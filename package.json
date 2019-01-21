@@ -1,0 +1,43 @@
+{
+	"name": "the-typography",
+	"name_title": "The Typography",
+	"version": "1.0.0",
+	"homepage": "http://wordpress.org/plugins/the-typography",
+	"main": "index.js",
+	"scripts": {
+		"dev": "parcel watch src/index-editor.js -o the-typography-editor.js -d build --no-hmr & parcel watch src/index-customizer.js -o the-typography-customizer.js -d build --no-hmr & parcel watch src/index-customizer-preview.js -o the-typography-customizer-preview.js -d build --no-hmr",
+		"release": "gulp release"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/plugin-proposal-class-properties": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/register": "^7.4.4",
+		"autoprefixer": "^9.5.1",
+		"cssnano": "^4.1.10",
+		"gulp": "^4.0.2",
+		"gulp-header": "^2.0.7",
+		"gulp-rename": "^1.4.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-run-command": "0.0.9",
+		"gulp-zip": "^4.2.0",
+		"merge2": "^1.2.3",
+		"stylus": "^0.54.5",
+		"npm-check-updates": "^3.1.9"
+	},
+	"dependencies": {
+		"@material-ui/core": "^3.9.3",
+		"@material-ui/icons": "^3.0.2",
+		"@material-ui/lab": "^3.0.0-alpha.30",
+		"@material-ui/styles": "^3.0.0-alpha.10",
+		"immer": "^3.1.1",
+		"react": "^16.8.6",
+		"react-color": "^2.17.3",
+		"react-dom": "^16.8.6",
+		"react-select": "^2.4.3",
+		"react-tiny-popover": "^3.4.2",
+		"tinycolor2": "^1.4.1",
+		"uuid": "^3.3.2",
+		"webfontloader": "^1.6.28"
+	}
+}

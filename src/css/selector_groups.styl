@@ -1,0 +1,122 @@
+/*
+ * Selector Groups
+ */
+
+.thet-selector_group
+	position relative
+	padding 10px 0
+	width 100%
+	display flex
+	flex-direction column
+
+	> span
+	> div
+		position relative
+
+	&.thet-is_open + .thet-is_closed
+		border-top none
+
+	&.thet-is_open + .thet-is_open
+		margin-top 15px
+
+	&.thet-is_open
+		padding-top 11px
+
+	&.thet-is_closed
+		cursor pointer
+		border-top 1px dotted var(--color_03)
+
+	&:first-child
+		border-top none
+
+	&.thet-is_open:before
+		background-color var(--background_color_softer)
+		border-top 1px dotted var(--color_02)
+		border-bottom 1px dotted var(--color_02)
+		content ""
+		position absolute
+		top 0
+		bottom 0
+		left -20px
+		right -20px
+
+.thet-selector_group-title-preview
+	cursor pointer
+	display block
+	overflow hidden
+	text-overflow ellipsis
+	white-space nowrap
+	position relative
+	margin-right 55px
+
+	&::selection
+		background-color transparent
+
+#thet-selector_groups
+	display flex
+	flex-direction column
+	padding 10px 20px
+	align-items self-start
+	border-top 1px solid var(--color_01)
+
+.thet-button-toggle_selector_group
+	top 16px
+	right 0
+	position absolute
+	padding 0
+
+	#thet-container &:focus
+	#thet-container &:hover
+		border none
+		box-shadow none
+		outline none
+		background none
+
+.thet-button-remove_selector_group
+	padding 5px
+	top 14px
+	right 29px
+	position absolute
+
+	svg
+		width 18px
+		height 18px
+
+	#thet-container &:focus
+		background none
+
+	.thet-is_open &
+		top 15px
+
+#thet-container
+	.thet-selector_group-title
+		padding-top 20px
+		padding-bottom 20px
+
+.thet-dark .thet-selector_group.thet-light.thet-is_closed
+.thet-selector_group.thet-dark.thet-is_closed
+	padding-left 20px
+	padding-right 20px
+	margin 0 -20px
+	width calc(100% + 40px)
+
+	.thet-button-toggle_selector_group
+	.thet-button-remove_selector_group
+		margin-right 20px
+
+.thet-is_open
+
+	.thet-selector_group-typography
+		padding-left 15px
+		border-left 1px solid var(--color_03)
+
+	.thet-selector_group-selectors
+		border-top 1px dotted var(--color_03)
+		margin-top 10px
+		padding-top 10px
+
+	.thet-selector_group-title-preview
+		border-bottom 1px dotted var(--color_02)
+		padding-bottom 10px
+		margin-bottom 10px
+		min-height 50px

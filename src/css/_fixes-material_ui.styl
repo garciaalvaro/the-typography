@@ -1,0 +1,81 @@
+/*
+ * Fixes Material UI
+ */
+
+#thet-container
+
+	.thet-control-container
+		.thet-material_ui-range-root
+			min-width 95px
+			flex 1
+
+	.thet-material_ui-range-thumb
+		&:hover
+			box-shadow 0px 0px 0px 9px var(--color_01)
+
+		&.thet-material_ui-range-activated
+			box-shadow 0px 0px 0px 18px var(--color_01)
+
+	.thet-material_ui-range-thumb
+		background-color var(--color_1)
+	.thet-material_ui-range-track
+		background-color var(--color_07)
+
+	.thet-material_ui-select-container
+		font-family inherit
+		font-size inherit
+		color inherit
+		line-height inherit
+		max-width 100%
+
+		&:before
+		&:after
+			content normal
+
+	.thet-material_ui-select-root
+		width auto
+		max-width 100%
+
+		svg
+			color var(--color_07)
+
+	.thet-material_ui-select-select
+		padding-right 1.7em
+		padding-top 0
+		padding-bottom 0
+
+		&:focus
+			background none
+
+	.thet-material_ui-textfield-label
+		color var(--color_07)
+	.thet-material_ui-select-placeholder
+		color var(--color_04)
+	.thet-material_ui-textfield-label-focused
+		color var(--color_085)
+
+	.thet-material_ui-textfield-input
+		color inherit
+		font-size inherit
+		margin-bottom .5em
+		max-width 85%
+
+		&:before
+			border-bottom-color var(--color_03)
+		input
+			border-radius 0
+			line-height 2.2
+			padding 0
+
+	.thet-material_ui-textfield-input-focused
+		&:after
+			border-bottom-color var(--color_07)
+
+div.thet-material_ui-select-menu
+	min-width 150px!important// Needed
+	box-shadow 0 1px 3px rgba(0,0,0,0.37)
+	border-radius 2px
+
+	li
+		padding 10px 20px
+		font-size 15px

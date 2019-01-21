@@ -1,0 +1,55 @@
+import l, { Span, pr } from "../../../utils";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
+
+const { __ } = wp.i18n;
+
+const options = [
+	{ value: "all_site", label: __("All site") },
+	{ value: "post_type", label: __("Post type/s") },
+	{ value: "front_page", label: __("Front page") },
+	{ value: "404_page", label: __("404 page") }
+];
+
+const ContextType = props => {
+	const { context_type, updateProp } = props;
+
+	return (
+		<Select
+			displayEmpty
+			value={context_type}
+			onChange={e => {
+				updateProp("context_type", e.target.value);
+			}}
+			classes={{
+				root: `${pr}-material_ui-select-root`,
+				select: `${pr}-material_ui-select-select`
+			}}
+			className={`${pr}-material_ui-select-container`}
+			MenuProps={{
+				classes: {
+					paper: `${pr}-material_ui-select-menu`
+				}
+			}}
+			renderValue={selected => {
+				if (selected === "") {
+					return (
+						<Span className={`${pr}-material_ui-select-placeholder`}>
+							{__("Select a context to filter")}
+						</Span>
+					);
+				}
+
+				return options.find(({ value }) => selected === value).label;
+			}}
+		>
+			{options.map(({ value, label }) => (
+				<MenuItem key={value} value={value}>
+					{label}
+				</MenuItem>
+			))}
+		</Select>
+	);
+};
+
+export default ContextType;

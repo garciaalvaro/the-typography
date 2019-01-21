@@ -1,0 +1,57 @@
+/*
+ * Panel
+ */
+
+#thet-title
+	padding 20px 20px 15px
+
+	> div
+		width 100%
+
+	input
+		line-height 2
+
+.thet-panel-is_open
+	border-top 1px solid var(--color_01)
+	border-bottom 1px solid var(--color_01)
+	margin-top -1px
+
+	+ .thet-panel-is_open
+		border-top none
+
+	&:last-child
+		border-bottom none
+
+.thet-panel
+	display flex
+	flex-direction column
+	padding 10px 20px
+
+.thet-panel-content
+	display flex
+	flex-direction column
+	align-items self-start
+
+.thet-button-toggle_panel
+	display flex
+	flex-direction row
+	width 100%
+	justify-content space-between
+	font-size inherit
+	line-height inherit
+	padding 0
+	align-items center
+
+	#thet-container &:focus
+		outline none
+		box-shadow none
+		background none
+
+.thet-panel-button
+	width 24px
+	height 24px
+	padding 0
+
+	svg
+		min-width 24px
+		min-height 24px
