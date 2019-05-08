@@ -1,4 +1,3 @@
-import l from "./js/utils/log";
 import WebFont from "webfontloader";
 
 ($ => {

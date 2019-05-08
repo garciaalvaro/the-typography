@@ -30,6 +30,8 @@ class Previewer extends Component {
 				updateTypographiesVisibility(data);
 				updateSingleVisibility(data);
 			});
+
+			this.updatePreviewFonts();
 		});
 	};
 
