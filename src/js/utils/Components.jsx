@@ -1,4 +1,4 @@
-import l, { addPrefix } from ".";
+import l, { addPrefix } from "utils";
 
 const DivForwardRef = wp.element.forwardRef(
 	({ children, classes, id, ...rest }, ref) => (

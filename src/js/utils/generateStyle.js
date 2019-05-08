@@ -1,4 +1,4 @@
-import l from ".";
+import l from "utils";
 
 const { isEmpty, cloneDeep, forOwn, forEach } = lodash;
 

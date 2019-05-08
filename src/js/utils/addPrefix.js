@@ -1,4 +1,4 @@
-import l, { pr } from ".";
+import l, { pr } from "utils";
 
 const { isUndefined, isString, compact } = lodash;
 
