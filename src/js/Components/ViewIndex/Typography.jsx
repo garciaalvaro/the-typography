@@ -16,7 +16,8 @@ class Typography extends Component {
 	};
 
 	render() {
-		const { color_class } = this.props;
+		const { props } = this;
+		const { color_class } = props;
 
 		return (
 			<Div classes={["index-typography", color_class]}>

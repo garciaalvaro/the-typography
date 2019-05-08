@@ -96,13 +96,14 @@ class BlockSelector extends Component {
 	};
 
 	render() {
+		const { props } = this;
 		const {
 			id,
 			parent_id,
 			block_name,
 			block_elements,
 			block_title_from_store
-		} = this.props;
+		} = props;
 
 		if (block_elements === null) {
 			return null;
