@@ -1,4 +1,4 @@
-import l, { Div, withControlCustom, pr_store } from "../../../utils";
+import l, { Div, withControlCustom, pr_store } from "utils";
 import FontFamily from "./FontFamily";
 import FontVariant from "./FontVariant";
 

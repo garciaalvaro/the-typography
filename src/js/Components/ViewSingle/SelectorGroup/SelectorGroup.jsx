@@ -6,7 +6,7 @@ import l, {
 	Div,
 	addPrefix,
 	pr_store
-} from "../../../utils";
+} from "utils";
 import SelectorGroupEdit from "./SelectorGroupEdit";
 import SelectorGroupPreview from "./SelectorGroupPreview";
 import ButtonRemove from "./ButtonRemove";

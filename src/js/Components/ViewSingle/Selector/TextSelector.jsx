@@ -1,4 +1,4 @@
-import l, { addPrefix } from "../../../utils";
+import l, { addPrefix } from "utils";
 import TextField from "@material-ui/core/TextField";
 import SelectorType from "./SelectorType";
 import ButtonRemove from "./ButtonRemove";

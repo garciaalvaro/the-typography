@@ -1,4 +1,4 @@
-import l, { Span, pr_store } from "../../utils";
+import l, { Span, pr_store } from "utils";
 import ButtonBack from "./ButtonBack";
 import ButtonUndo from "./ButtonUndo";
 import ButtonUpdate from "./ButtonUpdate";

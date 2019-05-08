@@ -1,4 +1,4 @@
-import l, { pr_store } from "../../utils";
+import l, { pr_store } from "utils";
 import WebFont from "webfontloader";
 
 const { isEmpty, isUndefined, forEach, map, union } = lodash;

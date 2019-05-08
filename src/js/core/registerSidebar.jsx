@@ -1,4 +1,4 @@
-import l, { pr, Div, plugin_namespace, plugin_title, icons } from "utils";
+import l, { Div, plugin_namespace, plugin_title, icons } from "utils";
 import Root from "../Components/Root/Root";
 
 const { registerPlugin } = wp.plugins;

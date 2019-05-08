@@ -1,4 +1,4 @@
-import l, { Div, pr_store, withAddTypography, addPrefix } from "../../utils";
+import l, { Div, pr_store, withAddTypography, addPrefix } from "utils";
 import Typography from "./Typography";
 import ButtonLoadMore from "./ButtonLoadMore";
 

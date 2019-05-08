@@ -1,4 +1,4 @@
-import l, { addPrefix, pr_store, icons, withToggle } from "../../utils";
+import l, { addPrefix, pr_store, icons, withToggle } from "utils";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
 const { __ } = wp.i18n;

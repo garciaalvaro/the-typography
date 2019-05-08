@@ -1,4 +1,4 @@
-import l, { Span } from "../../utils";
+import l, { Span } from "utils";
 import ButtonAdd from "./ButtonAdd";
 
 const { __ } = wp.i18n;

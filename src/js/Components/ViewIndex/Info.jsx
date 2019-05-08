@@ -1,11 +1,4 @@
-import l, {
-	is_customizer,
-	Div,
-	Span,
-	pr_store,
-	getNames,
-	icons
-} from "../../utils";
+import l, { is_customizer, Div, Span, pr_store, getNames, icons } from "utils";
 import ButtonRemove from "./ButtonRemove";
 
 const { __ } = wp.i18n;

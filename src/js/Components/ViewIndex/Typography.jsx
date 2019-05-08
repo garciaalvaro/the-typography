@@ -1,4 +1,4 @@
-import l, { Div, pr_store, withColorClass } from "../../utils";
+import l, { Div, pr_store, withColorClass } from "utils";
 import Title from "./Title";
 import Info from "./Info";
 

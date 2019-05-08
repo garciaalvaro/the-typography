@@ -1,4 +1,4 @@
-import l, { withTypographyStyle, Div, Span } from "../../utils";
+import l, { withTypographyStyle, Div, Span } from "utils";
 
 const { __ } = wp.i18n;
 

@@ -1,4 +1,4 @@
-import l, { withControlCustom, addPrefix } from "../../../utils";
+import l, { withControlCustom, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 

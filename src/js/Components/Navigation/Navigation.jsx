@@ -1,4 +1,4 @@
-import l, { Div } from "../../utils";
+import l, { Div } from "utils";
 import IndexView from "./IndexView";
 import SingleView from "./SingleView";
 

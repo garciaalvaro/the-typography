@@ -1,4 +1,4 @@
-import l, { is_customizer, Span, blocks_data } from "../../../utils";
+import l, { is_customizer, Span, blocks_data } from "utils";
 import SelectorType from "./SelectorType";
 import ButtonRemove from "./ButtonRemove";
 import BlockSelect from "./BlockSelect";

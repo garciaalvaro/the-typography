@@ -3,7 +3,7 @@ import l, {
 	pr_store,
 	cleanTypography,
 	cleanTaxonomyTerm
-} from "../../utils";
+} from "utils";
 
 const { isUndefined } = lodash;
 const { __ } = wp.i18n;

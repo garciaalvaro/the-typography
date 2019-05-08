@@ -1,4 +1,4 @@
-import l, { withPanel } from "../../utils";
+import l, { withPanel } from "utils";
 import ContextType from "./Context/ContextType";
 import PostType from "./Context/PostType";
 import PostTypeTemplate from "./Context/PostTypeTemplate";

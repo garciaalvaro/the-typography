@@ -1,4 +1,4 @@
-import l, { pr, Span, Div, withTypographyStyle } from "../../utils";
+import l, { Span, Div, withTypographyStyle } from "utils";
 import SelectorGroup from "./SelectorGroup/SelectorGroup";
 import ButtonAddGroup from "./SelectorGroup/ButtonAddGroup";
 

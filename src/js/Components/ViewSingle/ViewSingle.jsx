@@ -1,10 +1,4 @@
-import l, {
-	is_customizer,
-	withColorClass,
-	Div,
-	pr_store,
-	icons
-} from "../../utils";
+import l, { is_customizer, withColorClass, Div, pr_store, icons } from "utils";
 import SelectorGroups from "./SelectorGroups";
 import Title from "./Title";
 import Context from "./Context";

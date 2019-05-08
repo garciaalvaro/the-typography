@@ -1,4 +1,4 @@
-import l, { Div, Span } from "../../../utils";
+import l, { Div, Span } from "utils";
 
 const { isUndefined } = lodash;
 const { __ } = wp.i18n;

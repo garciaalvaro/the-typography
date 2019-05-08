@@ -1,4 +1,4 @@
-import l, { Span, Div, pr, addPrefix } from "../../../utils";
+import l, { Span, Div, pr, addPrefix } from "utils";
 import ReactSelect from "react-select";
 
 const { __ } = wp.i18n;

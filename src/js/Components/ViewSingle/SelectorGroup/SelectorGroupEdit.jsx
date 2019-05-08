@@ -1,4 +1,4 @@
-import l from "../../../utils";
+import l from "utils";
 import Title from "./Title";
 import Typography from "./Typography";
 import ParentSelector from "./ParentSelector";

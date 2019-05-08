@@ -1,4 +1,4 @@
-import l, { Div } from "../../../utils";
+import l, { Div } from "utils";
 import Selector from "../Selector/Selector";
 import ButtonAddSelector from "./ButtonAddSelector";
 

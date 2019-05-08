@@ -1,4 +1,4 @@
-import l, { withControlCustom, addPrefix } from "../../../utils";
+import l, { withControlCustom, addPrefix } from "utils";
 import Slider from "@material-ui/lab/Slider";
 
 const { __ } = wp.i18n;

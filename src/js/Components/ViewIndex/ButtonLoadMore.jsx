@@ -1,4 +1,4 @@
-import l, { withFetchTypographies, addPrefix } from "../../utils";
+import l, { withFetchTypographies, addPrefix } from "utils";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;

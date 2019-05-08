@@ -1,8 +1,8 @@
-import l, { Div } from "../../../utils";
+import l, { Div } from "utils";
 import BlockSelectorPreview from "./BlockSelectorPreview";
-import { Fragment } from "react";
 
 const { __ } = wp.i18n;
+const { Fragment } = wp.element;
 
 const SelectorsPreview = props => {
 	const { open, selectors, custom_parent_selector, parent_selector } = props;

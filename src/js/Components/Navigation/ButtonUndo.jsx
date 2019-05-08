@@ -1,4 +1,4 @@
-import l, { addPrefix, pr_store } from "../../utils";
+import l, { addPrefix, pr_store } from "utils";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;

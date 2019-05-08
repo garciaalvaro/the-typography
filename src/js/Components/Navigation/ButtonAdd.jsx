@@ -1,4 +1,4 @@
-import l, { addPrefix, icons, withAddTypography } from "../../utils";
+import l, { addPrefix, icons, withAddTypography } from "utils";
 
 const { Button, Icon } = wp.components;
 

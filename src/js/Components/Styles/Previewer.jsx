@@ -1,4 +1,4 @@
-import l, { pr_store } from "../../utils";
+import l, { pr_store } from "utils";
 
 const {
 	compact,

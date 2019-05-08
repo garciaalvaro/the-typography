@@ -1,4 +1,4 @@
-import l, { Span } from "../../../utils";
+import l, { Span } from "utils";
 
 const { __ } = wp.i18n;
 

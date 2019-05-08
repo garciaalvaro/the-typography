@@ -1,4 +1,4 @@
-import l, { withControlCustom, withToggle, Span } from "../../../utils";
+import l, { withControlCustom, withToggle, Span } from "utils";
 import { ChromePicker } from "react-color";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 

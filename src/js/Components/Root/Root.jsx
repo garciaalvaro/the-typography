@@ -1,4 +1,4 @@
-import l, { is_customizer, Div, pr_store, withFixedHeight } from "../../utils";
+import l, { is_customizer, Div, pr_store, withFixedHeight } from "utils";
 import PreviewerStyles from "../Styles/Previewer";
 import FontsStyles from "../Styles/Fonts";
 import Navigation from "../Navigation/Navigation";

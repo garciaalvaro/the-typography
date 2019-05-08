@@ -1,4 +1,4 @@
-import l, { withTypographyStyle, Div, addPrefix } from "../../utils";
+import l, { withTypographyStyle, Div, addPrefix } from "utils";
 import TextField from "@material-ui/core/TextField";
 
 const { __ } = wp.i18n;
