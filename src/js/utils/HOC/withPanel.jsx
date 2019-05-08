@@ -1,4 +1,4 @@
-import l, { Div, Span, pr, icons, generateClassName } from "../index";
+import l, { Div, Span, addPrefix, icons } from "../index";
 import withToggle from "./withToggle";
 
 const { Button, Icon } = wp.components;
@@ -9,22 +9,21 @@ const withPanel = ({ id, label }) =>
 		withToggle,
 		WrappedComponent => props => {
 			const { is_open, toggle } = props;
-			const classes = generateClassName([
-				`${pr}-panel`,
-				is_open ? `${pr}-panel-is_open` : `${pr}-panel-is_closed`
-			]);
 
 			return (
-				<Div id={`${pr}-${id}`} className={classes}>
-					<Button className={`${pr}-button-toggle_panel`} onClick={toggle}>
-						<Span className={`${pr}-panel-label`}>{label}</Span>
+				<Div
+					id={id}
+					classes={["panel", is_open ? "panel-is_open" : "panel-is_closed"]}
+				>
+					<Button className={addPrefix("button-toggle_panel")} onClick={toggle}>
+						<Span classes="panel-label">{label}</Span>
 						<Icon
-							className={`${pr}-panel-button`}
+							className={addPrefix("panel-button")}
 							icon={is_open ? icons.collapse : icons.expand}
 						/>
 					</Button>
 					{is_open && (
-						<Div className={`${pr}-panel-content`}>
+						<Div classes="panel-content">
 							<WrappedComponent {...props} />
 						</Div>
 					)}

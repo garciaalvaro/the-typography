@@ -5,8 +5,7 @@ import l, {
 	withTypographyStyle,
 	Div,
 	pr,
-	pr_store,
-	generateClassName
+	pr_store
 } from "../../../utils";
 import SelectorGroupEdit from "./SelectorGroupEdit";
 import SelectorGroupPreview from "./SelectorGroupPreview";
@@ -33,11 +32,11 @@ class SelectorGroup extends Component {
 
 		return (
 			<Div
-				className={generateClassName([
-					`${pr}-selector_group`,
-					color_class ? `${pr}-${color_class}` : null,
-					is_open ? `${pr}-is_open` : `${pr}-is_closed`
-				])}
+				classes={[
+					"selector_group",
+					color_class ? color_class : null,
+					is_open ? "is_open" : "is_closed"
+				]}
 			>
 				<TitlePreview {...props} />
 				<ButtonRemove id={id} />

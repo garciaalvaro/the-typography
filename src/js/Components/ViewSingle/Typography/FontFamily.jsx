@@ -1,4 +1,4 @@
-import l, { pr, fonts_family, Div, icons } from "../../../utils";
+import l, { addPrefix, pr, fonts_family, Div, icons } from "../../../utils";
 import Select from "react-select";
 
 const { find } = lodash;
@@ -10,9 +10,9 @@ const FontFamily = props => {
 	const selected = find(fonts_family, { value: font_family });
 
 	return (
-		<Div className={`${pr}-setting-font_family`}>
+		<Div classes="setting-font_family">
 			<Select
-				className={`${pr}-control-react_select`}
+				className={addPrefix("control-react_select")}
 				classNamePrefix={pr}
 				value={selected}
 				onChange={({ value }) => {

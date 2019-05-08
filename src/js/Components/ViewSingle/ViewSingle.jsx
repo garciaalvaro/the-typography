@@ -2,9 +2,7 @@ import l, {
 	is_customizer,
 	withColorClass,
 	Div,
-	pr,
 	pr_store,
-	generateClassName,
 	icons
 } from "../../utils";
 import SelectorGroups from "./SelectorGroups";
@@ -22,29 +20,19 @@ const ViewSingle = props => {
 	const { color_class, is_visible } = props;
 
 	return (
-		<Div
-			id={`${pr}-single`}
-			className={generateClassName([
-				color_class ? `${pr}-${color_class}` : null
-			])}
-		>
+		<Div id="single" classes={color_class ? color_class : null}>
 			{is_customizer && (
 				<Fragment>
 					<Div
-						className={generateClassName([
-							`${pr}-visibility-icon`,
-							`${pr}-single-visibility-icon`,
-							is_visible ? `${pr}-is_visible` : `${pr}-no-is_visible`
-						])}
+						classes={[
+							"visibility-icon",
+							"single-visibility-icon",
+							is_visible ? "is_visible" : "no-is_visible"
+						]}
 					>
 						<Icon icon={icons.preview} />
 					</Div>
-					<Div
-						className={generateClassName([
-							`${pr}-visibility-message`,
-							`${pr}-single-visibility-message`
-						])}
-					>
+					<Div classes={["visibility-message", "single-visibility-message"]}>
 						{is_visible
 							? __("Active in the current preview window")
 							: __(

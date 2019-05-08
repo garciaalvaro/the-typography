@@ -1,4 +1,4 @@
-import l, { pr, pr_store, icons, withToggle } from "../../utils";
+import l, { addPrefix, pr_store, icons, withToggle } from "../../utils";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
 const { __ } = wp.i18n;
@@ -32,8 +32,8 @@ const NavigationButtons = props => {
 			)}
 		>
 			<Button
-				id={`${pr}-go_back`}
-				className={`${pr}-navigation-button`}
+				id={addPrefix("go_back")}
+				className={addPrefix("navigation-button")}
 				onClick={() => {
 					if (!single_changed) {
 						goToIndex();

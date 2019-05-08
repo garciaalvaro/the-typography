@@ -1,4 +1,4 @@
-import l, { Span, pr, fonts, fonts_variants } from "../../../utils";
+import l, { Span, addPrefix, fonts, fonts_variants } from "../../../utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
@@ -32,13 +32,13 @@ const FontVariant = props => {
 	return (
 		<Select
 			classes={{
-				root: `${pr}-material_ui-select-root`,
-				select: `${pr}-material_ui-select-select`
+				root: addPrefix("material_ui-select-root"),
+				select: addPrefix("material_ui-select-select")
 			}}
-			className={`${pr}-material_ui-select-container`}
+			className={addPrefix("material_ui-select-container")}
 			MenuProps={{
 				classes: {
-					paper: `${pr}-material_ui-select-menu`
+					paper: addPrefix("material_ui-select-menu")
 				}
 			}}
 			multiple
@@ -48,7 +48,7 @@ const FontVariant = props => {
 			renderValue={selected => {
 				if (selected.length === 0) {
 					return (
-						<Span className={`${pr}-material_ui-select-placeholder`}>
+						<Span classes="material_ui-select-placeholder">
 							{__("Select variants")}
 						</Span>
 					);

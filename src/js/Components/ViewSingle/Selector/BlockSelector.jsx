@@ -1,4 +1,4 @@
-import l, { is_customizer, Span, Div, pr, blocks_data } from "../../../utils";
+import l, { is_customizer, Span, blocks_data } from "../../../utils";
 import SelectorType from "./SelectorType";
 import ButtonRemove from "./ButtonRemove";
 import BlockSelect from "./BlockSelect";
@@ -114,12 +114,10 @@ class BlockSelector extends Component {
 				<ButtonRemove id={id} parent_id={parent_id} />
 				<SelectorType {...props} />
 				{is_editor && block_name !== "" && block_title_from_store === "" && (
-					<Span className={`${pr}-message`}>
-						{__("The Block could not be found.")}
-					</Span>
+					<Span classes="message">{__("The Block could not be found.")}</Span>
 				)}
 				{is_customizer && (
-					<Span className={`${pr}-message ${pr}-message-go_to_editor`}>
+					<Span classes={["message", "message-go_to_editor"]}>
 						{__(
 							"To use this feature go to any Post editor where the Block editor is enabled."
 						)}

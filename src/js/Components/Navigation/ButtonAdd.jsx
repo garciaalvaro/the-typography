@@ -1,4 +1,4 @@
-import l, { pr, icons, withAddTypography } from "../../utils";
+import l, { addPrefix, icons, withAddTypography } from "../../utils";
 
 const { Button, Icon } = wp.components;
 
@@ -7,8 +7,8 @@ const ButtonAdd = props => {
 
 	return (
 		<Button
-			id={`${pr}-button-add_typography`}
-			className={`${pr}-navigation-button`}
+			id={addPrefix("button-add_typography")}
+			className={addPrefix("navigation-button")}
 			onClick={addTypography}
 		>
 			<Icon icon={icons.add_box} />

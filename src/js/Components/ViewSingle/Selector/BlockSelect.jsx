@@ -1,4 +1,4 @@
-import l, { Span, Div, pr, generateClassName } from "../../../utils";
+import l, { Span, Div, pr, addPrefix } from "../../../utils";
 import ReactSelect from "react-select";
 
 const { __ } = wp.i18n;
@@ -8,14 +8,8 @@ const Option = props => {
 	const { data, innerProps, isDisabled } = props;
 
 	return !isDisabled ? (
-		<Div
-			{...innerProps}
-			className={generateClassName([
-				`${pr}-react_select-menu-item`,
-				`${pr}-selector-block`
-			])}
-		>
-			<Div className={`${pr}-selector-block-icon`}>
+		<Div {...innerProps} classes={["react_select-menu-item", "selector-block"]}>
+			<Div classes="selector-block-icon">
 				<BlockIcon icon={data.icon} />
 			</Div>
 			<Span>{data.label}</Span>
@@ -29,17 +23,17 @@ const SingleValue = props => {
 
 	if (value === "") {
 		return (
-			<Div {...innerProps} className={`${pr}-selector-block`}>
+			<Div {...innerProps} classes="selector-block">
 				<Span>{__("...select a block")}</Span>
 			</Div>
 		);
 	}
 
 	return (
-		<Div {...innerProps} className={`${pr}-selector-block`}>
-			<Div className={`${pr}-selector-block-icon`}>
+		<Div {...innerProps} classes="selector-block">
+			<Div classes="selector-block-icon">
 				{icon === null ? (
-					<Div className={`${pr}-block_no_icon`} />
+					<Div classes="block_no_icon" />
 				) : (
 					<BlockIcon icon={icon} />
 				)}
@@ -65,7 +59,7 @@ const BlockSelect = props => {
 
 	return (
 		<ReactSelect
-			className={`${pr}-control-react_select`}
+			className={addPrefix("control-react_select")}
 			classNamePrefix={pr}
 			value={selected_block}
 			onChange={selected => {

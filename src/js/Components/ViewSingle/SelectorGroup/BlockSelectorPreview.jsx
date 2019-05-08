@@ -20,8 +20,8 @@ const BlockSelectorPreview = props => {
 	}
 
 	return (
-		<Div className={`${pr}-selector-block`}>
-			<Div className={`${pr}-selector-block-icon`}>
+		<Div classes="selector-block">
+			<Div classes="selector-block-icon">
 				{block_icon === null ? (
 					<Div className={`${pr}-block_no_icon`} />
 				) : (
@@ -31,7 +31,7 @@ const BlockSelectorPreview = props => {
 			<Span>{block_title}</Span>
 			{block_selector_extra !== "" && (
 				<Fragment>
-					<Span className={`${pr}-selector-block-separator`}>{__("|")}</Span>
+					<Span classes="selector-block-separator">{__("|")}</Span>
 					<Span>
 						{block_element_label === "Custom selector"
 							? block_selector_extra

@@ -10,6 +10,7 @@ import {
 	selector_group_defaults,
 	typography_defaults
 } from "./data-defaults";
+import addPrefix from "./addPrefix";
 import generateStyle from "./generateStyle";
 import generateClassName from "./generateClassName";
 import {
@@ -49,6 +50,7 @@ import {
 export default l;
 export {
 	is_customizer,
+	addPrefix,
 	generateStyle,
 	toFixed,
 	generateClassName,

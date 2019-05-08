@@ -1,5 +1,5 @@
 import l, {
-	pr,
+	addPrefix,
 	pr_store,
 	cleanTypography,
 	cleanTaxonomyTerm
@@ -15,12 +15,12 @@ const ButtonUpdate = props => {
 
 	return (
 		<Button
-			id={
+			id={addPrefix(
 				button_state === "save"
-					? `${pr}-button-save_typography`
-					: `${pr}-button-update_typography`
-			}
-			className={`${pr}-navigation-button`}
+					? "button-save_typography"
+					: "button-update_typography"
+			)}
+			className={addPrefix("navigation-button")}
 			onClick={update}
 		>
 			{button_state === "save" ? __("Save") : __("Update")}

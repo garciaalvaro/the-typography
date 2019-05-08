@@ -7,18 +7,18 @@ const Title = props => {
 	const { title, updateProp, typography_style } = props;
 
 	return (
-		<Div id={`${pr}-title`}>
+		<Div id="title">
 			<TextField
 				InputLabelProps={{
 					classes: {
-						root: `${pr}-material_ui-textfield-label`,
-						focused: `${pr}-material_ui-textfield-label-focused`
+						root: addPrefix("material_ui-textfield-label"),
+						focused: addPrefix("material_ui-textfield-label-focused")
 					}
 				}}
 				InputProps={{
 					classes: {
-						root: `${pr}-material_ui-textfield-input`,
-						focused: `${pr}-material_ui-textfield-input-focused`
+						root: addPrefix("material_ui-textfield-input"),
+						focused: addPrefix("material_ui-textfield-input-focused")
 					}
 				}}
 				inputProps={{

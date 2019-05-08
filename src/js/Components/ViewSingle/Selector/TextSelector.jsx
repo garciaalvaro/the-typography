@@ -1,4 +1,4 @@
-import l, { Span, Div, pr } from "../../../utils";
+import l, { addPrefix } from "../../../utils";
 import TextField from "@material-ui/core/TextField";
 import SelectorType from "./SelectorType";
 import ButtonRemove from "./ButtonRemove";
@@ -17,14 +17,14 @@ const TextSelector = props => {
 				// autoFocus={selector_just_added}
 				InputLabelProps={{
 					classes: {
-						root: `${pr}-material_ui-textfield-label`,
-						focused: `${pr}-material_ui-textfield-label-focused`
+						root: addPrefix("material_ui-textfield-label"),
+						focused: addPrefix("material_ui-textfield-label-focused")
 					}
 				}}
 				InputProps={{
 					classes: {
-						root: `${pr}-material_ui-textfield-input`,
-						focused: `${pr}-material_ui-textfield-input-focused`
+						root: addPrefix("material_ui-textfield-input"),
+						focused: addPrefix("material_ui-textfield-input-focused")
 					}
 				}}
 				placeholder={__("enter a CSS selector")}

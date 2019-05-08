@@ -2,7 +2,6 @@ import l, { Div, pr } from "../../../utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
-const { __ } = wp.i18n;
 const { Component } = wp.element;
 
 const options = [
@@ -15,16 +14,16 @@ class SelectorType extends Component {
 		const { selector_type, updateProp } = this.props;
 
 		return (
-			<Div className={`${pr}-selector_type`}>
+			<Div classes="selector_type">
 				<Select
 					classes={{
-						root: `${pr}-material_ui-select-root`,
-						select: `${pr}-material_ui-select-select`
+						root: addPrefix("material_ui-select-root"),
+						select: addPrefix("material_ui-select-select")
 					}}
 					className={`${pr}-material_ui-select-container`}
 					MenuProps={{
 						classes: {
-							paper: `${pr}-material_ui-select-menu`
+							paper: addPrefix("material_ui-select-menu")
 						}
 					}}
 					value={selector_type}

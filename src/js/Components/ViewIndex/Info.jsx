@@ -2,11 +2,9 @@ import l, {
 	is_customizer,
 	Div,
 	Span,
-	pr,
 	pr_store,
 	getNames,
-	icons,
-	generateClassName
+	icons
 } from "../../utils";
 import ButtonRemove from "./ButtonRemove";
 
@@ -43,23 +41,23 @@ const Info = props => {
 	};
 
 	return (
-		<Div className={`${pr}-index-typography-info`}>
+		<Div classes="index-typography-info">
 			{is_customizer && (
 				<Fragment>
 					<Div
-						className={generateClassName([
-							`${pr}-visibility-icon`,
-							`${pr}-index-typography-visibility-icon`,
-							is_visible ? `${pr}-is_visible` : `${pr}-no-is_visible`
-						])}
+						classes={[
+							"visibility-icon",
+							"index-typography-visibility-icon",
+							is_visible ? "is_visible" : "no-is_visible"
+						]}
 					>
 						<Icon icon={icons.preview} />
 					</Div>
 					<Div
-						className={generateClassName([
-							`${pr}-visibility-message`,
-							`${pr}-index-typography-visibility-message`
-						])}
+						classes={[
+							"visibility-message",
+							"index-typography-visibility-message"
+						]}
 					>
 						{is_visible
 							? __("Active in the current preview window")

@@ -1,4 +1,4 @@
-import l, { Span, pr, generateClassName } from "../../../utils";
+import l, { Span } from "../../../utils";
 
 const { __ } = wp.i18n;
 
@@ -7,10 +7,7 @@ const ForceStyles = props => {
 
 	return (
 		<Span
-			className={generateClassName([
-				`${pr}-control-text_toggle`,
-				force_styles ? `${pr}-enabled` : `${pr}-disabled`
-			])}
+			classes={["control-text_toggle", force_styles ? "enabled" : "disabled"]}
 			onClick={() => updateProp("force_styles", !force_styles)}
 		>
 			{__("Force styles using !important")}

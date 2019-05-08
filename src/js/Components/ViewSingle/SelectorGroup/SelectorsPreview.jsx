@@ -10,15 +10,11 @@ const SelectorsPreview = props => {
 	return (
 		<Div className={`${pr}-selector_group-selectors`} onClick={open}>
 			{selectors.length === 0 ? (
-				<Div className={`${pr}-selector-text`}>
-					{__("...no selectors")}
-				</Div>
+				<Div classes="selector-text">{__("...no selectors")}</Div>
 			) : (
 				<Fragment>
 					{custom_parent_selector && (
-						<Div
-							className={`${pr}-selector-text ${pr}-selector-parent`}
-						>
+						<Div className={`${pr}-selector-text ${pr}-selector-parent`}>
 							{parent_selector !== ""
 								? parent_selector
 								: __("...enter a parent selector")}
@@ -29,10 +25,7 @@ const SelectorsPreview = props => {
 
 						if (selector_type === "text") {
 							return (
-								<Div
-									key={selector.id}
-									className={`${pr}-selector-text`}
-								>
+								<Div key={selector.id} className={`${pr}-selector-text`}>
 									{text_selector === ""
 										? __("...enter a selector")
 										: text_selector}

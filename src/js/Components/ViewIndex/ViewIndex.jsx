@@ -1,4 +1,4 @@
-import l, { Div, pr_store, pr, withAddTypography } from "../../utils";
+import l, { Div, pr_store, withAddTypography, addPrefix } from "../../utils";
 import Typography from "./Typography";
 import ButtonLoadMore from "./ButtonLoadMore";
 
@@ -31,18 +31,16 @@ const ViewIndex = props => {
 
 	const getMessage = () => {
 		if (is_loading) {
-			return (
-				<Div id={`${pr}-index-message`}>{__("Loading typographies...")}</Div>
-			);
+			return <Div id="index-message">{__("Loading typographies...")}</Div>;
 		}
 
 		if (!is_loading && is_last_page && typographies.length === 0) {
 			return (
 				<Fragment>
-					<Div id={`${pr}-index-message`}>{__("No typographies found.")}</Div>
+					<Div id="index-message">{__("No typographies found.")}</Div>
 					<Button
-						id={`${pr}-button-add_first_typography`}
-						className={`${pr}-navigation-button`}
+						id={addPrefix("button-add_first_typography")}
+						className={addPrefix("navigation-button")}
 						onClick={addTypography}
 					>
 						{__("Add Typography")}
@@ -55,7 +53,7 @@ const ViewIndex = props => {
 	};
 
 	return (
-		<Div id={`${pr}-index`}>
+		<Div id="index">
 			{getTypographies()}
 			{getButton()}
 			{getMessage()}

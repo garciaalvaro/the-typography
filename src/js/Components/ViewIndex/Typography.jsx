@@ -1,10 +1,4 @@
-import l, {
-	Div,
-	pr,
-	pr_store,
-	withColorClass,
-	generateClassName
-} from "../../utils";
+import l, { Div, pr_store, withColorClass } from "../../utils";
 import Title from "./Title";
 import Info from "./Info";
 
@@ -26,12 +20,7 @@ class Typography extends Component {
 		const { color_class } = props;
 
 		return (
-			<Div
-				className={generateClassName([
-					`${pr}-index-typography`,
-					color_class ? `${pr}-${color_class}` : null
-				])}
-			>
+			<Div classes={["index-typography", color_class ? color_class : null]}>
 				<Info {...props} />
 				<Title {...props} />
 			</Div>

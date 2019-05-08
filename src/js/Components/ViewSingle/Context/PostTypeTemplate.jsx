@@ -1,4 +1,4 @@
-import l, { Span, pr } from "../../../utils";
+import l, { Span, addPrefix } from "../../../utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
@@ -15,13 +15,13 @@ const PostTypeTemplate = props => {
 	return (
 		<Select
 			classes={{
-				root: `${pr}-material_ui-select-root`,
-				select: `${pr}-material_ui-select-select`
+				root: addPrefix("material_ui-select-root"),
+				select: addPrefix("material_ui-select-select")
 			}}
-			className={`${pr}-material_ui-select-container`}
+			className={addPrefix("material_ui-select-container")}
 			MenuProps={{
 				classes: {
-					paper: `${pr}-material_ui-select-menu`
+					paper: addPrefix("material_ui-select-menu")
 				}
 			}}
 			multiple
@@ -31,7 +31,7 @@ const PostTypeTemplate = props => {
 			renderValue={selected => {
 				if (selected.length === 0) {
 					return (
-						<Span className={`${pr}-material_ui-select-placeholder`}>
+						<Span classes={"material_ui-select-placeholder"}>
 							{__("Select templates")}
 						</Span>
 					);

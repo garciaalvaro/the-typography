@@ -1,4 +1,4 @@
-import l, { Div, pr, pr_store, generateClassName } from "../../../utils";
+import l, { Div, pr_store } from "../../../utils";
 import TextSelector from "./TextSelector";
 import BlockSelector from "./BlockSelector";
 
@@ -9,12 +9,7 @@ const Selector = props => {
 	const { selector_type } = props;
 
 	return (
-		<Div
-			className={generateClassName([
-				`${pr}-selector`,
-				`${pr}-selector-type-${selector_type}`
-			])}
-		>
+		<Div classes={["selector", `selector-type-${selector_type}`]}>
 			{selector_type === "text" ? (
 				<TextSelector {...props} />
 			) : (

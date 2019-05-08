@@ -1,4 +1,4 @@
-import l, { withTypographyStyle, Div, Span, pr } from "../../utils";
+import l, { withTypographyStyle, Div, Span } from "../../utils";
 
 const { __ } = wp.i18n;
 
@@ -7,7 +7,7 @@ const Title = props => {
 
 	return (
 		<Div
-			className={`${pr}-index-typography-title`}
+			classes="index-typography-title"
 			onClick={openSingle}
 			style={typography_style}
 		>

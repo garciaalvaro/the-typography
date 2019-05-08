@@ -1,4 +1,4 @@
-import l, { Div, withControlCustom, pr_store, pr } from "../../../utils";
+import l, { Div, withControlCustom, pr_store } from "../../../utils";
 import FontFamily from "./FontFamily";
 import FontVariant from "./FontVariant";
 
@@ -14,7 +14,7 @@ const Font = props => {
 	}
 
 	return (
-		<Div className={`${pr}-font-container`}>
+		<Div classes="font-container">
 			<FontFamily {...props} />
 			{font_family !== "" && <FontVariant {...props} />}
 		</Div>

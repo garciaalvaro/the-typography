@@ -1,10 +1,4 @@
-import l, {
-	withToggle,
-	pr,
-	pr_store,
-	icons,
-	generateClassName
-} from "../../utils";
+import l, { withToggle, pr_store, icons, addPrefix } from "../../utils";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
 const { __ } = wp.i18n;
@@ -40,9 +34,9 @@ const ButtonRemove = props => {
 		>
 			<Button
 				onClick={toggle}
-				className={generateClassName([
-					`${pr}-button-remove_typography`,
-					is_open ? `${pr}-is_open` : null
+				className={addPrefix([
+					"button-remove_typography",
+					is_open ? "is_open" : null
 				])}
 			>
 				<Icon icon={icons.delete} />

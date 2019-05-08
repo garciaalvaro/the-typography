@@ -1,4 +1,4 @@
-import l, { Div, pr } from "../../../utils";
+import l, { Div, addPrefix } from "../../../utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
@@ -15,7 +15,7 @@ const BlockElementSelect = props => {
 	} = props;
 
 	return (
-		<Div className={`${pr}-block_selector-element`}>
+		<Div classes="block_selector-element">
 			<Select
 				value={block_element}
 				onChange={e => {
@@ -34,13 +34,13 @@ const BlockElementSelect = props => {
 					setState({ block_element: value });
 				}}
 				classes={{
-					root: `${pr}-material_ui-select-root`,
-					select: `${pr}-material_ui-select-select`
+					root: addPrefix("material_ui-select-root"),
+					select: addPrefix("material_ui-select-select")
 				}}
-				className={`${pr}-material_ui-select-container`}
+				className={addPrefix("material_ui-select-container")}
 				MenuProps={{
 					classes: {
-						paper: `${pr}-material_ui-select-menu`
+						paper: addPrefix("material_ui-select-menu")
 					}
 				}}
 				renderValue={selected =>
@@ -57,14 +57,14 @@ const BlockElementSelect = props => {
 				<TextField
 					InputLabelProps={{
 						classes: {
-							root: `${pr}-material_ui-textfield-label`,
-							focused: `${pr}-material_ui-textfield-label-focused`
+							root: addPrefix("material_ui-textfield-label"),
+							focused: addPrefix("material_ui-textfield-label-focused")
 						}
 					}}
 					InputProps={{
 						classes: {
-							root: `${pr}-material_ui-textfield-input`,
-							focused: `${pr}-material_ui-textfield-input-focused`
+							root: addPrefix("material_ui-textfield-input"),
+							focused: addPrefix("material_ui-textfield-input-focused")
 						}
 					}}
 					placeholder={__("enter a CSS selector")}

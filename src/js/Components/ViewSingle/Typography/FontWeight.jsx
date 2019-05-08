@@ -1,4 +1,4 @@
-import l, { withControlCustom, pr } from "../../../utils";
+import l, { withControlCustom, addPrefix } from "../../../utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
@@ -26,13 +26,13 @@ const FontWeight = props => {
 	return (
 		<Select
 			classes={{
-				root: `${pr}-material_ui-select-root`,
-				select: `${pr}-material_ui-select-select`
+				root: addPrefix("material_ui-select-root"),
+				select: addPrefix("material_ui-select-select")
 			}}
-			className={`${pr}-material_ui-select-container`}
+			className={addPrefix("material_ui-select-container")}
 			MenuProps={{
 				classes: {
-					paper: `${pr}-material_ui-select-menu`
+					paper: addPrefix("material_ui-select-menu")
 				}
 			}}
 			value={font_weight}

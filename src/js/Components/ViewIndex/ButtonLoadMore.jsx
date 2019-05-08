@@ -1,4 +1,4 @@
-import l, { withFetchTypographies, pr } from "../../utils";
+import l, { withFetchTypographies, addPrefix } from "../../utils";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;
@@ -9,8 +9,8 @@ const ButtonLoadMore = props => {
 	return (
 		<Button
 			onClick={fetchTypographies}
-			id={`${pr}-button-load_more`}
-			className={`${pr}-dark`}
+			id={addPrefix("button-load_more")}
+			className={addPrefix("dark")}
 		>
 			{__("Load more")}
 		</Button>

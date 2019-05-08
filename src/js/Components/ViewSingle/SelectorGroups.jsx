@@ -45,8 +45,8 @@ const SelectorGroups = props => {
 	};
 
 	return (
-		<Div id={`${pr}-selector_groups`}>
-			<Span className={`${pr}-panel-label`}>{__("Selectors")}</Span>
+		<Div id="selector_groups">
+			<Span classes="panel-label">{__("Selectors")}</Span>
 			<ButtonAddGroup />
 			{selector_groups.map(group => (
 				<SelectorGroup

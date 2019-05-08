@@ -1,4 +1,4 @@
-import l, { pr, pr_store } from "../../utils";
+import l, { addPrefix, pr_store } from "../../utils";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;
@@ -9,8 +9,8 @@ const ButtonUndo = props => {
 
 	return (
 		<Button
-			id={`${pr}-button-undo_single`}
-			className={`${pr}-navigation-button`}
+			id={addPrefix("button-undo_single")}
+			className={addPrefix("navigation-button")}
 			onClick={() => {
 				setState({ just_undoed: true });
 				undo();

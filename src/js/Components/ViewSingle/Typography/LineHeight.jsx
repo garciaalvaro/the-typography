@@ -1,4 +1,4 @@
-import l, { withControlCustom, pr, toFixed } from "../../../utils";
+import l, { withControlCustom, addPrefix, toFixed } from "../../../utils";
 import Slider from "@material-ui/lab/Slider";
 
 const { __ } = wp.i18n;
@@ -13,10 +13,10 @@ const LineHeight = props => {
 	return (
 		<Slider
 			classes={{
-				thumb: `${pr}-material_ui-range-thumb`,
-				container: `${pr}-material_ui-range-container`,
-				track: `${pr}-material_ui-range-track`,
-				root: `${pr}-material_ui-range-root`
+				thumb: addPrefix("material_ui-range-thumb"),
+				container: addPrefix("material_ui-range-container"),
+				track: addPrefix("material_ui-range-track"),
+				root: addPrefix("material_ui-range-root")
 			}}
 			step={0.1}
 			min={0.3}

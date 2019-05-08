@@ -7,7 +7,7 @@ const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
 const registerSidebar = () =>
 	registerPlugin(plugin_namespace, {
-		icon: <Div id={`${pr}-pinned-logo`}>{icons.logo}</Div>,
+		icon: <Div id="pinned-logo">{icons.logo}</Div>,
 		render: () => (
 			<Fragment>
 				<PluginSidebar name={plugin_namespace} title={plugin_title}>

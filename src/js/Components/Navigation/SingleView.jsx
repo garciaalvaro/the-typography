@@ -1,4 +1,4 @@
-import l, { Span, pr, pr_store } from "../../utils";
+import l, { Span, pr_store } from "../../utils";
 import ButtonBack from "./ButtonBack";
 import ButtonUndo from "./ButtonUndo";
 import ButtonUpdate from "./ButtonUpdate";
@@ -67,7 +67,7 @@ class SingleView extends Component {
 			return (
 				<Fragment>
 					<ButtonBack single_changed={single_changed} />
-					<Span className={`${pr}-navigation-message`}>
+					<Span classes="navigation-message">
 						{button_state === "update" ? __("Updated") : __("Saved")}
 					</Span>
 				</Fragment>

@@ -1,4 +1,4 @@
-import l, { Span, Div, pr, generateClassName } from "../../../utils";
+import l, { Span, Div } from "../../../utils";
 import Color from "../Typography/Color";
 import FontSize from "../Typography/FontSize";
 import FontStyle from "../Typography/FontStyle";
@@ -17,16 +17,16 @@ const Typography = props => {
 	return (
 		<Fragment>
 			<Span
-				className={generateClassName([
-					`${pr}-control-text_toggle`,
-					custom_typography ? `${pr}-enabled` : `${pr}-disabled`
-				])}
+				classes={[
+					"control-text_toggle",
+					custom_typography ? "enabled" : "disabled"
+				]}
 				onClick={() => updateProp("custom_typography", !custom_typography)}
 			>
 				{__("Use custom typography")}
 			</Span>
 			{custom_typography && (
-				<Div className={`${pr}-selector_group-typography`}>
+				<Div classes="selector_group-typography">
 					<Color {...props} />
 					<FontSize {...props} />
 					<FontStyle {...props} />

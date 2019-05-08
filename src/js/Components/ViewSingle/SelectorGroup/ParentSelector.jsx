@@ -1,4 +1,4 @@
-import l, { Span, pr, generateClassName } from "../../../utils";
+import l, { Span } from "../../../utils";
 import TextField from "@material-ui/core/TextField";
 
 const { __ } = wp.i18n;
@@ -10,10 +10,10 @@ const ParentSelector = props => {
 	return (
 		<Fragment>
 			<Span
-				className={generateClassName([
-					`${pr}-control-text_toggle`,
-					custom_parent_selector ? `${pr}-enabled` : `${pr}-disabled`
-				])}
+				classes={[
+					"control-text_toggle",
+					custom_parent_selector ? "enabled" : "disabled"
+				]}
 				onClick={() =>
 					updateProp("custom_parent_selector", !custom_parent_selector)
 				}
@@ -24,14 +24,14 @@ const ParentSelector = props => {
 				<TextField
 					InputLabelProps={{
 						classes: {
-							root: `${pr}-material_ui-textfield-label`,
-							focused: `${pr}-material_ui-textfield-label-focused`
+							root: addPrefix("material_ui-textfield-label"),
+							focused: addPrefix("material_ui-textfield-label-focused")
 						}
 					}}
 					InputProps={{
 						classes: {
-							root: `${pr}-material_ui-textfield-input`,
-							focused: `${pr}-material_ui-textfield-input-focused`
+							root: addPrefix("material_ui-textfield-input"),
+							focused: addPrefix("material_ui-textfield-input-focused")
 						}
 					}}
 					placeholder={__("enter a CSS selector")}
