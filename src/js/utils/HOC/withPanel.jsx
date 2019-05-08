@@ -1,4 +1,4 @@
-import l, { Div, Span, addPrefix, icons } from "../index";
+import l, { Div, Span, addPrefix, icons } from "utils";
 import withToggle from "./withToggle";
 
 const { Button, Icon } = wp.components;

@@ -1,4 +1,4 @@
-import l from "../utils";
+import l from "utils";
 
 const controls = {
 	FETCH_TAXONOMIES(action) {

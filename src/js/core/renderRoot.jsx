@@ -1,4 +1,4 @@
-import l from "../utils";
+import l from "utils";
 import Root from "../Components/Root/Root";
 
 const App = () => <Root />;

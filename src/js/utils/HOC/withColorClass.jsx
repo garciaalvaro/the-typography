@@ -1,4 +1,4 @@
-import l from "../index";
+import l from "utils";
 import tinycolor from "tinycolor2";
 
 const { Component } = wp.element;

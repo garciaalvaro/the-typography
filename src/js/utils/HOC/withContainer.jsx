@@ -1,4 +1,4 @@
-import l, { Div } from "../index";
+import l, { Div } from "utils";
 
 const withContainer = classes => WrappedComponent => props => (
 	<Div classes={classes}>

@@ -3,7 +3,7 @@ import l, {
 	selector_group_defaults,
 	selector_defaults,
 	generateStyle
-} from "../utils";
+} from "utils";
 import produce from "immer";
 import uuidv4 from "uuid/v4";
 

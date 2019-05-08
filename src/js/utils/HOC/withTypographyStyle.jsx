@@ -1,4 +1,4 @@
-import l from "../index";
+import l from "utils";
 
 const { omitBy, isNil } = lodash;
 

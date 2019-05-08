@@ -1,8 +1,4 @@
-import l, {
-	pr_store,
-	cleanTypographies,
-	typographies_per_page
-} from "../index";
+import l, { pr_store, cleanTypographies, typographies_per_page } from "utils";
 
 const { isUndefined } = lodash;
 

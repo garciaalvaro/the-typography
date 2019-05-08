@@ -1,4 +1,4 @@
-import l, { typographies_per_page } from "../utils";
+import l, { typographies_per_page } from "utils";
 
 const controls = {
 	FETCH_TYPOGRAPHIES(action) {

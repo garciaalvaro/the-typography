@@ -1,4 +1,4 @@
-import l from "./utils";
+import l from "utils";
 import createStore from "./store";
 import registerSidebar from "./core/registerSidebar";
 

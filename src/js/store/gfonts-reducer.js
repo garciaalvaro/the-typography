@@ -1,4 +1,4 @@
-import l from "../utils";
+import l from "utils";
 import produce from "immer";
 
 const { isUndefined, isEmpty, forEach } = lodash;

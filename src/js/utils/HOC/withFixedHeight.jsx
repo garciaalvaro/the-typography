@@ -1,4 +1,4 @@
-import l, { is_customizer, DivForwardRef } from "../index";
+import l, { is_customizer, DivForwardRef } from "utils";
 
 const { debounce } = lodash;
 const { compose, withGlobalEvents, withState } = wp.compose;

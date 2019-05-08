@@ -4,6 +4,9 @@
 	"version": "1.0.0",
 	"homepage": "http://wordpress.org/plugins/the-typography",
 	"main": "index.js",
+	"alias": {
+		"utils": "./src/js/utils"
+	},
 	"scripts": {
 		"dev": "parcel watch src/index-editor.js -o the-typography-editor.js -d build --no-hmr & parcel watch src/index-customizer.js -o the-typography-customizer.js -d build --no-hmr & parcel watch src/index-customizer-preview.js -o the-typography-customizer-preview.js -d build --no-hmr",
 		"release": "gulp release"

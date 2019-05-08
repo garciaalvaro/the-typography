@@ -1,4 +1,4 @@
-import l, { is_customizer, pr_store, typography_defaults } from "../index";
+import l, { is_customizer, pr_store, typography_defaults } from "utils";
 
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
