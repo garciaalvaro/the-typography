@@ -1,4 +1,4 @@
-import l, { is_customizer, DivForwardRef, pr } from "../index";
+import l, { is_customizer, DivForwardRef } from "../index";
 
 const { debounce } = lodash;
 const { compose, withGlobalEvents, withState } = wp.compose;
@@ -78,14 +78,13 @@ const withFixedHeight = WrappedComponent =>
 		render() {
 			const height = this.props.height;
 			const height_prepared = height > 450 ? height : null;
-			const classes = height > 450 ? `${pr}-sticky` : null;
 
 			return (
 				<DivForwardRef
 					ref={this.ref}
 					style={{ height: height_prepared }}
-					className={classes}
-					id={`${pr}-fixed_height_container`}
+					classes={height > 450 ? "sticky" : null}
+					id="fixed_height_container"
 				>
 					<WrappedComponent {...this.props} />
 				</DivForwardRef>

@@ -1,4 +1,4 @@
-import l, { Span, pr } from "../../../utils";
+import l, { Span } from "../../../utils";
 
 const { __ } = wp.i18n;
 
@@ -21,11 +21,7 @@ const TitlePreview = props => {
 	const { lineHeight, ...style } = typography_style_prepared;
 
 	return (
-		<Span
-			style={style}
-			onClick={toggle}
-			className={`${pr}-selector_group-title-preview`}
-		>
+		<Span style={style} onClick={toggle} classes="selector_group-title-preview">
 			{!custom_title || title === "" ? __("Sample text") : title}
 		</Span>
 	);

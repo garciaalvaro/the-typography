@@ -1,4 +1,4 @@
-import l, { Div, pr } from "../../../utils";
+import l, { Div, addPrefix } from "../../../utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
@@ -20,7 +20,7 @@ class SelectorType extends Component {
 						root: addPrefix("material_ui-select-root"),
 						select: addPrefix("material_ui-select-select")
 					}}
-					className={`${pr}-material_ui-select-container`}
+					className={addPrefix("material_ui-select-container")}
 					MenuProps={{
 						classes: {
 							paper: addPrefix("material_ui-select-menu")

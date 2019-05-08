@@ -1,4 +1,4 @@
-import l, { pr, pr_store } from "../../../utils";
+import l, { addPrefix, pr_store } from "../../../utils";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;
@@ -8,7 +8,7 @@ const ButtonAddSelector = props => {
 	const { addSelector } = props;
 
 	return (
-		<Button onClick={addSelector} className={`${pr}-button-add_selector`}>
+		<Button onClick={addSelector} className={addPrefix("button-add_selector")}>
 			{__("Add selector")}
 		</Button>
 	);

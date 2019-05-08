@@ -1,4 +1,4 @@
-import l, { pr, pr_store } from "../../../utils";
+import l, { addPrefix, pr_store } from "../../../utils";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;
@@ -8,7 +8,10 @@ const ButtonAddGroup = props => {
 	const { addSelectorGroup } = props;
 
 	return (
-		<Button onClick={addSelectorGroup} id={`${pr}-button-add_selector_group`}>
+		<Button
+			onClick={addSelectorGroup}
+			id={addPrefix("button-add_selector_group")}
+		>
 			{__("Add group of selectors")}
 		</Button>
 	);

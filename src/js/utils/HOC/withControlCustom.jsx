@@ -1,4 +1,4 @@
-import l, { Span, pr } from "../index";
+import l, { Span } from "../index";
 import withContainer from "./withContainer";
 
 const { isUndefined } = lodash;
@@ -7,7 +7,7 @@ const { compose } = wp.compose;
 
 const withControlCustom = ({ label, setting_name }) =>
 	compose([
-		withContainer([`${pr}-control-container`, `${pr}-setting-${setting_name}`]),
+		withContainer(["control-container", `setting-${setting_name}`]),
 		WrappedComponent => props => {
 			const { updateProp, parent_typography } = props;
 			const setting_name_custom = `custom_${setting_name}`;

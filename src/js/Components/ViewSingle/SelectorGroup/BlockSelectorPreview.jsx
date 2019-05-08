@@ -1,4 +1,4 @@
-import l, { Div, Span, pr } from "../../../utils";
+import l, { Div, Span } from "../../../utils";
 
 const { isUndefined } = lodash;
 const { __ } = wp.i18n;
@@ -23,7 +23,7 @@ const BlockSelectorPreview = props => {
 		<Div classes="selector-block">
 			<Div classes="selector-block-icon">
 				{block_icon === null ? (
-					<Div className={`${pr}-block_no_icon`} />
+					<Div classes="block_no_icon" />
 				) : (
 					<BlockIcon icon={block_icon} />
 				)}

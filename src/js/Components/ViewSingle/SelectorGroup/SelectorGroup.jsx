@@ -4,7 +4,7 @@ import l, {
 	withToggle,
 	withTypographyStyle,
 	Div,
-	pr,
+	addPrefix,
 	pr_store
 } from "../../../utils";
 import SelectorGroupEdit from "./SelectorGroupEdit";
@@ -42,10 +42,10 @@ class SelectorGroup extends Component {
 				<ButtonRemove id={id} />
 				<Button
 					onClick={toggle}
-					className={`${pr}-button-toggle_selector_group`}
+					className={addPrefix("button-toggle_selector_group")}
 				>
 					<Icon
-						className={`${pr}-panel-button`}
+						className={addPrefix("panel-button")}
 						icon={is_open ? icons.collapse : icons.expand}
 					/>
 				</Button>

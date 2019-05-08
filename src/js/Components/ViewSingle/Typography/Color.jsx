@@ -1,9 +1,4 @@
-import l, {
-	withControlCustom,
-	withToggle,
-	Span,
-	pr
-} from "../../../utils";
+import l, { withControlCustom, withToggle, Span } from "../../../utils";
 import { ChromePicker } from "react-color";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
@@ -49,7 +44,7 @@ const Color = props => {
 		>
 			<Span
 				style={{ color: color !== "" ? color : null }}
-				className={`${pr}-color-indicator`}
+				classes="color-indicator"
 				onClick={toggle}
 			>
 				{color === "" ? __("...select a color") : color}

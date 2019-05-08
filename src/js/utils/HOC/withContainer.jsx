@@ -1,7 +1,7 @@
-import l, { Div, generateClassName } from "../index";
+import l, { Div } from "../index";
 
 const withContainer = classes => WrappedComponent => props => (
-	<Div className={generateClassName(classes)}>
+	<Div classes={classes}>
 		<WrappedComponent {...props} />
 	</Div>
 );
