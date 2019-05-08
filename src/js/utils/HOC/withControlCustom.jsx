@@ -29,7 +29,7 @@ const withControlCustom = ({ label, setting_name }) =>
 
 			return (
 				<Fragment>
-					<Span className={toggle_classes} onClick={onClickHandler}>
+					<Span classes={toggle_classes} onClick={onClickHandler}>
 						{label}
 					</Span>
 					{!props[setting_name_custom] &&
