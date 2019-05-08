@@ -14,7 +14,7 @@ const ViewSingle = props => {
 	const { color_class, is_visible } = props;
 
 	return (
-		<Div id="single" classes={color_class ? color_class : null}>
+		<Div id="single" classes={color_class}>
 			{is_customizer && (
 				<Fragment>
 					<Div

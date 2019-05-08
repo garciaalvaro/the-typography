@@ -27,14 +27,13 @@ class SelectorGroup extends Component {
 	};
 
 	render() {
-		const { props } = this;
-		const { color_class, is_open, id, toggle } = props;
+		const { color_class, is_open, id, toggle } = this.props;
 
 		return (
 			<Div
 				classes={[
 					"selector_group",
-					color_class ? color_class : null,
+					color_class,
 					is_open ? "is_open" : "is_closed"
 				]}
 			>

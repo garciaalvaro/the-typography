@@ -16,11 +16,10 @@ class Typography extends Component {
 	};
 
 	render() {
-		const { props } = this;
-		const { color_class } = props;
+		const { color_class } = this.props;
 
 		return (
-			<Div classes={["index-typography", color_class ? color_class : null]}>
+			<Div classes={["index-typography", color_class]}>
 				<Info {...props} />
 				<Title {...props} />
 			</Div>
