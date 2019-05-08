@@ -12,7 +12,6 @@ import {
 } from "./data-defaults";
 import addPrefix from "./addPrefix";
 import generateStyle from "./generateStyle";
-import generateClassName from "./generateClassName";
 import {
 	cleanTaxonomy,
 	cleanTaxonomyTerm,
@@ -53,7 +52,6 @@ export {
 	addPrefix,
 	generateStyle,
 	toFixed,
-	generateClassName,
 	blocks_data,
 	withAddTypography,
 	withColorClass,
