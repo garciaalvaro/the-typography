@@ -116,12 +116,8 @@ class BlockSelector extends Component {
 				{is_editor && block_name !== "" && block_title_from_store === "" && (
 					<Span classes="message">{__("The Block could not be found.")}</Span>
 				)}
-				{block_name !== "" && (
-					<Fragment>
-						<BlockSelect {...props} />
-						<BlockElementSelect {...props} />
-					</Fragment>
-				)}
+				<BlockSelect {...props} />
+				{block_name !== "" && <BlockElementSelect {...props} />}
 			</Fragment>
 		);
 	}
