@@ -2,7 +2,7 @@ import l from "utils";
 
 const selectors = {
 	getTaxonomies(state) {
-		return state.taxonomies;
+		return state.entities.taxonomies;
 	}
 };
 
