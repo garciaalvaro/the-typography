@@ -1,7 +1,7 @@
 import typographies from "./typographies-controls";
-import taxonomies from "./taxonomies-controls";
+import entities from "./entities-controls";
 
 export default {
 	...typographies,
-	...taxonomies
+	...entities
 };

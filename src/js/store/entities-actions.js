@@ -14,7 +14,7 @@ const actions = {
 			taxonomies
 		};
 	},
-	// rest
+	// controls
 	fetchTaxonomies(taxonomy) {
 		return {
 			type: "FETCH_TAXONOMIES",
