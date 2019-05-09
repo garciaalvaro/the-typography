@@ -116,15 +116,12 @@ class BlockSelector extends Component {
 				{is_editor && block_name !== "" && block_title_from_store === "" && (
 					<Span classes="message">{__("The Block could not be found.")}</Span>
 				)}
-				{is_customizer && (
-					<Span classes={["message", "message-go_to_editor"]}>
-						{__(
-							"To use this feature go to any Post editor where the Block editor is enabled."
-						)}
-					</Span>
+				{block_name !== "" && (
+					<Fragment>
+						<BlockSelect {...props} />
+						<BlockElementSelect {...props} />
+					</Fragment>
 				)}
-				{(!is_customizer || block_name !== "") && <BlockSelect {...props} />}
-				{block_name !== "" && <BlockElementSelect {...props} />}
 			</Fragment>
 		);
 	}

@@ -90,6 +90,8 @@ function enqueue_customizer() {
 			'wp-data',
 			'wp-rich-text',
 			'wp-hooks',
+			'wp-blocks',
+			'wp-block-library',
 		),
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.
@@ -100,6 +102,10 @@ function enqueue_customizer() {
 	);
 
 	wp_localize_script( PLUGIN_NAME . '-customizer', 'the_typography', $data );
+
+	// Plugins can enqueue their block registration script so the block
+	// can be selected in the Typography selector inside the Customizer.
+	do_action( 'thet_enqueue_block_script_in_customizer' );
 
 }
 add_action( 'customize_controls_enqueue_scripts', __NAMESPACE__ . '\enqueue_customizer' );

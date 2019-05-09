@@ -15,10 +15,10 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 
 	.thet-is_open &
 		position relative
-		padding 10px
+		padding 10px 20px 20px
 		flex-direction column
-		margin 5px -10px
-		width calc(100% + 20px)
+		margin 0 -20px
+		width calc(100% + 40px)
 
 		&:last-child
 			margin-bottom 50px
@@ -29,6 +29,9 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 
 	.thet-is_closed &
 		align-items center
+
+	.thet-button-add_selector + &
+		margin-top 10px
 
 .thet-selector-block-separator
 	margin 0 10px
@@ -64,7 +67,7 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 	line-height 0
 	position absolute
 	top 15px
-	right 5px
+	right 15px
 
 	svg
 		width 20px
@@ -85,10 +88,10 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 	font-size inherit
 	line-height 3.2
 	padding 0 10px
-	margin-left -10px
 	font-size .86em
 	text-transform uppercase
 	font-weight 500
+	box-shadow inset 0 0 0 1px var(--color_03)
 
 	#thet-container &:hover
 	#thet-container &:focus
@@ -144,11 +147,11 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 
 .thet-message
 	font-style italic
-	background-color var(--color_007)
+	background-color var(--background_color)
 	font-size .95em
 	line-height 2
 	padding 10px
-
-.thet-message-go_to_editor ~ div
-	opacity .5
-	pointer-events none
+	margin-bottom 10px
+	color var( --color_07)
+	border 1px dashed var( --color_02)
+	display block
