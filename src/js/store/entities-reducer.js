@@ -4,6 +4,12 @@ const initial_state = { taxonomies: {}, blocks: [] };
 
 const reducer = (state = initial_state, action) => {
 	switch (action.type) {
+		case "UPDATE_BLOCKS": {
+			return {
+				...state,
+				blocks: [...state.blocks, ...action.blocks]
+			};
+		}
 		case "LOAD_TAXONOMIES": {
 			return {
 				...state,

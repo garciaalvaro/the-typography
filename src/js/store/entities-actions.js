@@ -1,6 +1,12 @@
 import l from "utils";
 
 const actions = {
+	updateBlocks(blocks) {
+		return {
+			type: "UPDATE_BLOCKS",
+			blocks
+		};
+	},
 	updateTaxonomyTerm(taxonomy, term) {
 		return {
 			type: "UPDATE_TAXONOMY_TERM",

@@ -2,7 +2,7 @@ import l from "./log";
 import blocks_core from "./data-blocks-core";
 import blocks_others from "./data-blocks-others";
 const blocks_data = [...blocks_core, ...blocks_others];
-import is_customizer from "./is_customizer";
+import { is_customizer, is_editor } from "./is_customizer";
 import icons from "./icons";
 import toFixed from "./toFixed";
 import {
@@ -48,6 +48,7 @@ import {
 
 export default l;
 export {
+	is_editor,
 	is_customizer,
 	addPrefix,
 	generateStyle,

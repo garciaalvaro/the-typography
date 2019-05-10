@@ -4,80 +4,97 @@ import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
 
 const { __ } = wp.i18n;
+const { Component } = wp.element;
 
-const BlockElementSelect = props => {
-	const {
-		block_elements,
-		block_element,
-		block_selector_extra,
-		setState,
-		updateProp
-	} = props;
+class BlockElementSelect extends Component {
+	componentDidMount() {
+		const { block, block_element_label, updateProp } = this.props;
 
-	return (
-		<Div classes="block_selector-element">
-			<Select
-				value={block_element}
-				onChange={e => {
-					const value = e.target.value;
-					const element = block_elements.find(
-						({ value: el_value }) => el_value === value
-					);
-					const element_selector =
-						value === "block_root" || value === "custom_selector"
-							? ""
-							: element.selector;
+		if (
+			block &&
+			block_element_label !== "Custom selector" &&
+			!block.elements.find(({ label }) => label === block_element_label)
+		) {
+			updateProp("block_element_label", "Custom selector");
+		}
+	}
 
-					updateProp("block_element_label", element.label);
-					updateProp("block_selector_extra", element_selector);
+	render() {
+		const {
+			block,
+			block_element_label,
+			block_selector_extra,
+			updateProp
+		} = this.props;
+		const selected = block.elements.find(
+			({ label }) => label === block_element_label
+		);
 
-					setState({ block_element: value });
-				}}
-				classes={{
-					root: addPrefix("material_ui-select-root"),
-					select: addPrefix("material_ui-select-select")
-				}}
-				className={addPrefix("material_ui-select-container")}
-				MenuProps={{
-					classes: {
-						paper: addPrefix("material_ui-select-menu")
-					}
-				}}
-				renderValue={selected =>
-					block_elements.find(({ value }) => value === selected).label
-				}
-			>
-				{block_elements.map(({ value, label }) => (
-					<MenuItem key={value} value={value}>
-						{label}
-					</MenuItem>
-				))}
-			</Select>
-			{block_element === "custom_selector" && (
-				<TextField
-					InputLabelProps={{
-						classes: {
-							root: addPrefix("material_ui-textfield-label"),
-							focused: addPrefix("material_ui-textfield-label-focused")
-						}
-					}}
-					InputProps={{
-						classes: {
-							root: addPrefix("material_ui-textfield-input"),
-							focused: addPrefix("material_ui-textfield-input-focused")
-						}
-					}}
-					placeholder={__("enter a CSS selector")}
-					value={block_selector_extra}
+		if (!selected) {
+			return null;
+		}
+
+		return (
+			<Div classes="block_selector-element">
+				<Select
+					value={selected.value}
 					onChange={e => {
 						const value = e.target.value;
+						const element = block.elements.find(el => el.value === value);
+						const extra =
+							value === "block_root" || value === "custom_selector"
+								? ""
+								: element.selector;
 
-						updateProp("block_selector_extra", value);
+						updateProp("block_element_label", element.label);
+						updateProp("block_selector_extra", extra);
 					}}
-				/>
-			)}
-		</Div>
-	);
-};
+					classes={{
+						root: addPrefix("material_ui-select-root"),
+						select: addPrefix("material_ui-select-select")
+					}}
+					className={addPrefix("material_ui-select-container")}
+					MenuProps={{
+						classes: {
+							paper: addPrefix("material_ui-select-menu")
+						}
+					}}
+					renderValue={selected =>
+						block.elements.find(({ value }) => value === selected).label
+					}
+				>
+					{block.elements.map(({ value, label }) => (
+						<MenuItem key={value} value={value}>
+							{label}
+						</MenuItem>
+					))}
+				</Select>
+				{block_element_label === "Custom selector" && (
+					<TextField
+						InputLabelProps={{
+							classes: {
+								root: addPrefix("material_ui-textfield-label"),
+								focused: addPrefix("material_ui-textfield-label-focused")
+							}
+						}}
+						InputProps={{
+							classes: {
+								root: addPrefix("material_ui-textfield-input"),
+								focused: addPrefix("material_ui-textfield-input-focused")
+							}
+						}}
+						placeholder={__("enter a CSS selector")}
+						value={block_selector_extra}
+						onChange={e => {
+							const extra = e.target.value;
+
+							updateProp("block_selector_extra", extra);
+						}}
+					/>
+				)}
+			</Div>
+		);
+	}
+}
 
 export default BlockElementSelect;
