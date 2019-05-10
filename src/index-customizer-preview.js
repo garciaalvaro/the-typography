@@ -1,6 +1,7 @@
 import WebFont from "webfontloader";
 
 ($ => {
+	let styles = [];
 	const api = wp.customize;
 	let $stylesheet_styles = $("#thet-styles");
 
@@ -13,7 +14,25 @@ import WebFont from "webfontloader";
 
 	api.bind("preview-ready", () => {
 		// Listen to the customizer typography styles changes.
-		api.preview.bind("thet-styles", styles => $stylesheet_styles.html(styles));
+		api.preview.bind("thet-styles", style_new => {
+			if (styles.find(style => style.id === style_new.id)) {
+				styles = styles.map(style => {
+					if (style.id === style_new.id) {
+						return style_new;
+					}
+
+					return style;
+				});
+			} else {
+				styles.push(style_new);
+			}
+
+			let css;
+			css = styles.map(({ selector, css }) => `${selector}{${css}}`);
+			css = css.join("");
+
+			$stylesheet_styles.html(css);
+		});
 		api.preview.bind("thet-gfonts", families =>
 			WebFont.load({
 				google: {

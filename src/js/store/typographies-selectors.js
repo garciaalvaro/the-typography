@@ -11,11 +11,14 @@ const selectors = {
 				font_family: custom_font ? font_family : null
 			}));
 	},
-	getTypography(state, typography_id) {
-		return state.typographies.find(({ id }) => id === typography_id);
+	getTypography(state, id) {
+		return state.typographies.find(typography => id === typography.id);
 	},
 	getTypographies(state) {
 		return state.typographies;
+	},
+	getTypographiesId(state) {
+		return state.typographies.map(({ id }) => id);
 	}
 };
 

@@ -1,6 +1,5 @@
 import l, { is_customizer, generateStyle } from "utils";
 import produce from "immer";
-import { isUndefined } from "util";
 
 const { forEach, remove } = lodash;
 
@@ -12,9 +11,9 @@ const reducer = (state = initial_state, action) => {
 			case "LOAD_TYPOGRAPHY": {
 				let typography = action.typography;
 
-				if (is_customizer) {
-					typography.style = generateStyle(typography);
-				}
+				// if (is_customizer) {
+				// 	typography.style = generateStyle(typography);
+				// }
 
 				draft.unshift(typography);
 				return;
@@ -61,12 +60,12 @@ const reducer = (state = initial_state, action) => {
 					({ id }) => !existent_ids.includes(id)
 				);
 
-				if (is_customizer) {
-					typographies = typographies.map(typography => ({
-						...typography,
-						style: generateStyle(typography)
-					}));
-				}
+				// if (is_customizer) {
+				// 	typographies = typographies.map(typography => ({
+				// 		...typography,
+				// 		style: generateStyle(typography)
+				// 	}));
+				// }
 
 				draft.push(...typographies);
 				return;
@@ -74,9 +73,9 @@ const reducer = (state = initial_state, action) => {
 			case "UPDATE_TYPOGRAPHY": {
 				let typography = action.typography;
 
-				if (is_customizer) {
-					typography = { ...typography, style: generateStyle(typography) };
-				}
+				// if (is_customizer) {
+				// 	typography = { ...typography, style: generateStyle(typography) };
+				// }
 
 				const index = draft.findIndex(({ id }) => id === typography.id);
 

@@ -15,17 +15,17 @@ const initial_state = {
 	changed: false,
 	style: ""
 };
-let can_update = true;
-const resetCanUpdate = throttle(
-	() => {
-		can_update = true;
-	},
-	100,
-	{
-		leading: true,
-		trailing: true
-	}
-);
+// let can_update = true;
+// const resetCanUpdate = throttle(
+// 	() => {
+// 		can_update = true;
+// 	},
+// 	100,
+// 	{
+// 		leading: true,
+// 		trailing: true
+// 	}
+// );
 
 const reducer = (state = initial_state, action) => {
 	return produce(state, draft => {
@@ -126,27 +126,27 @@ const reducer = (state = initial_state, action) => {
 			}
 		}
 
-		if (
-			is_customizer &&
-			can_update &&
-			[
-				"UPDATE_SINGLE_VISIBILITY",
-				"RESET_SINGLE",
-				"UPDATE_CHANGED",
-				"LOAD_SINGLE",
-				"UPDATE_PROP",
-				"UPDATE_SELECTOR_PROP",
-				"UPDATE_SELECTOR_GROUP_PROP",
-				"ADD_SELECTOR",
-				"ADD_SELECTOR_GROUP",
-				"REMOVE_SELECTOR",
-				"REMOVE_SELECTOR_GROUP"
-			].includes(action.type)
-		) {
-			can_update = false;
-			resetCanUpdate();
-			draft.style = generateStyle(draft.typography);
-		}
+		// if (
+		// 	is_customizer &&
+		// 	can_update &&
+		// 	[
+		// 		"UPDATE_SINGLE_VISIBILITY",
+		// 		"RESET_SINGLE",
+		// 		"UPDATE_CHANGED",
+		// 		"LOAD_SINGLE",
+		// 		"UPDATE_PROP",
+		// 		"UPDATE_SELECTOR_PROP",
+		// 		"UPDATE_SELECTOR_GROUP_PROP",
+		// 		"ADD_SELECTOR",
+		// 		"ADD_SELECTOR_GROUP",
+		// 		"REMOVE_SELECTOR",
+		// 		"REMOVE_SELECTOR_GROUP"
+		// 	].includes(action.type)
+		// ) {
+		// 	can_update = false;
+		// 	resetCanUpdate();
+		// 	draft.style = generateStyle(draft.typography);
+		// }
 	});
 };
 
