@@ -54,8 +54,8 @@ export default compose([
 		const { updateProp, updateChanged, updateSingleVisibility } = dispatch(
 			pr_store
 		);
-		const { getPreviewerData } = select(pr_store);
-		const previewer_data = getPreviewerData();
+		const { getPreviewerPageData } = select(pr_store);
+		const previewer_page_data = getPreviewerPageData();
 
 		return {
 			updateProp: (prop, value) => {
@@ -67,7 +67,7 @@ export default compose([
 					prop === "context_post_type" ||
 					prop === "context_post_type_template"
 				) {
-					updateSingleVisibility(previewer_data);
+					updateSingleVisibility(previewer_page_data);
 				}
 			}
 		};

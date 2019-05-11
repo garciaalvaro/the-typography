@@ -29,7 +29,7 @@ const PostTypeTemplate = props => {
 			value={context_post_type_template}
 			onChange={e => updateProp("context_post_type_template", e.target.value)}
 			renderValue={selected => {
-				if (selected.length === 0) {
+				if (!selected.length) {
 					return (
 						<Span classes={"material_ui-select-placeholder"}>
 							{__("Select templates")}

@@ -8,10 +8,10 @@ const { withDispatch } = wp.data;
 
 class Typography extends Component {
 	componentDidMount = () => {
-		const { custom_font, font_family, font_variant, updateGFont } = this.props;
+		const { custom_font, font_family, font_variant, addGFont } = this.props;
 
 		if (custom_font && font_family !== "") {
-			updateGFont(font_family, font_variant);
+			addGFont(font_family, font_variant);
 		}
 	};
 
@@ -31,10 +31,10 @@ class Typography extends Component {
 export default compose([
 	withColorClass,
 	withDispatch((dispatch, typography) => {
-		const { updateGFont, loadSingle, goToSingle } = dispatch(pr_store);
+		const { addGFont, loadSingle, goToSingle } = dispatch(pr_store);
 
 		return {
-			updateGFont,
+			addGFont,
 			openSingle: () => {
 				loadSingle(typography);
 				goToSingle();

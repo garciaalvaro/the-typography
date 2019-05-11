@@ -40,9 +40,9 @@ const resolvers = {
 
 		yield actions.loadTypographies(typographies);
 
-		const previewer_data = wp.data.select(pr_store).getPreviewerData();
+		const previewer_page_data = wp.data.select(pr_store).getPreviewerPageData();
 
-		yield actions.updateTypographiesVisibility(previewer_data);
+		yield actions.updateTypographiesVisibility(previewer_page_data);
 
 		if (typographies.length < typographies_per_page) {
 			yield actions.updateLastPage();

@@ -17,7 +17,7 @@ const { withSelect, withDispatch } = wp.data;
 class Previewer extends Component {
 	componentDidMount = () => {
 		const {
-			updatePreviewerData,
+			updatePreviewerPageData,
 			updateTypographiesVisibility,
 			updateSingleVisibility
 		} = this.props;
@@ -26,7 +26,7 @@ class Previewer extends Component {
 		api.previewer.bind("ready", () => {
 			// Listen to the current post data sent from the Previewer window.
 			api.previewer.bind("thet-data", data => {
-				updatePreviewerData(data);
+				updatePreviewerPageData(data);
 				updateTypographiesVisibility(data);
 				updateSingleVisibility(data);
 			});
@@ -149,13 +149,13 @@ export default compose([
 	}),
 	withDispatch(dispatch => {
 		const {
-			updatePreviewerData,
+			updatePreviewerPageData,
 			updateTypographiesVisibility,
 			updateSingleVisibility
 		} = dispatch(pr_store);
 
 		return {
-			updatePreviewerData,
+			updatePreviewerPageData,
 			updateTypographiesVisibility,
 			updateSingleVisibility
 		};

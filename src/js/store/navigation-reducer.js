@@ -13,7 +13,7 @@ const initial_state = {
 
 const reducer = (state = initial_state, action) => {
 	switch (action.type) {
-		case "UPDATE_PREVIEWER_DATA": {
+		case "UPDATE_PREVIEWER_PAGE_DATA": {
 			return {
 				...state,
 				previewer_post_type: action.post_type,

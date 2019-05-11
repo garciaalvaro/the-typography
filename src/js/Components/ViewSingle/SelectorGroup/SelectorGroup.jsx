@@ -21,7 +21,7 @@ class SelectorGroup extends Component {
 	componentDidMount = () => {
 		const { open, selectors } = this.props;
 
-		if (selectors.length === 0) {
+		if (!selectors.length) {
 			open();
 		}
 	};

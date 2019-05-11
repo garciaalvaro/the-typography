@@ -5,7 +5,7 @@ import l, {
 	generateStyle
 } from "utils";
 import produce from "immer";
-import uuidv4 from "uuid/v4";
+import uuid from "uuid/v4";
 
 const { remove, isUndefined, throttle } = lodash;
 
@@ -33,12 +33,13 @@ const reducer = (state = initial_state, action) => {
 			case "UPDATE_SINGLE_VISIBILITY": {
 				const { typography } = draft;
 
+				// If single is not open
 				if (isUndefined(typography.is_visible)) {
-					break;
+					return;
 				}
 				if (typography.context_type === "all_site") {
 					typography.is_visible = true;
-					break;
+					return;
 				}
 				if (typography.context_type === "404_page" && action.is_404) {
 					typography.is_visible = true;
@@ -55,61 +56,62 @@ const reducer = (state = initial_state, action) => {
 					typography.context_post_type_template.includes(action.template)
 				) {
 					typography.is_visible = true;
-					break;
+					return;
 				}
+
 				typography.is_visible = false;
-				break;
+				return;
 			}
 			case "EMPTY_SINGLE": {
 				draft.typography = {};
 				draft.typography_unmodified = {};
 				draft.changed = false;
 				draft.style = "";
-				break;
+				return;
 			}
 			case "RESET_SINGLE": {
 				draft.typography = draft.typography_unmodified;
-				break;
+				return;
 			}
 			case "UPDATE_CHANGED": {
 				draft.changed = action.value;
-				break;
+				return;
 			}
 			case "LOAD_SINGLE": {
 				draft.typography = action.typography;
 				draft.typography_unmodified = action.typography;
-				break;
+				return;
 			}
 			case "UPDATE_PROP": {
 				draft.typography[action.prop] = action.value;
-				break;
+				return;
 			}
 			case "UPDATE_SELECTOR_PROP": {
 				draft.typography.selector_groups
 					.find(({ id }) => id === action.parent_id)
 					.selectors.find(({ id }) => id === action.id)[action.prop] =
 					action.value;
-				break;
+				return;
 			}
 			case "UPDATE_SELECTOR_GROUP_PROP": {
 				draft.typography.selector_groups.find(({ id }) => id === action.id)[
 					action.prop
 				] = action.value;
-				break;
+				return;
 			}
 			case "ADD_SELECTOR": {
-				const defaults = { ...selector_defaults, id: uuidv4() };
+				const defaults = { ...selector_defaults, id: uuid() };
 
 				draft.typography.selector_groups
 					.find(({ id }) => id === action.parent_id)
 					.selectors.unshift(defaults);
-				break;
+				return;
 			}
 			case "ADD_SELECTOR_GROUP": {
-				const defaults = { ...selector_group_defaults, id: uuidv4() };
+				const defaults = { ...selector_group_defaults, id: uuid() };
 
 				draft.typography.selector_groups.unshift(defaults);
-				break;
+				return;
 			}
 			case "REMOVE_SELECTOR": {
 				remove(
@@ -118,11 +120,11 @@ const reducer = (state = initial_state, action) => {
 					).selectors,
 					({ id }) => id === action.id
 				);
-				break;
+				return;
 			}
 			case "REMOVE_SELECTOR_GROUP": {
 				remove(draft.typography.selector_groups, ({ id }) => id === action.id);
-				break;
+				return;
 			}
 		}
 

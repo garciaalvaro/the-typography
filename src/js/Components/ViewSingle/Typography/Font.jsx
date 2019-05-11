@@ -23,10 +23,10 @@ const Font = props => {
 
 export default compose([
 	withDispatch(dispatch => {
-		const { updateGFont } = dispatch(pr_store);
+		const { addGFont } = dispatch(pr_store);
 
 		return {
-			updateGFont
+			addGFont
 		};
 	}),
 	withControlCustom({

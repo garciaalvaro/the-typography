@@ -18,8 +18,8 @@ export default compose([
 			increasePage,
 			updateLastPage
 		} = dispatch(pr_store);
-		const { getTaxonomies, getPage, getPreviewerData } = select(pr_store);
-		const previewer_data = getPreviewerData();
+		const { getTaxonomies, getPage, getPreviewerPageData } = select(pr_store);
+		const previewer_page_data = getPreviewerPageData();
 		const taxonomies = getTaxonomies();
 		const next_page = getPage() + 1;
 
@@ -43,7 +43,7 @@ export default compose([
 
 					loadTypographies(typographies);
 
-					updateTypographiesVisibility(previewer_data);
+					updateTypographiesVisibility(previewer_page_data);
 
 					increasePage();
 

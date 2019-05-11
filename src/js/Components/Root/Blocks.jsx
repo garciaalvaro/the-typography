@@ -24,7 +24,7 @@ class Blocks extends Component {
 		if (
 			(is_editor &&
 				(active_sidebar === "the-typography/the-typography" &&
-					blocks.length === 0)) ||
+					!blocks.length)) ||
 			blocks_raw.length !== prev_props.blocks_raw.length
 		) {
 			this.updateBlocks();

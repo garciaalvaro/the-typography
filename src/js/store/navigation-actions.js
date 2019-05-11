@@ -1,9 +1,9 @@
 import l from "utils";
 
 const actions = {
-	updatePreviewerData(data) {
+	updatePreviewerPageData(data) {
 		return {
-			type: "UPDATE_PREVIEWER_DATA",
+			type: "UPDATE_PREVIEWER_PAGE_DATA",
 			...data
 		};
 	},

@@ -1,50 +1,54 @@
 import l from "utils";
 import produce from "immer";
+import uuid from "uuid/v4";
 
-const { isUndefined, isEmpty, forEach } = lodash;
+const { unionBy } = lodash;
 
-const initial_state = {};
+const initial_state = [
+	// {
+	// 	id: 0,
+	// 	family: "example_family",
+	// 	variants: [{ id: 0, variant: 400, loaded: false }]
+	// }
+];
 
 const reducer = (state = initial_state, action) => {
 	return produce(state, draft => {
 		switch (action.type) {
-			case "UPDATE_LOADED_G_FONTS": {
-				forEach(action.fonts, (variants, family) => {
-					variants = variants.map(({ variant }) => variant);
+			case "LOAD_G_FONTS": {
+				action.fonts.forEach(({ id, variants }) => {
+					const font = draft.find(font => font.id === id);
 
-					const variant_to_load = draft[family].find(({ variant }) =>
-						variants.includes(variant)
-					);
+					font.variants = font.variants.map(variant => {
+						if (variants.includes(variant.variant)) {
+							return { ...variant, loaded: true };
+						}
 
-					if (!isUndefined(variant_to_load)) {
-						draft[family].find(({ variant }) =>
-							variants.includes(variant)
-						).loaded = true;
-					}
+						return variant;
+					});
 				});
 				return;
 			}
-			case "UPDATE_G_FONT": {
-				const { family, variants } = action;
+			case "ADD_G_FONT": {
+				let { family: family_new, variants: variants_new } = action;
+				const family = draft.find(font => font.family === family_new);
 
-				if (isUndefined(state[family])) {
-					draft[family] = variants.map(variant => ({
-						loaded: false,
-						variant
-					}));
+				variants_new = variants_new.map(variant => ({
+					id: uuid(),
+					loaded: false,
+					variant
+				}));
 
-					return draft;
+				if (family) {
+					family.variants = unionBy(family.variants, variants_new, "variant");
+				} else {
+					draft.push({
+						id: uuid(),
+						family: family_new,
+						variants: variants_new
+					});
 				}
 
-				const existent_variants = draft[family].map(({ variant }) => variant);
-
-				const new_variants = variants
-					.filter(variant => !existent_variants.includes(variant))
-					.map(variant => ({ loaded: false, variant }));
-
-				if (!isEmpty(new_variants)) {
-					draft[family] = [...draft[family], ...new_variants];
-				}
 				return;
 			}
 		}

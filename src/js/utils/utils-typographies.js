@@ -7,7 +7,7 @@ import l, {
 	getSlug,
 	getSlugs
 } from "utils";
-import uuidv4 from "uuid/v4";
+import uuid from "uuid/v4";
 
 const {
 	assign,
@@ -111,7 +111,7 @@ const cleanSelectors = selectors =>
 			pick(selector, keys(selector_defaults))
 		);
 
-		selector.id = uuidv4();
+		selector.id = uuid();
 
 		return selector;
 	});
@@ -125,7 +125,7 @@ const cleanSelectorGroups = selector_groups =>
 		);
 
 		group.selectors = cleanSelectors(group.selectors);
-		group.id = uuidv4();
+		group.id = uuid();
 
 		return group;
 	});

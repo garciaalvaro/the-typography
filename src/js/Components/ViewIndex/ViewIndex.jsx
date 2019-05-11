@@ -12,7 +12,7 @@ const ViewIndex = props => {
 	const { is_loading, is_last_page, typographies, addTypography } = props;
 
 	const getTypographies = () => {
-		if (typographies.length === 0) {
+		if (!typographies.length) {
 			return null;
 		}
 
@@ -22,7 +22,7 @@ const ViewIndex = props => {
 	};
 
 	const getButton = () => {
-		if (is_loading || is_last_page || typographies.length === 0) {
+		if (is_loading || is_last_page || !typographies.length) {
 			return null;
 		}
 
@@ -34,7 +34,7 @@ const ViewIndex = props => {
 			return <Div id="index-message">{__("Loading typographies...")}</Div>;
 		}
 
-		if (!is_loading && is_last_page && typographies.length === 0) {
+		if (!is_loading && is_last_page && !typographies.length) {
 			return (
 				<Fragment>
 					<Div id="index-message">{__("No typographies found.")}</Div>

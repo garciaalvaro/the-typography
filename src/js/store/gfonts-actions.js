@@ -1,16 +1,16 @@
 import l from "utils";
 
 const actions = {
-	updateGFont(family, variants) {
+	addGFont(family = "", variants = []) {
 		return {
-			type: "UPDATE_G_FONT",
+			type: "ADD_G_FONT",
 			family,
 			variants
 		};
 	},
-	updateLoadedGFonts(fonts) {
+	loadGFonts(fonts) {
 		return {
-			type: "UPDATE_LOADED_G_FONTS",
+			type: "LOAD_G_FONTS",
 			fonts
 		};
 	}

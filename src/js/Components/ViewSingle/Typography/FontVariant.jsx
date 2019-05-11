@@ -6,11 +6,11 @@ const { isUndefined, find } = lodash;
 const { __ } = wp.i18n;
 
 const FontVariant = props => {
-	const { font_family, font_variant, updateProp, updateGFont } = props;
+	const { font_family, font_variant, updateProp, addGFont } = props;
 
 	const onChangeHandler = value => {
 		updateProp("font_variant", value);
-		updateGFont(font_family, value);
+		addGFont(font_family, value);
 	};
 
 	const getVariants = () => {
@@ -46,7 +46,7 @@ const FontVariant = props => {
 			value={font_variant}
 			onChange={e => onChangeHandler(e.target.value)}
 			renderValue={selected => {
-				if (selected.length === 0) {
+				if (!selected.length) {
 					return (
 						<Span classes="material_ui-select-placeholder">
 							{__("Select variants")}

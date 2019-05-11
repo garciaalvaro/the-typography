@@ -1,7 +1,7 @@
 import l from "utils";
 
 const selectors = {
-	getPreviewerData(state) {
+	getPreviewerPageData(state) {
 		return {
 			post_type: state.navigation.previewer_post_type,
 			template: state.navigation.previewer_template,

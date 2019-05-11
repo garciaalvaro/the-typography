@@ -33,7 +33,7 @@ const PostType = props => {
 			value={context_post_type}
 			onChange={e => updateProp("context_post_type", e.target.value)}
 			renderValue={selected => {
-				if (selected.length === 0) {
+				if (!selected.length) {
 					return (
 						<Span classes="material_ui-select-placeholder">
 							{__("Select types")}

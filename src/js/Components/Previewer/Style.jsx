@@ -1,9 +1,8 @@
-import l, { pr_store } from "utils";
+import l from "utils";
 
 const { map, pick, isEqual, compact } = lodash;
 const { Component } = wp.element;
 const { compose, withState } = wp.compose;
-const { withSelect, withDispatch } = wp.data;
 
 class Style extends Component {
 	componentDidMount() {
@@ -12,28 +11,56 @@ class Style extends Component {
 	}
 
 	componentDidUpdate(prev_props) {
-		const { style, css, selector, selectors, id } = this.props;
+		const {
+			style,
+			css,
+			selector,
+			selectors,
+			id,
+			typography_id,
+			parent_selector,
+			force_styles,
+			previewer_ready_counter
+		} = this.props;
 
-		if (!isEqual(style, prev_props.style)) {
+		if (
+			!isEqual(style, prev_props.style) ||
+			force_styles !== prev_props.force_styles
+		) {
 			this.updateCss();
-			return;
-		}
-
-		if (!isEqual(selectors, prev_props.selectors)) {
-			this.updateSelector();
-			return;
 		}
 
 		if (
-			!isEqual(css, prev_props.css) ||
-			!isEqual(selector, prev_props.selector)
+			!isEqual(selectors, prev_props.selectors) ||
+			parent_selector !== prev_props.parent_selector
 		) {
-			wp.customize.previewer.send("thet-styles", { id, selector, css });
+			this.updateSelector();
+		}
+
+		if (previewer_ready_counter !== prev_props.previewer_ready_counter) {
+			wp.customize.previewer.send("thet-add_modify_style", {
+				id,
+				typography_id,
+				selector,
+				css
+			});
+		}
+
+		if (
+			previewer_ready_counter > 0 &&
+			(!isEqual(css, prev_props.css) || !isEqual(selector, prev_props.selector))
+		) {
+			wp.customize.previewer.send("thet-add_modify_style", {
+				id,
+				typography_id,
+				selector,
+				css
+			});
 		}
 	}
 
 	updateSelector() {
-		const { setState, selectors } = this.props;
+		const { setState, selectors, parent_selector } = this.props;
 		let selector;
 		selector = selectors.map(
 			({
@@ -42,16 +69,19 @@ class Style extends Component {
 				block_selector_root,
 				block_selector_extra
 			}) => {
+				let selector = parent_selector ? `${parent_selector} ` : "";
+
 				if (selector_type === "text") {
-					return text_selector;
+					selector += text_selector;
 				} else if (selector_type === "block") {
-					return (
+					selector +=
 						block_selector_root +
-						(block_selector_extra ? ` ${block_selector_extra}` : "")
-					);
+						(block_selector_extra ? ` ${block_selector_extra}` : "");
 				} else {
 					return null;
 				}
+
+				return selector;
 			}
 		);
 		selector = compact(selector);
@@ -60,7 +90,7 @@ class Style extends Component {
 	}
 
 	updateCss() {
-		const { setState, style } = this.props;
+		const { setState, style, force_styles } = this.props;
 
 		const typography = pick(style, [
 			"font_family",
@@ -91,6 +121,7 @@ class Style extends Component {
 			}
 
 			prop_css = `${key.replace("_", "-")}:${prop_css}`;
+			prop_css += force_styles ? "!important" : "";
 
 			css.push(prop_css);
 		});
@@ -107,23 +138,3 @@ class Style extends Component {
 }
 
 export default withState({ css: "", selector: "" })(Style);
-// export default withSelect((select, { id, is_single, parent_style }) => {
-// 	const { getTypography, getSingle } = select(pr_store);
-// 	const typography = is_single ? getSingle() : getTypography(id);
-// 	const { selector_groups, is_visible } = typography;
-// 	let style;
-// 	style = pickBy(typography, prop => {
-// 		if (prop === "font_family" && typography.custom_font) {
-// 			return true;
-// 		}
-
-// 		if (`custom_${prop}`) {
-// 			return true;
-// 		}
-
-// 		return false;
-// 	});
-// 	style = parent_style ? { ...parent_style, ...style } : style;
-
-// 	return { style, selector_groups, is_visible };
-// })(Style);

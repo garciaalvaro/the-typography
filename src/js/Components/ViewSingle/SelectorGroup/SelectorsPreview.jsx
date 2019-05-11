@@ -9,7 +9,7 @@ const SelectorsPreview = props => {
 
 	return (
 		<Div classes="selector_group-selectors" onClick={open}>
-			{selectors.length === 0 ? (
+			{!selectors.length ? (
 				<Div classes="selector-text">{__("...no selectors")}</Div>
 			) : (
 				<Fragment>
