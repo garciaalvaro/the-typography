@@ -1,7 +1,7 @@
 // https://stackoverflow.com/a/661757 | CC BY-SA 3.0
 const toFixed = (value, precision) => {
 	const power = Math.pow(10, precision || 0);
-	return String(Math.round(value * power) / power);
+	return Math.round(value * power) / power;
 };
 
 export default toFixed;
