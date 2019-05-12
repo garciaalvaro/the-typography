@@ -1,14 +1,37 @@
 import l from "utils";
 
-const { map, pick, isEqual, compact } = lodash;
+const { map, pick, isEqual, compact, throttle } = lodash;
 const { Component } = wp.element;
 const { compose, withState } = wp.compose;
 
 class Style extends Component {
+	componentWillUnmount = () => {
+		this.sendStyle.cancel();
+	};
+
 	componentDidMount() {
 		this.updateCss();
 		this.updateSelector();
 	}
+
+	// Throttle the value change.
+	sendStyle = throttle(
+		() => {
+			const { id, typography_id, selector, css } = this.props;
+
+			wp.customize.previewer.send("thet-add_modify_style", {
+				id,
+				typography_id,
+				selector,
+				css
+			});
+		},
+		300,
+		{
+			leading: true,
+			trailing: true
+		}
+	);
 
 	componentDidUpdate(prev_props) {
 		const {
@@ -37,25 +60,15 @@ class Style extends Component {
 			this.updateSelector();
 		}
 
-		if (previewer_ready_counter !== prev_props.previewer_ready_counter) {
-			wp.customize.previewer.send("thet-add_modify_style", {
-				id,
-				typography_id,
-				selector,
-				css
-			});
+		if (previewer_ready_counter > prev_props.previewer_ready_counter) {
+			this.sendStyle();
 		}
 
 		if (
 			previewer_ready_counter > 0 &&
 			(!isEqual(css, prev_props.css) || !isEqual(selector, prev_props.selector))
 		) {
-			wp.customize.previewer.send("thet-add_modify_style", {
-				id,
-				typography_id,
-				selector,
-				css
-			});
+			this.sendStyle();
 		}
 	}
 
