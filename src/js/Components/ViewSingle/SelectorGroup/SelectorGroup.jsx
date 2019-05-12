@@ -23,20 +23,16 @@ class SelectorGroup extends Component {
 		this.resetNewSelectorAdded.cancel();
 	};
 
-	componentDidMount = () => {
-		const { open, selectors } = this.props;
-
-		if (!selectors.length) {
-			open();
-		}
-	};
-
 	componentDidUpdate(prev_props) {
-		const { new_selector_added, selectors, setState } = this.props;
+		const { is_new, open, selectors, setState } = this.props;
 
 		if (selectors.length > prev_props.selectors.length) {
 			setState({ new_selector_added: true });
 			this.resetNewSelectorAdded();
+		}
+
+		if (is_new && !prev_props.is_new) {
+			open();
 		}
 	}
 

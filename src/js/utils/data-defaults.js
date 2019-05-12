@@ -1,3 +1,5 @@
+import uuid from "uuid/v4";
+
 const selector_defaults = {
 	selector_type: "text",
 	text_selector: "",
@@ -15,7 +17,7 @@ const selector_group_defaults = {
 	custom_parent_selector: false,
 	parent_selector: "",
 	custom_typography: false,
-	selectors: [],
+	selectors: [{ ...selector_defaults, id: uuid() }],
 	// Typography
 	custom_color: false,
 	color: "",
