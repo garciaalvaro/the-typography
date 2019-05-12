@@ -6,11 +6,11 @@ const { isUndefined, find } = lodash;
 const { __ } = wp.i18n;
 
 const FontVariant = props => {
-	const { font_family, font_variant, updateProp, addGFont } = props;
+	const { id, font_family, font_variant, updateProp, addGFont } = props;
 
 	const onChangeHandler = value => {
 		updateProp("font_variant", value);
-		addGFont(font_family, value);
+		addGFont(id, font_family, value);
 	};
 
 	const getVariants = () => {

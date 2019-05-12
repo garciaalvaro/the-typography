@@ -6,7 +6,7 @@ const { __ } = wp.i18n;
 const { Icon } = wp.components;
 
 const FontFamily = props => {
-	const { updateProp, addGFont, font_family } = props;
+	const { id, updateProp, addGFont, font_family } = props;
 	const selected = find(fonts_family, { value: font_family });
 
 	return (
@@ -18,7 +18,7 @@ const FontFamily = props => {
 				onChange={({ value }) => {
 					updateProp("font_family", value);
 					updateProp("font_variant", ["400"]);
-					addGFont(value, ["400"]);
+					addGFont(id, value, ["400"]);
 				}}
 				options={fonts_family}
 				placeholder={__("Select a family")}

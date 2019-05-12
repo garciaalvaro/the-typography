@@ -8,10 +8,10 @@ const { withDispatch } = wp.data;
 
 class Typography extends Component {
 	componentDidMount = () => {
-		const { custom_font, font_family, font_variant, addGFont } = this.props;
+		const { id, custom_font, font_family, font_variant, addGFont } = this.props;
 
 		if (custom_font && font_family !== "") {
-			addGFont(font_family, font_variant);
+			addGFont(id, font_family, font_variant);
 		}
 	};
 

@@ -17,8 +17,10 @@ const selectors = {
 	getTypographies(state) {
 		return state.typographies;
 	},
-	getTypographiesId(state) {
-		return state.typographies.map(({ id }) => id);
+	getVisibleTypographiesId(state) {
+		return state.typographies
+			.filter(({ is_visible }) => is_visible)
+			.map(({ id }) => id);
 	}
 };
 

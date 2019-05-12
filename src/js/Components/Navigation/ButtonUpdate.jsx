@@ -71,7 +71,7 @@ export default withDispatch(
 					).name
 				}));
 
-			if (non_existent_terms.length > 0) {
+			if (non_existent_terms.length) {
 				await Promise.all(
 					non_existent_terms.map(async ({ slug, name }) => {
 						let term = await saveEntityRecord("taxonomy", "context_post_type", {

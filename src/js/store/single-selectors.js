@@ -17,19 +17,8 @@ const selectors = {
 			? null
 			: state.single.typography.id;
 	},
-	getSingleFontFamily(state) {
-		// Filter out the style if it doesn't belong to the current Previewer window.
-		const { typography } = state.single;
-
-		if (
-			!isUndefined(typography.is_visible) &&
-			typography.is_visible &&
-			typography.custom_font
-		) {
-			return typography.font_family;
-		}
-
-		return null;
+	getSingleVisibility(state) {
+		return state.single.typography && state.single.typography.is_visible;
 	},
 	getSingleStyle(state) {
 		// Filter out the style if it doesn't belong to the current Previewer window.

@@ -8,7 +8,7 @@ const selectors = {
 				({ loaded }) => !loaded
 			);
 
-			if (variants_not_loaded.length > 0) {
+			if (variants_not_loaded.length) {
 				return true;
 			}
 

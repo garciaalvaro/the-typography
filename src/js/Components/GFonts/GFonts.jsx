@@ -1,7 +1,7 @@
 import l, { is_customizer, pr_store } from "utils";
 import WebFont from "webfontloader";
 
-const { isEqual } = lodash;
+const { isEqual, intersection, uniq } = lodash;
 const { Component } = wp.element;
 const { compose, withState } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
@@ -12,41 +12,34 @@ class GFonts extends Component {
 
 		if (is_customizer) {
 			wp.customize.previewer.bind("ready", () => {
-				if (!this.props.previewer_ready) {
-					this.props.setState({ previewer_ready: true });
-				}
+				this.props.setState({
+					previewer_ready_counter: this.props.previewer_ready_counter + 1
+				});
 			});
 		}
 	};
 
 	componentDidUpdate = prev_props => {
 		const {
-			previewer_ready,
-			gfonts_to_load,
-			previewer_fonts_to_load,
-			setState
+			previewer_ready_counter,
+			gfonts_for_previewer,
+			gfonts_to_load
 		} = this.props;
 
 		if (!isEqual(gfonts_to_load, prev_props.gfonts_to_load)) {
 			this.loadFonts();
-		} else if (
-			previewer_fonts_to_load.length > 0 &&
-			previewer_ready &&
-			!prev_props.previewer_ready
+		}
+
+		if (
+			gfonts_for_previewer.length &&
+			previewer_ready_counter > prev_props.previewer_ready_counter
 		) {
-			wp.customize.previewer.send("thet-gfonts", previewer_fonts_to_load);
-			setState({ previewer_fonts_to_load: [] });
+			wp.customize.previewer.send("thet-load_gfonts", gfonts_for_previewer);
 		}
 	};
 
 	loadFonts() {
-		const {
-			gfonts_to_load,
-			loadGFonts,
-			previewer_ready,
-			setState,
-			previewer_fonts_to_load
-		} = this.props;
+		const { gfonts_to_load, updateGFontsLoaded } = this.props;
 
 		if (!gfonts_to_load.length) {
 			return;
@@ -64,19 +57,9 @@ class GFonts extends Component {
 				families
 			},
 			active: () => {
-				loadGFonts(gfonts_to_load);
+				updateGFontsLoaded(gfonts_to_load);
 			}
 		});
-
-		if (is_customizer) {
-			if (previewer_ready) {
-				wp.customize.previewer.send("thet-gfonts", families);
-			} else {
-				setState({
-					previewer_fonts_to_load: [...previewer_fonts_to_load, ...families]
-				});
-			}
-		}
 	}
 
 	render() {
@@ -85,46 +68,37 @@ class GFonts extends Component {
 }
 
 export default compose([
-	withState({ previewer_ready: false, previewer_fonts_to_load: [] }),
+	withState({ previewer_ready_counter: 0 }),
 	withSelect(select => {
-		const { getGFontsToLoad } = select(pr_store);
+		const {
+			getGFontsToLoad,
+			getGFonts,
+			getVisibleTypographiesId,
+			getSingleVisibility,
+			getSingleId
+		} = select(pr_store);
+		let visible_ids = getVisibleTypographiesId();
+		const single_is_visible = getSingleVisibility();
+		const single_id = getSingleId();
+
+		if (single_is_visible) {
+			visible_ids = uniq([...visible_ids, single_id]);
+		} else if (single_id) {
+			visible_ids = visible_ids.filter(id => id !== single_id);
+		}
+
+		const gfonts_for_previewer = getGFonts().filter(({ typographies_id }) => {
+			return intersection(typographies_id, visible_ids).length;
+		});
 
 		return {
-			gfonts_to_load: getGFontsToLoad()
+			gfonts_to_load: getGFontsToLoad(),
+			gfonts_for_previewer
 		};
 	}),
 	withDispatch(dispatch => {
-		const { loadGFonts } = dispatch(pr_store);
+		const { updateGFontsLoaded } = dispatch(pr_store);
 
-		return { loadGFonts };
+		return { updateGFontsLoaded };
 	})
 ])(GFonts);
-
-// // Fonts
-// const gfonts_raw = getGFonts();
-// const gfonts_to_load = {};
-// let gfonts = pick(gfonts_raw, font_families);
-
-// forEach(gfonts, (variants, family) => {
-// 	if (isUndefined(gfonts_to_load[family])) {
-// 		gfonts_to_load[family] = [];
-// 	}
-
-// 	const variants_to_load = variants.filter(({ loaded }) => !loaded);
-
-// 	gfonts_to_load[family] = union(variants_to_load, gfonts_to_load[family]);
-// });
-
-// if (!isEmpty(gfonts_to_load)) {
-// 	gfonts = map(gfonts_to_load, (variants, family) => {
-// 		family = family.replace(/_/g, "+");
-// 		variants = map(variants, ({ variant }) => variant).join(",");
-// 		variants = variants === "" ? "400" : variants;
-
-// 		return `${family}:${variants}`;
-// 	});
-// } else {
-// 	gfonts = [];
-// }
-
-// return { styles, gfonts };
