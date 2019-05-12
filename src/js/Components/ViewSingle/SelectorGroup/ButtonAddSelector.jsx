@@ -1,18 +1,33 @@
 import l, { addPrefix, pr_store } from "utils";
 
+const { throttle } = lodash;
+const { Component } = wp.element;
 const { __ } = wp.i18n;
 const { Button } = wp.components;
 const { withDispatch } = wp.data;
 
-const ButtonAddSelector = props => {
-	const { addSelector } = props;
+class ButtonAddSelector extends Component {
+	componentWillUnmount = () => {
+		this.addSelectorThrottled.cancel();
+	};
 
-	return (
-		<Button onClick={addSelector} className={addPrefix("button-add_selector")}>
-			{__("Add selector")}
-		</Button>
-	);
-};
+	// Throttle the action.
+	addSelectorThrottled = throttle(() => this.props.addSelector(), 1000, {
+		leading: true,
+		trailing: false
+	});
+
+	render() {
+		return (
+			<Button
+				onClick={this.addSelectorThrottled}
+				className={addPrefix("button-add_selector")}
+			>
+				{__("Add selector")}
+			</Button>
+		);
+	}
+}
 
 export default withDispatch((dispatch, { parent_id }) => {
 	const { addSelector, updateChanged } = dispatch(pr_store);
