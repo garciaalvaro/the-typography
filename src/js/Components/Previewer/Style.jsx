@@ -2,7 +2,7 @@ import l from "utils";
 
 const { map, pick, isEqual, compact, throttle } = lodash;
 const { Component } = wp.element;
-const { compose, withState } = wp.compose;
+const { withState } = wp.compose;
 
 class Style extends Component {
 	componentWillUnmount = () => {
@@ -39,8 +39,6 @@ class Style extends Component {
 			css,
 			selector,
 			selectors,
-			id,
-			typography_id,
 			parent_selector,
 			force_styles,
 			previewer_ready_counter

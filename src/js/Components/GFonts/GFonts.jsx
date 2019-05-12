@@ -36,6 +36,13 @@ class GFonts extends Component {
 		) {
 			wp.customize.previewer.send("thet-load_gfonts", gfonts_for_previewer);
 		}
+
+		if (
+			!isEqual(gfonts_for_previewer, prev_props.gfonts_for_previewer) &&
+			previewer_ready_counter > 0
+		) {
+			wp.customize.previewer.send("thet-load_gfonts", gfonts_for_previewer);
+		}
 	};
 
 	loadFonts() {
