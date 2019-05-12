@@ -1,5 +1,7 @@
 import l from "utils";
 
+const { reverse } = lodash;
+
 const selectors = {
 	getTypographyStyles(state) {
 		// Filter out styles that don't belong to the current Previewer window.
@@ -14,8 +16,19 @@ const selectors = {
 	getTypography(state, id) {
 		return state.typographies.find(typography => id === typography.id);
 	},
-	getTypographies(state) {
-		return state.typographies;
+	getTypographies(state, reversed = false) {
+		const { typographies } = state;
+
+		if (!reversed) {
+			return typographies;
+		}
+
+		return reverse([
+			...typographies.map(typography => ({
+				...typography,
+				selector_groups: reverse([...typography.selector_groups])
+			}))
+		]);
 	},
 	getVisibleTypographiesId(state) {
 		return state.typographies

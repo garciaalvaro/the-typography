@@ -81,7 +81,7 @@ export default compose([
 	withSelect(select => {
 		const { getTypographies, getSingle } = select(pr_store);
 		const single = getSingle();
-		let typographies = getTypographies();
+		let typographies = getTypographies(true);
 
 		if (single.id === 0) {
 			typographies = [single, ...typographies];

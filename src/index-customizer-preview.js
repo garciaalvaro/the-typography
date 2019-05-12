@@ -39,7 +39,7 @@ import WebFont from "webfontloader";
 						return style;
 					});
 				} else {
-					state.styles.unshift(style_changed);
+					state.styles.push(style_changed);
 				}
 
 				updateStylesheet();

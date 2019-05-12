@@ -196,7 +196,7 @@ function generate_styles_string( $groups = array() ) {
 		$selectors_string = generate_selectors_string( $group );
 
 		if ( !empty( $selectors_string ) ) {
-			$styles_string .= $selectors_string . '{' . $style_string . '}';
+			$styles_string = $selectors_string . '{' . $style_string . '}' . $styles_string;
 		}
 	}
 

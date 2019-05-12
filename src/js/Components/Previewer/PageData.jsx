@@ -18,7 +18,6 @@ class PageData extends Component {
 			if (!this.props.previewer_ready) {
 				// Listen to the current post data sent from the Previewer window.
 				previewer.bind("thet-page_data", page_data => {
-					l(page_data);
 					updatePreviewerPageData(page_data);
 					updateTypographiesVisibility(page_data);
 					updateSingleVisibility(page_data);
