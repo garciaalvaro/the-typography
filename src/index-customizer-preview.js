@@ -1,7 +1,7 @@
 import WebFont from "webfontloader";
 
 ($ => {
-	const { uniq, difference, unionBy } = lodash;
+	const { unionBy } = lodash;
 	const l = console.log.bind(console); // Console log shortcut helper
 	const updateStylesheet = () => {
 		let css;
@@ -28,7 +28,9 @@ import WebFont from "webfontloader";
 		wp.customize.preview
 			// Style added or modified.
 			.bind("thet-add_modify_style", style_changed => {
-				if (state.styles.find(({ id }) => id === style_changed.id)) {
+				const font_old = state.styles.find(({ id }) => id === style_changed.id);
+
+				if (font_old) {
 					state.styles = state.styles.map(style => {
 						if (style.id === style_changed.id) {
 							return style_changed;
@@ -37,7 +39,7 @@ import WebFont from "webfontloader";
 						return style;
 					});
 				} else {
-					state.styles.push(style_changed);
+					state.styles.unshift(style_changed);
 				}
 
 				updateStylesheet();

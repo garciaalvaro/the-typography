@@ -84,7 +84,7 @@ export default compose([
 		let typographies = getTypographies();
 
 		if (single.id === 0) {
-			typographies = [...typographies, single];
+			typographies = [single, ...typographies];
 		} else if (!isUndefined(single.id)) {
 			typographies = typographies.map(typography => {
 				if (typography.id === single.id) {
