@@ -12,12 +12,17 @@ import SelectorGroupPreview from "./SelectorGroupPreview";
 import ButtonRemove from "./ButtonRemove";
 import TitlePreview from "./TitlePreview";
 
+const { debounce } = lodash;
 const { withDispatch } = wp.data;
 const { Icon, Button } = wp.components;
-const { compose } = wp.compose;
+const { compose, withState } = wp.compose;
 const { Component } = wp.element;
 
 class SelectorGroup extends Component {
+	componentWillUnmount = () => {
+		this.resetNewSelectorAdded.cancel();
+	};
+
 	componentDidMount = () => {
 		const { open, selectors } = this.props;
 
@@ -26,16 +31,36 @@ class SelectorGroup extends Component {
 		}
 	};
 
+	componentDidUpdate(prev_props) {
+		const { new_selector_added, selectors, setState } = this.props;
+
+		if (selectors.length > prev_props.selectors.length) {
+			setState({ new_selector_added: true });
+			this.resetNewSelectorAdded();
+		}
+	}
+
+	// Debounce the value change.
+	resetNewSelectorAdded = debounce(
+		() => this.props.setState({ new_selector_added: false }),
+		1000,
+		{
+			leading: false,
+			trailing: true
+		}
+	);
+
 	render() {
 		const { props } = this;
-		const { color_class, is_open, id, toggle } = props;
+		const { color_class, is_open, id, toggle, is_new } = props;
 
 		return (
 			<Div
 				classes={[
 					"selector_group",
 					color_class,
-					is_open ? "is_open" : "is_closed"
+					is_open ? "is_open" : "is_closed",
+					is_new ? "selector_group-new" : null
 				]}
 			>
 				<TitlePreview {...props} />
@@ -60,6 +85,7 @@ class SelectorGroup extends Component {
 }
 
 export default compose([
+	withState({ new_selector_added: false }),
 	withTypographyStyle,
 	withToggle,
 	withColorClass,

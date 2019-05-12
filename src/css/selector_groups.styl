@@ -2,6 +2,8 @@
  * Selector Groups
  */
 
+$e_standard = cubic-bezier(0.4, 0.0, 0.2, 1)
+
 .thet-selector_group
 	position relative
 	padding 10px 0
@@ -115,3 +117,18 @@
 
 	.thet-selector_group-title-preview
 		min-height 50px
+
+.thet-selector_group-new:before
+	animation fade_in_bg_selector_group 1s $e_standard
+
+
+@keyframes fade_in_bg_selector_group {
+	0% {
+		background-color var(--color_01)
+		transform translateZ(0)
+	}
+	100% {
+		background-color var(--background_color_softer)
+		transform translateZ(0)
+	}
+}

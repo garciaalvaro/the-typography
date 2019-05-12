@@ -155,3 +155,18 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 	color var( --color_07)
 	border 1px dashed var( --color_02)
 	display block
+
+.thet-selector-new
+	animation fade_in_bg_selector 1s $e_standard
+
+
+@keyframes fade_in_bg_selector {
+	0% {
+		background-color var(--color_01)
+		transform translateZ(0)
+	}
+	100% {
+		background-color transparent
+		transform translateZ(0)
+	}
+}

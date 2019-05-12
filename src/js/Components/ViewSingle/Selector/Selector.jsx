@@ -6,10 +6,15 @@ const { withDispatch } = wp.data;
 const { compose } = wp.compose;
 
 const Selector = props => {
-	const { selector_type } = props;
+	const { selector_type, is_new } = props;
+	const classes = [
+		"selector",
+		`selector-type-${selector_type}`,
+		is_new ? "selector-new" : null
+	];
 
 	return (
-		<Div classes={["selector", `selector-type-${selector_type}`]}>
+		<Div classes={classes}>
 			{selector_type === "text" ? (
 				<TextSelector {...props} />
 			) : (

@@ -5,7 +5,7 @@ import ButtonAddSelector from "./ButtonAddSelector";
 const { __ } = wp.i18n;
 
 const Selectors = props => {
-	const { selectors, id: parent_id } = props;
+	const { selectors, id: parent_id, new_selector_added } = props;
 
 	return (
 		<Div classes={["selector_group-content", "selector_group-selectors"]}>
@@ -15,9 +15,18 @@ const Selectors = props => {
 				</Span>
 			)}
 			<ButtonAddSelector parent_id={parent_id} />
-			{selectors.map(selector => (
-				<Selector key={selector.id} {...selector} parent_id={parent_id} />
-			))}
+			{selectors.map((selector, index) => {
+				const is_new = new_selector_added && index === 0;
+
+				return (
+					<Selector
+						key={selector.id}
+						{...selector}
+						is_new={is_new}
+						parent_id={parent_id}
+					/>
+				);
+			})}
 		</Div>
 	);
 };
