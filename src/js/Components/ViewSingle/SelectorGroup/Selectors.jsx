@@ -11,7 +11,7 @@ const Selectors = props => {
 		<Div classes={["selector_group-content", "selector_group-selectors"]}>
 			{is_customizer && (
 				<Span classes={["message", "message-go_to_editor"]}>
-					{__("Selecting custom blocks can be done from a Post editor.")}
+					{__("Selecting custom blocks can be done from any Post editor.")}
 				</Span>
 			)}
 			<ButtonAddSelector parent_id={parent_id} />
