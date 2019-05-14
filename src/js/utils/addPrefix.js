@@ -2,13 +2,13 @@ import l, { pr } from "utils";
 
 const { isUndefined, isString, compact } = lodash;
 
-const addPrefix = items => {
+const addPrefix = (items, separator = "-") => {
 	if (isUndefined(items)) {
 		return null;
 	}
 
 	if (isString(items)) {
-		return `${pr}-${items}`;
+		return pr + separator + items;
 	}
 
 	items = compact(items);
@@ -17,7 +17,7 @@ const addPrefix = items => {
 			return item.replace("#", "");
 		}
 
-		return `${pr}-${item}`;
+		return pr + separator + item;
 	});
 	items = items.join(" ");
 
