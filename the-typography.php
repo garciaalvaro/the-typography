@@ -15,7 +15,7 @@ namespace THETYPOGRAPHY;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.0.0' );
+	define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.1.0' );
 }
 if ( ! defined( __NAMESPACE__ . '\PLUGIN_NAME' ) ) {
 	define( __NAMESPACE__ . '\PLUGIN_NAME', 'the-typography' );
