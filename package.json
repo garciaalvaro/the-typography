@@ -1,7 +1,7 @@
 {
 	"name": "the-typography",
 	"name_title": "The Typography",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"homepage": "http://wordpress.org/plugins/the-typography",
 	"main": "index.js",
 	"alias": {

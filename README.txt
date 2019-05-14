@@ -3,7 +3,7 @@ Contributors: melonpan
 Tags: gutenberg, blocks, typography, text, fonts, customizer
 Requires at least: 5.1
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -75,6 +75,14 @@ The following filters can be used to modify (or remove) the styles and fonts bef
 * `the_typography_fonts_before_enqueue`: This filter receives an array with the fonts before they are embeded as an external style sheet to be loaded in the front end.
 
 == Changelog ==
+
+= 1.1.0 =
+* Include core blocks selection in Customizer.
+* Sort typographies styles so that newer take preference over older.
+* Improvemenets in the UI and added some UX hints.
+* Fix Customizer Previewer bugs.
+* Improve code base.
+* Update dependencies.
 
 = 1.0.0 =
 * Initial release.
