@@ -2,18 +2,26 @@ import l, { Span, Div, withTypographyStyle } from "utils";
 import SelectorGroup from "./SelectorGroup/SelectorGroup";
 import ButtonAddGroup from "./SelectorGroup/ButtonAddGroup";
 
+interface withState extends setState<withState> {
+	new_group_added: boolean;
+}
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = withTypographyStyle & withState & Parent;
+
 const { debounce } = lodash;
 const { __ } = wp.i18n;
 const { compose, withState } = wp.compose;
 const { Component } = wp.element;
 
-class SelectorGroups extends Component {
+class SelectorGroups extends Component<Props> {
 	componentWillUnmount = () => {
 		this.resetNewGroupAdded.cancel();
 	};
 
-	componentDidUpdate(prev_props) {
-		const { new_group_added, selector_groups, setState } = this.props;
+	componentDidUpdate(prev_props: Props) {
+		const { selector_groups, setState } = this.props;
 
 		if (selector_groups.length > prev_props.selector_groups.length) {
 			setState({ new_group_added: true });

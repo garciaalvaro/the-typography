@@ -21,5 +21,5 @@
 			"store": ["./src/js/store"]
 		}
 	},
-	"include": ["src", "pro", "types/*/*.d.ts"]
+	"include": ["src", "pro", "types/**/*.d.ts"]
 }

@@ -2,13 +2,23 @@ import l, { Div, pr_store, withAddTypography, addPrefix } from "utils";
 import Typography from "./Typography";
 import ButtonLoadMore from "./ButtonLoadMore";
 
+interface SelectProps {
+	typographies: State["typographies"];
+	is_loading: State["is_loading"];
+	is_last_page: State["is_last_page"];
+}
+interface HOCProps {
+	addTypography: FunctionVoid;
+}
+type Props = SelectProps & HOCProps;
+
 const { __ } = wp.i18n;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 
-const ViewIndex = props => {
+const ViewIndex: React.ComponentType<Props> = props => {
 	const { is_loading, is_last_page, typographies, addTypography } = props;
 
 	const getTypographies = () => {
@@ -62,8 +72,10 @@ const ViewIndex = props => {
 };
 
 export default compose([
-	withSelect(select => {
-		const { getTypographies, isLoading, isLastPage } = select(pr_store);
+	withSelect<SelectProps>(select => {
+		const { getTypographies } = select<SelectorsR["getTypographies"]>(pr_store);
+		const { isLoading } = select<SelectorsR["isLoading"]>(pr_store);
+		const { isLastPage } = select<SelectorsR["isLastPage"]>(pr_store);
 		const typographies = getTypographies();
 		const is_loading = isLoading();
 		const is_last_page = isLastPage();

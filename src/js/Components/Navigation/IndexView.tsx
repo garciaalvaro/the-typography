@@ -4,7 +4,7 @@ import ButtonAdd from "./ButtonAdd";
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
-const IndexView = () => {
+const IndexView: React.ComponentType = () => {
 	return (
 		<Fragment>
 			<Span id="navigation-title">{__("Typographies")}</Span>

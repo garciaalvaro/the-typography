@@ -1,7 +1,13 @@
 import l from "utils";
 import SelectorsPreview from "./SelectorsPreview";
 
-const SelectorGroupPreview = props => {
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+	new_selector_added: boolean;
+}
+type Props = Parent & withToggle;
+
+const SelectorGroupPreview: React.ComponentType<Props> = props => {
 	return <SelectorsPreview {...props} />;
 };
 

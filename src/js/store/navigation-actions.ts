@@ -1,10 +1,10 @@
 import l from "utils";
 
-const actions = {
-	updatePreviewerPageData(data) {
+const actions: Partial<ActionCreators> = {
+	updatePreviewerPageData(page_data) {
 		return {
 			type: "UPDATE_PREVIEWER_PAGE_DATA",
-			...data
+			page_data
 		};
 	},
 	goToIndex() {
@@ -17,10 +17,10 @@ const actions = {
 			type: "GO_TO_SINGLE"
 		};
 	},
-	updateLoading(value) {
+	updateLoading(is_loading) {
 		return {
 			type: "UPDATE_LOADING",
-			value
+			is_loading
 		};
 	},
 	increasePage() {

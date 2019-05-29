@@ -1,12 +1,20 @@
 import l, { addPrefix, pr_store } from "utils";
 
+interface withDispatch {
+	addSelector: FunctionVoid;
+}
+interface Parent {
+	parent_id: string;
+}
+type Props = withDispatch & Parent;
+
 const { throttle } = lodash;
 const { Component } = wp.element;
 const { __ } = wp.i18n;
 const { Button } = wp.components;
 const { withDispatch } = wp.data;
 
-class ButtonAddSelector extends Component {
+class ButtonAddSelector extends Component<Props> {
 	componentWillUnmount = () => {
 		this.addSelectorThrottled.cancel();
 	};
@@ -29,7 +37,7 @@ class ButtonAddSelector extends Component {
 	}
 }
 
-export default withDispatch((dispatch, { parent_id }) => {
+export default withDispatch<withDispatch, Parent>((dispatch, { parent_id }) => {
 	const { addSelector, updateChanged } = dispatch(pr_store);
 
 	return {

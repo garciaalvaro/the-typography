@@ -2,7 +2,12 @@ import l, { Div } from "utils";
 import IndexView from "./IndexView";
 import SingleView from "./SingleView";
 
-const Navigation = props => {
+interface Parent {
+	view: State["view"];
+}
+type Props = Parent;
+
+const Navigation: React.ComponentType<Props> = props => {
 	const { view } = props;
 
 	return (

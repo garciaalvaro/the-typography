@@ -1,11 +1,19 @@
-import l, { is_customizer, generateStyle } from "utils";
+import l from "utils";
 import produce from "immer";
 
 const { forEach, remove } = lodash;
 
-const initial_state = [];
+const initial_state: State["typographies"] = [];
 
-const reducer = (state = initial_state, action) => {
+const reducer = (
+	state = initial_state,
+	action:
+		| Actions["loadTypography"]
+		| Actions["updateTypographiesVisibility"]
+		| Actions["removeTypography"]
+		| Actions["loadTypographies"]
+		| Actions["updateTypography"]
+) => {
 	return produce(state, draft => {
 		switch (action.type) {
 			case "LOAD_TYPOGRAPHY": {
@@ -19,26 +27,26 @@ const reducer = (state = initial_state, action) => {
 				return;
 			}
 			case "UPDATE_TYPOGRAPHIES_VISIBILITY": {
+				const { is_front_page, is_404, post_type, template } = action.page_data;
+
 				forEach(draft, typography => {
 					if (typography.context_type === "all_site") {
 						typography.is_visible = true;
 						return;
 					}
-					if (
-						typography.context_type === "front_page" &&
-						action.is_front_page
-					) {
+					if (typography.context_type === "front_page" && is_front_page) {
 						typography.is_visible = true;
 						return;
 					}
-					if (typography.context_type === "404_page" && action.is_404) {
+					if (typography.context_type === "404_page" && is_404) {
 						typography.is_visible = true;
 						return;
 					}
 					if (
+						post_type &&
 						typography.context_type === "post_type" &&
-						typography.context_post_type.includes(action.post_type) &&
-						typography.context_post_type_template.includes(action.template)
+						typography.context_post_type.includes(post_type) &&
+						typography.context_post_type_template.includes(template)
 					) {
 						typography.is_visible = true;
 						return;

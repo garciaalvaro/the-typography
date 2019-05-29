@@ -2,11 +2,19 @@ import l, { Div, withControlCustom, pr_store } from "utils";
 import FontFamily from "./FontFamily";
 import FontVariant from "./FontVariant";
 
+interface withDispatch {
+	addGFont: FunctionVoid;
+}
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = withDispatch & Parent & withToggle;
+
 const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 
-const Font = props => {
+const Font: React.ComponentType<Props> = props => {
 	const { custom_font, font_family } = props;
 
 	if (!custom_font) {

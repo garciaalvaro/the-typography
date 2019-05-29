@@ -1,10 +1,10 @@
 import l from "utils";
 
-const actions = {
-	updateTypographiesVisibility(data) {
+const actions: Partial<ActionCreators> = {
+	updateTypographiesVisibility(page_data) {
 		return {
 			type: "UPDATE_TYPOGRAPHIES_VISIBILITY",
-			...data
+			page_data
 		};
 	},
 	removeTypography(id) {

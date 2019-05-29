@@ -1,10 +1,10 @@
 import l from "utils";
 
-const actions = {
-	updateSingleVisibility(data) {
+const actions: Partial<ActionCreators> = {
+	updateSingleVisibility(page_data) {
 		return {
 			type: "UPDATE_SINGLE_VISIBILITY",
-			...data
+			page_data
 		};
 	},
 	emptySingle() {
@@ -17,10 +17,10 @@ const actions = {
 			type: "RESET_SINGLE"
 		};
 	},
-	updateChanged(value) {
+	updateChanged(changed) {
 		return {
 			type: "UPDATE_CHANGED",
-			value
+			changed
 		};
 	},
 	loadSingle(typography) {

@@ -2,6 +2,12 @@ import l, { Span, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
+interface Props {
+	context_post_type_template: Typography["context_post_type_template"];
+	updateProp: FunctionVoid;
+}
+
+const { compact } = lodash;
 const { __ } = wp.i18n;
 
 const templates = [
@@ -9,7 +15,7 @@ const templates = [
 	{ slug: "single", name: __("Single") }
 ];
 
-const PostTypeTemplate = props => {
+const PostTypeTemplate: React.ComponentType<Props> = props => {
 	const { context_post_type_template, updateProp } = props;
 
 	return (
@@ -28,7 +34,8 @@ const PostTypeTemplate = props => {
 			displayEmpty
 			value={context_post_type_template}
 			onChange={e => updateProp("context_post_type_template", e.target.value)}
-			renderValue={selected => {
+			// @ts-ignore
+			renderValue={(selected: typeof context_post_type_template) => {
 				if (!selected.length) {
 					return (
 						<Span classes={"material_ui-select-placeholder"}>
@@ -37,9 +44,16 @@ const PostTypeTemplate = props => {
 					);
 				}
 
-				return selected
-					.map(template => templates.find(({ slug }) => template === slug).name)
-					.join(", ");
+				selected = selected
+					.filter(temp => templates.find(({ slug }) => temp === slug))
+					.map(temp => {
+						const type = templates.find(({ slug }) => temp === slug);
+
+						return type ? type.name : "";
+					});
+				selected = compact(selected);
+
+				return selected.join(", ");
 			}}
 		>
 			{templates.map(({ slug, name }, index) => (

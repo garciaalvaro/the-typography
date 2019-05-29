@@ -1,9 +1,14 @@
 import l, { withControlCustom, addPrefix, toFixed } from "utils";
 import Slider from "@material-ui/lab/Slider";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
-const LetterSpacing = props => {
+const LetterSpacing: React.ComponentType<Props> = props => {
 	const { custom_letter_spacing, letter_spacing, updateProp } = props;
 
 	if (!custom_letter_spacing) {

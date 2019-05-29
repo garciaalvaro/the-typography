@@ -1,6 +1,6 @@
 import l from "utils";
 
-const selectors = {
+const selectors: Partial<Selectors> = {
 	getBlock(state, name) {
 		return state.entities.blocks.find(block => block.name === name);
 	},

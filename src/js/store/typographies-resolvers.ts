@@ -40,7 +40,9 @@ const resolvers = {
 
 		yield actions.loadTypographies(typographies);
 
-		const previewer_page_data = wp.data.select(pr_store).getPreviewerPageData();
+		const previewer_page_data = wp.data
+			.select<State["page_data"]>(pr_store)
+			.getPreviewerPageData();
 
 		yield actions.updateTypographiesVisibility(previewer_page_data);
 

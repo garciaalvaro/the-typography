@@ -21,7 +21,7 @@ const {
 	compact
 } = lodash;
 
-const cleanTypography = (typography, taxonomies) => {
+const cleanTypography = (typography: Object, taxonomies: Object): Object => {
 	let {
 		id,
 		title,
@@ -103,8 +103,8 @@ const cleanTypography = (typography, taxonomies) => {
 	};
 };
 
-const cleanSelectors = selectors =>
-	selectors.map(selector => {
+const cleanSelectors = (selectors: Object): Selector =>
+	selectors.map((selector: Object) => {
 		selector = assign(
 			{},
 			selector_defaults,
@@ -116,8 +116,8 @@ const cleanSelectors = selectors =>
 		return selector;
 	});
 
-const cleanSelectorGroups = selector_groups =>
-	selector_groups.map(group => {
+const cleanSelectorGroups = (selector_groups: Object): SelectorGroup[] =>
+	selector_groups.map((group: Object) => {
 		group = assign(
 			{},
 			selector_group_defaults,
@@ -130,8 +130,11 @@ const cleanSelectorGroups = selector_groups =>
 		return group;
 	});
 
-const cleanTypographies = (typographies, taxonomies) =>
-	typographies.map(typography => {
+const cleanTypographies = (
+	typographies: Object,
+	taxonomies: Object
+): Typography[] =>
+	typographies.map((typography: Object) => {
 		let {
 			id,
 			title,
@@ -174,12 +177,14 @@ const cleanTypographies = (typographies, taxonomies) =>
 		);
 
 		// Prepare selectors
-		let selector_groups;
-		selector_groups = isUndefined(meta.selector_groups)
+		let selector_groups_raw;
+		selector_groups_raw = isUndefined(meta.selector_groups)
 			? []
 			: JSON.parse(meta.selector_groups);
-		selector_groups = !isArray(selector_groups) ? [] : selector_groups;
-		selector_groups = cleanSelectorGroups(selector_groups);
+		selector_groups_raw = !isArray(selector_groups_raw)
+			? []
+			: selector_groups_raw;
+		const selector_groups = cleanSelectorGroups(selector_groups_raw);
 
 		const typography_clean = {
 			...meta,

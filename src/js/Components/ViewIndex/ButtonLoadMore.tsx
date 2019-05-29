@@ -1,9 +1,14 @@
 import l, { withFetchTypographies, addPrefix } from "utils";
 
+interface withDispatch {
+	fetchTypographies: FunctionVoid;
+}
+type Props = withDispatch;
+
 const { __ } = wp.i18n;
 const { Button } = wp.components;
 
-const ButtonLoadMore = props => {
+const ButtonLoadMore: React.ComponentType<Props> = props => {
 	const { fetchTypographies } = props;
 
 	return (

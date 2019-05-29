@@ -1,12 +1,20 @@
 import l, { withToggle, addPrefix, pr_store, icons } from "utils";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
+interface withDispatch {
+	removeSelector: FunctionVoid;
+}
+interface Parent {
+	id: string;
+}
+type Props = withDispatch & Parent & withToggle;
+
 const { __ } = wp.i18n;
 const { Icon, Button, MenuGroup, MenuItem } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 
-const ButtonRemove = props => {
+const ButtonRemove: React.ComponentType<Props> = props => {
 	const { removeSelector, is_open, toggle, close } = props;
 
 	return (
@@ -23,7 +31,7 @@ const ButtonRemove = props => {
 					arrowColor={"#111"}
 					arrowSize={6}
 				>
-					<MenuGroup>
+					<MenuGroup label="">
 						<MenuItem onClick={removeSelector}>{__("Remove group")}</MenuItem>
 					</MenuGroup>
 				</ArrowContainer>
@@ -41,7 +49,7 @@ const ButtonRemove = props => {
 
 export default compose([
 	withToggle,
-	withDispatch((dispatch, { close, id }) => {
+	withDispatch<withDispatch, Parent & withToggle>((dispatch, { close, id }) => {
 		const { removeSelectorGroup, updateChanged } = dispatch(pr_store);
 
 		return {

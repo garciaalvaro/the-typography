@@ -7,9 +7,12 @@ import resolvers from "./_resolvers";
 
 const createStore = () =>
 	wp.data.registerStore(pr_store, {
+		// @ts-ignore
 		reducer,
+		// @ts-ignore
 		actions,
 		controls,
+		// @ts-ignore
 		selectors,
 		resolvers
 	});

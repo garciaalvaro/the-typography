@@ -1,4 +1,4 @@
-export default [
+const fonts: { label: string; value: string }[] = [
 	{
 		label: "ABeeZee",
 		value: "ABeeZee"
@@ -3508,3 +3508,5 @@ export default [
 		value: "Zilla_Slab_Highlight"
 	}
 ];
+
+export default fonts;

@@ -12,18 +12,35 @@ import SelectorGroupPreview from "./SelectorGroupPreview";
 import ButtonRemove from "./ButtonRemove";
 import TitlePreview from "./TitlePreview";
 
+interface withState extends setState<withState> {
+	new_selector_added: boolean;
+}
+interface withDispatch {
+	updateProp: FunctionVoid;
+}
+interface Parent extends SelectorGroup {
+	is_new: boolean;
+	parent_typography_style: Partial<TypographyStyle>;
+}
+type Props = withState &
+	withDispatch &
+	Parent &
+	withTypographyStyle &
+	withToggle &
+	withColorClass;
+
 const { debounce } = lodash;
 const { withDispatch } = wp.data;
 const { Icon, Button } = wp.components;
 const { compose, withState } = wp.compose;
 const { Component } = wp.element;
 
-class SelectorGroup extends Component {
+class SelectorGroupComp extends Component<Props> {
 	componentWillUnmount = () => {
 		this.resetNewSelectorAdded.cancel();
 	};
 
-	componentDidUpdate(prev_props) {
+	componentDidUpdate(prev_props: Props) {
 		const { is_new, open, selectors, setState } = this.props;
 
 		if (selectors.length > prev_props.selectors.length) {
@@ -85,7 +102,7 @@ export default compose([
 	withTypographyStyle,
 	withToggle,
 	withColorClass,
-	withDispatch((dispatch, { id }) => {
+	withDispatch<withDispatch, Parent>((dispatch, { id }) => {
 		const { updateChanged, updateSelectorGroupProp } = dispatch(pr_store);
 
 		return {
@@ -95,4 +112,4 @@ export default compose([
 			}
 		};
 	})
-])(SelectorGroup);
+])(SelectorGroupComp);

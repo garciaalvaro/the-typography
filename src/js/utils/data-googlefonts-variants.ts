@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 
-export default [
+const variants: { value: string; label: string }[] = [
 	{ value: "100", label: __("thin 100") },
 	{ value: "100i", label: __("thin 100 Italic") },
 	{ value: "200", label: __("extra-light 200") },
@@ -20,3 +20,5 @@ export default [
 	{ value: "900", label: __("black 900") },
 	{ value: "900i", label: __("black 900 Italic") }
 ];
+
+export default variants;

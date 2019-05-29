@@ -1,25 +1,39 @@
 import l, { pr_store } from "utils";
 import Style from "./Style";
 
+interface withState extends setState<withState> {
+	previewer_ready_counter: number;
+}
+interface withSelect {
+	typographies: Typography[];
+}
+type Props = withState & withSelect;
+
 const { pickBy, isUndefined, difference } = lodash;
 const { Component } = wp.element;
 const { compose, withState } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-const prepareStyle = typography =>
+const prepareStyle = <P extends Object>(typography: P) =>
 	pickBy(typography, (value, key) => {
-		if (key === "font_family" && typography.custom_font) {
-			return true;
-		}
-
-		if (typography[`custom_${key}`]) {
+		if (
+			(key === "font_family" && typography.custom_font) ||
+			(key === "font_size" && typography.custom_font_size) ||
+			(key === "line_height" && typography.custom_line_height) ||
+			(key === "letter_spacing" && typography.custom_letter_spacing) ||
+			(key === "color" && typography.custom_color) ||
+			(key === "font_weight" && typography.custom_font_weight) ||
+			(key === "font_style" && typography.custom_font_style) ||
+			(key === "text_transform" && typography.custom_text_transform) ||
+			(key === "text_decoration" && typography.custom_text_decoration)
+		) {
 			return true;
 		}
 
 		return false;
 	});
 
-class Styles extends Component {
+class Styles extends Component<Props> {
 	componentDidMount() {
 		wp.customize.previewer.bind("ready", () => {
 			this.props.setState({
@@ -28,7 +42,7 @@ class Styles extends Component {
 		});
 	}
 
-	componentDidUpdate(prev_props) {
+	componentDidUpdate(prev_props: Props) {
 		const { typographies } = this.props;
 
 		if (typographies.length < prev_props.typographies.length) {
@@ -78,21 +92,24 @@ class Styles extends Component {
 
 export default compose([
 	withState({ previewer_ready_counter: 0 }),
-	withSelect(select => {
-		const { getTypographies, getSingle } = select(pr_store);
+	withSelect<withSelect>(select => {
+		const { getTypographies } = select<SelectorsR["getTypographies"]>(pr_store);
+		const { getSingle } = select<SelectorsR["getSingle"]>(pr_store);
 		const single = getSingle();
 		let typographies = getTypographies(true);
 
-		if (single.id === 0) {
-			typographies = [single, ...typographies];
-		} else if (!isUndefined(single.id)) {
-			typographies = typographies.map(typography => {
-				if (typography.id === single.id) {
-					return single;
-				}
+		if (single) {
+			if (single.id === 0) {
+				typographies = [single, ...typographies];
+			} else if (!isUndefined(single.id)) {
+				typographies = typographies.map(typography => {
+					if (typography.id === single.id) {
+						return single;
+					}
 
-				return typography;
-			});
+					return typography;
+				});
+			}
 		}
 
 		typographies = typographies.filter(({ is_visible }) => is_visible);

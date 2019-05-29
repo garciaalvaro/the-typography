@@ -1,12 +1,23 @@
 import l, { is_customizer, Div, Span, pr_store, getNames, icons } from "utils";
 import ButtonRemove from "./ButtonRemove";
 
+interface withSelect {
+	taxonomies: Object;
+}
+interface Parent {
+	id: number;
+	context_type: string;
+	context_post_type: string[];
+	is_visible: boolean;
+}
+type Props = withSelect & Parent;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { Icon } = wp.components;
 const { withSelect } = wp.data;
 
-const Info = props => {
+const Info: React.ComponentType<Props> = props => {
 	const { context_type, context_post_type, taxonomies, is_visible } = props;
 
 	const getTaxonomyInfo = () => {
@@ -66,7 +77,7 @@ const Info = props => {
 	);
 };
 
-export default withSelect(select => {
+export default withSelect<withSelect, Parent>(select => {
 	const { getTaxonomies } = select(pr_store);
 
 	return {

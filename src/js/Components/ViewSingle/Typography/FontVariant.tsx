@@ -2,32 +2,34 @@ import l, { Span, addPrefix, fonts, fonts_variants } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
-const { isUndefined, find } = lodash;
+interface Parent extends Typography {
+	addGFont: FunctionVoid;
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
+const { isUndefined, find, compact } = lodash;
 const { __ } = wp.i18n;
 
-const FontVariant = props => {
+const FontVariant: React.ComponentType<Props> = props => {
 	const { id, font_family, font_variant, updateProp, addGFont } = props;
-
-	const onChangeHandler = value => {
+	const onChangeHandler = (value: any) => {
 		updateProp("font_variant", value);
 		addGFont(id, font_family, value);
 	};
+	const font = fonts[font_family];
+	const options: { value: string; label: string }[] = isUndefined(font)
+		? []
+		: compact(
+				font.variants.map(variant => {
+					const font_variant = find(fonts_variants, { value: variant });
+					if (!font_variant) {
+						return null;
+					}
 
-	const getVariants = () => {
-		const font = fonts[font_family];
-
-		if (isUndefined(font)) {
-			return [];
-		}
-
-		const variants = font.variants.map(variant =>
-			find(fonts_variants, { value: variant })
-		);
-
-		return variants;
-	};
-
-	const options = getVariants();
+					return font_variant;
+				})
+		  );
 
 	return (
 		<Select
@@ -45,7 +47,8 @@ const FontVariant = props => {
 			displayEmpty
 			value={font_variant}
 			onChange={e => onChangeHandler(e.target.value)}
-			renderValue={selected => {
+			// @ts-ignore
+			renderValue={(selected: typeof font_variant) => {
 				if (!selected.length) {
 					return (
 						<Span classes="material_ui-select-placeholder">
@@ -54,12 +57,20 @@ const FontVariant = props => {
 					);
 				}
 
-				return selected
-					.map(
-						variant =>
-							fonts_variants.find(({ value }) => variant === value).label
-					)
-					.join(", ");
+				selected = selected.map(variant => {
+					const font_variant = fonts_variants.find(
+						({ value }) => variant === value
+					);
+
+					if (!font_variant) {
+						return "";
+					}
+
+					return font_variant.label;
+				});
+				selected = compact(selected);
+
+				return selected.join(", ");
 			}}
 		>
 			{options.map(({ value, label }) => (

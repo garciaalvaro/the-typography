@@ -3,10 +3,15 @@ import ContextType from "./Context/ContextType";
 import PostType from "./Context/PostType";
 import PostTypeTemplate from "./Context/PostTypeTemplate";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
-const Context = props => {
+const Context: React.ComponentType<Props> = props => {
 	return (
 		<Fragment>
 			<ContextType {...props} />

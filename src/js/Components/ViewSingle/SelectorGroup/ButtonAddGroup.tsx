@@ -1,12 +1,17 @@
 import l, { addPrefix, pr_store } from "utils";
 
+interface withDispatch {
+	addSelectorGroup: FunctionVoid;
+}
+type Props = withDispatch;
+
 const { throttle } = lodash;
 const { Component } = wp.element;
 const { __ } = wp.i18n;
 const { Button } = wp.components;
 const { withDispatch } = wp.data;
 
-class ButtonAddGroup extends Component {
+class ButtonAddGroup extends Component<Props> {
 	componentWillUnmount = () => {
 		this.addSelectorGroupThrottled.cancel();
 	};

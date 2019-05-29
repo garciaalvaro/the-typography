@@ -1,15 +1,28 @@
 import l, { is_customizer, DivForwardRef } from "utils";
 
+interface withState extends setState<withState> {
+	height: number;
+}
+interface withGlobalEvents {
+	resize: FunctionVoid;
+}
+interface Parent {
+	view: State["view"];
+}
+type Props = withGlobalEvents & withState & Parent;
+
 const { debounce } = lodash;
 const { compose, withGlobalEvents, withState } = wp.compose;
 const { Component, createRef } = wp.element;
 
-const withFixedHeight = WrappedComponent =>
-	class extends Component {
-		constructor(props) {
-			super(props);
+const withFixedHeight = <P extends Props>(
+	WrappedComponent: React.ComponentType<P>
+) =>
+	class extends Component<P> {
+		ref = createRef();
 
-			this.ref = createRef();
+		constructor(props: P) {
+			super(props);
 
 			let initiated = false;
 
@@ -23,10 +36,11 @@ const withFixedHeight = WrappedComponent =>
 			}
 		}
 
-		componentDidUpdate = prev_props => {
+		componentDidUpdate = (prev_props: P) => {
 			const { view } = this.props;
 
-			if (view !== prev_props.view) {
+			if (this.ref.current && view !== prev_props.view) {
+				// @ts-ignore
 				this.ref.current.scrollTop = 0;
 			}
 		};
@@ -48,8 +62,14 @@ const withFixedHeight = WrappedComponent =>
 			if (is_customizer) {
 				$container = $el.closest("div.wp-full-overlay-sidebar-content");
 
+				if (!$container.length) {
+					return;
+				}
+
 				height =
+					// @ts-ignore
 					$container.outerHeight() -
+					// @ts-ignore
 					$container
 						.find("li.customize-section-description-container")
 						.outerHeight() -
@@ -57,11 +77,18 @@ const withFixedHeight = WrappedComponent =>
 			} else {
 				$container = $el.closest(".edit-post-sidebar");
 
+				if (!$container.length) {
+					return;
+				}
+
 				height =
+					// @ts-ignore
 					$container.outerHeight() -
+					// @ts-ignore
 					$container
 						.children(".edit-post-sidebar-header:visible")
 						.outerHeight() -
+					// @ts-ignore
 					$container
 						.children(".edit-post-sidebar-header__small:visible")
 						.outerHeight();
@@ -83,7 +110,7 @@ const withFixedHeight = WrappedComponent =>
 				<DivForwardRef
 					ref={this.ref}
 					style={{ height: height_prepared }}
-					classes={height > 450 ? "sticky" : null}
+					classes={[height > 450 ? "sticky" : null]}
 					id="fixed_height_container"
 				>
 					<WrappedComponent {...this.props} />

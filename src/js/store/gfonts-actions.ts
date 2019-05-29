@@ -1,6 +1,6 @@
 import l from "utils";
 
-const actions = {
+const actions: Partial<ActionCreators> = {
 	addGFont(typography_id, family = "", variants = []) {
 		return {
 			type: "ADD_G_FONT",

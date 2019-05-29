@@ -1,4 +1,11 @@
-export default {
+const fonts: {
+	[key: string]: {
+		family: string;
+		id: string;
+		variants: string[];
+		subsets: string[];
+	};
+} = {
 	ABeeZee: {
 		family: "ABeeZee",
 		id: "ABeeZee",
@@ -3294,6 +3301,7 @@ export default {
 	Londrina_Sketch: {
 		family: "Londrina Sketch",
 		id: "Londrina_Sketch",
+		variants: ["400"],
 		subsets: ["latin"]
 	},
 	Londrina_Solid: {
@@ -6186,3 +6194,5 @@ export default {
 		subsets: ["latin", "latin-ext"]
 	}
 };
+
+export default fonts;

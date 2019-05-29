@@ -1,8 +1,13 @@
 import l, { Span } from "utils";
 
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
-const ForceStyles = props => {
+const ForceStyles: React.ComponentType<Props> = props => {
 	const { force_styles, updateProp } = props;
 
 	return (

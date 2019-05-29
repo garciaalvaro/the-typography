@@ -4,13 +4,22 @@ import Title from "./Title";
 import Context from "./Context";
 import Typography from "./Typography";
 
+interface withSelect extends Partial<Typography> {}
+interface withDispatch {
+	updateProp: FunctionVoid;
+}
+interface HOCProps {
+	color_class: string;
+}
+type Props = withSelect & withDispatch & HOCProps;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { Icon } = wp.components;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-const ViewSingle = props => {
+const ViewSingle: React.ComponentType<Props> = props => {
 	const { color_class, is_visible } = props;
 
 	return (
@@ -44,8 +53,8 @@ const ViewSingle = props => {
 };
 
 export default compose([
-	withSelect(select => {
-		const { getSingle } = select(pr_store);
+	withSelect<withSelect>(select => {
+		const { getSingle } = select<SelectorsR["getSingle"]>(pr_store);
 		const typography = getSingle();
 
 		return { ...typography };
@@ -58,7 +67,7 @@ export default compose([
 		const previewer_page_data = getPreviewerPageData();
 
 		return {
-			updateProp: (prop, value) => {
+			updateProp: (prop: string, value: any) => {
 				updateProp(prop, value);
 				updateChanged(true);
 

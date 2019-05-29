@@ -1,6 +1,6 @@
 import uuid from "uuid/v4";
 
-const selector_defaults = {
+const selector_defaults: Omit<Selector, "id"> = {
 	selector_type: "text",
 	text_selector: "",
 	block_name: "",
@@ -40,7 +40,6 @@ const selector_group_defaults = {
 const typography_defaults = {
 	id: 0,
 	title: "",
-	style: "",
 	is_visible: false,
 	// Typography
 	custom_font: false,

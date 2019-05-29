@@ -4,7 +4,7 @@ import Styles from "./Styles";
 
 const { Fragment } = wp.element;
 
-const Previewer = props => {
+const Previewer: React.ComponentType = () => {
 	return (
 		<Fragment>
 			<PageData />

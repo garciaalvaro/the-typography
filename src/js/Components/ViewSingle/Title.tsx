@@ -1,9 +1,14 @@
 import l, { withTypographyStyle, Div, addPrefix } from "utils";
 import TextField from "@material-ui/core/TextField";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = withTypographyStyle & Parent;
+
 const { __ } = wp.i18n;
 
-const Title = props => {
+const Title: React.ComponentType<Props> = props => {
 	const { title, updateProp, typography_style } = props;
 
 	return (
@@ -21,8 +26,9 @@ const Title = props => {
 						focused: addPrefix("material_ui-textfield-input-focused")
 					}
 				}}
+				// @ts-ignore
 				inputProps={{
-					style: title !== "" ? typography_style : null
+					style: title !== "" && typography_style ? typography_style : {}
 				}}
 				label={__("Title")}
 				value={title}

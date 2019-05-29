@@ -2,6 +2,11 @@ import l, { withControlCustom, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
 const options = [
@@ -11,7 +16,7 @@ const options = [
 	{ value: "underline", label: "underline" }
 ];
 
-const TextDecoration = props => {
+const TextDecoration: React.ComponentType<Props> = props => {
 	const { custom_text_decoration, text_decoration, updateProp } = props;
 
 	if (!custom_text_decoration) {

@@ -3,10 +3,16 @@ import TextField from "@material-ui/core/TextField";
 import SelectorType from "./SelectorType";
 import ButtonRemove from "./ButtonRemove";
 
+interface Parent extends Selector {
+	updateProp: FunctionVoid;
+	parent_id: string;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
-const TextSelector = props => {
+const TextSelector: React.ComponentType<Props> = props => {
 	const { text_selector, updateProp, id, parent_id } = props;
 
 	return (

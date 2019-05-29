@@ -1,16 +1,16 @@
 import l from "utils";
 
-const actions = {
+const actions: Partial<ActionCreators> = {
 	updateBlocks(blocks) {
 		return {
 			type: "UPDATE_BLOCKS",
 			blocks
 		};
 	},
-	updateTaxonomyTerm(taxonomy, term) {
+	updateTaxonomyTerm(taxonomy_name, term) {
 		return {
 			type: "UPDATE_TAXONOMY_TERM",
-			taxonomy,
+			taxonomy_name,
 			term
 		};
 	},
@@ -21,10 +21,10 @@ const actions = {
 		};
 	},
 	// controls
-	fetchTaxonomies(taxonomy) {
+	fetchTaxonomies(taxonomy_name) {
 		return {
 			type: "FETCH_TAXONOMIES",
-			taxonomy
+			taxonomy_name
 		};
 	}
 };

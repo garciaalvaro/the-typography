@@ -1,8 +1,15 @@
 import l, { withTypographyStyle, Div, Span } from "utils";
 
+interface Parent {
+	title: Typography["title"];
+	openSingle: FunctionVoid;
+	typography_style: Object;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
-const Title = props => {
+const Title: React.ComponentType<Props> = props => {
 	const { title, openSingle, typography_style } = props;
 
 	return (

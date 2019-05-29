@@ -11,7 +11,6 @@ import {
 	typography_defaults
 } from "./data-defaults";
 import addPrefix from "./addPrefix";
-import generateStyle from "./generateStyle";
 import {
 	cleanTaxonomy,
 	cleanTaxonomyTerm,
@@ -51,7 +50,6 @@ export {
 	is_editor,
 	is_customizer,
 	addPrefix,
-	generateStyle,
 	toFixed,
 	blocks_data,
 	withAddTypography,

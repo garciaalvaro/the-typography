@@ -3,13 +3,26 @@ import ButtonBack from "./ButtonBack";
 import ButtonUndo from "./ButtonUndo";
 import ButtonUpdate from "./ButtonUpdate";
 
+interface withState extends setState<withState> {
+	button_state: "update" | "save";
+	show_message: boolean;
+}
+interface withSelect {
+	single_changed: boolean;
+	is_single_new_typography: boolean;
+}
+interface Parent {
+	setState: FunctionVoid;
+}
+type Props = withState & withSelect & Parent;
+
 const { throttle } = lodash;
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { compose, withState } = wp.compose;
 const { withSelect } = wp.data;
 
-class SingleView extends Component {
+class SingleView extends Component<Props> {
 	componentWillUnmount = () => {
 		this.resetShowMessage.cancel();
 		this.resetButtonState.cancel();

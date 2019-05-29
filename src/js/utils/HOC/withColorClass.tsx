@@ -1,16 +1,22 @@
 import l from "utils";
 import tinycolor from "tinycolor2";
 
+interface withState extends setState<withState> {
+	color_class: null | string;
+}
+
 const { Component } = wp.element;
 const { withState, compose } = wp.compose;
 
-const withColorClass = WrappedComponent =>
-	class extends Component {
+const withColorClass = <P extends Typography & withState>(
+	WrappedComponent: React.ComponentType<P>
+) =>
+	class extends Component<P> {
 		componentDidMount = () => {
 			this.updateColorBg();
 		};
 
-		componentDidUpdate = prev_props => {
+		componentDidUpdate = (prev_props: P) => {
 			if (
 				prev_props.color !== this.props.color ||
 				prev_props.custom_color !== this.props.custom_color

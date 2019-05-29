@@ -4,14 +4,21 @@ import uuid from "uuid/v4";
 
 const { unionBy, uniq } = lodash;
 
-const initial_state = [];
+const initial_state: State["gfonts"] = [];
 
-const reducer = (state = initial_state, action) => {
+const reducer = (
+	state = initial_state,
+	action: Actions["updateGFontsLoaded"] | Actions["addGFont"]
+) => {
 	return produce(state, draft => {
 		switch (action.type) {
 			case "UPDATE_G_FONTS_LOADED": {
-				action.fonts.forEach(({ id, variants }) => {
+				action.fonts.forEach(({ id, variants }: GFontVariants) => {
 					const font = draft.find(font => font.id === id);
+
+					if (!font) {
+						return;
+					}
 
 					font.variants = font.variants.map(variant => {
 						if (variants.includes(variant.variant)) {
@@ -42,7 +49,7 @@ const reducer = (state = initial_state, action) => {
 
 				const font_old = draft.find(font => font.family === family_new);
 
-				variants_new = variants_new.map(variant => ({
+				const variants_prepared = variants_new.map(variant => ({
 					id: uuid(),
 					loaded: false,
 					variant
@@ -55,7 +62,7 @@ const reducer = (state = initial_state, action) => {
 					]);
 					font_old.variants = unionBy(
 						font_old.variants,
-						variants_new,
+						variants_prepared,
 						"variant"
 					);
 				} else {
@@ -63,7 +70,7 @@ const reducer = (state = initial_state, action) => {
 						typographies_id: [typography_id],
 						id: uuid(),
 						family: family_new,
-						variants: variants_new
+						variants: variants_prepared
 					});
 				}
 

@@ -2,17 +2,7 @@ import l from "utils";
 
 const { reverse } = lodash;
 
-const selectors = {
-	getTypographyStyles(state) {
-		// Filter out styles that don't belong to the current Previewer window.
-		return state.typographies
-			.filter(({ is_visible }) => is_visible)
-			.map(({ id, style, font_family, custom_font }) => ({
-				id,
-				style,
-				font_family: custom_font ? font_family : null
-			}));
-	},
+const selectors: Partial<Selectors> = {
 	getTypography(state, id) {
 		return state.typographies.find(typography => id === typography.id);
 	},

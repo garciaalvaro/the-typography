@@ -2,11 +2,19 @@ import l, { Div, pr_store, withColorClass } from "utils";
 import Title from "./Title";
 import Info from "./Info";
 
+interface withDispatch {
+	addGFont: FunctionVoid;
+	openSingle: FunctionVoid;
+}
+type Parent = Typography;
+
+type Props = withDispatch & withColorClass & Parent;
+
 const { compose } = wp.compose;
 const { Component } = wp.element;
 const { withDispatch } = wp.data;
 
-class Typography extends Component {
+class TypographyComp extends Component<Props> {
 	componentDidMount = () => {
 		const { id, custom_font, font_family, font_variant, addGFont } = this.props;
 
@@ -41,4 +49,4 @@ export default compose([
 			}
 		};
 	})
-])(Typography);
+])(TypographyComp);

@@ -2,6 +2,11 @@ import l, { withControlCustom, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
 const options = [
@@ -11,7 +16,7 @@ const options = [
 	{ value: "lowercase", label: "lowercase" }
 ];
 
-const TextTransform = props => {
+const TextTransform: React.ComponentType<Props> = props => {
 	const { custom_text_transform, text_transform, updateProp } = props;
 
 	if (!custom_text_transform) {

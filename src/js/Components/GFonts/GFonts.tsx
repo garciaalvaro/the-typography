@@ -1,12 +1,24 @@
 import l, { is_customizer, pr_store } from "utils";
 import WebFont from "webfontloader";
 
+interface withSelect {
+	gfonts_to_load: GFontVariants[];
+	gfonts_for_previewer: GFont[];
+}
+interface withDispatch {
+	updateGFontsLoaded: ActionCreators["updateGFontsLoaded"];
+}
+interface withState extends setState<withState> {
+	previewer_ready_counter: number;
+}
+type Props = withSelect & withDispatch & withState;
+
 const { isEqual, intersection, uniq } = lodash;
 const { Component } = wp.element;
 const { compose, withState } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-class GFonts extends Component {
+class GFonts extends Component<Props> {
 	componentDidMount = () => {
 		this.loadFonts();
 
@@ -19,7 +31,7 @@ class GFonts extends Component {
 		}
 	};
 
-	componentDidUpdate = prev_props => {
+	componentDidUpdate = (prev_props: Props) => {
 		const {
 			previewer_ready_counter,
 			gfonts_for_previewer,
@@ -53,10 +65,10 @@ class GFonts extends Component {
 		}
 
 		const families = gfonts_to_load.map(({ family, variants }) => {
-			family = family.replace(/_/g, "+");
-			variants = variants.join(",");
+			const family_prepared = family.replace(/_/g, "+");
+			const variants_prepared = variants.join(",");
 
-			return `${family}:${variants}`;
+			return `${family_prepared}:${variants_prepared}`;
 		});
 
 		WebFont.load({
@@ -76,27 +88,27 @@ class GFonts extends Component {
 
 export default compose([
 	withState({ previewer_ready_counter: 0 }),
-	withSelect(select => {
-		const {
-			getGFontsToLoad,
-			getGFonts,
-			getVisibleTypographiesId,
-			getSingleVisibility,
-			getSingleId
-		} = select(pr_store);
+	withSelect<withSelect>(select => {
+		const { getGFontsToLoad } = select<SelectorsR["getGFontsToLoad"]>(pr_store);
+		const { getGFonts } = select<SelectorsR["getGFonts"]>(pr_store);
+		const { getVisibleTypographiesId } = select<
+			SelectorsR["getVisibleTypographiesId"]
+		>(pr_store);
+		const { isSingleVisible } = select<SelectorsR["isSingleVisible"]>(pr_store);
+		const { getSingleId } = select<SelectorsR["getSingleId"]>(pr_store);
 		let visible_ids = getVisibleTypographiesId();
-		const single_is_visible = getSingleVisibility();
+		const single_is_visible = isSingleVisible();
 		const single_id = getSingleId();
 
-		if (single_is_visible) {
+		if (single_is_visible && single_id !== null) {
 			visible_ids = uniq([...visible_ids, single_id]);
 		} else if (single_id) {
 			visible_ids = visible_ids.filter(id => id !== single_id);
 		}
 
-		const gfonts_for_previewer = getGFonts().filter(({ typographies_id }) => {
-			return intersection(typographies_id, visible_ids).length;
-		});
+		const gfonts_for_previewer = getGFonts().filter(
+			({ typographies_id }) => intersection(typographies_id, visible_ids).length
+		);
 
 		return {
 			gfonts_to_load: getGFontsToLoad(),

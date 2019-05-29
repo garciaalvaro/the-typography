@@ -1,10 +1,20 @@
 import l, { pr_store } from "utils";
 
+interface withState extends setState<withState> {
+	previewer_ready: boolean;
+}
+interface withDispatch {
+	updatePreviewerPageData: FunctionVoid;
+	updateTypographiesVisibility: FunctionVoid;
+	updateSingleVisibility: FunctionVoid;
+}
+type Props = withDispatch & withState;
+
 const { Component } = wp.element;
 const { compose, withState } = wp.compose;
-const { withSelect, withDispatch } = wp.data;
+const { withDispatch } = wp.data;
 
-class PageData extends Component {
+class PageData extends Component<Props> {
 	componentDidMount = () => {
 		const {
 			setState,
@@ -17,7 +27,7 @@ class PageData extends Component {
 		previewer.bind("ready", () => {
 			if (!this.props.previewer_ready) {
 				// Listen to the current post data sent from the Previewer window.
-				previewer.bind("thet-page_data", page_data => {
+				previewer.bind("thet-page_data", (page_data: State["page_data"]) => {
 					updatePreviewerPageData(page_data);
 					updateTypographiesVisibility(page_data);
 					updateSingleVisibility(page_data);
@@ -35,7 +45,7 @@ class PageData extends Component {
 
 export default compose([
 	withState({ previewer_ready: false }),
-	withDispatch(dispatch => {
+	withDispatch<withDispatch>(dispatch => {
 		const {
 			updatePreviewerPageData,
 			updateTypographiesVisibility,

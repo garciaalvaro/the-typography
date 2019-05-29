@@ -2,6 +2,11 @@ import l, { Span, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
+interface Props {
+	context_type: Typography["context_type"];
+	updateProp: FunctionVoid;
+}
+
 const { __ } = wp.i18n;
 
 const options = [
@@ -11,7 +16,7 @@ const options = [
 	{ value: "404_page", label: __("404 page") }
 ];
 
-const ContextType = props => {
+const ContextType: React.ComponentType<Props> = props => {
 	const { context_type, updateProp } = props;
 
 	return (
@@ -40,7 +45,9 @@ const ContextType = props => {
 					);
 				}
 
-				return options.find(({ value }) => selected === value).label;
+				const option = options.find(({ value }) => selected === value);
+
+				return option ? option.label : "";
 			}}
 		>
 			{options.map(({ value, label }) => (

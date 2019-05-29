@@ -1,13 +1,21 @@
 import l, { withToggle, pr_store, icons, addPrefix } from "utils";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
+interface withDispatch {
+	removeTypography: FunctionVoid;
+}
+interface Parent {
+	id: number;
+}
+type Props = withToggle & withDispatch & Parent;
+
 const { __ } = wp.i18n;
 const { Icon, Button, MenuGroup, MenuItem } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 const { apiFetch } = wp;
 
-const ButtonRemove = props => {
+const ButtonRemove: React.ComponentType<Props> = props => {
 	const { is_open, toggle, close, removeTypography } = props;
 
 	return (
@@ -24,7 +32,7 @@ const ButtonRemove = props => {
 					arrowColor={"#111"}
 					arrowSize={6}
 				>
-					<MenuGroup>
+					<MenuGroup label="">
 						<MenuItem onClick={removeTypography}>
 							{__("Remove Typography")}
 						</MenuItem>
@@ -47,12 +55,13 @@ const ButtonRemove = props => {
 
 export default compose([
 	withToggle,
-	withDispatch((dispatch, { id }) => {
+	withDispatch<withDispatch, Parent>((dispatch, { id }) => {
 		const { removeTypography } = dispatch(pr_store);
 
 		return {
 			removeTypography: () => {
 				apiFetch({
+					parse: true,
 					path: `/wp/v2/the_typography/${id}`,
 					method: "DELETE",
 					data: { force: true }

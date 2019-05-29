@@ -1,8 +1,10 @@
 import l, { addPrefix, icons, withAddTypography } from "utils";
 
+type Props = withAddTypography;
+
 const { Button, Icon } = wp.components;
 
-const ButtonAdd = props => {
+const ButtonAdd: React.ComponentType<Props> = props => {
 	const { addTypography } = props;
 
 	return (

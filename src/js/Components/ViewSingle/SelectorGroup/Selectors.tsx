@@ -2,9 +2,15 @@ import l, { is_customizer, Div, Span } from "utils";
 import Selector from "../Selector/Selector";
 import ButtonAddSelector from "./ButtonAddSelector";
 
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+	new_selector_added: boolean;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
-const Selectors = props => {
+const Selectors: React.ComponentType<Props> = props => {
 	const { selectors, id: parent_id, new_selector_added } = props;
 
 	return (

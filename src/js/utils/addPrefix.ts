@@ -1,27 +1,33 @@
-import l, { pr } from "utils";
+import l from "./log";
+import { pr } from "./data-plugin";
 
-const { isUndefined, isString, compact } = lodash;
+const { compact, flow } = lodash;
 
-const addPrefix = (items, separator = "-") => {
-	if (isUndefined(items)) {
-		return null;
+const resolvePrefix = (el: string, separator: string): string => {
+	if (el.startsWith("#")) {
+		return el.replace("#", "");
 	}
 
-	if (isString(items)) {
-		return pr + separator + items;
+	return pr + separator + el;
+};
+
+const addPrefix = (
+	els: string | null | (string | null)[],
+	separator: string = "-"
+): string => {
+	if (els === null) {
+		return "";
 	}
 
-	items = compact(items);
-	items = items.map(item => {
-		if (item.startsWith("#")) {
-			return item.replace("#", "");
-		}
+	if (typeof els === "string") {
+		return resolvePrefix(els, separator);
+	}
 
-		return pr + separator + item;
-	});
-	items = items.join(" ");
-
-	return items;
+	return flow([
+		compact,
+		(els: string[]) => els.map((el: string) => resolvePrefix(el, separator)),
+		(els: string[]): string => els.join(" ")
+	])(els);
 };
 
 export default addPrefix;

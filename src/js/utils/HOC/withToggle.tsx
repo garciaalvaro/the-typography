@@ -1,17 +1,21 @@
 import l from "utils";
 
+interface withState extends setState<withState> {
+	is_open: boolean;
+}
+
 const { withState, compose } = wp.compose;
 
-const withToggle = WrappedComponent => props => {
+const withToggle = <P extends {}>(
+	Component: React.ComponentType<P>
+): React.ComponentType<P & withState> => props => {
 	const { setState, is_open } = props;
 
 	const open = () => setState({ is_open: true });
 	const close = () => setState({ is_open: false });
 	const toggle = () => setState({ is_open: !is_open });
 
-	return (
-		<WrappedComponent {...props} close={close} open={open} toggle={toggle} />
-	);
+	return <Component {...props} close={close} open={open} toggle={toggle} />;
 };
 
 export default compose([withState({ is_open: false }), withToggle]);

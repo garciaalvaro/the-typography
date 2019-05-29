@@ -2,6 +2,11 @@ import l, { withControlCustom, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
 const options = [
@@ -16,7 +21,7 @@ const options = [
 	{ value: "900", label: __("black 900") }
 ];
 
-const FontWeight = props => {
+const FontWeight: React.ComponentType<Props> = props => {
 	const { custom_font_weight, font_weight, updateProp } = props;
 
 	if (!custom_font_weight) {

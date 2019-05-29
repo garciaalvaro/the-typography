@@ -1,8 +1,14 @@
 import l, { Span } from "utils";
 
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+	parent_typography_style: Partial<TypographyStyle>;
+}
+type Props = Parent & withToggle & withTypographyStyle;
+
 const { __ } = wp.i18n;
 
-const TitlePreview = props => {
+const TitlePreview: React.ComponentType<Props> = props => {
 	let {
 		custom_title,
 		title,

@@ -2,10 +2,15 @@ import l, { withControlCustom, withToggle, Span } from "utils";
 import { ChromePicker } from "react-color";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent & withToggle;
+
 const { __ } = wp.i18n;
 const { compose } = wp.compose;
 
-const Color = props => {
+const Color: React.ComponentType<Props> = props => {
 	const { custom_color, color, updateProp, is_open, close, toggle } = props;
 
 	if (!custom_color) {
@@ -29,6 +34,10 @@ const Color = props => {
 					<ChromePicker
 						color={color}
 						onChangeComplete={color => {
+							if (!color || !color.rgb || !color.rgb.a) {
+								return;
+							}
+
 							const { r, g, b, a } = color.rgb;
 							const rgba = `rgba(${r}, ${g}, ${b}, ${a})`;
 

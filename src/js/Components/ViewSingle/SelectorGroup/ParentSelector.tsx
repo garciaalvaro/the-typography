@@ -1,10 +1,15 @@
 import l, { Span, addPrefix } from "utils";
 import TextField from "@material-ui/core/TextField";
 
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
-const ParentSelector = props => {
+const ParentSelector: React.ComponentType<Props> = props => {
 	const { custom_parent_selector, parent_selector, updateProp } = props;
 
 	return (

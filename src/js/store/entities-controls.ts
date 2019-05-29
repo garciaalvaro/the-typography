@@ -1,9 +1,10 @@
 import l from "utils";
 
 const controls = {
-	FETCH_TAXONOMIES(action) {
+	FETCH_TAXONOMIES(action: Object) {
 		return wp.apiFetch({
-			path: `/wp/v2/${action.taxonomy}`
+			parse: true,
+			path: `/wp/v2/${action.taxonomy_name}`
 		});
 	}
 };

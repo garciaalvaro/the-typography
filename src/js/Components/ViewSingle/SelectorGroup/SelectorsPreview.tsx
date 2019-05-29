@@ -1,10 +1,16 @@
 import l, { Div } from "utils";
 import BlockSelectorPreview from "./BlockSelectorPreview";
 
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+	new_selector_added: boolean;
+}
+type Props = Parent & withToggle;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
-const SelectorsPreview = props => {
+const SelectorsPreview: React.ComponentType<Props> = props => {
 	const { open, selectors, custom_parent_selector, parent_selector } = props;
 
 	return (

@@ -5,12 +5,23 @@ import l, {
 	cleanTaxonomyTerm
 } from "utils";
 
-const { isUndefined } = lodash;
+interface withDispatch {
+	update: FunctionVoid;
+}
+interface Parent {
+	button_state: "update" | "save";
+	resetShowMessage: FunctionVoid;
+	resetButtonState: FunctionVoid;
+	setState: FunctionVoid;
+}
+type Props = withDispatch & Parent;
+
+const { isUndefined, compact } = lodash;
 const { __ } = wp.i18n;
 const { Button } = wp.components;
 const { withDispatch } = wp.data;
 
-const ButtonUpdate = props => {
+const ButtonUpdate: React.ComponentType<Props> = props => {
 	const { update, button_state } = props;
 
 	return (
@@ -28,13 +39,14 @@ const ButtonUpdate = props => {
 	);
 };
 
-export default withDispatch(
+export default withDispatch<withDispatch, Parent>(
 	(
 		dispatch,
 		{ resetShowMessage, resetButtonState, button_state, setState },
 		{ select }
 	) => {
-		const { getSingle, getTaxonomies } = select(pr_store);
+		const { getSingle } = select<SelectorsR["getSingle"]>(pr_store);
+		const { getTaxonomies } = select<SelectorsR["getTaxonomies"]>(pr_store);
 		const {
 			loadSingle,
 			updateTypography,
@@ -55,30 +67,46 @@ export default withDispatch(
 				resetButtonState();
 			}
 
+			if (!typography) {
+				return;
+			}
+
 			// If there are post types (names) which have not been saved as a taxonomy yet.
-			const non_existent_terms = typography.context_post_type
-				.filter(slug => {
-					return isUndefined(
-						taxonomies.context_post_type.find(({ slug: taxo_slug }) => {
-							return slug === taxo_slug;
-						})
-					);
-				})
-				.map(slug => ({
-					slug,
-					name: the_typography.post_types.find(
-						({ slug: cpt_slug }) => cpt_slug === slug
-					).name
-				}));
+			const non_existent_terms = compact(
+				typography.context_post_type
+					.filter(slug => {
+						return isUndefined(
+							taxonomies.context_post_type.find(
+								({ slug: taxo_slug }: Object) => {
+									return slug === taxo_slug;
+								}
+							)
+						);
+					})
+					.map(slug => {
+						const post_type = the_typography.post_types.find(
+							({ slug: cpt_slug }: Object) => cpt_slug === slug
+						);
+
+						return {
+							slug,
+							name: post_type ? post_type.name : ""
+						};
+					})
+			);
 
 			if (non_existent_terms.length) {
 				await Promise.all(
 					non_existent_terms.map(async ({ slug, name }) => {
-						let term = await saveEntityRecord("taxonomy", "context_post_type", {
-							slug,
-							name
-						});
-						term = cleanTaxonomyTerm(term);
+						const term_raw = (await saveEntityRecord(
+							"taxonomy",
+							"context_post_type",
+							{
+								slug,
+								name
+							}
+						)) as (Object);
+						const term = cleanTaxonomyTerm(term_raw);
 
 						// Update the local variable so cleanTypography has the new term ids
 						taxonomies = {
@@ -100,7 +128,7 @@ export default withDispatch(
 
 				updateTypography(typography);
 			} else {
-				const new_typography = await saveEntityRecord(
+				const new_typography: Object = await saveEntityRecord(
 					"postType",
 					"the_typography",
 					{

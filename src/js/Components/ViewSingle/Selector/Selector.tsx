@@ -2,10 +2,20 @@ import l, { Div, pr_store } from "utils";
 import TextSelector from "./TextSelector";
 import BlockSelector from "./BlockSelector";
 
+interface withDispatch {
+	updateProp: FunctionVoid;
+	removeSelector: FunctionVoid;
+}
+interface Parent extends Selector {
+	is_new: boolean;
+	parent_id: string;
+}
+type Props = withDispatch & Parent;
+
 const { withDispatch } = wp.data;
 const { compose } = wp.compose;
 
-const Selector = props => {
+const Selector: React.ComponentType<Props> = props => {
 	const { selector_type, is_new } = props;
 	const classes = [
 		"selector",
@@ -25,7 +35,7 @@ const Selector = props => {
 };
 
 export default compose([
-	withDispatch((dispatch, { id, parent_id }) => {
+	withDispatch<withDispatch, Parent>((dispatch, { id, parent_id }) => {
 		const { removeSelector, updateChanged, updateSelectorProp } = dispatch(
 			pr_store
 		);

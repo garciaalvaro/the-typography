@@ -1,38 +1,43 @@
 import l, {
 	is_customizer,
 	selector_group_defaults,
-	selector_defaults,
-	generateStyle
+	selector_defaults
 } from "utils";
 import produce from "immer";
 import uuid from "uuid/v4";
 
-const { remove, isUndefined, throttle } = lodash;
-
-const initial_state = {
-	typography: {},
-	typography_unmodified: {},
-	changed: false,
-	style: ""
+const { remove, isUndefined } = lodash;
+const initial_state: State["single"] = {
+	typography: null,
+	typography_unmodified: null,
+	changed: false
 };
-// let can_update = true;
-// const resetCanUpdate = throttle(
-// 	() => {
-// 		can_update = true;
-// 	},
-// 	100,
-// 	{
-// 		leading: true,
-// 		trailing: true
-// 	}
-// );
 
-const reducer = (state = initial_state, action) => {
+const reducer = (
+	state = initial_state,
+	action:
+		| Actions["updateSingleVisibility"]
+		| Actions["emptySingle"]
+		| Actions["resetSingle"]
+		| Actions["updateChanged"]
+		| Actions["loadSingle"]
+		| Actions["updateProp"]
+		| Actions["updateSelectorProp"]
+		| Actions["updateSelectorGroupProp"]
+		| Actions["addSelector"]
+		| Actions["addSelectorGroup"]
+		| Actions["removeSelector"]
+		| Actions["removeSelectorGroup"]
+) => {
 	return produce(state, draft => {
 		switch (action.type) {
 			case "UPDATE_SINGLE_VISIBILITY": {
 				const { typography } = draft;
+				const { is_404, is_front_page, post_type, template } = action.page_data;
 
+				if (!typography) {
+					return;
+				}
 				// If single is not open
 				if (isUndefined(typography.is_visible)) {
 					return;
@@ -41,19 +46,20 @@ const reducer = (state = initial_state, action) => {
 					typography.is_visible = true;
 					return;
 				}
-				if (typography.context_type === "404_page" && action.is_404) {
+				if (typography.context_type === "404_page" && is_404) {
 					typography.is_visible = true;
 					return;
 				}
-				if (typography.context_type === "front_page" && action.is_front_page) {
+				if (typography.context_type === "front_page" && is_front_page) {
 					typography.is_visible = true;
 					return;
 				}
 
 				if (
+					post_type &&
 					typography.context_type === "post_type" &&
-					typography.context_post_type.includes(action.post_type) &&
-					typography.context_post_type_template.includes(action.template)
+					typography.context_post_type.includes(post_type) &&
+					typography.context_post_type_template.includes(template)
 				) {
 					typography.is_visible = true;
 					return;
@@ -63,10 +69,9 @@ const reducer = (state = initial_state, action) => {
 				return;
 			}
 			case "EMPTY_SINGLE": {
-				draft.typography = {};
-				draft.typography_unmodified = {};
+				draft.typography = null;
+				draft.typography_unmodified = null;
 				draft.changed = false;
-				draft.style = "";
 				return;
 			}
 			case "RESET_SINGLE": {
@@ -74,7 +79,7 @@ const reducer = (state = initial_state, action) => {
 				return;
 			}
 			case "UPDATE_CHANGED": {
-				draft.changed = action.value;
+				draft.changed = action.changed;
 				return;
 			}
 			case "LOAD_SINGLE": {
@@ -83,72 +88,104 @@ const reducer = (state = initial_state, action) => {
 				return;
 			}
 			case "UPDATE_PROP": {
+				if (!draft.typography) {
+					return;
+				}
+
 				draft.typography[action.prop] = action.value;
 				return;
 			}
 			case "UPDATE_SELECTOR_PROP": {
-				draft.typography.selector_groups
-					.find(({ id }) => id === action.parent_id)
-					.selectors.find(({ id }) => id === action.id)[action.prop] =
-					action.value;
+				if (!draft.typography) {
+					return;
+				}
+
+				const group = draft.typography.selector_groups.find(
+					({ id }) => id === action.parent_id
+				);
+
+				if (!group) {
+					return;
+				}
+
+				const selector = group.selectors.find(({ id }) => id === action.id);
+
+				if (!selector) {
+					return;
+				}
+
+				selector[action.prop] = action.value;
 				return;
 			}
 			case "UPDATE_SELECTOR_GROUP_PROP": {
-				draft.typography.selector_groups.find(({ id }) => id === action.id)[
-					action.prop
-				] = action.value;
+				if (!draft.typography) {
+					return;
+				}
+
+				const group = draft.typography.selector_groups.find(
+					({ id }) => id === action.id
+				);
+
+				if (!group) {
+					return;
+				}
+
+				group[action.prop] = action.value;
 				return;
 			}
 			case "ADD_SELECTOR": {
-				const defaults = { ...selector_defaults, id: uuid() };
+				if (!draft.typography) {
+					return;
+				}
 
-				draft.typography.selector_groups
-					.find(({ id }) => id === action.parent_id)
-					.selectors.unshift(defaults);
+				const group = draft.typography.selector_groups.find(
+					({ id }) => id === action.parent_id
+				);
+
+				if (!group) {
+					return;
+				}
+
+				const defaults: Selector = { ...selector_defaults, id: uuid() };
+
+				group.selectors.unshift(defaults);
 				return;
 			}
 			case "ADD_SELECTOR_GROUP": {
+				if (!draft.typography) {
+					return;
+				}
+
 				const defaults = { ...selector_group_defaults, id: uuid() };
 
 				draft.typography.selector_groups.unshift(defaults);
 				return;
 			}
 			case "REMOVE_SELECTOR": {
-				remove(
-					draft.typography.selector_groups.find(
-						({ id }) => id === action.parent_id
-					).selectors,
-					({ id }) => id === action.id
+				if (!draft.typography) {
+					return;
+				}
+
+				const group = draft.typography.selector_groups.find(
+					({ id }) => id === action.parent_id
 				);
+
+				if (!group) {
+					return;
+				}
+
+				remove(group.selectors, ({ id }) => id === action.id);
 				return;
 			}
 			case "REMOVE_SELECTOR_GROUP": {
+				if (!draft.typography) {
+					return;
+				}
+
 				remove(draft.typography.selector_groups, ({ id }) => id === action.id);
 				return;
 			}
 		}
-
-		// if (
-		// 	is_customizer &&
-		// 	can_update &&
-		// 	[
-		// 		"UPDATE_SINGLE_VISIBILITY",
-		// 		"RESET_SINGLE",
-		// 		"UPDATE_CHANGED",
-		// 		"LOAD_SINGLE",
-		// 		"UPDATE_PROP",
-		// 		"UPDATE_SELECTOR_PROP",
-		// 		"UPDATE_SELECTOR_GROUP_PROP",
-		// 		"ADD_SELECTOR",
-		// 		"ADD_SELECTOR_GROUP",
-		// 		"REMOVE_SELECTOR",
-		// 		"REMOVE_SELECTOR_GROUP"
-		// 	].includes(action.type)
-		// ) {
-		// 	can_update = false;
-		// 	resetCanUpdate();
-		// 	draft.style = generateStyle(draft.typography);
-		// }
 	});
 };
 

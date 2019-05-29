@@ -2,10 +2,15 @@ import l, { Span, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
-const { isUndefined } = lodash;
+interface Props {
+	context_post_type: Typography["context_post_type"];
+	updateProp: FunctionVoid;
+}
+
+const { isUndefined, compact } = lodash;
 const { __ } = wp.i18n;
 
-const PostType = props => {
+const PostType: React.ComponentType<Props> = props => {
 	const { context_post_type, updateProp } = props;
 	const post_types = [
 		...the_typography.post_types,
@@ -32,7 +37,8 @@ const PostType = props => {
 			displayEmpty
 			value={context_post_type}
 			onChange={e => updateProp("context_post_type", e.target.value)}
-			renderValue={selected => {
+			// @ts-ignore
+			renderValue={(selected: typeof context_post_type) => {
 				if (!selected.length) {
 					return (
 						<Span classes="material_ui-select-placeholder">
@@ -41,11 +47,16 @@ const PostType = props => {
 					);
 				}
 
-				return selected
-					.map(
-						selected => post_types.find(({ slug }) => selected === slug).name
-					)
-					.join(", ");
+				selected = selected
+					.filter(sel => post_types.find(({ slug }) => sel === slug))
+					.map(sel => {
+						const type = post_types.find(({ slug }) => sel === slug);
+
+						return type ? type.name : "";
+					});
+				selected = compact(selected);
+
+				return selected.join(", ");
 			}}
 		>
 			{post_types.map(({ slug, name }, index) => (

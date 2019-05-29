@@ -1,12 +1,18 @@
 import l, { Div, Span } from "utils";
 
+interface withSelect {
+	block_icon: any;
+}
+interface Parent extends Selector {}
+type Props = withSelect & Parent;
+
 const { isUndefined } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { withSelect } = wp.data;
 const { BlockIcon } = wp.editor;
 
-const BlockSelectorPreview = props => {
+const BlockSelectorPreview: React.ComponentType<Props> = props => {
 	const {
 		block_name,
 		block_title,
@@ -16,7 +22,7 @@ const BlockSelectorPreview = props => {
 	} = props;
 
 	if (block_name === "") {
-		return __("...select a block");
+		return <Fragment>{__("...select a block")}</Fragment>;
 	}
 
 	return (
@@ -43,7 +49,7 @@ const BlockSelectorPreview = props => {
 	);
 };
 
-export default withSelect((select, { block_name }) => {
+export default withSelect<withSelect, Parent>((select: any, { block_name }) => {
 	const { getBlockType } = select("core/blocks");
 	const block_type = getBlockType(block_name);
 	const block_icon = isUndefined(block_type) ? null : block_type.icon.src;

@@ -5,12 +5,33 @@ const { isUndefined } = lodash;
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 
-const withControlCustom = ({ label, setting_name }) =>
+interface withControlCustom {
+	label: string;
+	setting_name: keyof TypographyStyleWithFont | "font";
+}
+interface withParentTypographyStyle {
+	parent_typography: TypographyStyleWithFont;
+}
+interface withUpdateProp {
+	updateProp: FunctionVoid;
+}
+type Props = TypographyStyle &
+	withParentTypographyStyle &
+	withUpdateProp &
+	withControlCustom;
+
+const withControlCustom = ({ label, setting_name }: withControlCustom) =>
 	compose([
 		withContainer(["control-container", `setting-${setting_name}`]),
-		WrappedComponent => props => {
-			const { updateProp, parent_typography } = props;
-			const setting_name_custom = `custom_${setting_name}`;
+		<P extends Props>(
+			WrappedComponent: React.ComponentType<P>
+		): React.ComponentType<P> => props => {
+			const {
+				updateProp,
+				parent_typography
+			}: { updateProp: FunctionVoid; parent_typography: any } = props;
+			// @ts-ignore
+			const setting_name_custom: keyof TypographyStyleCustomProps = `custom_${setting_name}`;
 			const toggle_classes = [
 				"control-text_toggle",
 				props[setting_name_custom] ? "enabled" : "disabled"
@@ -20,6 +41,7 @@ const withControlCustom = ({ label, setting_name }) =>
 			let parent_value = !isUndefined(parent_typography)
 				? parent_typography[setting_name]
 				: null;
+			// @ts-ignore
 			let value = props[setting_name];
 
 			if (setting_name === "font_size" || setting_name === "letter_spacing") {

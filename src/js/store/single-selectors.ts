@@ -2,36 +2,29 @@ import l from "utils";
 
 const { isUndefined } = lodash;
 
-const selectors = {
+const selectors: Partial<Selectors> = {
 	hasSingleChanged(state) {
 		return state.single.changed;
 	},
 	isSingleNewTypography(state) {
-		return state.single.typography.id === 0;
+		return !!(
+			state.single &&
+			state.single.typography &&
+			state.single.typography.id === 0
+		);
 	},
 	getSingle(state) {
 		return state.single.typography;
 	},
 	getSingleId(state) {
-		return isUndefined(state.single.typography.id)
-			? null
-			: state.single.typography.id;
+		return state.single &&
+			state.single.typography &&
+			!isUndefined(state.single.typography.id)
+			? state.single.typography.id
+			: null;
 	},
-	getSingleVisibility(state) {
-		return state.single.typography && state.single.typography.is_visible;
-	},
-	getSingleStyle(state) {
-		// Filter out the style if it doesn't belong to the current Previewer window.
-		const { typography, style } = state.single;
-
-		if (isUndefined(typography.is_visible)) {
-			return "";
-		}
-		if (typography.is_visible) {
-			return style;
-		}
-
-		return null;
+	isSingleVisible(state) {
+		return !!(state.single.typography && state.single.typography.is_visible);
 	}
 };
 

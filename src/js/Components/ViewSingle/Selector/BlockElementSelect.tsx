@@ -3,10 +3,16 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
 
+interface Parent extends Selector {
+	block: BlockType | undefined;
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 
-class BlockElementSelect extends Component {
+class BlockElementSelect extends Component<Props> {
 	componentDidMount() {
 		const { block, block_element_label, updateProp } = this.props;
 
@@ -26,6 +32,11 @@ class BlockElementSelect extends Component {
 			block_selector_extra,
 			updateProp
 		} = this.props;
+
+		if (!block) {
+			return null;
+		}
+
 		const selected = block.elements.find(
 			({ label }) => label === block_element_label
 		);
@@ -41,6 +52,11 @@ class BlockElementSelect extends Component {
 					onChange={e => {
 						const value = e.target.value;
 						const element = block.elements.find(el => el.value === value);
+
+						if (!element) {
+							return;
+						}
+
 						const extra =
 							value === "block_root" || value === "custom_selector"
 								? ""
@@ -59,9 +75,17 @@ class BlockElementSelect extends Component {
 							paper: addPrefix("material_ui-select-menu")
 						}
 					}}
-					renderValue={selected =>
-						block.elements.find(({ value }) => value === selected).label
-					}
+					renderValue={selected => {
+						const element = block.elements.find(
+							({ value }) => value === selected
+						);
+
+						if (!element) {
+							return null;
+						}
+
+						return element.label;
+					}}
 				>
 					{block.elements.map(({ value, label }) => (
 						<MenuItem key={value} value={value}>

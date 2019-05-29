@@ -8,10 +8,15 @@ import LetterSpacing from "../Typography/LetterSpacing";
 import TextTransform from "../Typography/TextTransform";
 import TextDecoration from "../Typography/TextDecoration";
 
+interface Parent extends SelectorGroup {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
-const Typography = props => {
+const Typography: React.ComponentType<Props> = props => {
 	const { custom_typography, updateProp } = props;
 
 	return (

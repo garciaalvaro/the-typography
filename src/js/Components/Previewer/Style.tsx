@@ -1,10 +1,25 @@
 import l from "utils";
 
-const { map, pick, isEqual, compact, throttle } = lodash;
-const { Component } = wp.element;
-const { withState } = wp.compose;
+interface withState extends setState<withState> {
+	css: string;
+	selector: string[];
+}
+interface Parent {
+	id: string;
+	typography_id: number;
+	style: Style;
+	selectors: Selector[];
+	parent_selector: string;
+	force_styles: boolean;
+	previewer_ready_counter: number;
+}
+type Props = withState & Parent;
 
-class Style extends Component {
+const { map, pick, isEqual, isString, compact, throttle } = lodash;
+const { Component } = wp.element;
+const { withState, compose } = wp.compose;
+
+class Style extends Component<Props> {
 	componentWillUnmount = () => {
 		this.sendStyle.cancel();
 	};
@@ -33,7 +48,7 @@ class Style extends Component {
 		}
 	);
 
-	componentDidUpdate(prev_props) {
+	componentDidUpdate(prev_props: Props) {
 		const {
 			style,
 			css,
@@ -115,9 +130,9 @@ class Style extends Component {
 			"text_decoration"
 		]);
 
-		let css = [];
+		let css: string[] = [];
 
-		map(typography, (value, key) => {
+		map(typography, (value: string | number, key) => {
 			if (value === null) {
 				return;
 			}
@@ -126,7 +141,7 @@ class Style extends Component {
 
 			if (["font_size", "letter_spacing"].includes(key)) {
 				prop_css = `${prop_css}px`;
-			} else if (key === "font_family") {
+			} else if (key === "font_family" && isString(prop_css)) {
 				prop_css = prop_css.replace(/_/g, " ");
 				prop_css = `'${prop_css}'`;
 			}
@@ -137,10 +152,7 @@ class Style extends Component {
 			css.push(prop_css);
 		});
 
-		css = css.join(";");
-		css = `${css};`;
-
-		setState({ css });
+		setState({ css: `${css.join(";")};` });
 	}
 
 	render() {
@@ -148,4 +160,4 @@ class Style extends Component {
 	}
 }
 
-export default withState({ css: "", selector: "" })(Style);
+export default compose([withState({ css: "", selector: "" })])(Style);

@@ -1,9 +1,14 @@
 import l, { withControlCustom, addPrefix, toFixed } from "utils";
 import Slider from "@material-ui/lab/Slider";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
-const LineHeight = props => {
+const LineHeight: React.ComponentType<Props> = props => {
 	const { custom_line_height, line_height, updateProp } = props;
 
 	if (!custom_line_height) {

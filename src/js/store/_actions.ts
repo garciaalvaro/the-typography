@@ -4,10 +4,12 @@ import navigation from "./navigation-actions";
 import single from "./single-actions";
 import entities from "./entities-actions";
 
-export default {
+const actions = {
 	...typographies,
 	...gfonts,
 	...navigation,
 	...single,
 	...entities
-};
+} as ActionCreators;
+
+export default actions;

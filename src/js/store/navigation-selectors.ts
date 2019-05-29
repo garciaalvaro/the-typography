@@ -1,6 +1,6 @@
 import l from "utils";
 
-const selectors = {
+const selectors: Partial<Selectors> = {
 	getPreviewerPageData(state) {
 		return {
 			post_type: state.navigation.previewer_post_type,
@@ -10,10 +10,10 @@ const selectors = {
 		};
 	},
 	isLastPage(state) {
-		return state.navigation.last_page;
+		return state.navigation.is_last_page;
 	},
 	isLoading(state) {
-		return state.navigation.loading;
+		return state.navigation.is_loading;
 	},
 	getPage(state) {
 		return state.navigation.page;

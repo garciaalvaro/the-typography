@@ -1,13 +1,21 @@
 import l, { Div, Span, addPrefix, icons } from "utils";
 import withToggle from "./withToggle";
 
+interface withPanel {
+	id: string;
+	label: string;
+}
+type Props = withToggle & withPanel;
+
 const { Button, Icon } = wp.components;
 const { compose } = wp.compose;
 
-const withPanel = ({ id, label }) =>
+const withPanel = ({ id, label }: withPanel) =>
 	compose([
 		withToggle,
-		WrappedComponent => props => {
+		<P extends Props>(
+			WrappedComponent: React.ComponentType<P>
+		): React.ComponentType<P> => props => {
 			const { is_open, toggle } = props;
 
 			return (

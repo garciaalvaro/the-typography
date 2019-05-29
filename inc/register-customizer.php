@@ -39,7 +39,7 @@ function localize_previewer_window_data() {
 		'is_404'        => is_404(),
 	);
 
-	wp_localize_script( PLUGIN_NAME . '-customizer-preview', 'the_typography', $data );
+	wp_localize_script( PLUGIN_NAME . '-customizer-preview', 'the_typography_page_data', $data );
 
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\localize_previewer_window_data' );

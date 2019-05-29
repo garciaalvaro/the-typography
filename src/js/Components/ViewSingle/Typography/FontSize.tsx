@@ -1,9 +1,14 @@
 import l, { withControlCustom, addPrefix } from "utils";
 import Slider from "@material-ui/lab/Slider";
 
+interface Parent extends Typography {
+	updateProp: FunctionVoid;
+}
+type Props = Parent;
+
 const { __ } = wp.i18n;
 
-const FontSize = props => {
+const FontSize: React.ComponentType<Props> = props => {
 	const { custom_font_size, font_size, updateProp } = props;
 
 	if (!custom_font_size) {

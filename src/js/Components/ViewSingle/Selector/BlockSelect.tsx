@@ -1,11 +1,20 @@
 import l, { pr_store, Span, Div, pr, addPrefix } from "utils";
 import ReactSelect from "react-select";
 
+interface withSelect {
+	blocks: State["blocks"];
+}
+interface Parent extends Selector {
+	block: BlockType | undefined;
+	updateProp: FunctionVoid;
+}
+type Props = withSelect & Parent;
+
 const { __ } = wp.i18n;
 const { BlockIcon } = wp.editor;
 const { withSelect } = wp.data;
 
-const Option = props => {
+const Option: React.ComponentType<any> = props => {
 	const { data, innerProps, isDisabled } = props;
 	const { icon, label } = data;
 
@@ -19,7 +28,7 @@ const Option = props => {
 	);
 };
 
-const SingleValue = props => {
+const SingleValue: React.ComponentType<any> = props => {
 	const { data, innerProps } = props;
 	const { value, label, icon } = data;
 
@@ -41,7 +50,7 @@ const SingleValue = props => {
 	);
 };
 
-const BlockSelect = props => {
+const BlockSelect: React.ComponentType<Props> = props => {
 	const { block_name, block_title, block, blocks, updateProp } = props;
 	const selected = block
 		? {
@@ -60,18 +69,21 @@ const BlockSelect = props => {
 			className={addPrefix("control-react_select")}
 			classNamePrefix={pr}
 			value={selected}
-			onChange={({ value: name, label: title }) => {
+			onChange={({ value: name, label: title }: any) => {
 				updateProp("block_name", name);
 				updateProp("block_title", title);
 
 				const selected = blocks.find(block => block.name === name);
+				const root_selector =
+					selected &&
+					selected.elements.find(({ value }) => value === "block_root");
 
 				updateProp("block_selector_extra", "");
 				updateProp("block_element_label", "Block root");
-				updateProp(
-					"block_selector_root",
-					selected.elements.find(({ value }) => value === "block_root").selector
-				);
+
+				if (root_selector) {
+					updateProp("block_selector_root", root_selector.selector);
+				}
 			}}
 			options={blocks.map(({ name, title, icon }) => ({
 				value: name,
@@ -84,8 +96,8 @@ const BlockSelect = props => {
 	);
 };
 
-export default withSelect(select => {
-	const { getBlocks } = select(pr_store);
+export default withSelect<withSelect, Parent>(select => {
+	const { getBlocks } = select<SelectorsR["getBlocks"]>(pr_store);
 
 	return {
 		blocks: getBlocks()
