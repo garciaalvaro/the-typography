@@ -1,24 +1,14 @@
-const package = require("../package.json");
+const pkg = require("../package.json");
 
 const _rootdir = __dirname + "/..";
-const {
-	plugin_name,
-	plugin_uri,
-	plugin_description,
-	plugin_author,
-	plugin_version,
-	plugin_tested_up_to,
-	plugin_requires_at_least,
-	plugin_php_version,
-	plugin_tags
-} = package.wp;
+const { version } = pkg;
 
 const getReplace = (search, replace) => ({
 	loader: "string-replace-loader",
 	options: {
 		search: search,
 		replace: replace,
-		flags: "g"
+		flags: "gm"
 	}
 });
 
@@ -32,7 +22,7 @@ module.exports = [
 		module: {
 			rules: [
 				{
-					test: /melonpan-block-images\.php$/,
+					test: /the-typography\.php$/,
 					use: [
 						{
 							loader: "file-loader",
@@ -40,11 +30,9 @@ module.exports = [
 								name: "[name].[ext]"
 							}
 						},
-						getReplace("_PLUGIN_NAME_", plugin_name),
-						getReplace("_PLUGIN_URI_", plugin_uri),
-						getReplace("_PLUGIN_DESCRIPTION_", plugin_description),
-						getReplace("_PLUGIN_AUTHOR_", plugin_author),
-						getReplace("_PLUGIN_VERSION_", plugin_version)
+						getReplace(/^( \* Version: )\d+\.\d+\.\d+/.source, "$1" + version),
+						getReplace(/\n\/\/\sDEV_start(.|\n)*?\/\/\sDEV_end/.source, ""),
+						getReplace(/\n\/\/\sPRO_start(.|\n)*?\/\/\sPRO_end\n/.source, "")
 					]
 				},
 				{
@@ -56,14 +44,7 @@ module.exports = [
 								name: "[name].[ext]"
 							}
 						},
-						getReplace("_PLUGIN_NAME_", plugin_name),
-						getReplace("_PLUGIN_AUTHOR_", plugin_author),
-						getReplace("_PLUGIN_TAGS_", plugin_tags),
-						getReplace("_PLUGIN_REQUIRES_AT_LEAST_", plugin_requires_at_least),
-						getReplace("_PLUGIN_TESTED_UP_TO_", plugin_tested_up_to),
-						getReplace("_PLUGIN_VERSION_", plugin_version),
-						getReplace("_PLUGIN_PHP_VERSION_", plugin_php_version),
-						getReplace("_PLUGIN_DESCRIPTION_", plugin_description)
+						getReplace(/^(Stable tag: )\d+\.\d+\.\d+/.source, "$1" + version)
 					]
 				}
 			]

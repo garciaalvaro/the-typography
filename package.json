@@ -1,14 +1,16 @@
 {
 	"name": "the-typography",
+	"plugin_name": "The Typography for Gutenberg",
+	"plugin_uri": "https://wordpress.org/plugins/the-typography/",
 	"version": "1.1.0",
 	"alias": {
 		"utils": "./src/js/utils"
 	},
 	"scripts": {
-		"dev": "webpack --mode development --watch --config ./.webpack/editor.config.js && webpack --mode development --watch --config ./.webpack/customizer.config.js && webpack --mode development --watch --config ./.webpack/previewer.config.js",
-		"prod": "webpack --mode production --config ./.webpack/editor.config.js && webpack --mode production --config ./.webpack/customizer.config.js && webpack --mode production --config ./.webpack/previewer.config.js",
-		"copy": "webpack --config ./.webpack/release-copy.config.js",
-		"replace": "webpack --config ./.webpack/release-replace.config.js",
+		"dev": "webpack --mode development --watch --config ./.webpack/src.config.babel.js",
+		"prod": "webpack --mode production --config ./.webpack/src.config.babel.js",
+		"copy": "webpack --mode production --config ./.webpack/release-copy.config.js",
+		"replace": "webpack --mode production --config ./.webpack/release-replace.config.js",
 		"remove": "rm _extras/release/_replace.js _extras/release/_copy.js",
 		"release": "npm run prod && npm run copy && npm run replace && npm run remove",
 		"type": "tsc"
@@ -56,27 +58,17 @@
 		"webpack-cli": "^3.3.2"
 	},
 	"dependencies": {
-		"@material-ui/core": "^3.9.0",
+		"@material-ui/core": "^4.0.1",
 		"@material-ui/icons": "^4.0.1",
 		"@material-ui/lab": "^3.0.0-alpha.30",
-		"@material-ui/styles": "^4.0.1",
+		"@material-ui/styles": "^4.0.2",
 		"immer": "^3.1.2",
+		"npm-check-updates": "^3.1.10",
 		"react-color": "^2.17.3",
-		"react-select": "^3.0.3",
+		"react-select": "^3.0.4",
 		"react-tiny-popover": "^3.4.2",
 		"tinycolor2": "^1.4.1",
 		"uuid": "^3.3.2",
 		"webfontloader": "^1.6.28"
-	},
-	"wp": {
-		"plugin_name": "The Typography for Gutenberg",
-		"plugin_uri": "https://wordpress.org/plugins/the-typography/",
-		"plugin_description": "Add Typography to your Gutenberg site using Google Fonts.",
-		"plugin_author": "melonpan",
-		"plugin_version": "1.1.0",
-		"plugin_tested_up_to": "5.2",
-		"plugin_requires_at_least": "5.1",
-		"plugin_php_version": "7.1",
-		"plugin_tags": "gutenberg, blocks, typography, text, fonts, customizer"
 	}
 }

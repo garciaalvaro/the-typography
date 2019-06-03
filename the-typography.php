@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: _PLUGIN_NAME_
- * Plugin URI: _PLUGIN_URI_
- * Description: _PLUGIN_DESCRIPTION_
- * Author: _PLUGIN_AUTHOR_
- * Version: _PLUGIN_VERSION_
+ * Plugin Name: The Typography for Gutenberg
+ * Plugin URI: https://wordpress.org/plugins/the-typography/
+ * Description: Add Typography to your Gutenberg site using Google Fonts.
+ * Author: melonpan
+ * Version: 1.1.0
  * License: GPL3+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  */
@@ -15,7 +15,7 @@ namespace THETYPOGRAPHY;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_VERSION', '_PLUGIN_VERSION_' );
+	define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.1.0' );
 }
 if ( ! defined( __NAMESPACE__ . '\PLUGIN_NAME' ) ) {
 	define( __NAMESPACE__ . '\PLUGIN_NAME', 'the-typography' );
@@ -46,8 +46,8 @@ require_once INC_DIR . 'register-taxonomy.php';
 require_once INC_DIR . 'register-meta.php';
 
 // DEV_start
-require_once INC_DIR . '_test-back.php';
-require_once INC_DIR . '_test-front.php';
+require_once INC_DIR . 'test/back.php';
+require_once INC_DIR . 'test/front.php';
 // DEV_end
 // PRO_start
 require_once PLUGIN_DIR . 'pro/the-typography-pro.php';
