@@ -1,6 +1,5 @@
 import l, { Div, plugin_namespace, plugin_title, icons } from "utils";
 import Root from "../Components/Root/Root";
-// import Blocks from "../Components/Root/Blocks";
 
 const { registerPlugin } = wp.plugins;
 const { Fragment } = wp.element;
@@ -12,7 +11,6 @@ const registerSidebar = () =>
 		icon: <Div id="pinned-logo">{icons.logo}</Div>,
 		render: () => (
 			<Fragment>
-				{/* <Blocks /> */}
 				<PluginSidebar name={plugin_namespace} title={plugin_title}>
 					<Root />
 				</PluginSidebar>

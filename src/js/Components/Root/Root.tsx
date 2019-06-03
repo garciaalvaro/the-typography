@@ -1,5 +1,4 @@
 import l, { is_customizer, Div, pr_store, withFixedHeight } from "utils";
-// import Blocks from "./Blocks";
 import Previewer from "../Previewer/Previewer";
 import GFonts from "../GFonts/GFonts";
 import Navigation from "../Navigation/Navigation";
@@ -19,7 +18,6 @@ const Root: React.ComponentType<Props> = props => {
 
 	return (
 		<Div id="container">
-			{/* {is_customizer && <Blocks />} */}
 			{is_customizer && <Previewer />}
 			<GFonts />
 			<Navigation view={view} />

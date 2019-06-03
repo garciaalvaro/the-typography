@@ -28,7 +28,7 @@ const BlockSelector: React.ComponentType<Props> = props => {
 			{is_editor && !block && block_name !== "" && (
 				<Span classes="message">{__("The Block could not be found.")}</Span>
 			)}
-			{!isUndefined(block) && <BlockSelect {...props} />}
+			<BlockSelect {...props} />
 			{!isUndefined(block) && <BlockElementSelect {...props} />}
 		</Fragment>
 	);
