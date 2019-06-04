@@ -2,6 +2,8 @@ import l, {
 	selector_defaults,
 	selector_group_defaults,
 	typography_defaults,
+	typography_style_selector_group_defaults,
+	typography_style_root_defaults,
 	getId,
 	getIds,
 	getSlug,
@@ -21,7 +23,10 @@ const {
 	compact
 } = lodash;
 
-const cleanTypography = (typography: Object, taxonomies: Object): Object => {
+const cleanTypographyforDB = (
+	typography: Object,
+	taxonomies: Object
+): Object => {
 	let {
 		id,
 		title,
@@ -125,10 +130,40 @@ const cleanSelectorGroups = (selector_groups: Object): SelectorGroup[] =>
 		);
 
 		group.selectors = cleanSelectors(group.selectors);
+		group.typography_style_defaults = cleanTypographyStyleSelectorGroup(
+			group.typography_style_defaults
+		);
 		group.id = uuid();
 
 		return group;
 	});
+
+const cleanTypographyStyleSelectorGroup = (
+	style: Object
+): Partial<TypographyStyle> => {
+	return assign(
+		{},
+		typography_style_selector_group_defaults,
+		pick(style, keys(typography_style_selector_group_defaults))
+	);
+};
+
+const cleanTypographyStyleRoot = (
+	style: Partial<TypographyStyleWithFont>
+): TypographyStyleWithFont => {
+	let style_prepared;
+
+	style_prepared = assign(
+		{},
+		typography_style_root_defaults,
+		pick(style, keys(typography_style_root_defaults))
+	) as TypographyStyleWithFont;
+
+	// TODO: this shouldnt be necessary
+	style_prepared.font_variant = castArray(style_prepared.font_variant);
+
+	return style_prepared;
+};
 
 const cleanTypographies = (
 	typographies: Object,
@@ -186,6 +221,13 @@ const cleanTypographies = (
 			: selector_groups_raw;
 		const selector_groups = cleanSelectorGroups(selector_groups_raw);
 
+		// Prepare typography_style_defaults
+		const typography_style_defaults = isUndefined(
+			meta.typography_style_defaults
+		)
+			? null
+			: cleanTypographyStyleRoot(JSON.parse(meta.typography_style_defaults));
+
 		const typography_clean = {
 			...meta,
 			id,
@@ -193,7 +235,8 @@ const cleanTypographies = (
 			context_type,
 			context_post_type,
 			context_post_type_template,
-			selector_groups
+			selector_groups,
+			typography_style_defaults
 		};
 
 		return assign(
@@ -203,4 +246,4 @@ const cleanTypographies = (
 		);
 	});
 
-export { cleanTypography, cleanTypographies };
+export { cleanTypographyforDB, cleanTypographies };

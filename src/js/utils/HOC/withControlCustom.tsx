@@ -9,16 +9,11 @@ interface withControlCustom {
 	label: string;
 	setting_name: keyof TypographyStyleWithFont | "font";
 }
-interface withParentTypographyStyle {
+interface Parent {
 	parent_typography: TypographyStyleWithFont;
-}
-interface withUpdateProp {
 	updateProp: FunctionVoid;
 }
-type Props = TypographyStyle &
-	withParentTypographyStyle &
-	withUpdateProp &
-	withControlCustom;
+type Props = TypographyStyle & Parent & withControlCustom;
 
 const withControlCustom = ({ label, setting_name }: withControlCustom) =>
 	compose([

@@ -1,6 +1,7 @@
 import l from "utils";
 
 const actions: Partial<ActionCreators> = {
+	...wp.hooks.applyFilters("thet.pro.addActions", {}),
 	updateSingleVisibility(page_data) {
 		return {
 			type: "UPDATE_SINGLE_VISIBILITY",

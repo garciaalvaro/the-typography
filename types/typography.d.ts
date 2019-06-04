@@ -9,6 +9,11 @@ declare interface TypographyStyleCamelCase {
 	textDecoration: TypographyStyleProps["text_decoration"];
 }
 
+declare interface TypographyStyleSelectorGroup extends TypographyStyle {
+	custom_typography: boolean;
+	force_styles: boolean;
+}
+
 declare interface TypographyStyleWithFont extends TypographyStyle {
 	custom_font: boolean;
 	font_family: string;
@@ -57,6 +62,7 @@ declare interface Style {
 }
 
 declare interface Selector {
+	fixed: boolean;
 	id: string;
 	selector_type: "text" | "block";
 	text_selector: string;
@@ -68,6 +74,8 @@ declare interface Selector {
 }
 
 declare interface SelectorGroup extends TypographyStyle {
+	fixed: boolean;
+	typography_style_defaults: TypographyStyle | null;
 	id: string;
 	selectors: Selector[];
 	custom_title: boolean;
@@ -79,6 +87,8 @@ declare interface SelectorGroup extends TypographyStyle {
 }
 
 declare interface Typography extends TypographyStyleWithFont {
+	context_fixed: boolean;
+	typography_style_defaults: TypographyStyleWithFont | null;
 	id: number;
 	title: string;
 	is_visible: boolean;

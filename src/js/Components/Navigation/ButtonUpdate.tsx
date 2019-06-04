@@ -1,7 +1,7 @@
 import l, {
 	addPrefix,
 	pr_store,
-	cleanTypography,
+	cleanTypographyforDB,
 	cleanTaxonomyTerm
 } from "utils";
 
@@ -108,7 +108,7 @@ export default withDispatch<withDispatch, Parent>(
 						)) as (Object);
 						const term = cleanTaxonomyTerm(term_raw);
 
-						// Update the local variable so cleanTypography has the new term ids
+						// Update the local variable so cleanTypographyforDB has the new term ids
 						taxonomies = {
 							...taxonomies,
 							context_post_type: [...taxonomies.context_post_type, term]
@@ -119,7 +119,7 @@ export default withDispatch<withDispatch, Parent>(
 				);
 			}
 
-			const typography_prepared = cleanTypography(typography, taxonomies);
+			const typography_prepared = cleanTypographyforDB(typography, taxonomies);
 
 			if (typography.id !== 0) {
 				saveEntityRecord("postType", "the_typography", typography_prepared);

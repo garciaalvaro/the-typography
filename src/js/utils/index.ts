@@ -8,7 +8,9 @@ import toFixed from "./toFixed";
 import {
 	selector_defaults,
 	selector_group_defaults,
-	typography_defaults
+	typography_defaults,
+	typography_style_selector_group_defaults,
+	typography_style_root_defaults
 } from "./data-defaults";
 import addPrefix from "./addPrefix";
 import {
@@ -21,7 +23,7 @@ import {
 	getName,
 	getNames
 } from "./utils-taxonomies";
-import { cleanTypography, cleanTypographies } from "./utils-typographies";
+import { cleanTypographyforDB, cleanTypographies } from "./utils-typographies";
 import fonts from "./data-googlefonts-fonts";
 import fonts_family from "./data-googlefonts-families";
 import fonts_variants from "./data-googlefonts-variants";
@@ -65,7 +67,9 @@ export {
 	selector_defaults,
 	selector_group_defaults,
 	typography_defaults,
-	cleanTypography,
+	typography_style_selector_group_defaults,
+	typography_style_root_defaults,
+	cleanTypographyforDB,
 	cleanTypographies,
 	cleanTaxonomy,
 	cleanTaxonomyTerm,

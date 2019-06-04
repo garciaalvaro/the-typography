@@ -2,9 +2,6 @@
  * Selectors
  */
 
-$e_standard = cubic-bezier(0.4, 0.0, 0.2, 1)
-$e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
-
 #thet-button-add_selector_root
 	background-color var(--color_01)
 	width 100%
@@ -12,6 +9,7 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 
 .thet-selector
 	display flex
+	border-top 1px dotted var(--color_02)
 
 	.thet-is_open &
 		position relative

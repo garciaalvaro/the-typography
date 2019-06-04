@@ -73,6 +73,15 @@ declare interface SelectorsR {
 }
 
 declare interface Actions {
+	resetProps: {
+		type: "RESET_PROPS";
+		values: TypographyStyleWithFont;
+	};
+	resetSelectorGroupProps: {
+		type: "RESET_SELECTOR_GROUP_PROPS";
+		values: TypographyStyle;
+		id: SelectorGroup["id"];
+	};
 	updateProp: {
 		type: "UPDATE_PROP";
 		prop: keyof Typography;
@@ -257,6 +266,13 @@ declare interface ActionCreators {
 	loadSingle: (
 		typography: Actions["loadSingle"]["typography"]
 	) => Actions["loadSingle"];
+	resetProps: (
+		values: Actions["resetProps"]["values"]
+	) => Actions["resetProps"];
+	resetSelectorGroupProps: (
+		values: Actions["resetSelectorGroupProps"]["values"],
+		id: Actions["resetSelectorGroupProps"]["id"]
+	) => Actions["resetSelectorGroupProps"];
 	updateProp: (
 		prop: Actions["updateProp"]["prop"],
 		value: Actions["updateProp"]["value"]

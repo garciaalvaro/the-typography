@@ -3,11 +3,12 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
 interface Props {
+	context_fixed: Typography["context_fixed"];
 	context_post_type_template: Typography["context_post_type_template"];
 	updateProp: FunctionVoid;
 }
 
-const { compact } = lodash;
+const { compact, get } = lodash;
 const { __ } = wp.i18n;
 
 const templates = [
@@ -16,7 +17,19 @@ const templates = [
 ];
 
 const PostTypeTemplate: React.ComponentType<Props> = props => {
-	const { context_post_type_template, updateProp } = props;
+	const { context_post_type_template, updateProp, context_fixed } = props;
+
+	if (context_fixed) {
+		return (
+			<Span>
+				{context_post_type_template
+					.map(template =>
+						get(templates.find(({ slug }) => slug === template), "name")
+					)
+					.join(", ")}
+			</Span>
+		);
+	}
 
 	return (
 		<Select

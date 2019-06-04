@@ -1,12 +1,8 @@
-import l, {
-	is_customizer,
-	selector_group_defaults,
-	selector_defaults
-} from "utils";
+import l, { selector_group_defaults, selector_defaults } from "utils";
 import produce from "immer";
 import uuid from "uuid/v4";
 
-const { remove, isUndefined } = lodash;
+const { remove, isUndefined, forOwn } = lodash;
 const initial_state: State["single"] = {
 	typography: null,
 	typography_unmodified: null,
@@ -16,6 +12,8 @@ const initial_state: State["single"] = {
 const reducer = (
 	state = initial_state,
 	action:
+		| Actions["resetProps"]
+		| Actions["resetSelectorGroupProps"]
 		| Actions["updateSingleVisibility"]
 		| Actions["emptySingle"]
 		| Actions["resetSingle"]
@@ -85,6 +83,48 @@ const reducer = (
 			case "LOAD_SINGLE": {
 				draft.typography = action.typography;
 				draft.typography_unmodified = action.typography;
+				return;
+			}
+			case "RESET_PROPS": {
+				if (!draft.typography) {
+					return;
+				}
+
+				forOwn(action.values, (value, key) => {
+					// @ts-ignore
+					if (isUndefined(draft.typography[key])) {
+						return;
+					}
+
+					// @ts-ignore
+					draft.typography[key] = value;
+				});
+
+				return;
+			}
+			case "RESET_SELECTOR_GROUP_PROPS": {
+				if (!draft.typography) {
+					return;
+				}
+
+				const group = draft.typography.selector_groups.find(
+					({ id }) => id === action.id
+				);
+
+				if (!group) {
+					return;
+				}
+
+				forOwn(action.values, (value, key) => {
+					// @ts-ignore
+					if (isUndefined(group[key])) {
+						return;
+					}
+
+					// @ts-ignore
+					group[key] = value;
+				});
+
 				return;
 			}
 			case "UPDATE_PROP": {

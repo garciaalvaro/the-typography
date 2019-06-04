@@ -9,10 +9,10 @@ const _rootdir = __dirname + "/..";
 const { name, version, plugin_name, plugin_uri } = pkg;
 
 export default {
-	entry: [`./src/js/index-editor.ts`, `./src/css/index-editor.styl`],
+	entry: [`./pro/src/index.ts`],
 	output: {
-		path: _rootdir + "/build",
-		filename: `${name}-editor.js`
+		path: _rootdir + "/pro/build",
+		filename: `${name}-pro.js`
 	},
 	resolve: {
 		alias: {
@@ -51,20 +51,13 @@ export default {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: `${name}-editor.css`
+			filename: `${name}-pro.css`
 		}),
 		new BannerPlugin({
 			banner: () => {
 				const banner = [
 					`/*! ${plugin_name} | ${version} | ${plugin_uri} */`,
-					`/*! TinyColor | https://github.com/bgrins/TinyColor | 2016-07-07, Brian Grinstead | MIT License */`,
-					`/*! immer | https://github.com/mweststrate/immer | Michel Weststrate | MIT License */`,
-					`/*! uuid | https://github.com/kelektiv/node-uuid | MIT License */`,
-					`/*! webfontloader | https://github.com/typekit/webfontloader | Apache-2.0 License */`,
-					`/*! react-tiny-popover | https://github.com/alexkatz/react-tiny-popover | Alex Katz | MIT License */`,
-					`/*! React-Select | https://github.com/JedWatson/react-select | Jed Watson | MIT License */`,
-					`/*! React Color | https://github.com/casesandberg/react-color | Case Sandberg | MIT License */`,
-					`/*! Material-UI | https://github.com/mui-org/material-ui | Material-UI Team | MIT License */`
+					`/*! react-tiny-popover | https://github.com/alexkatz/react-tiny-popover | Alex Katz | MIT License */`
 				];
 				return banner.join("");
 			},

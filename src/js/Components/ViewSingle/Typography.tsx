@@ -14,12 +14,24 @@ interface Parent extends Typography {
 }
 type Props = withTypographyStyle & Parent;
 
+const ButtonResetDefaults = wp.hooks.applyFilters(
+	"thet.pro.ButtonResetDefaults",
+	() => null
+);
+
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
 const Typography: React.ComponentType<Props> = props => {
+	const { typography_style_defaults } = props;
+
 	return (
 		<Fragment>
+			{typography_style_defaults && (
+				<ButtonResetDefaults
+					typography_style_defaults={typography_style_defaults}
+				/>
+			)}
 			<Font {...props} />
 			<Color {...props} />
 			<FontSize {...props} />

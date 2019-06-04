@@ -3,10 +3,12 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
 interface Props {
+	context_fixed: Typography["context_fixed"];
 	context_type: Typography["context_type"];
 	updateProp: FunctionVoid;
 }
 
+const { get } = lodash;
 const { __ } = wp.i18n;
 
 const options = [
@@ -17,7 +19,15 @@ const options = [
 ];
 
 const ContextType: React.ComponentType<Props> = props => {
-	const { context_type, updateProp } = props;
+	const { context_type, updateProp, context_fixed } = props;
+
+	if (context_fixed) {
+		return (
+			<Span>
+				{get(options.find(({ value }) => value === context_type), "label")}
+			</Span>
+		);
+	}
 
 	return (
 		<Select
