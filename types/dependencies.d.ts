@@ -9,6 +9,7 @@ declare const wp: {
 	data: typeof import("./academic-bloggers-toolkit-master/wordpress__data");
 	components: typeof import("./academic-bloggers-toolkit-master/wordpress__components") & {
 		Icon: React.ReactType;
+		TabPanel: React.ReactType;
 	};
 	compose: typeof import("./academic-bloggers-toolkit-master/wordpress__compose") & {
 		withGlobalEvents: any;

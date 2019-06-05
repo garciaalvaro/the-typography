@@ -3,6 +3,7 @@ import Typography from "./Typography";
 import ButtonLoadMore from "./ButtonLoadMore";
 
 interface SelectProps {
+	has_custom: boolean;
 	typographies: State["typographies"];
 	is_loading: State["is_loading"];
 	is_last_page: State["is_last_page"];
@@ -17,27 +18,16 @@ const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
+const Tabs = wp.hooks.applyFilters("thet.pro.Tabs", false);
 
 const ViewIndex: React.ComponentType<Props> = props => {
-	const { is_loading, is_last_page, typographies, addTypography } = props;
-
-	const getTypographies = () => {
-		if (!typographies.length) {
-			return null;
-		}
-
-		return typographies.map(typography => (
-			<Typography key={typography.id} {...typography} />
-		));
-	};
-
-	const getButton = () => {
-		if (is_loading || is_last_page || !typographies.length) {
-			return null;
-		}
-
-		return <ButtonLoadMore />;
-	};
+	const {
+		is_loading,
+		is_last_page,
+		addTypography,
+		typographies,
+		has_custom
+	} = props;
 
 	const getMessage = () => {
 		if (is_loading) {
@@ -64,8 +54,34 @@ const ViewIndex: React.ComponentType<Props> = props => {
 
 	return (
 		<Div id="index">
-			{getTypographies()}
-			{getButton()}
+			{has_custom && Tabs ? (
+				<Tabs
+					render={(tab_open: "custom" | "predefined") => {
+						let typographies_filtered: Typography[];
+
+						if (tab_open === "custom") {
+							typographies_filtered = typographies.filter(
+								({ namespace }) => !namespace
+							);
+						} else {
+							typographies_filtered = typographies.filter(
+								({ namespace }) => namespace
+							);
+						}
+
+						return typographies_filtered.map(typography => (
+							<Typography key={typography.id} {...typography} />
+						));
+					}}
+				/>
+			) : (
+				typographies.map(typography => (
+					<Typography key={typography.id} {...typography} />
+				))
+			)}
+			{!is_loading && !is_last_page && typographies.length && (
+				<ButtonLoadMore />
+			)}
 			{getMessage()}
 		</Div>
 	);
@@ -76,11 +92,13 @@ export default compose([
 		const { getTypographies } = select<SelectorsR["getTypographies"]>(pr_store);
 		const { isLoading } = select<SelectorsR["isLoading"]>(pr_store);
 		const { isLastPage } = select<SelectorsR["isLastPage"]>(pr_store);
-		const typographies = getTypographies();
 		const is_loading = isLoading();
 		const is_last_page = isLastPage();
+		const typographies = getTypographies();
+		const has_custom = !!typographies.filter(({ namespace }) => !namespace)
+			.length;
 
-		return { typographies, is_loading, is_last_page };
+		return { typographies, has_custom, is_loading, is_last_page };
 	}),
 	withAddTypography
 ])(ViewIndex);
