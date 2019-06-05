@@ -4,29 +4,56 @@ import tinycolor from "tinycolor2";
 interface withState extends setState<withState> {
 	color_class: null | string;
 }
+interface Parent {
+	custom_typography?: boolean;
+	parent_typography?: TypographyStyleSelectorGroup;
+}
+type Props = Parent & Typography & withState;
 
 const { Component } = wp.element;
 const { withState, compose } = wp.compose;
 
-const withColorClass = <P extends Typography & withState>(
+const withColorClass = <P extends Props>(
 	WrappedComponent: React.ComponentType<P>
 ) =>
 	class extends Component<P> {
 		componentDidMount = () => {
-			this.updateColorBg();
+			const [color, custom_color] = this.getColorProps(this.props);
+
+			this.updateColorBg(color, custom_color);
 		};
 
 		componentDidUpdate = (prev_props: P) => {
-			if (
-				prev_props.color !== this.props.color ||
-				prev_props.custom_color !== this.props.custom_color
-			) {
-				this.updateColorBg();
+			const [prev_color, prev_custom_color] = this.getColorProps(prev_props);
+			const [color, custom_color] = this.getColorProps(this.props);
+
+			if (prev_color !== color || prev_custom_color !== custom_color) {
+				this.updateColorBg(color, custom_color);
 			}
 		};
 
-		updateColorBg = () => {
-			const { custom_color, color, setState } = this.props;
+		getColorProps(
+			props: P
+		): [TypographyStyle["color"], TypographyStyle["custom_color"]] {
+			const {
+				custom_color,
+				color,
+				custom_typography,
+				parent_typography
+			} = props;
+
+			if (parent_typography && !custom_typography) {
+				return [parent_typography.color, parent_typography.custom_color];
+			}
+
+			return [color, custom_color];
+		}
+
+		updateColorBg = (
+			color: TypographyStyle["color"],
+			custom_color: TypographyStyle["custom_color"]
+		) => {
+			let { setState } = this.props;
 
 			if (custom_color === false || color === "") {
 				setState({ color_class: null });
