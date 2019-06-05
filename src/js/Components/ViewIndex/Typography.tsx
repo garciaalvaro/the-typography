@@ -1,4 +1,4 @@
-import l, { Div, pr_store, withColorClass } from "utils";
+import l, { Span, Div, pr_store, withColorClass } from "utils";
 import Title from "./Title";
 import Info from "./Info";
 
@@ -25,12 +25,17 @@ class TypographyComp extends Component<Props> {
 
 	render() {
 		const { props } = this;
-		const { color_class } = props;
+		const { color_class, namespace_title } = props;
 
 		return (
 			<Div classes={["index-typography", color_class]}>
 				<Info {...props} />
 				<Title {...props} />
+				{namespace_title && (
+					<Div classes={["namespace-info", "index-typography-info"]}>
+						<Span>{namespace_title}</Span>
+					</Div>
+				)}
 			</Div>
 		);
 	}
