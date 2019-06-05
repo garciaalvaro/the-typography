@@ -25,7 +25,7 @@ import WebFont from "webfontloader";
 	};
 
 	// Create stylesheet if it doesn't exist yet.
-	if (!state.$stylesheet) {
+	if (!state.$stylesheet.length) {
 		state.$stylesheet = $("head")
 			.append('<style type="text/css" id="thet-styles" />')
 			.find("#thet-styles");
