@@ -4,7 +4,7 @@
 
 .thet-selector_group
 	position relative
-	padding 10px 0
+	padding 10px 0 20px
 	width 100%
 	display flex
 	flex-direction column
@@ -13,32 +13,23 @@
 	> div
 		position relative
 
-	&.thet-is_open + .thet-is_closed
-		border-top none
-
 	&.thet-is_open + .thet-is_open
 		margin-top 15px
 
-	&.thet-is_open
-		padding-top 11px
-
 	&.thet-is_closed
 		cursor pointer
-		border-top 1px dotted var(--color_03)
 
-	&:first-child
-		border-top none
-
-	&.thet-is_open:before
-		background-color var(--background_color_softer)
+	&:before
 		border-top 1px dotted var(--color_02)
-		border-bottom 1px dotted var(--color_02)
 		content ""
 		position absolute
 		top 0
 		bottom 0
 		left -20px
 		right -20px
+
+	&.thet-is_open:before
+		background-color var(--background_color_softer)
 
 .thet-selector_group-title-preview
 	cursor pointer
@@ -55,9 +46,8 @@
 #thet-selector_groups
 	display flex
 	flex-direction column
-	padding 10px 20px
+	padding 20px
 	align-items self-start
-	border-top 1px solid var(--color_01)
 
 	.thet-custom_typography
 		margin-right 0
@@ -88,9 +78,6 @@
 	#thet-container &:focus
 		background none
 		box-shadow none
-
-	.thet-is_open &
-		top 15px
 
 #thet-container
 	.thet-selector_group-title

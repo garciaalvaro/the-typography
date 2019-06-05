@@ -1,4 +1,4 @@
-import l, { Span, Div, withTypographyStyle } from "utils";
+import l, { Div, withTypographyStyle } from "utils";
 import SelectorGroup from "./SelectorGroup/SelectorGroup";
 import ButtonAddGroup from "./SelectorGroup/ButtonAddGroup";
 
@@ -82,7 +82,6 @@ class SelectorGroups extends Component<Props> {
 
 		return (
 			<Div id="selector_groups">
-				<Span classes="panel-label">{__("Selectors")}</Span>
 				<ButtonAddGroup />
 				{selector_groups.map((group, index) => {
 					const is_new = new_group_added && index === 0;
