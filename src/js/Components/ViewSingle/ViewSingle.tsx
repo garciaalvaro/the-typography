@@ -20,10 +20,11 @@ const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
 const ViewSingle: React.ComponentType<Props> = props => {
-	const { color_class, is_visible } = props;
+	const { color_class, is_visible, namespace } = props;
+	const is_custom = namespace !== "";
 
 	return (
-		<Div id="single" classes={color_class}>
+		<Div id="single" classes={[color_class, is_custom ? "is_custom" : null]}>
 			{is_customizer && (
 				<Fragment>
 					<Div

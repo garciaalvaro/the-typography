@@ -59,6 +59,8 @@ const selector_group_defaults: Omit<SelectorGroup, "id"> = {
 };
 
 const typography_defaults: Typography = {
+	namespace: "",
+	namespace_title: "",
 	description: "",
 	context_fixed: false,
 	typography_style_defaults: null,

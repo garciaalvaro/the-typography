@@ -88,6 +88,8 @@ declare interface SelectorGroup extends TypographyStyle {
 }
 
 declare interface Typography extends TypographyStyleWithFont {
+	namespace: string;
+	namespace_title: string;
 	description: string;
 	context_fixed: boolean;
 	typography_style_defaults: TypographyStyleWithFont | null;

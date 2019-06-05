@@ -10,19 +10,26 @@ const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
 const Title: React.ComponentType<Props> = props => {
-	const { title, updateProp, typography_style, description } = props;
-	const custom = true;
+	const {
+		title,
+		updateProp,
+		typography_style,
+		description,
+		namespace_title
+	} = props;
+	const is_custom = namespace_title !== "";
 
-	if (custom) {
+	if (is_custom) {
 		return (
 			<Fragment>
+				<Span id="namespace-title">{namespace_title}</Span>
+				{description && <Span id="description">{description}</Span>}
 				<Span
 					id="title"
 					style={title !== "" && typography_style ? typography_style : {}}
 				>
 					{title}
 				</Span>
-				{description && <Span id="description">{description}</Span>}
 			</Fragment>
 		);
 	}
