@@ -7,6 +7,7 @@ use WP_Query;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_the_typography', 900 );
 function enqueue_the_typography() {
 
 	// If we are in the previewer of the customizer return;
@@ -133,4 +134,3 @@ function enqueue_the_typography() {
 
 	}
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_the_typography', 900 );

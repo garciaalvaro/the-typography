@@ -114,8 +114,8 @@ add_action( 'customize_preview_init', __NAMESPACE__ . '\enqueue_customizer_previ
 function enqueue_customizer_preview() {
 
 	wp_enqueue_script(
-		PLUGIN_NAME . '-customizer-preview',
-		BUILD_DIR . PLUGIN_NAME . '-customizer-preview.js',
+		PLUGIN_NAME . '-previewer',
+		BUILD_DIR . PLUGIN_NAME . '-previewer.js',
 		array(
 			'customize-preview',
 			'jquery',

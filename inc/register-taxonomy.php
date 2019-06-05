@@ -5,6 +5,7 @@ namespace THETYPOGRAPHY;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+add_action( 'init', __NAMESPACE__ . '\register_the_typography_taxonomy' );
 function register_the_typography_taxonomy() {
 
 	register_taxonomy( 'context_type', 'the_typography', array(
@@ -47,8 +48,6 @@ function register_the_typography_taxonomy() {
 		),
 	) );
 }
-add_action( 'init', __NAMESPACE__ . '\register_the_typography_taxonomy' );
-
 
 function register_the_typography_taxonomy_terms() {
 

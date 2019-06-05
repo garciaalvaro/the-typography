@@ -5,6 +5,7 @@ namespace THETYPOGRAPHY;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+add_action( 'init', __NAMESPACE__ . '\register_the_typography_cpt' );
 function register_the_typography_cpt() {
 	$args = array(
 		'capabilities' => array(
@@ -23,6 +24,4 @@ function register_the_typography_cpt() {
 	);
 
 	register_post_type( 'the_typography', $args );
-
 }
-add_action( 'init', __NAMESPACE__ . '\register_the_typography_cpt' );

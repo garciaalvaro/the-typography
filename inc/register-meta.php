@@ -5,6 +5,7 @@ namespace THETYPOGRAPHY;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+add_action( 'init', __NAMESPACE__ . '\register_the_typography_meta' );
 function register_the_typography_meta() {
 
 	register_post_meta( 'the_typography', 'selector_groups', array(
@@ -204,4 +205,3 @@ function register_the_typography_meta() {
 			},
 	) );
 }
-add_action( 'init', __NAMESPACE__ . '\register_the_typography_meta' );

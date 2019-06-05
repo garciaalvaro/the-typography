@@ -5,6 +5,7 @@ namespace THETYPOGRAPHY;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+add_action( 'customize_register', __NAMESPACE__ . '\add_customizer_section' );
 function add_customizer_section( $wp_customize ) {
 
 	$wp_customize->add_section( 'section_thet' , array(
@@ -20,8 +21,8 @@ function add_customizer_section( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', __NAMESPACE__ . '\add_customizer_section' );
 
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\localize_previewer_window_data' );
 function localize_previewer_window_data() {
 
 	// If we are in the previewer of the customizer pass the current window data.
@@ -39,7 +40,5 @@ function localize_previewer_window_data() {
 		'is_404'        => is_404(),
 	);
 
-	wp_localize_script( PLUGIN_NAME . '-customizer-preview', 'the_typography_page_data', $data );
-
+	wp_localize_script( PLUGIN_NAME . '-previewer', 'the_typography_page_data', $data );
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\localize_previewer_window_data' );
