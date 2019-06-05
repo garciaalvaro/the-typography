@@ -7,6 +7,7 @@ interface Parent extends SelectorGroup {
 type Props = Parent & withToggle & withTypographyStyle;
 
 const { __ } = wp.i18n;
+const { Fragment } = wp.element;
 
 const TitlePreview: React.ComponentType<Props> = props => {
 	let {
@@ -15,7 +16,8 @@ const TitlePreview: React.ComponentType<Props> = props => {
 		toggle,
 		parent_typography_style,
 		typography_style,
-		custom_typography
+		custom_typography,
+		description
 	} = props;
 
 	typography_style = custom_typography ? typography_style : {};
@@ -27,9 +29,16 @@ const TitlePreview: React.ComponentType<Props> = props => {
 	const { lineHeight, ...style } = typography_style_prepared;
 
 	return (
-		<Span style={style} onClick={toggle} classes="selector_group-title-preview">
-			{!custom_title || title === "" ? __("Sample text") : title}
-		</Span>
+		<Fragment>
+			<Span
+				style={style}
+				onClick={toggle}
+				classes="selector_group-title-preview"
+			>
+				{!custom_title || title === "" ? __("Sample text") : title}
+			</Span>
+			{description && <Span classes="description">{description}</Span>}
+		</Fragment>
 	);
 };
 

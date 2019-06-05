@@ -74,6 +74,7 @@ declare interface Selector {
 }
 
 declare interface SelectorGroup extends TypographyStyle {
+	description: string;
 	fixed: boolean;
 	typography_style_defaults: TypographyStyle | null;
 	id: string;
@@ -87,6 +88,7 @@ declare interface SelectorGroup extends TypographyStyle {
 }
 
 declare interface Typography extends TypographyStyleWithFont {
+	description: string;
 	context_fixed: boolean;
 	typography_style_defaults: TypographyStyleWithFont | null;
 	id: number;

@@ -1,4 +1,4 @@
-import l, { withTypographyStyle, Div, addPrefix } from "utils";
+import l, { withTypographyStyle, Div, Span, addPrefix } from "utils";
 import TextField from "@material-ui/core/TextField";
 
 interface Parent extends Typography {
@@ -7,9 +7,25 @@ interface Parent extends Typography {
 type Props = withTypographyStyle & Parent;
 
 const { __ } = wp.i18n;
+const { Fragment } = wp.element;
 
 const Title: React.ComponentType<Props> = props => {
-	const { title, updateProp, typography_style } = props;
+	const { title, updateProp, typography_style, description } = props;
+	const custom = true;
+
+	if (custom) {
+		return (
+			<Fragment>
+				<Span
+					id="title"
+					style={title !== "" && typography_style ? typography_style : {}}
+				>
+					{title}
+				</Span>
+				{description && <Span id="description">{description}</Span>}
+			</Fragment>
+		);
+	}
 
 	return (
 		<Div id="title">

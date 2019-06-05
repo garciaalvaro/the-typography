@@ -44,6 +44,7 @@ const selector_defaults: Omit<Selector, "id"> = {
 };
 
 const selector_group_defaults: Omit<SelectorGroup, "id"> = {
+	description: "",
 	fixed: false,
 	typography_style_defaults: null,
 	custom_title: false,
@@ -58,6 +59,7 @@ const selector_group_defaults: Omit<SelectorGroup, "id"> = {
 };
 
 const typography_defaults: Typography = {
+	description: "",
 	context_fixed: false,
 	typography_style_defaults: null,
 	id: 0,
