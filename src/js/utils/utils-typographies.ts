@@ -57,6 +57,13 @@ const cleanTypographyforDB = (
 		text_decoration
 	} = typography;
 
+	selector_groups = selector_groups.map(({ id, selectors, ...rest }: any) => {
+		return {
+			selectors: selectors.map(({ _id, id, ...rest }: any) => rest),
+			...rest
+		};
+	});
+
 	// Meta
 	const meta = {
 		selector_groups: JSON.stringify(selector_groups),
