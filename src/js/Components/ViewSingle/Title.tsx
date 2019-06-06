@@ -17,9 +17,9 @@ const Title: React.ComponentType<Props> = props => {
 		description,
 		namespace_title
 	} = props;
-	const is_custom = namespace_title !== "";
+	const is_predefined = namespace_title !== "";
 
-	if (is_custom) {
+	if (is_predefined) {
 		return (
 			<Fragment>
 				<Span id="namespace-title">{namespace_title}</Span>
