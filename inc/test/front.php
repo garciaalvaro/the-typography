@@ -5,11 +5,21 @@ namespace THETYPOGRAPHY;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-function test_front($qq) {
-	// var_dump(get_post_meta(331)['font_variant']);
-	// var_dump($qq);
+// add_filter( 'wp_head', __NAMESPACE__ . '\test_front' );
+function test_front() {
 
-	return $qq;
+	$typography_args = array(
+		'post_type'  => 'the_typography',
+		'meta_query' => array(
+			array(
+				'key'     => 'id',
+				'value'   => 'aaa',
+				'compare' => '=',
+			)
+		)
+	);
+
+	$typography_query = new \WP_Query( $typography_args );
+
+	var_dump($typography_query->posts[0]->ID);
 }
-
-add_filter( 'the_typography_fonts_before_enqueue', __NAMESPACE__ . '\test_front' );
