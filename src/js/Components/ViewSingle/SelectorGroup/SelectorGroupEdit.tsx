@@ -20,20 +20,21 @@ const ButtonResetDefaults = wp.hooks.applyFilters(
 );
 
 const SelectorGroupEdit: React.ComponentType<Props> = props => {
-	const { fixed, typography_style_defaults, id } = props;
+	const { _id, id, typography_style_defaults } = props;
+	const is_predefined = _id !== "";
 
 	return (
 		<Fragment>
-			{fixed && (
+			{is_predefined && (
 				<ButtonResetDefaults
 					typography_style_defaults={typography_style_defaults}
 					selector_group_id={id}
 				/>
 			)}
-			{!fixed && <Title {...props} />}
+			{!is_predefined && <Title {...props} />}
 			<Typography {...props} />
 			<ForceStyles {...props} />
-			{fixed ? (
+			{is_predefined ? (
 				<SelectorsPreview {...props} />
 			) : (
 				<Fragment>

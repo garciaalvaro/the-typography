@@ -65,20 +65,21 @@ class SelectorGroupComp extends Component<Props> {
 
 	render() {
 		const { props } = this;
-		const { color_class, is_open, id, toggle, is_new, fixed } = props;
+		const { _id, id, color_class, is_open, toggle, is_new } = props;
+		const is_predefined = _id !== "";
 
 		return (
 			<Div
 				classes={[
 					"selector_group",
 					color_class,
-					fixed ? "is_fixed" : null,
+					is_predefined ? "is_predefined" : null,
 					is_open ? "is_open" : "is_closed",
 					is_new ? "selector_group-new" : null
 				]}
 			>
 				<TitlePreview {...props} />
-				{!fixed && <ButtonRemove id={id} />}
+				{!is_predefined && <ButtonRemove id={id} />}
 				<Button
 					onClick={toggle}
 					className={addPrefix("button-toggle_selector_group")}

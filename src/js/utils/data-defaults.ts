@@ -33,7 +33,7 @@ const typography_style_root_defaults: TypographyStyleWithFont = {
 };
 
 const selector_defaults: Omit<Selector, "id"> = {
-	fixed: false,
+	_id: "",
 	selector_type: "text",
 	text_selector: "",
 	block_name: "",
@@ -44,8 +44,8 @@ const selector_defaults: Omit<Selector, "id"> = {
 };
 
 const selector_group_defaults: Omit<SelectorGroup, "id"> = {
+	_id: "",
 	description: "",
-	fixed: false,
 	typography_style_defaults: null,
 	custom_title: false,
 	title: "",

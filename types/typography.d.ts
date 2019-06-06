@@ -62,7 +62,7 @@ declare interface Style {
 }
 
 declare interface Selector {
-	fixed: boolean;
+	_id: string;
 	id: string;
 	selector_type: "text" | "block";
 	text_selector: string;
@@ -74,8 +74,8 @@ declare interface Selector {
 }
 
 declare interface SelectorGroup extends TypographyStyle {
+	_id: string;
 	description: string;
-	fixed: boolean;
 	typography_style_defaults: TypographyStyle | null;
 	id: string;
 	selectors: Selector[];
