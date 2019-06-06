@@ -20,7 +20,8 @@ const {
 	isUndefined,
 	isArray,
 	castArray,
-	compact
+	compact,
+	mapKeys
 } = lodash;
 
 const cleanTypographyforDB = (
@@ -181,6 +182,10 @@ const cleanTypographies = (
 
 		// Clean empty meta values
 		meta = omitBy(meta, (value, key) => {
+			if (key === "_id") {
+				return true;
+			}
+
 			if ((key === "font_size" || key === "line_height") && value === 0) {
 				return true;
 			}
@@ -191,6 +196,9 @@ const cleanTypographies = (
 
 			return false;
 		});
+
+		// Remove initial underscore from private keys.
+		meta = mapKeys(meta, (value, key) => key.replace(/^_/, ""));
 
 		// Prepare title
 		title = title.rendered;
