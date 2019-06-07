@@ -19,7 +19,6 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 	opacity .1
 	transition opacity .1s $e_deceleration
 	margin-right -10px
-	margin-bottom -10px
 	padding 10px
 	z-index 1
 	margin-left auto
@@ -43,9 +42,13 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 	align-items center
 	padding 0 10px
 	font-size 12px
-	line-height 2
+	line-height 3
 	color var(--color_07)
 	cursor default
+	align-items end
+
+	&:first-child
+		margin-bottom -3em
 
 .thet-index-typography-title
 	cursor pointer
