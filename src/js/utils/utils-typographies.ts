@@ -59,7 +59,7 @@ const cleanTypographyforDB = (
 
 	selector_groups = selector_groups.map(({ id, selectors, ...rest }: any) => {
 		return {
-			selectors: selectors.map(({ _id, id, ...rest }: any) => rest),
+			selectors: selectors.map(({ id, ...rest }: any) => rest),
 			...rest
 		};
 	});

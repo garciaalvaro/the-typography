@@ -8,7 +8,7 @@ interface Parent extends SelectorGroup {
 type Props = Parent & withToggle;
 
 const SelectorGroupPreview: React.ComponentType<Props> = props => {
-	return <SelectorsPreview {...props} />;
+	return <SelectorsPreview {...props} is_edit={false} />;
 };
 
 export default SelectorGroupPreview;

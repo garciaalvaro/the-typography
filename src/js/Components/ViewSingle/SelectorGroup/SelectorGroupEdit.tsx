@@ -35,7 +35,10 @@ const SelectorGroupEdit: React.ComponentType<Props> = props => {
 			<Typography {...props} />
 			<ForceStyles {...props} />
 			{is_predefined ? (
-				<SelectorsPreview {...props} />
+				<Fragment>
+					<Selectors {...props} />
+					<SelectorsPreview {...props} is_edit={true} />
+				</Fragment>
 			) : (
 				<Fragment>
 					<ParentSelector {...props} />

@@ -11,7 +11,8 @@ type Props = Parent;
 const { __ } = wp.i18n;
 
 const Selectors: React.ComponentType<Props> = props => {
-	const { selectors, id: parent_id, new_selector_added } = props;
+	let { selectors, id: parent_id, new_selector_added } = props;
+	selectors = selectors.filter(({ _id }) => _id === "");
 
 	return (
 		<Div classes={["selector_group-content", "selector_group-selectors"]}>
