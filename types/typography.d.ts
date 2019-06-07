@@ -62,7 +62,7 @@ declare interface Style {
 }
 
 declare interface Selector {
-	_id: string;
+	_parent_id: string;
 	id: string;
 	selector_type: "text" | "block";
 	text_selector: string;
