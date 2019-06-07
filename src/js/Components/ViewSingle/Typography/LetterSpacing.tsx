@@ -24,7 +24,7 @@ const LetterSpacing: React.ComponentType<Props> = props => {
 				root: addPrefix("material_ui-range-root")
 			}}
 			step={0.1}
-			min={0}
+			min={-3}
 			max={10}
 			value={letter_spacing}
 			onChange={(e, value) => updateProp("letter_spacing", toFixed(value, 1))}

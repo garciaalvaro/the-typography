@@ -37,7 +37,11 @@ function sanitize_text( $value ) {
 /**
  * Sanitize float.
  */
-function sanitize_float( $value ) {
+function sanitize_float( $value, $can_be_negative = false ) {
+	if ( $can_be_negative ) {
+		return round( floatval( $value ), 2 );
+	}
+
 	return round( abs( floatval( $value ) ), 2 );
 }
 
@@ -99,11 +103,11 @@ function sanitize_range( $value = 50, $min = 0, $max = 100 ) {
 /**
  * Sanitize float range.
  */
-function sanitize_range_float( $value = 50, $min = 0, $max = 100 ) {
+function sanitize_range_float( $value = 50, $min = 0, $max = 100, $can_be_negative = false ) {
 
-	$value = sanitize_float( $value );
-	$min   = sanitize_float( $min );
-	$max   = sanitize_float( $max );
+	$value = sanitize_float( $value, $can_be_negative );
+	$min   = sanitize_float( $min, $can_be_negative );
+	$max   = sanitize_float( $max, $can_be_negative );
 
 	$value = max( $value, $min );
 	$value = min( $value, $max );

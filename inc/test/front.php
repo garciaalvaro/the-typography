@@ -10,6 +10,10 @@ function test_front() {
 
 	$data = register_my_typography();
 	$data = prepare_groups( $data );
+	$data='-123';
+	$data=(integer)$data;
+	$data = (string)round( floatval( $data ), 2 );
 
-	highlight_string("<?php\n\$data =\n" . var_export($data, true) . ";\n?>");
+	var_dump($data);
+
 }

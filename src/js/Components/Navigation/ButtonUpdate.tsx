@@ -128,7 +128,7 @@ export default withDispatch<withDispatch, Parent>(
 
 				updateTypography(typography);
 			} else {
-				const new_typography: Object = await saveEntityRecord(
+				const new_typography: any = await saveEntityRecord(
 					"postType",
 					"the_typography",
 					{

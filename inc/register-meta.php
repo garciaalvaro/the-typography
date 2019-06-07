@@ -92,9 +92,9 @@ function register_the_typography_meta() {
 		'type'              => 'number',
 		'sanitize_callback' =>
 			function ( $value ) {
-				$min = 0;
+				$min = -3;
 				$max = 10;
-				return sanitize_range_float( $value, $min, $max );
+				return sanitize_range_float( $value, $min, $max, true );
 			},
 	) );
 
