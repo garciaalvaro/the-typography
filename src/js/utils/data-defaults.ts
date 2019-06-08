@@ -46,7 +46,7 @@ const selector_defaults: Omit<Selector, "id"> = {
 const selector_group_defaults: Omit<SelectorGroup, "id"> = {
 	_id: "",
 	_description: "",
-	typography_style_defaults: null,
+	_typography_style_defaults: null,
 	custom_title: false,
 	title: "",
 	force_styles: false,

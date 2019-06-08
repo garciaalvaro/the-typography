@@ -138,8 +138,8 @@ const cleanSelectorGroups = (selector_groups: Object): SelectorGroup[] =>
 		);
 
 		group.selectors = cleanSelectors(group.selectors);
-		group.typography_style_defaults = cleanTypographyStyleSelectorGroup(
-			group.typography_style_defaults
+		group._typography_style_defaults = cleanTypographyStyleSelectorGroup(
+			group._typography_style_defaults
 		);
 		group.id = uuid();
 
@@ -229,12 +229,12 @@ const cleanTypographies = (
 			: selector_groups_raw;
 		const selector_groups = cleanSelectorGroups(selector_groups_raw);
 
-		// Prepare typography_style_defaults
-		const typography_style_defaults = isUndefined(
-			meta.typography_style_defaults
+		// Prepare _typography_style_defaults
+		const _typography_style_defaults = isUndefined(
+			meta._typography_style_defaults
 		)
 			? null
-			: cleanTypographyStyleRoot(JSON.parse(meta.typography_style_defaults));
+			: cleanTypographyStyleRoot(JSON.parse(meta._typography_style_defaults));
 
 		const typography_clean = {
 			...meta,
@@ -244,7 +244,7 @@ const cleanTypographies = (
 			context_post_type,
 			context_post_type_template,
 			selector_groups,
-			typography_style_defaults
+			_typography_style_defaults
 		};
 
 		return assign(
