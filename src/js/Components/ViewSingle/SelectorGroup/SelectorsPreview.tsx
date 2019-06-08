@@ -39,7 +39,7 @@ const SelectorsPreview: React.ComponentType<Props> = props => {
 			}}
 		>
 			{!selectors.length ? (
-				<Div classes="selector-text">{__("...there are no selectors yet")}</Div>
+				<Div classes="selector-text">{__("...no selectors, add one")}</Div>
 			) : (
 				<Fragment>
 					{custom_parent_selector && (
