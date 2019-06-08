@@ -12,7 +12,9 @@ const { __ } = wp.i18n;
 
 const Selectors: React.ComponentType<Props> = props => {
 	let { selectors, id: parent_id, new_selector_added } = props;
-	selectors = selectors.filter(({ _parent_id }) => _parent_id === "");
+	selectors = selectors.filter(
+		({ _parent_id, _can_be_removed }) => _parent_id === "" || _can_be_removed
+	);
 
 	return (
 		<Div classes={["selector_group-content", "selector_group-selectors"]}>

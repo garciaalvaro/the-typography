@@ -33,6 +33,7 @@ const typography_style_root_defaults: TypographyStyleWithFont = {
 };
 
 const selector_defaults: Omit<Selector, "id"> = {
+	_can_be_removed: false,
 	_parent_id: "",
 	selector_type: "text",
 	text_selector: "",

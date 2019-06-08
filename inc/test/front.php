@@ -14,14 +14,6 @@ function test_front() {
 	// $data=(integer)$data;
 	// $data = (string)round( floatval( $data ), 2 );
 
-	$tt = array(
-		'aaa' => array('post_id'=>123),
-		'bbb' => array('post_id'=>456),
-	);
 
-	$qq = array_search( 456, array_column( $tt, 'post_id' ) );
-
-	// $qq = array_keys(array_combine(array_keys($tt), array_column($tt, 'post_id')),456);
-
-	// var_dump(array_keys($tt)[$qq]);
+	var_dump(get_option('the_typography'));
 }

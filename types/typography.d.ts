@@ -62,6 +62,7 @@ declare interface Style {
 }
 
 declare interface Selector {
+	_can_be_removed: boolean;
 	_parent_id: string;
 	id: string;
 	selector_type: "text" | "block";

@@ -21,7 +21,10 @@ const SelectorsPreview: React.ComponentType<Props> = props => {
 		is_edit
 	} = props;
 	selectors = is_edit
-		? selectors.filter(({ _parent_id }) => _parent_id !== "")
+		? selectors.filter(
+				({ _parent_id, _can_be_removed }) =>
+					_parent_id !== "" && !_can_be_removed
+		  )
 		: selectors;
 
 	if (is_edit && !selectors.length) {
