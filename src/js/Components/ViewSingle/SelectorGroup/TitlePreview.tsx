@@ -18,7 +18,7 @@ const TitlePreview: React.ComponentType<Props> = props => {
 		parent_typography_style,
 		typography_style,
 		custom_typography,
-		description,
+		_description,
 		open
 	} = props;
 
@@ -39,14 +39,14 @@ const TitlePreview: React.ComponentType<Props> = props => {
 			>
 				{!custom_title || title === "" ? __("Sample text") : title}
 			</Span>
-			{description && (
+			{_description && (
 				<Span
 					classes="description"
 					onClick={() => {
 						open ? open() : noop;
 					}}
 				>
-					{description}
+					{_description}
 				</Span>
 			)}
 		</Fragment>

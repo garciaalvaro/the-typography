@@ -20,8 +20,8 @@ const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
 const ViewSingle: React.ComponentType<Props> = props => {
-	const { color_class, is_visible, namespace } = props;
-	const is_predefined = namespace !== "";
+	const { color_class, is_visible, _namespace } = props;
+	const is_predefined = _namespace !== "";
 
 	return (
 		<Div

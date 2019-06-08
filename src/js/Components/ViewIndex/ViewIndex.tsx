@@ -61,11 +61,11 @@ const ViewIndex: React.ComponentType<Props> = props => {
 
 						if (tab_open === "custom") {
 							typographies_filtered = typographies.filter(
-								({ namespace }) => !namespace
+								({ _namespace }) => !_namespace
 							);
 						} else {
 							typographies_filtered = typographies.filter(
-								({ namespace }) => namespace
+								({ _namespace }) => _namespace
 							);
 						}
 
@@ -95,7 +95,7 @@ export default compose([
 		const is_loading = isLoading();
 		const is_last_page = isLastPage();
 		const typographies = getTypographies();
-		const has_custom = !!typographies.filter(({ namespace }) => !namespace)
+		const has_custom = !!typographies.filter(({ _namespace }) => !_namespace)
 			.length;
 
 		return { typographies, has_custom, is_loading, is_last_page };

@@ -14,16 +14,16 @@ const Title: React.ComponentType<Props> = props => {
 		title,
 		updateProp,
 		typography_style,
-		description,
-		namespace_title
+		_description,
+		_namespace_title
 	} = props;
-	const is_predefined = namespace_title !== "";
+	const is_predefined = _namespace_title !== "";
 
 	if (is_predefined) {
 		return (
 			<Fragment>
-				<Span id="namespace-title">{namespace_title}</Span>
-				{description && <Span id="description">{description}</Span>}
+				<Span id="namespace-title">{_namespace_title}</Span>
+				{_description && <Span id="description">{_description}</Span>}
 				<Span
 					id="title"
 					style={title !== "" && typography_style ? typography_style : {}}

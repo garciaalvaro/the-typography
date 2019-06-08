@@ -78,7 +78,7 @@ const Info: React.ComponentType<Props> = props => {
 };
 
 export default withSelect<withSelect, Parent>(select => {
-	const { getTaxonomies } = select(pr_store);
+	const { getTaxonomies } = select<SelectorsR["getTaxonomies"]>(pr_store);
 
 	return {
 		taxonomies: getTaxonomies()

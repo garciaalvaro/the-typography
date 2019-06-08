@@ -75,7 +75,7 @@ declare interface Selector {
 
 declare interface SelectorGroup extends TypographyStyle {
 	_id: string;
-	description: string;
+	_description: string;
 	typography_style_defaults: TypographyStyle | null;
 	id: string;
 	selectors: Selector[];
@@ -88,11 +88,12 @@ declare interface SelectorGroup extends TypographyStyle {
 }
 
 declare interface Typography extends TypographyStyleWithFont {
-	namespace: string;
-	namespace_title: string;
-	description: string;
-	context_fixed: boolean;
-	typography_style_defaults: TypographyStyleWithFont | null;
+	_id: string;
+	_namespace: string;
+	_namespace_title: string;
+	_description: string;
+	_context_fixed: boolean;
+	_typography_style_defaults: TypographyStyleWithFont | null;
 	id: number;
 	title: string;
 	is_visible: boolean;

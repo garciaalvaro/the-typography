@@ -3,7 +3,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
 interface Props {
-	context_fixed: Typography["context_fixed"];
+	_context_fixed: Typography["_context_fixed"];
 	context_post_type: Typography["context_post_type"];
 	updateProp: FunctionVoid;
 }
@@ -12,7 +12,7 @@ const { isUndefined, compact } = lodash;
 const { __ } = wp.i18n;
 
 const PostType: React.ComponentType<Props> = props => {
-	const { context_post_type, updateProp, context_fixed } = props;
+	const { context_post_type, updateProp, _context_fixed } = props;
 	const post_types = [
 		...the_typography.post_types,
 		...context_post_type
@@ -22,7 +22,7 @@ const PostType: React.ComponentType<Props> = props => {
 			.map(type => ({ slug: type, name: type }))
 	];
 
-	if (context_fixed) {
+	if (_context_fixed) {
 		return <Span>{post_types.map(({ name }) => name).join(", ")}</Span>;
 	}
 

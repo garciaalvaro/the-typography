@@ -23,13 +23,13 @@ const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
 const Typography: React.ComponentType<Props> = props => {
-	const { typography_style_defaults } = props;
+	const { _typography_style_defaults } = props;
 
 	return (
 		<Fragment>
-			{typography_style_defaults && (
+			{_typography_style_defaults && (
 				<ButtonResetDefaults
-					typography_style_defaults={typography_style_defaults}
+					_typography_style_defaults={_typography_style_defaults}
 				/>
 			)}
 			<Font {...props} />

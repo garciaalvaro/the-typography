@@ -3,7 +3,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
 interface Props {
-	context_fixed: Typography["context_fixed"];
+	_context_fixed: Typography["_context_fixed"];
 	context_type: Typography["context_type"];
 	updateProp: FunctionVoid;
 }
@@ -19,9 +19,9 @@ const options = [
 ];
 
 const ContextType: React.ComponentType<Props> = props => {
-	const { context_type, updateProp, context_fixed } = props;
+	const { context_type, updateProp, _context_fixed } = props;
 
-	if (context_fixed) {
+	if (_context_fixed) {
 		return (
 			<Span>
 				{get(options.find(({ value }) => value === context_type), "label")}

@@ -25,15 +25,15 @@ class TypographyComp extends Component<Props> {
 
 	render() {
 		const { props } = this;
-		const { color_class, namespace_title } = props;
+		const { color_class, _namespace_title } = props;
 
 		return (
 			<Div classes={["index-typography", color_class]}>
 				<Info {...props} />
 				<Title {...props} />
-				{namespace_title && (
+				{_namespace_title && (
 					<Div classes={["namespace-info", "index-typography-info"]}>
-						<Span>{namespace_title}</Span>
+						<Span>{_namespace_title}</Span>
 					</Div>
 				)}
 			</Div>
