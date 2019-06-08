@@ -6,6 +6,7 @@ interface Parent extends SelectorGroup {
 }
 type Props = Parent & withToggle & withTypographyStyle;
 
+const { noop } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
@@ -17,7 +18,8 @@ const TitlePreview: React.ComponentType<Props> = props => {
 		parent_typography_style,
 		typography_style,
 		custom_typography,
-		description
+		description,
+		open
 	} = props;
 
 	typography_style = custom_typography ? typography_style : {};
@@ -37,7 +39,16 @@ const TitlePreview: React.ComponentType<Props> = props => {
 			>
 				{!custom_title || title === "" ? __("Sample text") : title}
 			</Span>
-			{description && <Span classes="description">{description}</Span>}
+			{description && (
+				<Span
+					classes="description"
+					onClick={() => {
+						open ? open() : noop;
+					}}
+				>
+					{description}
+				</Span>
+			)}
 		</Fragment>
 	);
 };
