@@ -15,5 +15,4 @@ function test_front() {
 	// $data = (string)round( floatval( $data ), 2 );
 
 
-	var_dump(get_option('the_typography'));
 }
