@@ -201,7 +201,7 @@ const cleanTypographies = (
 		});
 
 		// Prepare title
-		title = title.rendered;
+		title = wp.htmlEntities.decodeEntities(title.rendered);
 
 		// As the taxonomy returns an array we get the first element or return a default.
 		context_type = head(context_type) || "";

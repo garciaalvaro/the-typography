@@ -51,6 +51,7 @@ function enqueue_editor() {
 			'wp-plugins',
 			'wp-data',
 			'wp-hooks',
+			'wp-html-entities',
 		),
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.

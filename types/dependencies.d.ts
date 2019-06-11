@@ -15,6 +15,9 @@ declare const wp: {
 		withGlobalEvents: any;
 	};
 	blockEditor: typeof import("./academic-bloggers-toolkit-master/wordpress__block-editor");
+	htmlEntities: {
+		decodeEntities: (arg: string) => Object[];
+	};
 	editor: Object;
 	hooks: Object;
 	blockLibrary: Object;
