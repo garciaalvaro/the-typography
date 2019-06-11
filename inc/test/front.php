@@ -14,5 +14,12 @@ function test_front() {
 	// $data=(integer)$data;
 	// $data = (string)round( floatval( $data ), 2 );
 
+	$qq = array('aa'=>123,'bb'=>456);
+
+	var_dump($qq);
+
+	$qq = array_merge(array('aa'=>789),$qq);
+
+	// var_dump($qq);
 
 }
