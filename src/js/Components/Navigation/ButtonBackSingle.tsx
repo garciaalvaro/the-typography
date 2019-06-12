@@ -14,7 +14,7 @@ const { Icon, Button, MenuGroup, MenuItem } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 
-const ButtonBackSingle: React.ComponentType<Props> = props => {
+const ButtonBack: React.ComponentType<Props> = props => {
 	const { single_changed, goToIndex, is_open, toggle, close } = props;
 
 	return (
@@ -67,4 +67,4 @@ export default compose([
 			}
 		};
 	})
-])(ButtonBackSingle);
+])(ButtonBack);

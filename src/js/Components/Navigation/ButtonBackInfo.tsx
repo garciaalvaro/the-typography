@@ -8,7 +8,7 @@ type Props = withDispatch;
 const { Icon, Button } = wp.components;
 const { withDispatch } = wp.data;
 
-const ButtonBackInsert: React.ComponentType<Props> = props => {
+const ButtonBack: React.ComponentType<Props> = props => {
 	const { goToIndex } = props;
 
 	return (
@@ -26,4 +26,4 @@ export default withDispatch<withDispatch>(dispatch => {
 	const { goToIndex } = dispatch(pr_store);
 
 	return { goToIndex };
-})(ButtonBackInsert);
+})(ButtonBack);

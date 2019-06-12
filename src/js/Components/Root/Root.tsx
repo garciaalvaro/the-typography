@@ -4,7 +4,7 @@ import GFonts from "../GFonts/GFonts";
 import Navigation from "../Navigation/Navigation";
 import ViewIndex from "../ViewIndex/ViewIndex";
 import ViewSingle from "../ViewSingle/ViewSingle";
-import ViewInsert from "../ViewInsert/ViewInsert";
+import ViewInfo from "../ViewInfo/ViewInfo";
 
 interface withSelect {
 	view: State["view"];
@@ -27,7 +27,7 @@ const Root: React.ComponentType<Props> = props => {
 			) : view === "single" ? (
 				<ViewSingle />
 			) : (
-				<ViewInsert />
+				<ViewInfo />
 			)}
 		</Div>
 	);

@@ -40,6 +40,7 @@ import {
 } from "./HOC";
 import { DivForwardRef, Div, Span } from "./Components";
 import {
+	plugin_info,
 	plugin_title,
 	plugin_namespace,
 	pr,
@@ -82,6 +83,7 @@ export {
 	fonts,
 	fonts_family,
 	fonts_variants,
+	plugin_info,
 	plugin_title,
 	plugin_namespace,
 	pr,

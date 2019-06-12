@@ -17,9 +17,9 @@ const actions: Partial<ActionCreators> = {
 			type: "GO_TO_SINGLE"
 		};
 	},
-	goToInsert() {
+	goToInfo() {
 		return {
-			type: "GO_TO_INSERT"
+			type: "GO_TO_INFO"
 		};
 	},
 	updateLoading(is_loading) {

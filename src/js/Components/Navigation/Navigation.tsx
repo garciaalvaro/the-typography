@@ -1,7 +1,7 @@
 import l, { Div } from "utils";
 import ViewIndex from "./ViewIndex";
 import ViewSingle from "./ViewSingle";
-import ViewInsert from "./ViewInsert";
+import ViewInfo from "./ViewInfo";
 
 interface Parent {
 	view: State["view"];
@@ -18,7 +18,7 @@ const Navigation: React.ComponentType<Props> = props => {
 			) : view === "single" ? (
 				<ViewSingle />
 			) : (
-				<ViewInsert />
+				<ViewInfo />
 			)}
 		</Div>
 	);

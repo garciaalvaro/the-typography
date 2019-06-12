@@ -1,5 +1,5 @@
 declare interface State {
-	view: "single" | "index" | "insert";
+	view: "single" | "index" | "info";
 	is_loading: boolean;
 	is_last_page: boolean;
 	taxonomies: Taxonomies;
@@ -134,8 +134,8 @@ declare interface Actions {
 	goToSingle: {
 		type: "GO_TO_SINGLE";
 	};
-	goToInsert: {
-		type: "GO_TO_INSERT";
+	goToInfo: {
+		type: "GO_TO_INFO";
 	};
 	increasePage: {
 		type: "INCREASE_PAGE";
@@ -256,7 +256,7 @@ declare interface ActionCreators {
 	) => Actions["updatePreviewerPageData"];
 	goToIndex: () => Actions["goToIndex"];
 	goToSingle: () => Actions["goToSingle"];
-	goToInsert: () => Actions["goToInsert"];
+	goToInfo: () => Actions["goToInfo"];
 	increasePage: () => Actions["increasePage"];
 	updateLastPage: () => Actions["updateLastPage"];
 	emptySingle: () => Actions["emptySingle"];

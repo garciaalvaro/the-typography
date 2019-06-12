@@ -1,29 +1,29 @@
 import l, { addPrefix, icons, pr_store } from "utils";
 
 interface withDispatch {
-	goToInsert: FunctionVoid;
+	goToInfo: FunctionVoid;
 }
 type Props = withDispatch;
 
 const { withDispatch } = wp.data;
 const { Button, Icon } = wp.components;
 
-const ButtonInsert: React.ComponentType<Props> = props => {
-	const { goToInsert } = props;
+const ButtonInfo: React.ComponentType<Props> = props => {
+	const { goToInfo } = props;
 
 	return (
 		<Button
-			id={addPrefix("button-open_insert")}
+			id={addPrefix("button-open_info")}
 			className={addPrefix("navigation-button")}
-			onClick={goToInsert}
+			onClick={goToInfo}
 		>
-			<Icon icon={icons.notifications} />
+			<Icon icon={icons.info} />
 		</Button>
 	);
 };
 
 export default withDispatch<withDispatch>(dispatch => {
-	const { goToInsert } = dispatch(pr_store);
+	const { goToInfo } = dispatch(pr_store);
 
-	return { goToInsert };
-})(ButtonInsert);
+	return { goToInfo };
+})(ButtonInfo);
