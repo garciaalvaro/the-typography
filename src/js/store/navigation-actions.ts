@@ -7,6 +7,11 @@ const actions: Partial<ActionCreators> = {
 			page_data
 		};
 	},
+	toggleTabOpen() {
+		return {
+			type: "TOGGLE_TAB_OPEN"
+		};
+	},
 	goToIndex() {
 		return {
 			type: "GO_TO_INDEX"

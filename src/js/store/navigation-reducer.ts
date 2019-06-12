@@ -1,6 +1,7 @@
 import l from "utils";
 
 const initial_state: State["navigation"] = {
+	tab_open: "custom",
 	view: "index",
 	page: 1,
 	is_last_page: false,
@@ -14,6 +15,7 @@ const initial_state: State["navigation"] = {
 const reducer = (
 	state = initial_state,
 	action:
+		| Actions["toggleTabOpen"]
 		| Actions["updatePreviewerPageData"]
 		| Actions["goToIndex"]
 		| Actions["goToSingle"]
@@ -31,6 +33,14 @@ const reducer = (
 				previewer_is_404: action.page_data.is_404,
 				previewer_is_front_page: action.page_data.is_front_page
 			};
+		}
+		case "TOGGLE_TAB_OPEN": {
+			const state_new: State["navigation"] = {
+				...state,
+				tab_open: state.tab_open === "custom" ? "predefined" : "custom"
+			};
+
+			return state_new;
 		}
 		case "GO_TO_INDEX": {
 			const state_new: State["navigation"] = {

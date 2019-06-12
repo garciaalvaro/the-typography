@@ -1,4 +1,5 @@
 declare interface State {
+	tab_open: "custom" | "predefined";
 	view: "single" | "index" | "info";
 	is_loading: boolean;
 	is_last_page: boolean;
@@ -21,6 +22,7 @@ declare interface State {
 		changed: boolean;
 	};
 	navigation: {
+		tab_open: State["tab_open"];
 		view: State["view"];
 		page: State["page"];
 		is_last_page: State["is_last_page"];
@@ -33,7 +35,7 @@ declare interface State {
 }
 
 declare interface Selectors {
-	getPredefinedRaw: (state: State) => Typography[];
+	getTabOpen: (state: State) => typeof state.tab_open;
 	getView: (state: State) => typeof state.view;
 	getGFontsToLoad: (state: State) => GFontVariants[];
 	getGFonts: (state: State) => typeof state.gfonts;
@@ -54,7 +56,7 @@ declare interface Selectors {
 	getTypography: (state: State, id: Typography["id"]) => Typography | undefined;
 }
 declare interface SelectorsR {
-	getPredefinedRaw: ReturnType<Selectors["getPredefinedRaw"]>;
+	getTabOpen: ReturnType<Selectors["getTabOpen"]>;
 	getView: ReturnType<Selectors["getView"]>;
 	getGFontsToLoad: ReturnType<Selectors["getGFontsToLoad"]>;
 	getGFonts: ReturnType<Selectors["getGFonts"]>;
@@ -75,6 +77,9 @@ declare interface SelectorsR {
 }
 
 declare interface Actions {
+	toggleTabOpen: {
+		type: "TOGGLE_TAB_OPEN";
+	};
 	resetProps: {
 		type: "RESET_PROPS";
 		values: TypographyStyleWithFont;
@@ -220,6 +225,7 @@ declare interface Actions {
 }
 
 declare interface ActionCreators {
+	toggleTabOpen: () => Actions["toggleTabOpen"];
 	deactivateTypography: (
 		id: Actions["deactivateTypography"]["id"]
 	) => Actions["deactivateTypography"];

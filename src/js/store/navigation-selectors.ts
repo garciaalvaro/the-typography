@@ -9,6 +9,9 @@ const selectors: Partial<Selectors> = {
 			is_front_page: state.navigation.previewer_is_front_page
 		};
 	},
+	getTabOpen(state) {
+		return state.navigation.tab_open;
+	},
 	isLastPage(state) {
 		return state.navigation.is_last_page;
 	},

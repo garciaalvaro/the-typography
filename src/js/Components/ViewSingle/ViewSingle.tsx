@@ -8,10 +8,10 @@ interface withSelect extends Partial<Typography> {}
 interface withDispatch {
 	updateProp: FunctionVoid;
 }
-interface HOCProps {
+interface withColorClass {
 	color_class: string;
 }
-type Props = withSelect & withDispatch & HOCProps;
+type Props = withSelect & withDispatch & withColorClass;
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
