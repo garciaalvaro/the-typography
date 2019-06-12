@@ -1,10 +1,13 @@
 import l, { is_customizer, Div, Span, pr_store, getNames, icons } from "utils";
 import ButtonRemove from "./ButtonRemove";
+import ButtonActivate from "./ButtonActivate";
 
 interface withSelect {
 	taxonomies: Object;
 }
 interface Parent {
+	is_active: boolean;
+	_namespace: string;
 	id: number;
 	context_type: string;
 	context_post_type: string[];
@@ -18,7 +21,14 @@ const { Icon } = wp.components;
 const { withSelect } = wp.data;
 
 const Info: React.ComponentType<Props> = props => {
-	const { context_type, context_post_type, taxonomies, is_visible } = props;
+	const {
+		_namespace,
+		context_type,
+		context_post_type,
+		taxonomies,
+		is_visible
+	} = props;
+	const is_predefined = _namespace !== "";
 
 	const getTaxonomyInfo = () => {
 		if (context_type === "all_site") {
@@ -72,7 +82,11 @@ const Info: React.ComponentType<Props> = props => {
 				</Fragment>
 			)}
 			<Span>{getTaxonomyInfo()}</Span>
-			<ButtonRemove id={props.id} />
+			{is_predefined ? (
+				<ButtonActivate id={props.id} is_active={props.is_active} />
+			) : (
+				<ButtonRemove id={props.id} />
+			)}
 		</Div>
 	);
 };

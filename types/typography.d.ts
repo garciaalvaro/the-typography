@@ -89,6 +89,7 @@ declare interface SelectorGroup extends TypographyStyle {
 }
 
 declare interface Typography extends TypographyStyleWithFont {
+	is_active: boolean;
 	_id: string;
 	_namespace: string;
 	_namespace_title: string;

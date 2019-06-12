@@ -7,6 +7,18 @@ const actions: Partial<ActionCreators> = {
 			page_data
 		};
 	},
+	activateTypography(id) {
+		return {
+			type: "ACTIVATE_TYPOGRAPHY",
+			id
+		};
+	},
+	deactivateTypography(id) {
+		return {
+			type: "DEACTIVATE_TYPOGRAPHY",
+			id
+		};
+	},
 	removeTypography(id) {
 		return {
 			type: "REMOVE_TYPOGRAPHY",

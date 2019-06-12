@@ -20,8 +20,7 @@ const {
 	isUndefined,
 	isArray,
 	castArray,
-	compact,
-	mapKeys
+	compact
 } = lodash;
 
 const cleanTypographyforDB = (

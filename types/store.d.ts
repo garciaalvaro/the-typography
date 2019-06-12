@@ -197,6 +197,14 @@ declare interface Actions {
 		type: "REMOVE_TYPOGRAPHY";
 		id: Typography["id"];
 	};
+	activateTypography: {
+		type: "ACTIVATE_TYPOGRAPHY";
+		id: Typography["id"];
+	};
+	deactivateTypography: {
+		type: "DEACTIVATE_TYPOGRAPHY";
+		id: Typography["id"];
+	};
 	updateTypography: {
 		type: "UPDATE_TYPOGRAPHY";
 		typography: Typography;
@@ -212,6 +220,12 @@ declare interface Actions {
 }
 
 declare interface ActionCreators {
+	deactivateTypography: (
+		id: Actions["deactivateTypography"]["id"]
+	) => Actions["deactivateTypography"];
+	activateTypography: (
+		id: Actions["activateTypography"]["id"]
+	) => Actions["activateTypography"];
 	removeTypography: (
 		id: Actions["removeTypography"]["id"]
 	) => Actions["removeTypography"];

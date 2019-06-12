@@ -25,10 +25,17 @@ class TypographyComp extends Component<Props> {
 
 	render() {
 		const { props } = this;
-		const { color_class, _namespace_title } = props;
+		const { color_class, _namespace_title, is_active, _namespace } = props;
+		const is_predefined = _namespace !== "";
 
 		return (
-			<Div classes={["index-typography", color_class]}>
+			<Div
+				classes={[
+					"index-typography",
+					color_class,
+					is_predefined && !is_active ? "no-is_active" : null
+				]}
+			>
 				<Info {...props} />
 				<Title {...props} />
 				{_namespace_title && (

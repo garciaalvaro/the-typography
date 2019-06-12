@@ -8,6 +8,8 @@ const initial_state: State["typographies"] = [];
 const reducer = (
 	state = initial_state,
 	action:
+		| Actions["deactivateTypography"]
+		| Actions["activateTypography"]
 		| Actions["loadTypography"]
 		| Actions["updateTypographiesVisibility"]
 		| Actions["removeTypography"]
@@ -58,6 +60,18 @@ const reducer = (
 			}
 			case "REMOVE_TYPOGRAPHY": {
 				remove(draft, ({ id }) => id === action.id);
+				return;
+			}
+			case "ACTIVATE_TYPOGRAPHY": {
+				const index = draft.findIndex(({ id }) => id === action.id);
+				draft[index].is_active = true;
+
+				return;
+			}
+			case "DEACTIVATE_TYPOGRAPHY": {
+				const index = draft.findIndex(({ id }) => id === action.id);
+				draft[index].is_active = false;
+
 				return;
 			}
 			case "LOAD_TYPOGRAPHIES": {

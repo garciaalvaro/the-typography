@@ -60,6 +60,7 @@ const selector_group_defaults: Omit<SelectorGroup, "id"> = {
 };
 
 const typography_defaults: Typography = {
+	is_active: true,
 	_id: "",
 	_namespace: "",
 	_namespace_title: "",
