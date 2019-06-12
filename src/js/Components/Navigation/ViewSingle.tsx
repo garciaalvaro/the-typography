@@ -1,5 +1,5 @@
 import l, { Span, pr_store } from "utils";
-import ButtonBack from "./ButtonBack";
+import ButtonBack from "./ButtonBackSingle";
 import ButtonUndo from "./ButtonUndo";
 import ButtonUpdate from "./ButtonUpdate";
 
@@ -22,7 +22,7 @@ const { Component, Fragment } = wp.element;
 const { compose, withState } = wp.compose;
 const { withSelect } = wp.data;
 
-class SingleView extends Component<Props> {
+class ViewSingle extends Component<Props> {
 	componentWillUnmount = () => {
 		this.resetShowMessage.cancel();
 		this.resetButtonState.cancel();
@@ -106,4 +106,4 @@ export default compose([
 			is_single_new_typography
 		};
 	})
-])(SingleView);
+])(ViewSingle);

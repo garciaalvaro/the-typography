@@ -14,7 +14,7 @@ const { Icon, Button, MenuGroup, MenuItem } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 
-const NavigationButtons: React.ComponentType<Props> = props => {
+const ButtonBackSingle: React.ComponentType<Props> = props => {
 	const { single_changed, goToIndex, is_open, toggle, close } = props;
 
 	return (
@@ -40,7 +40,7 @@ const NavigationButtons: React.ComponentType<Props> = props => {
 			)}
 		>
 			<Button
-				id={addPrefix("go_back")}
+				id={addPrefix("button-go_back")}
 				className={addPrefix("navigation-button")}
 				onClick={() => {
 					if (!single_changed) {
@@ -67,4 +67,4 @@ export default compose([
 			}
 		};
 	})
-])(NavigationButtons);
+])(ButtonBackSingle);

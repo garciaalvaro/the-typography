@@ -2,8 +2,8 @@ import l, { Div, pr_store, withAddTypography, addPrefix } from "utils";
 import Typography from "./Typography";
 import ButtonLoadMore from "./ButtonLoadMore";
 
-interface SelectProps {
-	has_custom: boolean;
+interface withSelect {
+	has_predefined: boolean;
 	typographies: State["typographies"];
 	is_loading: State["is_loading"];
 	is_last_page: State["is_last_page"];
@@ -11,7 +11,7 @@ interface SelectProps {
 interface HOCProps {
 	addTypography: FunctionVoid;
 }
-type Props = SelectProps & HOCProps;
+type Props = withSelect & HOCProps;
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;
@@ -26,7 +26,7 @@ const ViewIndex: React.ComponentType<Props> = props => {
 		is_last_page,
 		addTypography,
 		typographies,
-		has_custom
+		has_predefined
 	} = props;
 
 	const getMessage = () => {
@@ -54,7 +54,7 @@ const ViewIndex: React.ComponentType<Props> = props => {
 
 	return (
 		<Div id="index">
-			{has_custom && Tabs ? (
+			{has_predefined && Tabs ? (
 				<Tabs
 					render={(tab_open: "custom" | "predefined") => {
 						let typographies_filtered: Typography[];
@@ -88,17 +88,17 @@ const ViewIndex: React.ComponentType<Props> = props => {
 };
 
 export default compose([
-	withSelect<SelectProps>(select => {
+	withSelect<withSelect>(select => {
 		const { getTypographies } = select<SelectorsR["getTypographies"]>(pr_store);
 		const { isLoading } = select<SelectorsR["isLoading"]>(pr_store);
 		const { isLastPage } = select<SelectorsR["isLastPage"]>(pr_store);
 		const is_loading = isLoading();
 		const is_last_page = isLastPage();
 		const typographies = getTypographies();
-		const has_custom = !!typographies.filter(({ _namespace }) => _namespace)
+		const has_predefined = !!typographies.filter(({ _namespace }) => _namespace)
 			.length;
 
-		return { typographies, has_custom, is_loading, is_last_page };
+		return { typographies, has_predefined, is_loading, is_last_page };
 	}),
 	withAddTypography
 ])(ViewIndex);

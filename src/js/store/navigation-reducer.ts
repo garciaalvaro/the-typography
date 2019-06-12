@@ -17,6 +17,7 @@ const reducer = (
 		| Actions["updatePreviewerPageData"]
 		| Actions["goToIndex"]
 		| Actions["goToSingle"]
+		| Actions["goToInsert"]
 		| Actions["updateLoading"]
 		| Actions["increasePage"]
 		| Actions["updateLastPage"]
@@ -43,6 +44,14 @@ const reducer = (
 			const state_new: State["navigation"] = {
 				...state,
 				view: "single"
+			};
+
+			return state_new;
+		}
+		case "GO_TO_INSERT": {
+			const state_new: State["navigation"] = {
+				...state,
+				view: "insert"
 			};
 
 			return state_new;

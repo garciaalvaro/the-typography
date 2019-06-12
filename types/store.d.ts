@@ -1,5 +1,5 @@
 declare interface State {
-	view: "single" | "index";
+	view: "single" | "index" | "insert";
 	is_loading: boolean;
 	is_last_page: boolean;
 	taxonomies: Taxonomies;
@@ -33,6 +33,7 @@ declare interface State {
 }
 
 declare interface Selectors {
+	getPredefinedRaw: (state: State) => Typography[];
 	getView: (state: State) => typeof state.view;
 	getGFontsToLoad: (state: State) => GFontVariants[];
 	getGFonts: (state: State) => typeof state.gfonts;
@@ -53,6 +54,7 @@ declare interface Selectors {
 	getTypography: (state: State, id: Typography["id"]) => Typography | undefined;
 }
 declare interface SelectorsR {
+	getPredefinedRaw: ReturnType<Selectors["getPredefinedRaw"]>;
 	getView: ReturnType<Selectors["getView"]>;
 	getGFontsToLoad: ReturnType<Selectors["getGFontsToLoad"]>;
 	getGFonts: ReturnType<Selectors["getGFonts"]>;
@@ -131,6 +133,9 @@ declare interface Actions {
 	};
 	goToSingle: {
 		type: "GO_TO_SINGLE";
+	};
+	goToInsert: {
+		type: "GO_TO_INSERT";
 	};
 	increasePage: {
 		type: "INCREASE_PAGE";
@@ -251,6 +256,7 @@ declare interface ActionCreators {
 	) => Actions["updatePreviewerPageData"];
 	goToIndex: () => Actions["goToIndex"];
 	goToSingle: () => Actions["goToSingle"];
+	goToInsert: () => Actions["goToInsert"];
 	increasePage: () => Actions["increasePage"];
 	updateLastPage: () => Actions["updateLastPage"];
 	emptySingle: () => Actions["emptySingle"];

@@ -1,6 +1,7 @@
 import l, { Div } from "utils";
-import IndexView from "./IndexView";
-import SingleView from "./SingleView";
+import ViewIndex from "./ViewIndex";
+import ViewSingle from "./ViewSingle";
+import ViewInsert from "./ViewInsert";
 
 interface Parent {
 	view: State["view"];
@@ -12,7 +13,13 @@ const Navigation: React.ComponentType<Props> = props => {
 
 	return (
 		<Div id="navigation" classes={`view-${view}`}>
-			{view === "index" ? <IndexView /> : <SingleView />}
+			{view === "index" ? (
+				<ViewIndex />
+			) : view === "single" ? (
+				<ViewSingle />
+			) : (
+				<ViewInsert />
+			)}
 		</Div>
 	);
 };
