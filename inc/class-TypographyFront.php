@@ -66,12 +66,20 @@ class TypographyFront {
 			'selectors' => array(),
 			'style'     => $this->getCssStyle( $this->style ),
 		);
+		$css_root_forced = array(
+			'selectors' => array(),
+			'style'     => $this->getCssStyle( $this->style, true ),
+		);
 
 		foreach ( $this->selector_groups as $group ) {
 
 			$css_object = $group->getCssObject();
 
-			$css_root['selectors'][] = $css_object['selectors'];
+			if ( $css_object['force_styles'] ) {
+				$css_root_forced['selectors'][] = $css_object['selectors'];
+			} else {
+				$css_root['selectors'][] = $css_object['selectors'];
+			}
 
 			if ( ! empty( $css_object['style'] ) ) {
 
@@ -80,12 +88,15 @@ class TypographyFront {
 			}
 		}
 
-		$css_root['selectors'] = implode( ',', $css_root['selectors'] );
+		$css_root['selectors']        = implode( ',', $css_root['selectors'] );
+		$css_root_forced['selectors'] = implode( ',', $css_root_forced['selectors'] );
 
 		if ( ! empty( $css_root['style'] ) ) {
-
 			array_unshift( $css_array, $css_root );
+		}
 
+		if ( ! empty( $css_root_forced['style'] ) ) {
+			array_unshift( $css_array, $css_root_forced );
 		}
 
 		$css_string = array();

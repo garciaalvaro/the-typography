@@ -52,8 +52,9 @@ class SelectorGroupFront {
 		}
 
 		return array(
-			'selectors' => implode( ',', $css_selectors ),
-			'style'     => $this->getCssStyle( $this->style )
+			'selectors'    => implode( ',', $css_selectors ),
+			'style'        => $this->getCssStyle( $this->style, $this->props['force_styles'] ),
+			'force_styles' => $this->props['force_styles'],
 		);
 	}
 
@@ -62,7 +63,6 @@ class SelectorGroupFront {
 		$schema = array_merge(
 			array(
 				'_id'                    => 'id',
-				'force_styles'           => 'boolean',
 				'force_styles'           => 'boolean',
 				'custom_parent_selector' => 'boolean',
 				'parent_selector'        => 'text',

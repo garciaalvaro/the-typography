@@ -57,8 +57,9 @@ trait TypographyStyle {
 		'text_decoration'        => 'id',
 	);
 
-	protected function getCssStyle( $style ) {
+	protected function getCssStyle( $style, $force_styles = false ) {
 
+		$important = $force_styles ? '!important' : '';
 		$css_style = array();
 
 		foreach ( $style as $key => $value) {
@@ -77,7 +78,7 @@ trait TypographyStyle {
 
 			$key = str_replace( '_', '-', $key );
 
-			$css_style[] = $key . ':' . $value;
+			$css_style[] = $key . ':' . $value . $important;
 		}
 
 		return implode( ';', $css_style );
