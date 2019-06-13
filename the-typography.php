@@ -30,11 +30,14 @@ if ( ! defined( __NAMESPACE__ . '\PLUGIN_DIR' ) ) {
 	define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 }
 
+// Utils.
+require_once INC_DIR . 'utils-CastArray.php';
+require_once INC_DIR . 'utils-Sanitize.php';
+require_once INC_DIR . 'utils-CastSchema.php';
+require_once INC_DIR . 'utils-SetDefaults.php';
+require_once INC_DIR . 'utils-Utils.php';
+
 // Traits.
-require_once INC_DIR . 'trait-CastArray.php';
-require_once INC_DIR . 'trait-Sanitize.php';
-require_once INC_DIR . 'trait-CastSchema.php';
-require_once INC_DIR . 'trait-SetDefaults.php';
 require_once INC_DIR . 'trait-TypographyStyle.php';
 
 // Classes.

@@ -10,8 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 class SelectorFront {
 
-	use CastSchema, SetDefaults;
-
 	private $props = array();
 
 	function __construct( $props = array() ) {
@@ -86,7 +84,7 @@ class SelectorFront {
 			'block_element_label'  => 'text',
 		);
 
-		$this->props = $this->castSchema( $this->props, $schema );
+		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
 	private function setPropsDefaults() {
@@ -103,7 +101,7 @@ class SelectorFront {
 			'block_element_label'  => ''
 		);
 
-		$this->props = $this->setDefaults( $this->props, $defaults );
+		$this->props = Utils::setDefaults( $this->props, $defaults );
 	}
 
 	private function setSelectors() {

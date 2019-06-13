@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Trait Sanitize
  */
-trait Sanitize {
+class Sanitize {
 
 	/**
 	 * Sanitize string and/or integer.
 	 */
-	public function sanitizeStringInteger( $value ) {
+	static public function sanitizeStringInteger( $value ) {
 		if ( ! is_string( $value ) && ! is_int( $value ) ) {
 			return '';
 		}
@@ -24,8 +24,8 @@ trait Sanitize {
 	/**
 	 * Sanitize id.
 	 */
-	public function sanitizeId( $value ) {
-		$value = $this->sanitizeStringInteger( $value );
+	static public function sanitizeId( $value ) {
+		$value = self::sanitizeStringInteger( $value );
 
 		return \sanitize_key( $value );
 	}
@@ -33,8 +33,8 @@ trait Sanitize {
 	/**
 	 * Sanitize text.
 	 */
-	public function sanitizeText( $value ) {
-		$value = $this->sanitizeStringInteger( $value );
+	static public function sanitizeText( $value ) {
+		$value = self::sanitizeStringInteger( $value );
 
 		return \sanitize_text_field( $value );
 	}
@@ -42,14 +42,14 @@ trait Sanitize {
 	/**
 	 * Sanitize float.
 	 */
-	public function sanitizeFloat( $value ) {
+	static public function sanitizeFloat( $value ) {
 		return round( abs( floatval( $value ) ), 2 );
 	}
 
 	/**
 	 * Sanitize integer.
 	 */
-	public function sanitizeInteger( $value ) {
+	static public function sanitizeInteger( $value ) {
 		return \absint( $value );
 	}
 
@@ -58,24 +58,24 @@ trait Sanitize {
 	 *
 	 * https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
 	 */
-	public function sanitizeBoolean( $value ) {
+	static public function sanitizeBoolean( $value ) {
 		return isset( $value ) && true == $value ? true : false;
 	}
 
 	/**
 	 * Sanitize array.
 	 */
-	public function sanitizeArray( $value ) {
+	static public function sanitizeArray( $value ) {
 		return is_array( $value ) ? $value : array();
 	}
 
 	/**
 	 * Sanitize value inside an options array.
 	 */
-	public function sanitizeOptions( $value = '', $options = array(), $default_value = '' ) {
+	static public function sanitizeOptions( $value = '', $options = array(), $default_value = '' ) {
 
 		$value         = \sanitize_key( $value );
-		$options       = $this->sanitizeArray( $options );
+		$options       = self::sanitizeArray( $options );
 		$default_value = \sanitize_key( $default_value );
 
 		if ( empty( $options ) ) {
@@ -89,7 +89,7 @@ trait Sanitize {
 	/**
 	 * Sanitize number range.
 	 */
-	public function sanitizeRange( $value = 50, $min = 0, $max = 100 ) {
+	static public function sanitizeRange( $value = 50, $min = 0, $max = 100 ) {
 
 		$value = \absint( $value );
 		$min   = \absint( $min );
@@ -104,11 +104,11 @@ trait Sanitize {
 	/**
 	 * Sanitize float range.
 	 */
-	public function sanitizeRangeFloat( $value = 50, $min = 0, $max = 100 ) {
+	static public function sanitizeRangeFloat( $value = 50, $min = 0, $max = 100 ) {
 
-		$value = $this->sanitizeFloat( $value );
-		$min   = $this->sanitizeFloat( $min );
-		$max   = $this->sanitizeFloat( $max );
+		$value = self::sanitizeFloat( $value );
+		$min   = self::sanitizeFloat( $min );
+		$max   = self::sanitizeFloat( $max );
 
 		$value = max( $value, $min );
 		$value = min( $value, $max );
@@ -121,7 +121,7 @@ trait Sanitize {
 	 *
 	 * https://stackoverflow.com/a/31245990 | CC BY-SA 3.0
 	 */
-	public function sanitizeColor( $value ) {
+	static public function sanitizeColor( $value ) {
 
 		$color          = \sanitize_text_field( $value );
 		$regex_rgb_rgba = '/rgba?\(((25[0-5]|2[0-4]\d|1\d{1,2}|\d\d?)\s*,\s*?){2}(25[0-5]|2[0-4]\d|1\d{1,2}|\d\d?)\s*,?\s*([01]\.?\d*?)?\)/';

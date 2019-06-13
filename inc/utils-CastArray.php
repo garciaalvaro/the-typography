@@ -8,13 +8,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Trait CastArray
  */
-trait CastArray {
+class CastArray {
 
 	/**
 	 * Utility that returns an array.
 	 * If the provided value is not an array the function will wrap it in one.
 	 */
-	function castArray( $value ) {
+	static public function castArray( $value ) {
 		if ( is_array( $value ) ) {
 			return $value;
 		}

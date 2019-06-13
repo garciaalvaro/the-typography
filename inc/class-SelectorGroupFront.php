@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 class SelectorGroupFront {
 
-	use SetDefaults, CastSchema, TypographyStyle;
+	use TypographyStyle;
 
 	private $props     = array();
 	private $style     = array();
@@ -72,7 +72,7 @@ class SelectorGroupFront {
 			$this->style_schema
 		);
 
-		$this->props = $this->castSchema( $this->props, $schema );
+		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
 	private function setPropsDefaults() {
@@ -89,7 +89,7 @@ class SelectorGroupFront {
 			$this->style_defaults
 		);
 
-		$this->props = $this->setDefaults( $this->props, $defaults );
+		$this->props = Utils::setDefaults( $this->props, $defaults );
 	}
 
 	private function setStyle() {

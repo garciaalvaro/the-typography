@@ -8,14 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Trait CastSchema
  */
-trait CastSchema {
-
-	use Sanitize, CastArray;
+class CastSchema {
 
 	/**
 	 * Cast an array of properties and values given a schema array.
 	 */
-	protected function castSchema( $elements = array(), $schema = array() ) {
+	static public function castSchema( $elements = array(), $schema = array() ) {
 
 		foreach ( $elements as $key => $value ) {
 
@@ -29,35 +27,35 @@ trait CastSchema {
 			}
 
 			if ( is_array( $type ) ) {
-				$value = $this->castArray( $value );
+				$value = CastArray::castArray( $value );
 
-				$elements[ $key ] = $this->castSchema( $value, $type );
+				$elements[ $key ] = self::castSchema( $value, $type );
 				continue;
 			}
 
 			switch ( $type ) {
 				case 'id':
-					$elements[ $key ] = $this->sanitizeId( $value );
+					$elements[ $key ] = Sanitize::sanitizeId( $value );
 					break;
 
 				case 'text':
-					$elements[ $key ] = $this->sanitizeText( $value );
+					$elements[ $key ] = Sanitize::sanitizeText( $value );
 					break;
 
 				case 'float':
-					$elements[ $key ] = $this->sanitizeFloat( $value );
+					$elements[ $key ] = Sanitize::sanitizeFloat( $value );
 					break;
 
 				case 'integer':
-					$elements[ $key ] = $this->sanitizeInteger( $value );
+					$elements[ $key ] = Sanitize::sanitizeInteger( $value );
 					break;
 
 				case 'boolean':
-					$elements[ $key ] = $this->sanitizeBoolean( $value );
+					$elements[ $key ] = Sanitize::sanitizeBoolean( $value );
 					break;
 
 				case 'color':
-					$elements[ $key ] = $this->sanitizeColor( $value );
+					$elements[ $key ] = Sanitize::sanitizeColor( $value );
 					break;
 
 				case '_no_cast':

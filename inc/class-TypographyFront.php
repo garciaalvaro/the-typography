@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 class TypographyFront {
 
-	use SetDefaults, CastSchema, TypographyStyle;
+	use TypographyStyle;
 
 	private $props           = array();
 	private $style           = array();
@@ -163,7 +163,7 @@ class TypographyFront {
 			$this->style_schema
 		);
 
-		$this->props = $this->castSchema( $this->props, $schema );
+		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
 	private function setPropsDefaults() {
@@ -179,7 +179,7 @@ class TypographyFront {
 			$this->style_defaults
 		);
 
-		$this->props = $this->setDefaults( $this->props, $defaults );
+		$this->props = Utils::setDefaults( $this->props, $defaults );
 	}
 
 	private function setStyle() {
