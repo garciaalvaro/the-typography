@@ -38,6 +38,7 @@ require_once INC_DIR . 'trait-SetDefaults.php';
 require_once INC_DIR . 'trait-TypographyStyle.php';
 
 // Classes.
+require_once INC_DIR . 'class-LoadTypographies.php';
 require_once INC_DIR . 'class-SelectorFront.php';
 require_once INC_DIR . 'class-SelectorGroupFront.php';
 require_once INC_DIR . 'class-TypographyFront.php';
@@ -47,7 +48,7 @@ require_once INC_DIR . 'core-typography.php';
 
 // Register.
 require_once INC_DIR . 'register-customizer.php';
-require_once INC_DIR . 'register-enqueue_the_typography.php';
+require_once INC_DIR . 'register-load_typographies.php';
 require_once INC_DIR . 'register-enqueue.php';
 require_once INC_DIR . 'register-cpt.php';
 require_once INC_DIR . 'register-taxonomy.php';
