@@ -29,6 +29,10 @@ class TypographyFront {
 		$this->setSelectorGroups();
 	}
 
+	public function isActive() {
+		return $this->props['is_active'];
+	}
+
 	public function isValid() {
 
 		if ( ! empty( $this->selector_groups ) ) {
@@ -150,6 +154,7 @@ class TypographyFront {
 
 		$schema = array_merge(
 			array(
+				'is_active'       => 'boolean',
 				'selector_groups' => array( '_all' => '_no_cast' ),
 				'custom_font'     => 'boolean',
 				'font_family'     => 'text',
@@ -165,6 +170,7 @@ class TypographyFront {
 
 		$defaults = array_merge(
 			array(
+				'is_active'       => true,
 				'selector_groups' => array(),
 				'custom_font'     => false,
 				'font_family'     => '',

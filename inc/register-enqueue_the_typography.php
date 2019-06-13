@@ -90,8 +90,8 @@ function enqueue_the_typography() {
 
 		$typography = new TypographyFront( $post->ID );
 
-		if ( ! $typography->isValid() ) {
-			return;
+		if ( ! $typography->isValid() || ! $typography->isActive() ) {
+			continue;
 		}
 
 		$font = $typography->getFont();
