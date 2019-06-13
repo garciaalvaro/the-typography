@@ -80,36 +80,42 @@ function enqueue_the_typography() {
 	$fonts_array  = array();
 	$styles_array = array();
 
-	$typography = new WP_Query( $typography_args );
+	$query = new WP_Query( $typography_args );
 
-	if ( $typography->have_posts() ) {
-		while ( $typography->have_posts() ) {
-
-			$typography->the_post();
-
-			$typography_props = get_typography_meta( get_the_ID() );
-			$typography_props = cast_typography_props( $typography_props );
-
-			// Fonts
-			$fonts_array = add_font( $fonts_array, $typography_props );
-
-			$typography_props = prepare_font_family( $typography_props );
-			$typography_props = clean_style_props( $typography_props );
-
-			// Styles
-			$style        = add_style( $typography_props );
-			$styles_array = array_merge( $styles_array, $style );
-
-		}
-
-		/* Restore original Post Data */
-		wp_reset_postdata();
-	} else {
+	if ( 0 === $query->found_posts ) {
 		return;
 	}
 
-	$styles_array  = apply_filters( 'the_typography_styles_before_enqueue', $styles_array );
-	$styles_string = generate_styles_string( $styles_array );
+	foreach ( $query->posts as $post ) {
+
+		$typography = new TypographyFront( $post->ID );
+
+		if ( ! $typography->isValid() ) {
+			return;
+		}
+
+		$font = $typography->getFont();
+
+		if ( ! empty( $font ) ) {
+
+			if ( isset( $fonts_array[ $font['family'] ] ) ) {
+
+				$fonts_array[ $font['family'] ] = array_merge(
+					$font['variants'],
+					$fonts_array[ $font['family'] ]
+				);
+
+				$fonts_array[ $font['family'] ] = array_unique( $fonts_array[ $font['family'] ] );
+
+			} else {
+
+				$fonts_array[ $font['family'] ] = $font['variants'];
+
+			}
+		}
+
+		$styles_array[] = $typography->getCssString();
+	}
 
 	$fonts_array  = apply_filters( 'the_typography_fonts_before_enqueue', $fonts_array );
 	$fonts_string = generate_fonts_string( $fonts_array );
@@ -124,13 +130,13 @@ function enqueue_the_typography() {
 		);
 	}
 
-	if ( ! empty( $styles_string ) ) {
+	if ( ! empty( $styles_array ) ) {
 
 		// https://wordpress.stackexchange.com/a/282868 | CC BY-SA 3.0
 		wp_register_style( 'thet-styles', false );
 		wp_enqueue_style( 'thet-styles' );
 
-		wp_add_inline_style( 'thet-styles', wp_strip_all_tags( $styles_string ) );
+		wp_add_inline_style( 'thet-styles', wp_strip_all_tags( implode( '', $styles_array ) ) );
 
 	}
 }

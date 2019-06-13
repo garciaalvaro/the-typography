@@ -30,9 +30,17 @@ if ( ! defined( __NAMESPACE__ . '\PLUGIN_DIR' ) ) {
 	define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 }
 
-// Utils.
-require_once INC_DIR . 'util-sanitize.php';
-require_once INC_DIR . 'util-cast_schema.php';
+// Traits.
+require_once INC_DIR . 'trait-CastArray.php';
+require_once INC_DIR . 'trait-Sanitize.php';
+require_once INC_DIR . 'trait-CastSchema.php';
+require_once INC_DIR . 'trait-SetDefaults.php';
+require_once INC_DIR . 'trait-TypographyStyle.php';
+
+// Classes.
+require_once INC_DIR . 'class-SelectorFront.php';
+require_once INC_DIR . 'class-SelectorGroupFront.php';
+require_once INC_DIR . 'class-TypographyFront.php';
 
 // Core.
 require_once INC_DIR . 'core-typography.php';

@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 add_action( 'init', __NAMESPACE__ . '\register_the_typography_cpt' );
 function register_the_typography_cpt() {
+
 	$args = array(
 		'capabilities' => array(
 			'edit_posts'        => 'edit_theme_options',
