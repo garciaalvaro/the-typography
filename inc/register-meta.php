@@ -40,7 +40,7 @@ function register_the_typography_meta() {
 				);
 				$default_value = '400';
 
-				return sanitize_options( $value, $options, $default_value );
+				return Utils::sanitizeOptions( $value, $options, $default_value );
 			},
 	) );
 
@@ -58,7 +58,8 @@ function register_the_typography_meta() {
 			function ( $value ) {
 				$min = 5;
 				$max = 60;
-				return sanitize_range( $value, $min, $max );
+
+				return Utils::sanitizeRange( $value, $min, $max );
 			},
 	) );
 
@@ -76,7 +77,8 @@ function register_the_typography_meta() {
 			function ( $value ) {
 				$min = 0.3;
 				$max = 3;
-				return sanitize_range_float( $value, $min, $max );
+
+				return Utils::sanitizeRangeFloat( $value, $min, $max );
 			},
 	) );
 
@@ -94,7 +96,8 @@ function register_the_typography_meta() {
 			function ( $value ) {
 				$min = -3;
 				$max = 10;
-				return sanitize_range_float( $value, $min, $max, true );
+
+				return Utils::sanitizeRangeFloat( $value, $min, $max, true );
 			},
 	) );
 
@@ -108,7 +111,10 @@ function register_the_typography_meta() {
 		'show_in_rest'      => true,
 		'single'            => true,
 		'type'              => 'string',
-		'sanitize_callback' => __NAMESPACE__ . '\sanitize_color',
+		'sanitize_callback' =>
+			function ( $value ) {
+				return Utils::sanitizeColor( $value );
+			},
 	) );
 
 	register_post_meta( 'the_typography', 'custom_font_weight', array(
@@ -130,7 +136,7 @@ function register_the_typography_meta() {
 				);
 				$default_value = '400';
 
-				return sanitize_options( $value, $options, $default_value );
+				return Utils::sanitizeOptions( $value, $options, $default_value );
 			},
 	) );
 
@@ -153,7 +159,7 @@ function register_the_typography_meta() {
 				);
 				$default_value = 'normal';
 
-				return sanitize_options( $value, $options, $default_value );
+				return Utils::sanitizeOptions( $value, $options, $default_value );
 			},
 	) );
 
@@ -177,7 +183,7 @@ function register_the_typography_meta() {
 				);
 				$default_value = 'none';
 
-				return sanitize_options( $value, $options, $default_value );
+				return Utils::sanitizeOptions( $value, $options, $default_value );
 			},
 	) );
 
@@ -201,7 +207,7 @@ function register_the_typography_meta() {
 				);
 				$default_value = 'none';
 
-				return sanitize_options( $value, $options, $default_value );
+				return Utils::sanitizeOptions( $value, $options, $default_value );
 			},
 	) );
 }

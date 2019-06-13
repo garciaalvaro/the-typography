@@ -42,7 +42,11 @@ class Sanitize {
 	/**
 	 * Sanitize float.
 	 */
-	static public function sanitizeFloat( $value ) {
+	static public function sanitizeFloat( $value, $can_be_negative = false ) {
+		if ( $can_be_negative ) {
+			return round( floatval( $value ), 2 );
+		}
+
 		return round( abs( floatval( $value ) ), 2 );
 	}
 
@@ -72,7 +76,11 @@ class Sanitize {
 	/**
 	 * Sanitize value inside an options array.
 	 */
-	static public function sanitizeOptions( $value = '', $options = array(), $default_value = '' ) {
+	static public function sanitizeOptions(
+		$value = '',
+		$options = array(),
+		$default_value = ''
+	) {
 
 		$value         = \sanitize_key( $value );
 		$options       = self::sanitizeArray( $options );
@@ -104,11 +112,16 @@ class Sanitize {
 	/**
 	 * Sanitize float range.
 	 */
-	static public function sanitizeRangeFloat( $value = 50, $min = 0, $max = 100 ) {
+	static public function sanitizeRangeFloat(
+		$value = 50,
+		$min = 0,
+		$max = 100,
+		$can_be_negative = false
+	) {
 
-		$value = self::sanitizeFloat( $value );
-		$min   = self::sanitizeFloat( $min );
-		$max   = self::sanitizeFloat( $max );
+		$value = self::sanitizeFloat( $value, $can_be_negative );
+		$min   = self::sanitizeFloat( $min, $can_be_negative );
+		$max   = self::sanitizeFloat( $max, $can_be_negative );
 
 		$value = max( $value, $min );
 		$value = min( $value, $max );
