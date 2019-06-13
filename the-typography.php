@@ -43,9 +43,6 @@ require_once INC_DIR . 'class-SelectorFront.php';
 require_once INC_DIR . 'class-SelectorGroupFront.php';
 require_once INC_DIR . 'class-TypographyFront.php';
 
-// Core.
-require_once INC_DIR . 'core-typography.php';
-
 // Register.
 require_once INC_DIR . 'register-customizer.php';
 require_once INC_DIR . 'register-load_typographies.php';
