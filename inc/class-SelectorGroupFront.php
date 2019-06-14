@@ -60,34 +60,14 @@ class SelectorGroupFront {
 
 	private function castProps() {
 
-		$schema = array_merge(
-			array(
-				'_id'                    => 'id',
-				'force_styles'           => 'boolean',
-				'custom_parent_selector' => 'boolean',
-				'parent_selector'        => 'text',
-				'custom_typography'      => 'boolean',
-				'selectors'              => array( '_all' => 'no_cast' ),
-			),
-			$this->style_schema
-		);
+		$schema = Schemas::$selector_group;
 
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
 	private function setPropsDefaults() {
 
-		$defaults = array_merge(
-			array(
-				'_id'                    => '',
-				'selectors'              => array(),
-				'force_styles'           => false,
-				'custom_parent_selector' => false,
-				'parent_selector'        => '',
-				'custom_typography'      => false,
-			),
-			$this->style_defaults
-		);
+		$defaults = Defaults::$selector_group;
 
 		$this->props = Utils::setDefaults( $this->props, $defaults );
 	}

@@ -67,31 +67,16 @@ class SelectorFront {
 
 	private function castProps() {
 
-		$schema = array(
-			'_can_be_removed'      => 'boolean',
-			'selector_type'        => 'id',
-			'text_selector'        => 'text',
-			'block_name'           => 'text',
-			'block_title'          => 'text',
-			'block_selector_root'  => 'text',
-			'block_selector_extra' => 'text',
-			'block_element_label'  => 'text',
-		);
+		$schema = Schemas::$selector;
 
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
 	private function setPropsDefaults() {
 
-		$defaults = array(
-			'_can_be_removed'      => true,
-			'selector_type'        => 'text',
-			'text_selector'        => '',
-			'block_name'           => '',
-			'block_title'          => '',
-			'block_selector_root'  => '',
-			'block_selector_extra' => '',
-			'block_element_label'  => ''
+		$defaults = array_merge(
+			Defaults::$selector,
+			array( '_can_be_removed' => true )
 		);
 
 		$this->props = Utils::setDefaults( $this->props, $defaults );
