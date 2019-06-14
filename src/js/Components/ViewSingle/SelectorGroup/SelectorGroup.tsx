@@ -92,7 +92,7 @@ class SelectorGroupComp extends Component<Props> {
 				{is_open ? (
 					<SelectorGroupEdit {...props} />
 				) : (
-					<SelectorGroupPreview {...props} />
+					<SelectorGroupPreview {...props} is_predefined={is_predefined} />
 				)}
 			</Div>
 		);

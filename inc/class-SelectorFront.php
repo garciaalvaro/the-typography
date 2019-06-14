@@ -40,16 +40,12 @@ class SelectorFront {
 		return false;
 	}
 
-	public function getCssSelector( $parent_selector = '', $is_predefined = false ) {
+	public function getCssSelector( $parent_selector = '', $group_is_predefined = false ) {
 
-		if (
-			$is_predefined &&
-			! $this->props['_can_be_removed']
-		) {
-			return $this->generateSelector( $parent_selector );
-		}
+		$parent_selector = ! empty( $parent_selector ) ? $parent_selector . ' ' : '';
 
-		if ( ! $is_predefined ) {
+		if ( ! $group_is_predefined || ! $this->props['_can_be_removed'] ) {
+
 			return $this->generateSelector( $parent_selector );
 		}
 
@@ -57,7 +53,6 @@ class SelectorFront {
 	}
 
 	private function generateSelector( $parent_selector = '' ) {
-		$parent_selector = ! empty( $parent_selector ) ? $parent_selector . ' ' : '';
 
 		if ( 'text' === $this->props['selector_type'] ) {
 			return $parent_selector . $this->props['text_selector'];
@@ -73,7 +68,6 @@ class SelectorFront {
 	private function castProps() {
 
 		$schema = array(
-			'_parent_id'           => 'id',
 			'_can_be_removed'      => 'boolean',
 			'selector_type'        => 'id',
 			'text_selector'        => 'text',
@@ -90,8 +84,7 @@ class SelectorFront {
 	private function setPropsDefaults() {
 
 		$defaults = array(
-			'_parent_id'           => '',
-			'_can_be_removed'      => false,
+			'_can_be_removed'      => true,
 			'selector_type'        => '',
 			'text_selector'        => '',
 			'block_name'           => '',

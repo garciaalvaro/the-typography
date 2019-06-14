@@ -4,7 +4,6 @@ import BlockSelectorPreview from "./BlockSelectorPreview";
 interface Parent extends SelectorGroup {
 	updateProp: FunctionVoid;
 	new_selector_added: boolean;
-	is_edit: boolean;
 }
 type Props = Parent & Partial<withToggle>;
 
@@ -13,23 +12,7 @@ const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
 const SelectorsPreview: React.ComponentType<Props> = props => {
-	let {
-		open,
-		selectors,
-		custom_parent_selector,
-		parent_selector,
-		is_edit
-	} = props;
-	selectors = is_edit
-		? selectors.filter(
-				({ _parent_id, _can_be_removed }) =>
-					_parent_id !== "" && !_can_be_removed
-		  )
-		: selectors;
-
-	if (is_edit && !selectors.length) {
-		return null;
-	}
+	const { open, selectors, custom_parent_selector, parent_selector } = props;
 
 	return (
 		<Div
@@ -43,7 +26,7 @@ const SelectorsPreview: React.ComponentType<Props> = props => {
 			) : (
 				<Fragment>
 					{custom_parent_selector && (
-						<Div classes={["selector-text,", "selector-parent"]}>
+						<Div classes={["selector-text", "selector-parent"]}>
 							{parent_selector !== ""
 								? parent_selector
 								: __("...enter a parent selector")}

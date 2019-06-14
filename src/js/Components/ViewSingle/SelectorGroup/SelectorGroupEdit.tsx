@@ -4,7 +4,7 @@ import Typography from "./Typography";
 import ParentSelector from "./ParentSelector";
 import ForceStyles from "./ForceStyles";
 import Selectors from "./Selectors";
-import SelectorsPreview from "./SelectorsPreview";
+import SelectorsPreviewPredefined from "./SelectorsPreviewPredefined";
 
 interface Parent extends SelectorGroup {
 	updateProp: FunctionVoid;
@@ -37,7 +37,7 @@ const SelectorGroupEdit: React.ComponentType<Props> = props => {
 			{is_predefined ? (
 				<Fragment>
 					<Selectors {...props} />
-					<SelectorsPreview {...props} is_edit={true} />
+					<SelectorsPreviewPredefined {...props} is_edit={true} />
 				</Fragment>
 			) : (
 				<Fragment>

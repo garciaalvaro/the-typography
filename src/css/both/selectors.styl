@@ -143,9 +143,13 @@
 	padding-left 26px
 	border-left 1px solid var(--color_03)
 
-.thet-selector-parent ~ div
-	border-left 1px solid var(--color_04)
-	padding-left 15px
+.thet-selector-parent
+	~ div
+		border-left 1px solid var(--color_04)
+		padding-left 15px
+
+	&:last-child
+		display none
 
 .thet-message
 	font-style italic

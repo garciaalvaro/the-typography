@@ -91,11 +91,11 @@ class TypographyFront {
 		$css_root['selectors']        = implode( ',', $css_root['selectors'] );
 		$css_root_forced['selectors'] = implode( ',', $css_root_forced['selectors'] );
 
-		if ( ! empty( $css_root['style'] ) ) {
+		if ( ! empty( $css_root['selectors'] ) && ! empty( $css_root['style'] ) ) {
 			array_unshift( $css_array, $css_root );
 		}
 
-		if ( ! empty( $css_root_forced['style'] ) ) {
+		if ( ! empty( $css_root_forced['selectors'] ) && ! empty( $css_root_forced['style'] ) ) {
 			array_unshift( $css_array, $css_root_forced );
 		}
 
