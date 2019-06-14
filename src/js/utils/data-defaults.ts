@@ -1,14 +1,14 @@
 import uuid from "uuid/v4";
 
 const typography_style_defaults: TypographyStyle = {
+	custom_color: false,
+	color: "",
 	custom_font_size: false,
 	font_size: 15,
 	custom_line_height: false,
 	line_height: 1.2,
 	custom_letter_spacing: false,
 	letter_spacing: 0,
-	custom_color: false,
-	color: "",
 	custom_font_weight: false,
 	font_weight: "400",
 	custom_font_style: false,
@@ -44,9 +44,9 @@ const selector_defaults: Omit<Selector, "id"> = {
 };
 
 const selector_group_defaults: Omit<SelectorGroup, "id"> = {
+	_typography_style_defaults: null,
 	_id: "",
 	_description: "",
-	_typography_style_defaults: null,
 	custom_title: false,
 	title: "",
 	force_styles: false,
@@ -59,13 +59,13 @@ const selector_group_defaults: Omit<SelectorGroup, "id"> = {
 };
 
 const typography_defaults: Typography = {
-	is_active: true,
+	_typography_style_defaults: null,
 	_id: "",
 	_namespace: "",
 	_namespace_title: "",
 	_description: "",
 	_context_fixed: false,
-	_typography_style_defaults: null,
+	is_active: true,
 	id: 0,
 	title: "",
 	is_visible: false,

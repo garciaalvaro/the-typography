@@ -56,12 +56,28 @@ const cleanTypographyforDB = (
 		text_decoration
 	} = typography;
 
-	selector_groups = selector_groups.map(({ id, selectors, ...rest }: any) => {
-		return {
-			selectors: selectors.map(({ id, ...rest }: any) => rest),
-			...rest
-		};
-	});
+	selector_groups = selector_groups.map(
+		({ id, selectors, ...to_be_saved }: any) => {
+			to_be_saved = omitBy(
+				to_be_saved,
+				(val, key: keyof typeof selector_group_defaults) =>
+					val === selector_group_defaults[key]
+			);
+
+			return {
+				selectors: selectors.map(({ id, ...to_be_saved }: any) => {
+					to_be_saved = omitBy(
+						to_be_saved,
+						(val, key: keyof typeof selector_defaults) =>
+							val === selector_defaults[key]
+					);
+
+					return to_be_saved;
+				}),
+				...to_be_saved
+			};
+		}
+	);
 
 	// Meta
 	const meta = {
@@ -137,9 +153,13 @@ const cleanSelectorGroups = (selector_groups: Object): SelectorGroup[] =>
 		);
 
 		group.selectors = cleanSelectors(group.selectors);
-		group._typography_style_defaults = cleanTypographyStyleSelectorGroup(
-			group._typography_style_defaults
-		);
+
+		if (group._typography_style_defaults) {
+			group._typography_style_defaults = cleanTypographyStyleSelectorGroup(
+				group._typography_style_defaults
+			);
+		}
+
 		group.id = uuid();
 
 		return group;

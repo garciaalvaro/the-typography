@@ -79,7 +79,7 @@ class SelectorGroupFront {
 
 		$defaults = array_merge(
 			array(
-				'_id'                    => array(),
+				'_id'                    => '',
 				'selectors'              => array(),
 				'force_styles'           => false,
 				'custom_parent_selector' => false,

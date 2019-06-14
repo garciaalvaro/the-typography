@@ -85,7 +85,7 @@ class SelectorFront {
 
 		$defaults = array(
 			'_can_be_removed'      => true,
-			'selector_type'        => '',
+			'selector_type'        => 'text',
 			'text_selector'        => '',
 			'block_name'           => '',
 			'block_title'          => '',
