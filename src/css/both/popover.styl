@@ -42,10 +42,14 @@
 		text-align left
 		display block
 		cursor pointer
+		transition opacity .2s $e_standard
 
 		&.components-button:disabled
 			cursor default
 			opacity .3
+
+		&:hover
+			opacity .8
 
 		&:focus
 		&:hover

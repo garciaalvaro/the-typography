@@ -186,9 +186,6 @@ const cleanTypographyStyleRoot = (
 		pick(style, keys(typography_style_root_defaults))
 	) as TypographyStyleWithFont;
 
-	// TODO: this shouldnt be necessary
-	style_prepared.font_variant = castArray(style_prepared.font_variant);
-
 	return style_prepared;
 };
 

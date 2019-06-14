@@ -8,25 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 add_filter( 'wp_head', __NAMESPACE__ . '\test_front' );
 function test_front() {
 
-	$schema = array(
-		'qqq' => array(
-			'_options'       => array( '700' ),
-			'_default_value' => '400',
-		),
-		// 'font_variant' => array( '_all' =>
-		// 	// 'id'
-		// 	array(
-		// 		'_options'       => array( '400', '700' ),
-		// 		'_default_value' => '400',
-		// 	),
-		// ),
+	array(
+        'selector_type' => 'block',
+        'block_name' => 'core/quote',
+        // 'block_title' => 'Quote',
+        // 'block_selector_root' => '.wp-block-quote',
+        // 'block_selector_extra' => 'cite',
+        'block_element_label' => 'Citation',
 	);
 
-	$qq = array(
-		'qqq' => '700'
-		// 'font_variant' => array( '300', '700' )
-	);
-
-	// var_dump( Utils::castSchema( $qq, $schema ) );
-
+	$data = json_decode( "[{\"selectors\":[{\"selector_type\":\"block\",\"block_name\":\"core/quote\",\"block_title\":\"Quote\",\"block_selector_root\":\".wp-block-quote\",\"block_selector_extra\":\"cite\",\"block_element_label\":\"Citation\"}],\"custom_title\":true,\"title\":\"algo\",\"custom_typography\":true,\"custom_font_size\":true,\"font_size\":38}]", true);
+	highlight_string("<?php\n\$data =\n" . var_export($data, true) . ";\n?>");
 }
