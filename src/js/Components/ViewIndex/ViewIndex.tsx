@@ -36,7 +36,11 @@ const ViewIndex: React.ComponentType<Props> = props => {
 			{!is_loading && !is_last_page && typographies.length && (
 				<ButtonLoadMore />
 			)}
-			<Message {...props} />
+			<Message
+				typographies_custom={typographies_custom}
+				is_loading={is_loading}
+				is_last_page={is_last_page}
+			/>
 		</Div>
 	);
 };
