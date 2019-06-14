@@ -26,6 +26,12 @@ class CastSchema {
 				continue;
 			}
 
+			if ( isset( $type['_options'] ) ) {
+				$options       = $type['_options'];
+				$default_value = $type['_default_value'];
+				$type          = 'options';
+			}
+
 			if ( is_array( $type ) ) {
 				$value = CastArray::castArray( $value );
 
@@ -58,8 +64,13 @@ class CastSchema {
 					$elements[ $key ] = Sanitize::sanitizeColor( $value );
 					break;
 
-				case '_no_cast':
+				case 'no_cast':
 					$elements[ $key ] = $value;
+					break;
+
+				case 'options':
+					$elements[ $key ] =
+						Sanitize::sanitizeOptions( $value, $options, $default_value );
 					break;
 
 				default:

@@ -67,7 +67,7 @@ class SelectorGroupFront {
 				'custom_parent_selector' => 'boolean',
 				'parent_selector'        => 'text',
 				'custom_typography'      => 'boolean',
-				'selectors'              => array( '_all' => '_no_cast' ),
+				'selectors'              => array( '_all' => 'no_cast' ),
 			),
 			$this->style_schema
 		);

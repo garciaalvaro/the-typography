@@ -166,7 +166,7 @@ class TypographyFront {
 		$schema = array_merge(
 			array(
 				'is_active'       => 'boolean',
-				'selector_groups' => array( '_all' => '_no_cast' ),
+				'selector_groups' => array( '_all' => 'no_cast' ),
 				'custom_font'     => 'boolean',
 				'font_family'     => 'text',
 				'font_variant'    => array( '_all' => 'id' ),
