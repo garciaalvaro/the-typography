@@ -12,7 +12,7 @@ class SelectorGroupFront {
 
 	use TypographyStyle;
 
-	private $props     = array();
+	public $props      = array();
 	private $style     = array();
 	private $selectors = array();
 

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 class SelectorFront {
 
-	private $props = array();
+	public $props = array();
 
 	function __construct( $props = array() ) {
 
