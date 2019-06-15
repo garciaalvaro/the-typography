@@ -6,7 +6,7 @@ namespace THETYPOGRAPHY;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
- * Trait Sanitize
+ * Class Sanitize
  */
 class Sanitize {
 

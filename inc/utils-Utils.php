@@ -6,7 +6,7 @@ namespace THETYPOGRAPHY;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
- * Trait CastArray
+ * Class CastArray
  */
 class Utils {
 
@@ -15,11 +15,11 @@ class Utils {
 	}
 
 	static public function castSchema( $elements, $schema ) {
-		return CastSchema::castSchema( $elements, $schema );
+		return Schema::castSchema( $elements, $schema );
 	}
 
 	static public function setDefaults( $props, $defaults ) {
-		return SetDefaults::setDefaults( $props, $defaults );
+		return Defaults::setDefaults( $props, $defaults );
 	}
 
 	static public function sanitizeStringInteger( $value ) {

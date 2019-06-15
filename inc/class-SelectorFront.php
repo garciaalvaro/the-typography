@@ -67,7 +67,7 @@ class SelectorFront {
 
 	private function castProps() {
 
-		$schema = Schemas::$selector;
+		$schema = Schema::$selector;
 
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}

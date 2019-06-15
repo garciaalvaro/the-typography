@@ -60,7 +60,7 @@ class SelectorGroupFront {
 
 	private function castProps() {
 
-		$schema = Schemas::$selector_group;
+		$schema = Schema::$selector_group;
 
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}

@@ -163,7 +163,7 @@ class TypographyFront {
 
 	private function castProps() {
 
-		$schema = Schemas::$typography;
+		$schema = Schema::$typography;
 
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}

@@ -31,12 +31,10 @@ if ( ! defined( __NAMESPACE__ . '\PLUGIN_DIR' ) ) {
 }
 
 // Utils.
-require_once INC_DIR . 'utils-Defaults.php';
-require_once INC_DIR . 'utils-Schemas.php';
 require_once INC_DIR . 'utils-CastArray.php';
 require_once INC_DIR . 'utils-Sanitize.php';
-require_once INC_DIR . 'utils-CastSchema.php';
-require_once INC_DIR . 'utils-SetDefaults.php';
+require_once INC_DIR . 'utils-Schema.php';
+require_once INC_DIR . 'utils-Defaults.php';
 require_once INC_DIR . 'utils-Utils.php';
 
 // Traits.
