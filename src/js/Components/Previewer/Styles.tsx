@@ -112,7 +112,9 @@ export default compose([
 			}
 		}
 
-		typographies = typographies.filter(({ is_visible }) => is_visible);
+		typographies = typographies.filter(
+			({ is_visible, is_active }) => is_visible && is_active
+		);
 
 		return { typographies };
 	})
