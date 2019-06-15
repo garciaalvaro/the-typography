@@ -6,7 +6,7 @@ interface Parent extends Typography {
 }
 type Props = withTypographyStyle & Parent;
 
-const { __ } = wp.i18n;
+const { __, sprintf } = wp.i18n;
 const { Fragment } = wp.element;
 
 const Title: React.ComponentType<Props> = props => {
@@ -22,7 +22,9 @@ const Title: React.ComponentType<Props> = props => {
 	if (is_predefined) {
 		return (
 			<Fragment>
-				<Span id="namespace-title">{_namespace_title}</Span>
+				<Span id="namespace-title">
+					{sprintf(__("%s. %s"), _namespace_title, title)}
+				</Span>
 				{_description && <Span id="description">{_description}</Span>}
 				<Span
 					id="title"
