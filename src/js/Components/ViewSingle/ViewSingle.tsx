@@ -13,6 +13,7 @@ interface withColorClass {
 }
 type Props = withSelect & withDispatch & withColorClass;
 
+const { compact } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { Icon } = wp.components;
@@ -20,8 +21,16 @@ const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
 const ViewSingle: React.ComponentType<Props> = props => {
-	const { color_class, is_visible, _namespace } = props;
+	const { color_class, is_visible, is_active, _namespace } = props;
 	const is_predefined = _namespace !== "";
+	const visibility_message = compact([
+		`Not active in the current preview window `,
+		`(`,
+		!is_visible && `the "context" is different`,
+		!is_visible && !is_active && ` & `,
+		!is_active && `the typography is deactivated`,
+		`)`
+	]).join("");
 
 	return (
 		<Div
@@ -34,17 +43,15 @@ const ViewSingle: React.ComponentType<Props> = props => {
 						classes={[
 							"visibility-icon",
 							"single-visibility-icon",
-							is_visible ? "is_visible" : "no-is_visible"
+							is_visible && is_active ? "is_visible" : "no-is_visible"
 						]}
 					>
 						<Icon icon={icons.preview} />
 					</Div>
 					<Div classes={["visibility-message", "single-visibility-message"]}>
-						{is_visible
+						{is_visible && is_active
 							? __("Active in the current preview window")
-							: __(
-									`Not active in the current preview window (the "context" is different)`
-							  )}
+							: __(visibility_message)}
 					</Div>
 				</Fragment>
 			)}

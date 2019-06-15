@@ -15,6 +15,7 @@ interface Parent {
 }
 type Props = withSelect & Parent;
 
+const { compact } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { Icon } = wp.components;
@@ -26,9 +27,18 @@ const Info: React.ComponentType<Props> = props => {
 		context_type,
 		context_post_type,
 		taxonomies,
-		is_visible
+		is_visible,
+		is_active
 	} = props;
 	const is_predefined = _namespace !== "";
+	const visibility_message = compact([
+		`Not active in the current preview window `,
+		`(`,
+		!is_visible && `the "context" is different`,
+		!is_visible && !is_active && ` & `,
+		!is_active && `the typography is deactivated`,
+		`)`
+	]).join("");
 
 	const getTaxonomyInfo = () => {
 		if (context_type === "all_site") {
@@ -62,7 +72,7 @@ const Info: React.ComponentType<Props> = props => {
 						classes={[
 							"visibility-icon",
 							"index-typography-visibility-icon",
-							is_visible ? "is_visible" : "no-is_visible"
+							is_visible && is_active ? "is_visible" : "no-is_visible"
 						]}
 					>
 						<Icon icon={icons.preview} />
@@ -73,11 +83,9 @@ const Info: React.ComponentType<Props> = props => {
 							"index-typography-visibility-message"
 						]}
 					>
-						{is_visible
+						{is_visible && is_active
 							? __("Active in the current preview window")
-							: __(
-									`Not active in the current preview window (the "context" is different)`
-							  )}
+							: __(visibility_message)}
 					</Div>
 				</Fragment>
 			)}

@@ -34,6 +34,7 @@ const cleanTypographyforDB = (
 		context_post_type,
 		context_post_type_template,
 		// Meta
+		is_active,
 		selector_groups,
 		custom_font,
 		font_family,
@@ -81,6 +82,7 @@ const cleanTypographyforDB = (
 
 	// Meta
 	const meta = {
+		is_active,
 		selector_groups: JSON.stringify(selector_groups),
 		custom_font,
 		font_family,

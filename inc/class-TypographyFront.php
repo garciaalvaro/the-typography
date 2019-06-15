@@ -163,25 +163,7 @@ class TypographyFront {
 
 	private function castProps() {
 
-		$schema = array_merge(
-			Schemas::$typography,
-			array(
-				'is_active'       => 'boolean',
-				'selector_groups' => array( '_all' => 'no_cast' ),
-				'custom_font'     => 'boolean',
-				'font_family'     => 'text',
-				'font_variant'    => array( '_all' =>
-					array(
-						'_options' => array(
-							'100', '100i', '200', '200i', '300', '300i',
-							'400', '400i', '500', '500i', '600', '600i',
-							'700', '700i', '800', '800i', '900', '900i',
-						),
-						'_default_value' => '400',
-					),
-				),
-			)
-		);
+		$schema = Schemas::$typography;
 
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}
