@@ -5,6 +5,7 @@ import ParentSelector from "./ParentSelector";
 import ForceStyles from "./ForceStyles";
 import Selectors from "./Selectors";
 import SelectorsPreviewPredefined from "./SelectorsPreviewPredefined";
+import ButtonResetDefaults from "../ButtonResetDefaults";
 
 interface Parent extends SelectorGroup {
 	updateProp: FunctionVoid;
@@ -14,10 +15,6 @@ interface Parent extends SelectorGroup {
 type Props = Parent;
 
 const { Fragment } = wp.element;
-const ButtonResetDefaults = wp.hooks.applyFilters(
-	"thet.pro.ButtonResetDefaults",
-	() => null
-);
 
 const SelectorGroupEdit: React.ComponentType<Props> = props => {
 	const { _id, id, _typography_style_defaults } = props;

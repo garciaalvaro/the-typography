@@ -8,16 +8,12 @@ import LineHeight from "./Typography/LineHeight";
 import LetterSpacing from "./Typography/LetterSpacing";
 import TextTransform from "./Typography/TextTransform";
 import TextDecoration from "./Typography/TextDecoration";
+import ButtonResetDefaults from "./ButtonResetDefaults";
 
 interface Parent extends Typography {
 	updateProp: FunctionVoid;
 }
 type Props = withTypographyStyle & Parent;
-
-const ButtonResetDefaults = wp.hooks.applyFilters(
-	"thet.pro.ButtonResetDefaults",
-	() => null
-);
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;

@@ -1,7 +1,19 @@
 import l from "utils";
 
 const actions: Partial<ActionCreators> = {
-	...wp.hooks.applyFilters("thet.pro.addActions", {}),
+	resetProps(values) {
+		return {
+			type: "RESET_PROPS",
+			values
+		};
+	},
+	resetSelectorGroupProps(values, id) {
+		return {
+			type: "RESET_SELECTOR_GROUP_PROPS",
+			values,
+			id
+		};
+	},
 	updateSingleVisibility(page_data) {
 		return {
 			type: "UPDATE_SINGLE_VISIBILITY",
