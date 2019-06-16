@@ -18,7 +18,8 @@ const SelectorsPreviewPredefined: React.ComponentType<Props> = props => {
 		selectors,
 		custom_parent_selector,
 		parent_selector,
-		is_edit
+		is_edit,
+		id
 	} = props;
 	selectors = is_edit
 		? selectors.filter(({ _can_be_removed }) => !_can_be_removed)
@@ -54,7 +55,13 @@ const SelectorsPreviewPredefined: React.ComponentType<Props> = props => {
 								);
 							}
 
-							return <BlockSelectorPreview key={selector.id} {...selector} />;
+							return (
+								<BlockSelectorPreview
+									key={selector.id}
+									{...selector}
+									parent_id={id}
+								/>
+							);
 						})}
 					{custom_parent_selector && (
 						<Div classes={["selector-text", "selector-parent"]}>
@@ -78,7 +85,13 @@ const SelectorsPreviewPredefined: React.ComponentType<Props> = props => {
 								);
 							}
 
-							return <BlockSelectorPreview key={selector.id} {...selector} />;
+							return (
+								<BlockSelectorPreview
+									key={selector.id}
+									{...selector}
+									parent_id={id}
+								/>
+							);
 						})}
 				</Fragment>
 			)}

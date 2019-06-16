@@ -124,20 +124,6 @@ class Schema {
 		),
 	);
 
-	static public $selector = array(
-		'_can_be_removed'      => 'boolean',
-		'selector_type'        => array(
-			'_options'       => array( 'text', 'block' ),
-			'_default_value' => 'text',
-		),
-		'text_selector'        => 'text',
-		'block_name'           => 'text',
-		'block_title'          => 'text',
-		'block_selector_root'  => 'text',
-		'block_selector_extra' => 'text',
-		'block_element_label'  => 'text',
-	);
-
 	static public $typography = array(
 		'is_active'              => 'boolean',
 		'selector_groups'        => array( '_all' => array( '_all' => 'no_cast' ) ),

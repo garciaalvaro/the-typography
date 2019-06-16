@@ -36,7 +36,10 @@ const Root: React.ComponentType<Props> = props => {
 export default compose([
 	withFixedHeight,
 	withSelect<withSelect>(select => {
-		const { getView } = select<SelectorsR["getView"]>(pr_store);
+		const { getView, getBlocks } = select<SelectorsR["getView"]>(pr_store);
+
+		// Trigger initial load
+		getBlocks();
 
 		return { view: getView() };
 	})

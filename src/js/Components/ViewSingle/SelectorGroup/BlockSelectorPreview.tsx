@@ -1,28 +1,48 @@
-import l, { Div, Span } from "utils";
+import l, { Div, Span, pr_store } from "utils";
 
 interface withSelect {
-	block_icon: any;
+	block: BlockType | undefined;
 }
-interface Parent extends Selector {}
+interface Parent extends Selector {
+	parent_id: string;
+}
 type Props = withSelect & Parent;
 
-const { isUndefined } = lodash;
+const { startCase } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { withSelect } = wp.data;
-const { BlockIcon } = wp.editor;
+const { BlockIcon } = wp.blockEditor;
 
 const BlockSelectorPreview: React.ComponentType<Props> = props => {
-	const {
+	let {
+		block,
 		block_name,
 		block_title,
-		block_icon,
 		block_selector_extra,
 		block_element_label
 	} = props;
+	let block_icon = null;
+
+	if (block) {
+		block_title = block.title;
+		block_icon = block.icon;
+	} else if (block_title === "" && block_name !== "") {
+		block_title = startCase(block_name);
+	}
+
+	if (block && block_element_label === "") {
+		block_element_label = "Block root";
+	} else if (
+		block_element_label !== "Custom selector" &&
+		(!block ||
+			!block.elements.find(({ label }) => label === block_element_label))
+	) {
+		block_element_label = "Custom selector";
+	}
 
 	if (block_name === "") {
-		return <Fragment>{__("...select a block")}</Fragment>;
+		return <Div classes="selector-block">{__("...select a block")}</Div>;
 	}
 
 	return (
@@ -49,10 +69,8 @@ const BlockSelectorPreview: React.ComponentType<Props> = props => {
 	);
 };
 
-export default withSelect<withSelect, Parent>((select: any, { block_name }) => {
-	const { getBlockType } = select("core/blocks");
-	const block_type = getBlockType(block_name);
-	const block_icon = isUndefined(block_type) ? null : block_type.icon.src;
+export default withSelect<withSelect, Parent>((select, { block_name }) => {
+	const { getBlock } = select<SelectorsR["getBlock"]>(pr_store);
 
-	return { block_icon };
+	return { block: getBlock(block_name) };
 })(BlockSelectorPreview);

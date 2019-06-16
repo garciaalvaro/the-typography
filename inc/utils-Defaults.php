@@ -43,16 +43,6 @@ class Defaults {
 		'text_decoration'        => 'none',
 	);
 
-	static public $selector = array(
-		'selector_type'        => 'text',
-		'text_selector'        => '',
-		'block_name'           => '',
-		'block_title'          => '',
-		'block_selector_root'  => '',
-		'block_selector_extra' => '',
-		'block_element_label'  => '',
-	);
-
 	static public $typography = array(
 		'is_active'              => true,
 		'selector_groups'        => array(),

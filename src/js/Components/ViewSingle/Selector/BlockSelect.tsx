@@ -11,7 +11,7 @@ interface Parent extends Selector {
 type Props = withSelect & Parent;
 
 const { __ } = wp.i18n;
-const { BlockIcon } = wp.editor;
+const { BlockIcon } = wp.blockEditor;
 const { withSelect } = wp.data;
 
 const Option: React.ComponentType<any> = props => {

@@ -14,7 +14,9 @@ declare const wp: {
 	compose: typeof import("./academic-bloggers-toolkit-master/wordpress__compose") & {
 		withGlobalEvents: any;
 	};
-	blockEditor: typeof import("./academic-bloggers-toolkit-master/wordpress__block-editor");
+	blockEditor: typeof import("./academic-bloggers-toolkit-master/wordpress__block-editor") & {
+		BlockIcon: React.ReactType;
+	};
 	htmlEntities: {
 		decodeEntities: (arg: string) => Object[];
 	};

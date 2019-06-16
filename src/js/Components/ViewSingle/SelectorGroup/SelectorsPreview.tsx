@@ -12,7 +12,13 @@ const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 
 const SelectorsPreview: React.ComponentType<Props> = props => {
-	const { open, selectors, custom_parent_selector, parent_selector } = props;
+	const {
+		open,
+		selectors,
+		custom_parent_selector,
+		parent_selector,
+		id
+	} = props;
 
 	return (
 		<Div
@@ -45,7 +51,13 @@ const SelectorsPreview: React.ComponentType<Props> = props => {
 							);
 						}
 
-						return <BlockSelectorPreview key={selector.id} {...selector} />;
+						return (
+							<BlockSelectorPreview
+								key={selector.id}
+								{...selector}
+								parent_id={id}
+							/>
+						);
 					})}
 				</Fragment>
 			)}
