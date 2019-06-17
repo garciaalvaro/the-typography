@@ -1,53 +1,55 @@
+const { __ } = wp.i18n;
+
 export default [
 	{
 		name: "core/more",
-		elements: [{ name: "Block root", selector: ".more-link" }]
+		elements: [{ name: __("Block root"), selector: ".more-link" }]
 	},
 	{
 		name: "core/quote",
 		elements: [
-			{ name: "Body", selector: "p" },
-			{ name: "Citation", selector: "cite" }
+			{ name: __("Body"), selector: "p" },
+			{ name: __("Citation"), selector: "cite" }
 		]
 	},
 	{
 		name: "core/categories",
 		elements: [
 			{
-				name: "Item",
+				name: __("Item"),
 				selector: ".cat-item"
 			},
 			{
-				name: "Link",
+				name: __("Link"),
 				selector: ".wp-block-button__link"
 			}
 		]
 	},
 	{
 		name: "core/button",
-		elements: [{ name: "Link", selector: ".wp-block-button__link" }]
+		elements: [{ name: __("Link"), selector: ".wp-block-button__link" }]
 	},
 	{
 		name: "core/latest-comments",
 		elements: [
 			{
-				name: "Meta",
+				name: __("Meta"),
 				selector: ".wp-block-latest-comments__comment-meta"
 			},
 			{
-				name: "Excerpt",
+				name: __("Excerpt"),
 				selector: ".wp-block-latest-comments__comment-excerpt"
 			},
 			{
-				name: "Author",
+				name: __("Author"),
 				selector: ".wp-block-latest-comments__comment-author"
 			},
 			{
-				name: "Link",
+				name: __("Link"),
 				selector: ".wp-block-latest-comments__comment-link"
 			},
 			{
-				name: "Date",
+				name: __("Date"),
 				selector: ".wp-block-latest-comments__comment-date"
 			}
 		]
@@ -55,22 +57,22 @@ export default [
 	{
 		name: "core/latest-posts",
 		elements: [
-			{ name: "Date", selector: ".wp-block-latest-posts__post-date" },
-			{ name: "Title", selector: "a" }
+			{ name: __("Date"), selector: ".wp-block-latest-posts__post-date" },
+			{ name: __("Title"), selector: "a" }
 		]
 	},
 	{
 		name: "core/archives",
 		elements: [
-			{ name: "Item", selector: "li" },
-			{ name: "Link", selector: "a" }
+			{ name: __("Item"), selector: "li" },
+			{ name: __("Link"), selector: "a" }
 		]
 	},
 	{
 		name: "core/pullquote",
 		elements: [
-			{ name: "Body", selector: "p" },
-			{ name: "Citation", selector: "cite" }
+			{ name: __("Body"), selector: "p" },
+			{ name: __("Citation"), selector: "cite" }
 		]
 	}
 ];
