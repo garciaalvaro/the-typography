@@ -27,18 +27,6 @@ const BlockSelectorPreview: React.ComponentType<Props> = props => {
 	if (block) {
 		block_title = block.title;
 		block_icon = block.icon;
-	} else if (block_title === "" && block_name !== "") {
-		block_title = startCase(block_name);
-	}
-
-	if (block && block_element_label === "") {
-		block_element_label = "Block root";
-	} else if (
-		block_element_label !== "Custom selector" &&
-		(!block ||
-			!block.elements.find(({ label }) => label === block_element_label))
-	) {
-		block_element_label = "Custom selector";
 	}
 
 	if (block_name === "") {

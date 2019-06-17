@@ -7,7 +7,8 @@ import l, {
 	getId,
 	getIds,
 	getSlug,
-	getSlugs
+	getSlugs,
+	blocks_data
 } from "utils";
 import uuid from "uuid/v4";
 
@@ -20,8 +21,10 @@ const {
 	isUndefined,
 	isArray,
 	castArray,
-	compact
+	compact,
+	startCase
 } = lodash;
+const { __ } = wp.i18n;
 
 const cleanTypographyforDB = (
 	typography: Object,
@@ -140,10 +143,42 @@ const cleanSelectors = (selectors: Object): Selector =>
 			selector_defaults,
 			pick(selector, keys(selector_defaults))
 		);
+		let {
+			block_name,
+			block_selector_extra,
+			block_element_label,
+			block_title
+		} = selector;
 
-		selector.id = uuid();
+		if (block_name) {
+			block_title = block_title ? block_title : startCase(block_name);
 
-		return selector;
+			if (block_selector_extra === "") {
+				block_element_label = __("Block root");
+			} else {
+				const block_data = blocks_data.find(
+					({ name }) => name === selector.block_name
+				);
+				const element = block_data
+					? block_data.elements.find(
+							({ selector }) => selector === block_selector_extra
+					  )
+					: null;
+
+				block_element_label = element
+					? element.name
+					: block_element_label === ""
+					? __("Custom selector")
+					: block_element_label;
+			}
+		}
+
+		return {
+			...selector,
+			block_element_label,
+			block_title,
+			id: uuid()
+		};
 	});
 
 const cleanSelectorGroups = (selector_groups: Object): SelectorGroup[] =>
