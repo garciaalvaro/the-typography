@@ -33,7 +33,6 @@ const Message: React.ComponentType<Props> = props => {
 				<Div id="index-message">{__("No typographies found.")}</Div>
 				<Button
 					id={addPrefix("button-add_first_typography")}
-					className={addPrefix("navigation-button")}
 					onClick={addTypography}
 				>
 					{__("Add a Typography")}

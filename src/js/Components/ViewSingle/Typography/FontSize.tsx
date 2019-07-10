@@ -27,7 +27,7 @@ const FontSize: React.ComponentType<Props> = props => {
 				jumped: addPrefix("material_ui-range-jumped")
 			}}
 			min={5}
-			max={70}
+			max={80}
 			step={1}
 			value={font_size}
 			onChange={(e, value) => updateProp("font_size", value)}

@@ -57,7 +57,7 @@ function register_the_typography_meta() {
 		'sanitize_callback' =>
 			function ( $value ) {
 				$min = 5;
-				$max = 60;
+				$max = 80;
 
 				return Utils::sanitizeRange( $value, $min, $max );
 			},
