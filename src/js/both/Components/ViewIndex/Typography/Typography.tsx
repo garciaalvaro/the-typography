@@ -1,4 +1,4 @@
-import l, { Span, Div, pr_store, withColorClass } from "src/js/both/utils";
+import l, { Span, Div, pr_store, withColorClass } from "utils";
 import Title from "./Title";
 import Info from "./Info";
 

@@ -1,4 +1,4 @@
-import l from "src/js/both/utils";
+import l from "utils";
 import produce from "immer";
 import uuid from "uuid/v4";
 

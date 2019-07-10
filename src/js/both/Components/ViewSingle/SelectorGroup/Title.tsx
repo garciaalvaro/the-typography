@@ -1,4 +1,4 @@
-import l, { addPrefix, Span } from "src/js/both/utils";
+import l, { addPrefix, Span } from "utils";
 import TextField from "@material-ui/core/TextField";
 
 interface Parent extends SelectorGroup {

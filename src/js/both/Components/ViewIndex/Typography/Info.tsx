@@ -5,7 +5,7 @@ import l, {
 	pr_store,
 	getNames,
 	icons
-} from "src/js/both/utils";
+} from "utils";
 import ButtonRemove from "./ButtonRemove";
 import ButtonActivate from "./ButtonActivate";
 

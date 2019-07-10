@@ -1,4 +1,4 @@
-import l, { pr_store } from "src/js/both/utils";
+import l, { pr_store } from "utils";
 import reducer from "./_reducer";
 import actions from "./_actions";
 import controls from "./_controls";

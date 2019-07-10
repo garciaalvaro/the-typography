@@ -3,7 +3,7 @@ import l, {
 	Div,
 	pr_store,
 	withFixedHeight
-} from "src/js/both/utils";
+} from "utils";
 import Previewer from "../Previewer/Previewer";
 import GFonts from "../GFonts/GFonts";
 import Navigation from "../Navigation/Navigation";

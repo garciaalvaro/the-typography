@@ -17,7 +17,9 @@ export default {
 	},
 	resolve: {
 		alias: {
-			utils: _rootdir + "/src/js/utils"
+			utils: _rootdir + "/src/js/both/utils",
+			store: _rootdir + "/src/js/both/store",
+			Components: _rootdir + "/src/js/both/Components"
 		}
 	},
 	externals: {

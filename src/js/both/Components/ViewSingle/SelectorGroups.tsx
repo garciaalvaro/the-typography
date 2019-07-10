@@ -1,4 +1,4 @@
-import l, { Div, withTypographyStyle } from "src/js/both/utils";
+import l, { Div, withTypographyStyle } from "utils";
 import SelectorGroup from "./SelectorGroup/SelectorGroup";
 import ButtonAddGroup from "./SelectorGroup/ButtonAddGroup";
 

@@ -3,7 +3,7 @@ import l, {
 	Div,
 	Span,
 	addPrefix
-} from "src/js/both/utils";
+} from "utils";
 import TextField from "@material-ui/core/TextField";
 
 interface Parent extends Typography {

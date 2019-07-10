@@ -1,4 +1,4 @@
-import l, { Div, pr_store } from "src/js/both/utils";
+import l, { Div, pr_store } from "utils";
 import Message from "./Message";
 import Typography from "./Typography/Typography";
 import ButtonLoadMore from "./ButtonLoadMore";

@@ -1,4 +1,4 @@
-import l, { pr_store } from "src/js/both/utils";
+import l, { pr_store } from "utils";
 
 interface withState extends setState<withState> {
 	previewer_ready: boolean;

@@ -1,4 +1,4 @@
-import l, { Div, Span, pr_store } from "src/js/both/utils";
+import l, { Div, Span, pr_store } from "utils";
 
 interface withSelect {
 	block: BlockType | undefined;

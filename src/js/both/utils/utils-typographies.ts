@@ -9,7 +9,7 @@ import l, {
 	getSlug,
 	getSlugs,
 	blocks_data
-} from "src/js/both/utils";
+} from "utils";
 import uuid from "uuid/v4";
 
 const {

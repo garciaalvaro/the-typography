@@ -1,4 +1,4 @@
-import l, { addPrefix, pr_store, icons } from "src/js/both/utils";
+import l, { addPrefix, pr_store, icons } from "utils";
 
 interface withDispatch {
 	goToIndex: FunctionVoid;

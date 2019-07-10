@@ -3,7 +3,7 @@ import l, {
 	cleanTypographies,
 	typographies_per_page,
 	pr_store
-} from "src/js/both/utils";
+} from "utils";
 import actions from "./_actions";
 
 const resolvers = {

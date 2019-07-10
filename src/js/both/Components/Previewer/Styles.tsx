@@ -1,4 +1,4 @@
-import l, { pr_store } from "src/js/both/utils";
+import l, { pr_store } from "utils";
 import Style from "./Style";
 
 interface withState extends setState<withState> {

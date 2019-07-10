@@ -2,7 +2,7 @@ import l, {
 	pr_store,
 	cleanTypographies,
 	typographies_per_page
-} from "src/js/both/utils";
+} from "utils";
 
 interface withDispatch {
 	fetchTypographies: FunctionVoid;

@@ -1,4 +1,4 @@
-import l, { withControlCustom, addPrefix } from "src/js/both/utils";
+import l, { withControlCustom, addPrefix } from "utils";
 import Slider from "@material-ui/lab/Slider";
 
 interface Parent extends Typography {

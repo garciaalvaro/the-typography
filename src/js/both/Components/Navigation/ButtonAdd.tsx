@@ -1,4 +1,4 @@
-import l, { addPrefix, icons, withAddTypography } from "src/js/both/utils";
+import l, { addPrefix, icons, withAddTypography } from "utils";
 
 type Props = withAddTypography;
 

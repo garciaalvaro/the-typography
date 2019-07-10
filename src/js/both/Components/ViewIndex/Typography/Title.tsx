@@ -1,4 +1,4 @@
-import l, { withTypographyStyle, Div, Span } from "src/js/both/utils";
+import l, { withTypographyStyle, Div, Span } from "utils";
 
 interface Parent {
 	title: Typography["title"];

@@ -1,4 +1,4 @@
-import l, { Div, withAddTypography, addPrefix } from "src/js/both/utils";
+import l, { Div, withAddTypography, addPrefix } from "utils";
 
 interface Parent {
 	typographies_custom: State["typographies"];

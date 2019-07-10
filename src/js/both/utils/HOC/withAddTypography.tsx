@@ -2,7 +2,7 @@ import l, {
 	is_customizer,
 	pr_store,
 	typography_defaults
-} from "src/js/both/utils";
+} from "utils";
 
 interface withDispatch {
 	addTypography: FunctionVoid;

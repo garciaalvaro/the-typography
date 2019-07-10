@@ -1,4 +1,4 @@
-import l, { is_customizer, DivForwardRef } from "src/js/both/utils";
+import l, { is_customizer, DivForwardRef } from "utils";
 
 interface withState extends setState<withState> {
 	height: number;

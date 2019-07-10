@@ -1,4 +1,4 @@
-import l from "src/js/both/utils";
+import l from "utils";
 
 const initial_state: State["entities"] = { taxonomies: {}, blocks: [] };
 

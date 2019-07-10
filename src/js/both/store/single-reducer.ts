@@ -1,4 +1,4 @@
-import l, { selector_group_defaults, selector_defaults } from "src/js/both/utils";
+import l, { selector_group_defaults, selector_defaults } from "utils";
 import produce from "immer";
 import uuid from "uuid/v4";
 

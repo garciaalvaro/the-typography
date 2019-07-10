@@ -1,4 +1,4 @@
-import l, { Span, pr_store } from "src/js/both/utils";
+import l, { Span, pr_store } from "utils";
 import ButtonBack from "./ButtonBackSingle";
 import ButtonUndo from "./ButtonUndo";
 import ButtonUpdate from "./ButtonUpdate";

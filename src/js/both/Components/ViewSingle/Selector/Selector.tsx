@@ -1,4 +1,4 @@
-import l, { Div, pr_store } from "src/js/both/utils";
+import l, { Div, pr_store } from "utils";
 import TextSelector from "./TextSelector";
 import BlockSelector from "./BlockSelector";
 

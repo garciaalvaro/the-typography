@@ -1,4 +1,4 @@
-import l, { is_customizer, pr_store } from "src/js/both/utils";
+import l, { is_customizer, pr_store } from "utils";
 import WebFont from "webfontloader";
 
 interface withSelect {

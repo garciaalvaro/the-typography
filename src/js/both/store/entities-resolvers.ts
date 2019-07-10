@@ -1,4 +1,4 @@
-import l, { blocks_data } from "src/js/both/utils";
+import l, { blocks_data } from "utils";
 import actions from "./_actions";
 
 const { unionBy, snakeCase } = lodash;

@@ -1,4 +1,4 @@
-import l, { is_customizer, Div, Span } from "src/js/both/utils";
+import l, { is_customizer, Div, Span } from "utils";
 import Selector from "../Selector/Selector";
 import ButtonAddSelector from "./ButtonAddSelector";
 

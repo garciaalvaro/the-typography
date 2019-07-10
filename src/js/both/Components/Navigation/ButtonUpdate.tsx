@@ -3,7 +3,7 @@ import l, {
 	pr_store,
 	cleanTypographyforDB,
 	cleanTaxonomyTerm
-} from "src/js/both/utils";
+} from "utils";
 
 interface withDispatch {
 	update: FunctionVoid;

@@ -1,4 +1,4 @@
-import l, { Div } from "src/js/both/utils";
+import l, { Div } from "utils";
 
 const withContainer = (classes: (string | null)[]) => <P extends {}>(
 	Component: React.ComponentType<P>

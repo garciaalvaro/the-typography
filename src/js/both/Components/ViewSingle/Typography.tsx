@@ -1,4 +1,4 @@
-import l, { withPanel } from "src/js/both/utils";
+import l, { withPanel } from "utils";
 import Font from "./Typography/Font";
 import Color from "./Typography/Color";
 import FontSize from "./Typography/FontSize";

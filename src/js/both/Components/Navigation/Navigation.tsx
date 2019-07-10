@@ -1,4 +1,4 @@
-import l, { Div } from "src/js/both/utils";
+import l, { Div } from "utils";
 import ViewIndex from "./ViewIndex";
 import ViewSingle from "./ViewSingle";
 import ViewInfo from "./ViewInfo";

@@ -1,4 +1,4 @@
-import l, { addPrefix, pr, fonts_family, Div, icons } from "src/js/both/utils";
+import l, { addPrefix, pr, fonts_family, Div, icons } from "utils";
 import Select from "react-select";
 
 interface Parent extends Typography {

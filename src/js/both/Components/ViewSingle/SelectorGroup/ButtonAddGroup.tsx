@@ -1,4 +1,4 @@
-import l, { addPrefix, pr_store } from "src/js/both/utils";
+import l, { addPrefix, pr_store } from "utils";
 
 interface withDispatch {
 	addSelectorGroup: FunctionVoid;

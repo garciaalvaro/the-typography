@@ -1,4 +1,4 @@
-import l, { Span, Div } from "src/js/both/utils";
+import l, { Span, Div } from "utils";
 import Color from "../Typography/Color";
 import FontSize from "../Typography/FontSize";
 import FontStyle from "../Typography/FontStyle";

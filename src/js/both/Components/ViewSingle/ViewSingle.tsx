@@ -4,7 +4,7 @@ import l, {
 	Div,
 	pr_store,
 	icons
-} from "src/js/both/utils";
+} from "utils";
 import SelectorGroups from "./SelectorGroups";
 import Title from "./Title";
 import Context from "./Context";

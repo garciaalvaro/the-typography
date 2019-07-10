@@ -1,4 +1,4 @@
-import l, { Span, addPrefix } from "src/js/both/utils";
+import l, { Span, addPrefix } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 

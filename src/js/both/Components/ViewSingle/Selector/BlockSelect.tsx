@@ -1,4 +1,4 @@
-import l, { pr_store, Span, Div, pr, addPrefix } from "src/js/both/utils";
+import l, { pr_store, Span, Div, pr, addPrefix } from "utils";
 import ReactSelect from "react-select";
 
 interface withSelect {

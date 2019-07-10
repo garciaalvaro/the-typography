@@ -1,4 +1,4 @@
-import l, { withToggle, pr_store, icons, addPrefix } from "src/js/both/utils";
+import l, { withToggle, pr_store, icons, addPrefix } from "utils";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
 interface withDispatch {

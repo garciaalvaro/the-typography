@@ -1,4 +1,4 @@
-import l, { Span } from "src/js/both/utils";
+import l, { Span } from "utils";
 import withContainer from "./withContainer";
 
 const { isUndefined } = lodash;

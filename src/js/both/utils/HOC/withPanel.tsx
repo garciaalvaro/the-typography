@@ -1,4 +1,4 @@
-import l, { Div, Span, addPrefix, icons } from "src/js/both/utils";
+import l, { Div, Span, addPrefix, icons } from "utils";
 import withToggle from "./withToggle";
 
 interface withPanel {

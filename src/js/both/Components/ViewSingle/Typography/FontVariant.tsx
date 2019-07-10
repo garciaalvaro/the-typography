@@ -1,4 +1,4 @@
-import l, { Span, addPrefix, fonts, fonts_variants } from "src/js/both/utils";
+import l, { Span, addPrefix, fonts, fonts_variants } from "utils";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 

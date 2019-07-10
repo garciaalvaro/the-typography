@@ -1,4 +1,4 @@
-import l, { withFetchTypographies, addPrefix } from "src/js/both/utils";
+import l, { withFetchTypographies, addPrefix } from "utils";
 
 interface withDispatch {
 	fetchTypographies: FunctionVoid;

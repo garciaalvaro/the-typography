@@ -1,4 +1,4 @@
-import l from "src/js/both/utils";
+import l from "utils";
 import SelectorsPreviewPredefined from "./SelectorsPreviewPredefined";
 import SelectorsPreview from "./SelectorsPreview";
 

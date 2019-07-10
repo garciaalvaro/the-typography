@@ -1,4 +1,4 @@
-import l, { Div, Span, plugin_info } from "src/js/both/utils";
+import l, { Div, Span, plugin_info } from "utils";
 
 type Props = {};
 

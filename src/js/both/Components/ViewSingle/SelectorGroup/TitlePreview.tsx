@@ -1,4 +1,4 @@
-import l, { Span } from "src/js/both/utils";
+import l, { Span } from "utils";
 
 interface Parent extends SelectorGroup {
 	updateProp: FunctionVoid;

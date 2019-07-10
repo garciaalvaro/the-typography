@@ -1,4 +1,4 @@
-import l, { pr_store, is_editor, Span } from "src/js/both/utils";
+import l, { pr_store, is_editor, Span } from "utils";
 import SelectorType from "./SelectorType";
 import ButtonRemove from "./ButtonRemove";
 import BlockSelect from "./BlockSelect";

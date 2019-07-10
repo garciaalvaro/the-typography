@@ -1,4 +1,4 @@
-import l, { Div, addPrefix, pr_store } from "src/js/both/utils";
+import l, { Div, addPrefix, pr_store } from "utils";
 
 interface withDispatch {
 	toggleTabOpen: FunctionVoid;

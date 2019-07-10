@@ -1,4 +1,4 @@
-import l, { Div } from "src/js/both/utils";
+import l, { Div } from "utils";
 import BlockSelectorPreview from "./BlockSelectorPreview";
 
 interface Parent extends SelectorGroup {
