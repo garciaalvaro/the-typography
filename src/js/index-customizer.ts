@@ -1,7 +1,7 @@
-import l from "utils";
-import registerCoreBlocks from "./core/registerCoreBlocks";
-import createStore from "./store";
-import renderRoot from "./core/renderRoot";
+import l from "src/js/both/utils";
+import registerCoreBlocks from "./both/core/registerCoreBlocks";
+import createStore from "./both/store";
+import renderRoot from "./both/core/renderRoot";
 
 registerCoreBlocks();
 createStore();

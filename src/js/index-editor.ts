@@ -1,6 +1,6 @@
-import l from "utils";
-import createStore from "./store";
-import registerSidebar from "./core/registerSidebar";
+import l from "src/js/both/utils";
+import createStore from "./both/store";
+import registerSidebar from "./both/core/registerSidebar";
 
 createStore();
 registerSidebar();

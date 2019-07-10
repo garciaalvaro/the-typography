@@ -17,8 +17,8 @@
 		"jsx": "react",
 		"baseUrl": ".",
 		"paths": {
-			"utils": ["./src/js/utils"],
-			"store": ["./src/js/store"]
+			"utils": ["src/js/both/utils"],
+			"store": ["src/js/both/store"]
 		}
 	},
 	"include": ["src", "pro", "types/**/*.d.ts"],
