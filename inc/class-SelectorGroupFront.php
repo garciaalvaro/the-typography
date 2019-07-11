@@ -22,7 +22,7 @@ class SelectorGroupFront {
 
 		$this->castProps();
 
-		$this->setPropsDefaults();
+		$this->setSinglePropsDefaults();
 
 		$this->setStyle();
 
@@ -40,13 +40,17 @@ class SelectorGroupFront {
 
 	public function getCssObject() {
 
-		$is_predefined = '' !== $this->props['_id'];
-		$css_selectors = array();
+		$is_predefined   = '' !== $this->props['_id'];
+		$css_selectors   = array();
+		$parent_selector = true === $this->props['custom_parent_selector']
+			? $this->props['parent_selector']
+			: '';
 
 		foreach ( $this->selectors as $selector ) {
+
 			$css_selectors[] =
 				$selector->getCssSelector(
-					$this->props['parent_selector'],
+					$parent_selector,
 					$is_predefined
 				);
 		}
@@ -65,7 +69,7 @@ class SelectorGroupFront {
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
-	private function setPropsDefaults() {
+	private function setSinglePropsDefaults() {
 
 		$defaults = Defaults::$selector_group;
 
@@ -82,6 +86,7 @@ class SelectorGroupFront {
 	}
 
 	private function setSelectors() {
+
 		foreach ( $this->props['selectors'] as $selector_props ) {
 
 			$selector = new SelectorFront( $selector_props );

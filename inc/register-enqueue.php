@@ -5,23 +5,6 @@ namespace THETYPOGRAPHY;
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-function get_post_types_prepared() {
-
-	$post_types = get_post_types( array( 'public' => true ) );
-	$post_types_prepared = array();
-
-	foreach ( $post_types as $slug ) {
-		$obj = get_post_type_object( $slug );
-
-		$post_types_prepared[] = array(
-			'slug' => $slug,
-			'name' => $obj->labels->name,
-		);
-	}
-
-	return $post_types_prepared;
-}
-
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_editor', 901 );
 function enqueue_editor() {
 
@@ -40,29 +23,23 @@ function enqueue_editor() {
 		PLUGIN_NAME . '-editor',
 		BUILD_DIR . PLUGIN_NAME . '-editor.js',
 		array(
-			'jquery',
 			'lodash',
-			'wp-i18n',
-			'wp-compose',
-			'wp-element',
-			'wp-components',
+			'wp-api-fetch',
 			'wp-block-editor',
-			'wp-edit-post',
-			'wp-plugins',
+			'wp-components',
+			'wp-compose',
 			'wp-data',
+			'wp-edit-post',
+			'wp-element',
 			'wp-hooks',
 			'wp-html-entities',
+			'wp-i18n',
+			'wp-plugins',
+			'wp-url',
 		),
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.
 	);
-
-	$data = array(
-		'post_types' => get_post_types_prepared(),
-	);
-
-	wp_localize_script( PLUGIN_NAME . '-editor', 'the_typography', $data );
-
 }
 
 add_action( 'customize_controls_enqueue_scripts', __NAMESPACE__ . '\enqueue_customizer', 901 );
@@ -80,32 +57,29 @@ function enqueue_customizer() {
 		BUILD_DIR . PLUGIN_NAME . '-customizer.js',
 		array(
 			'customize-controls',
-			'jquery',
 			'lodash',
-			'wp-i18n',
-			'wp-compose',
-			'wp-element',
-			'wp-components',
+			'wp-api-fetch',
 			'wp-block-editor',
-			'wp-plugins',
-			'wp-data',
-			'wp-hooks',
-			'wp-blocks',
 			'wp-block-library',
+			'wp-components',
+			'wp-compose',
+			'wp-data',
+			'wp-dom-ready',
+			'wp-edit-post',
+			'wp-element',
+			'wp-hooks',
+			'wp-html-entities',
+			'wp-i18n',
+			'wp-plugins',
+			'wp-url',
 		),
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.
 	);
 
-	$data = array(
-		'post_types' => get_post_types_prepared(),
-	);
-
-	wp_localize_script( PLUGIN_NAME . '-customizer', 'the_typography', $data );
-
 	// Plugins can enqueue their block registration script so the block
 	// can be selected in the Typography selector inside the Customizer.
-	do_action( 'thet_enqueue_block_script_in_customizer' );
+	do_action( 'the_typography_after_customizer_enqueue' );
 
 }
 
@@ -117,8 +91,8 @@ function enqueue_customizer_preview() {
 		BUILD_DIR . PLUGIN_NAME . '-previewer.js',
 		array(
 			'customize-preview',
-			'jquery',
 			'lodash',
+			'wp-dom-ready',
 		),
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.

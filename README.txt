@@ -1,4 +1,4 @@
-=== The Typography for Gutenberg ===
+=== The Typography ===
 Contributors: melonpan
 Tags: gutenberg, blocks, typography, text, fonts, customizer
 Requires at least: 5.1

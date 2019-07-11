@@ -1,0 +1,42 @@
+/**
+ * Typography
+ */
+
+@import "./_predefined"
+
++prefix-classes('thet-')
+
+	#thet-single-title
+		display block
+		padding 20px 20px 10px
+
+		> div
+			width 100%
+
+		input
+			line-height 2
+
+	#thet-content-single
+		overflow hidden
+		line-height 2.7
+		padding-bottom 150px
+		position relative
+		cursor default
+
+	.panel
+		display flex
+		flex-direction column
+		padding 10px 20px
+		align-items self-start
+
+		&.is_open
+			border-top 1px solid var(--color_01)
+			border-bottom 1px solid var(--color_01)
+			margin-top -1px
+
+			+ .is_open
+				border-top none
+				margin-top 0
+
+			&:last-child
+				border-bottom none

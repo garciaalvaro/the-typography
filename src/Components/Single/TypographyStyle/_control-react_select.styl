@@ -1,0 +1,87 @@
+/**
+ * TypographyStyle - React Select
+ */
+
+#thet-container
+
+	.thet__menu .thet-block
+		padding 0 10px
+
+		&:hover
+			background-color var(--color_01)
+
+	+prefix-classes('thet-')
+
+		.control-react_select
+			height 2.7em
+
+			input
+				color var(--color_085)!important
+
+		.font_family
+			display flex
+			flex-direction row
+			align-items center
+
+			svg
+				fill var(--color_07)
+
+	+prefix-classes('thet__')
+
+		.menu-list
+			max-height 250px
+
+		.menu
+			z-index 10
+			border-radius 2px
+			min-width 222px
+			color var(--color_085)
+
+		.option--is-focused
+			background-color var(--color_003)
+
+		.option--is-selected
+			background-color var(--color_01)
+			color var(--color_085)
+
+		.control
+			border none
+			min-height 0
+			box-shadow none
+			display inline-block
+			background none
+			width 100%
+
+		.value-container
+			padding 0
+			display block
+			overflow visible
+
+		.indicators
+			display none
+
+		.indicator-separator
+			display none
+
+		.single-value
+		.placeholder
+			position relative
+			transform none
+			display block
+			margin 0
+			color var(--color_085)
+			max-width none
+			cursor pointer
+
+			+ div
+				position absolute
+				z-index -1
+
+		div.placeholder
+			color var(--color_03)
+
+		.input input
+			box-shadow none
+			padding-right 25px
+			line-height inherit
+			margin 0

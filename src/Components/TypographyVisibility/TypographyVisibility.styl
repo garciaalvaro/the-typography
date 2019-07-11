@@ -1,0 +1,93 @@
+/**
+ * TypographyVisibility
+ */
+
++prefix-classes('thet-')
+
+	#thet-content-index
+
+		div.typography-visibility
+			padding 0
+			position absolute
+			left 0
+			bottom 0
+			font-size .85em
+			width 100%
+
+		.typography-visibility-message
+			bottom 100%
+			left 0
+			transform translateY(15px)
+
+		.typography-visibility-icon
+			height 3em
+			width 30px
+			display flex
+			align-items center
+			padding 0 10px
+
+	#thet-content-single
+
+		.typography-visibility-message
+			top 100%
+			right 0
+			transform translateY(-13px)
+
+		.typography-visibility
+			position absolute
+			top 0
+			left 0
+			width 100%
+
+		.typography-visibility-icon
+			height 20px
+			width 20px
+			padding 0 5px
+			margin-left auto
+
+	.typography-visibility
+		z-index 100
+
+	.typography-visibility-icon
+		display flex
+		align-items center
+
+		svg
+			fill var(--color_07)
+
+		&.no-is_visible svg
+			fill var(--color_01)
+
+		&:hover + .typography-visibility-message
+			display block
+
+	.typography-visibility-message
+		white-space normal
+		display none
+		padding 3px 6px
+		background #fff
+		color #333
+		border 1px solid #aaa
+		position absolute
+		font-size .85em
+		line-height 1.5
+		margin 11px
+
+		&:hover
+			display block
+
+	.single-visibility-icon
+		position absolute
+		top 5px
+		right 5px
+		padding 5px
+		width 20px
+		height 20px
+		display flex
+		align-items center
+		justify-content center
+
+	.single-visibility-message
+		top 20px
+		right 7px
+		margin-left 30px

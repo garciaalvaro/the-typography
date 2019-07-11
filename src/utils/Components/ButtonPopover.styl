@@ -1,0 +1,45 @@
+/**
+ * ButtonPopover
+ */
+
+.react-tiny-popover-container
+
+	.chrome-picker
+		box-shadow none!important
+		border 1px solid
+		border-radius 0!important
+
++prefix-classes('thet-')
+
+	.menu-icon
+		display flex
+		margin-right 5px
+		width 24px
+		justify-content center
+
+	.menu
+		background-color var(--background_color)
+		border 1px solid var(--color_02)
+		padding 5px 0
+		max-width 300px
+
+	button.button-menu
+		line-height 1.7em
+		min-height 30px
+
+		.menu &
+			width 100%
+			padding 0 10px
+			display flex
+			align-items center
+			transition opacity .2s $e_standard, background-color .2s $e_standard
+
+			&:hover
+				background-color var(--primary_color)
+
+		&.is_disabled
+			pointer-events none
+			opacity .3
+
+		&:hover
+			opacity .8

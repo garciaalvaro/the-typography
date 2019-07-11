@@ -1,0 +1,173 @@
+/**
+ * Selectors
+ */
+
++prefix-classes('thet-')
+
+	.block_selector_extra
+		padding-left 15px
+		border-left 1px solid var(--color_03)
+
+		.material_ui-select-container + .material_ui-select-container
+			width 100%
+
+	#thet-button-add_selector_root
+		background-color var(--color_01)
+		width 100%
+		padding 0 1em
+
+	.selector
+		display flex
+
+		.selector-parent ~ &
+			padding-left 15px
+			border-left 1px solid var(--color_03)
+
+		.edit-selectors &
+			border-top 1px dotted var(--color_02)
+			transition background-color .1s $e_standard
+			position relative
+			padding 10px 20px 20px
+			flex-direction column
+			margin 0 -20px
+			width calc(100% + 40px)
+
+			&:hover
+				background-color var(--color_005)
+				border-radius 1px
+
+		.is_closed &
+			align-items center
+
+		.button-add_selector + &
+			margin-top 20px
+
+		&.is_new
+			animation fade_in_bg_selector 1s $e_standard
+
+		.selector_type + .control-react_select .block
+			margin-left -2px
+
+		.block
+			width 100%
+			align-items center
+			height 2.7em
+			display flex
+			cursor pointer
+			white-space nowrap
+			transition background-color .1s $e_standard
+
+			.icon
+				height 20px
+				width 20px
+				align-items center
+				justify-content center
+				min-width 20px
+				display flex
+				margin-right 8px
+
+				svg
+					width 100%
+					height 100%
+					fill var(--color_07)
+
+			.label
+				text-overflow ellipsis
+				white-space nowrap
+				overflow hidden
+
+				+ span:before
+					content "|"
+					padding 0 10px
+
+	.selector-title
+		text-overflow ellipsis
+		overflow hidden
+		white-space nowrap
+
+		&:selection
+			background-color transparent
+
+	.block_no_icon
+		min-width 15px
+		width 15px
+		height 15px
+		background-color var(--color_07)
+		border-radius 50%
+
+	.selector-header
+		display flex
+		justify-content space-between
+		align-items center
+
+	.button-remove_selector
+		padding 5px
+		line-height 0
+		position absolute
+		top 15px
+		right 15px
+
+		svg
+			width 20px
+			height 20px
+
+		#thet-container &:focus
+			background none
+			box-shadow none
+
+	#thet-button-add_selector_group
+		margin-bottom 20px
+
+	.button-add_selector
+		margin-top 15px
+
+		&:last-child
+			margin-bottom 15px
+
+	.block_selector-element
+		display flex
+		flex-direction column
+		padding-left 26px
+		border-left 1px solid var(--color_03)
+
+	.selector-parent
+		~ div
+			border-left 1px solid var(--color_04)
+			padding-left 15px
+
+		&:last-child
+			display none
+
+	.single-message
+		font-style italic
+		background-color var(--background_color)
+		font-size .95em
+		line-height 2
+		padding 10px
+		margin-bottom 10px
+		color var(--color_07)
+		border 1px dashed var(--color_02)
+		display block
+
+	.message-go_to_editor
+		margin-top 10px
+
+	#thet-button-add_selector
+		margin-bottom 20px
+		margin-top 10px
+
+.thet-icon .editor-block-icon
+	display flex
+	align-items center
+
+
+@keyframes fade_in_bg_selector {
+	0% {
+		background-color var(--color_01)
+		transform translateZ(0)
+	}
+	100% {
+		background-color transparent
+		transform translateZ(0)
+	}
+}

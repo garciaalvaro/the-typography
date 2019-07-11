@@ -1,27 +1,44 @@
-declare interface BlockType {
-	name: string;
-	title: string;
+interface BlockType {
+	value: string;
+	label: string;
 	icon: string | React.ReactNode;
-	elements: { value: string; label: string; selector: string }[];
+	elements: BlockTypeDataElement[];
 }
 
-declare interface GFont {
-	typographies_id: number[];
-	id: string;
-	family: string;
-	variants: { id: string; loaded: boolean; variant: string }[];
-}
+interface TaxonomyTermRaw extends Object, TaxonomyTerm {}
 
-declare interface GFontVariants extends Omit<GFont, "variants"> {
-	variants: string[];
-}
-
-declare interface TaxonomyTerm {
-	id: string;
+interface TaxonomyTerm {
+	id: number;
 	slug: string;
 	name: string;
 }
 
-declare interface Taxonomies {
+interface Taxonomies {
 	[key: string]: TaxonomyTerm[];
+}
+
+interface PostTypeRaw extends Object {
+	slug: string;
+	name: string;
+	viewable: boolean;
+}
+
+interface PostType {
+	value: string;
+	label: string;
+}
+
+interface DownloadedFontRaw {
+	font: string;
+	woff: string;
+	woff2: string;
+	ttf: string;
+	svg: string;
+	eot: string;
+}
+
+interface DownloadedFont {
+	value: string;
+	label: string;
+	is_downloaded: boolean;
 }

@@ -1,1 +1,0 @@
-wp.blockLibrary.registerCoreBlocks();

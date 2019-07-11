@@ -18,21 +18,14 @@ class SelectorFront {
 
 		$this->castProps();
 
-		$this->setPropsDefaults();
+		$this->setSinglePropsDefaults();
 	}
 
 	public function isValid() {
 
 		if (
-			'text' === $this->props['selector_type'] &&
+			! empty( $this->props['block_selector_root'] ) ||
 			! empty( $this->props['text_selector'] )
-		) {
-			return true;
-		}
-
-		if (
-			'block' === $this->props['selector_type'] &&
-			! empty( $this->props['block_selector_root'] )
 		) {
 			return true;
 		}
@@ -54,7 +47,7 @@ class SelectorFront {
 
 	private function generateSelector( $parent_selector = '' ) {
 
-		if ( 'text' === $this->props['selector_type'] ) {
+		if ( ! empty( $this->props['text_selector'] ) ) {
 			return $parent_selector . $this->props['text_selector'];
 		}
 
@@ -69,10 +62,6 @@ class SelectorFront {
 
 		$schema = array(
 			'_can_be_removed'      => 'boolean',
-			'selector_type'        => array(
-				'_options'       => array( 'text', 'block' ),
-				'_default_value' => 'text',
-			),
 			'text_selector'        => 'text',
 			'block_selector_root'  => 'text',
 			'block_selector_extra' => 'text',
@@ -81,11 +70,10 @@ class SelectorFront {
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
-	private function setPropsDefaults() {
+	private function setSinglePropsDefaults() {
 
 		$defaults = array(
 			'_can_be_removed'      => true,
-			'selector_type'        => 'text',
 			'text_selector'        => '',
 			'block_selector_root'  => '',
 			'block_selector_extra' => '',
@@ -95,6 +83,7 @@ class SelectorFront {
 	}
 
 	private function setSelectors() {
+
 		foreach ( $this->props['selectors'] as $selector ) {
 			$this->selectors[] = new SelectorFront( $selector );
 		}

@@ -6,7 +6,7 @@ namespace THETYPOGRAPHY;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
- * Class CastArray
+ * Class Utils
  */
 class Utils {
 

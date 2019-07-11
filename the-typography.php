@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: The Typography for Gutenberg
+ * Plugin Name: The Typography
  * Plugin URI: https://wordpress.org/plugins/the-typography/
  * Description: Add Typography to your Gutenberg site using Google Fonts.
  * Author: melonpan
@@ -80,14 +80,15 @@ if ( ! class_exists( 'TheTypography' ) ) {
 			require_once INC_DIR . 'register-taxonomy.php';
 			require_once INC_DIR . 'register-meta.php';
 
-// DEV_start
-require_once INC_DIR . 'test/back.php';
-require_once INC_DIR . 'test/front.php';
-// DEV_end
-
-			if ( file_exists( PLUGIN_DIR . 'pro/the-typography-pro.php' ) ) {
-				require_once PLUGIN_DIR . 'pro/the-typography-pro.php';
+			if ( file_exists( plugin_dir_path( __FILE__ ) . 'pro/the-typography-pro.php' ) ) {
+				require_once plugin_dir_path( __FILE__ ) . 'pro/the-typography-pro.php';
 			}
+
+/** @dev_start */
+			require_once INC_DIR . 'dev/register-cpt_public.php';
+			require_once INC_DIR . 'dev/register-rest-option.php';
+/** @dev_end */
+
 		}
 	}
 

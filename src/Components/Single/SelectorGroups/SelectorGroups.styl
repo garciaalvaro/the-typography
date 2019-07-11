@@ -1,0 +1,116 @@
+/**
+ * SelectorGroups
+ */
+
++prefix-classes('thet-')
+
+	.selector_group
+		position relative
+		padding 10px 20px 20px
+		width calc(100% + 40px)
+		margin 0 -20px
+		display flex
+		flex-direction column
+
+		> span
+		> div
+			position relative
+
+		&.is_new:before
+			animation fade_in_bg_selector_group 1s $e_standard
+
+		&:before
+			border-top 1px dotted var(--color_02)
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			left -20px
+			right -20px
+
+		&.is_closed
+			cursor pointer
+
+		&.is_open
+
+			> div:last-child
+				margin-bottom 50px
+
+			+ .is_open
+				margin-top 15px
+
+			&:before
+				background-color var(--background_color_softer)
+
+			.typography
+				padding-left 15px
+				border-left 1px solid var(--color_03)
+
+				& + .control-text_toggle
+					margin-top 10px
+
+		.preview-title
+			cursor pointer
+			display block
+			overflow hidden
+			text-overflow ellipsis
+			white-space nowrap
+			position relative
+			width 100%
+
+			&::selection
+				background-color transparent
+
+		.preview-header
+			display flex
+			align-items start
+
+		.custom_typography
+			margin-right 0
+
+		.title
+			padding-top 20px
+			padding-bottom 20px
+
+		.edit
+			display flex
+			flex-direction column
+
+	#thet-selector_groups
+		display flex
+		flex-direction column
+		padding 20px
+		align-items self-start
+
+	.dark .selector_group.light.is_closed
+	.selector_group.dark.is_closed
+		padding-left 20px
+		padding-right 20px
+		margin 0 -20px
+		width calc(100% + 40px)
+
+		.button-toggle_selector_group
+		.button-remove_selector_group
+			margin-right 20px
+
+	#thet-container
+
+		.button-toggle_selector_group
+			margin-right -5px
+			padding 2px
+
+		.button-remove_selector_group
+			margin-left auto
+			padding 5px
+
+
+@keyframes fade_in_bg_selector_group {
+	0% {
+		background-color var(--color_01)
+		transform translateZ(0)
+	}
+	100% {
+		background-color var(--background_color_softer)
+		transform translateZ(0)
+	}
+}

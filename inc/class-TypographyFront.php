@@ -18,11 +18,11 @@ class TypographyFront {
 
 	function __construct( $post_id = 0 ) {
 
-		$this->setProps( $post_id );
+		$this->setSingleProps( $post_id );
 
 		$this->castProps();
 
-		$this->setPropsDefaults();
+		$this->setSinglePropsDefaults();
 
 		$this->setStyle();
 
@@ -30,7 +30,10 @@ class TypographyFront {
 	}
 
 	public function isActive() {
-		return $this->props['is_active'];
+
+		$is_pro = apply_filters( 'the_typography_is_pro', false );
+
+		return ! $is_pro || $this->props['is_active'];
 	}
 
 	public function isValid() {
@@ -110,7 +113,7 @@ class TypographyFront {
 		return implode( '', $css_string );
 	}
 
-	private function setProps( $post_id ) {
+	private function setSingleProps( $post_id ) {
 
 		// Meta.
 		$post_meta = get_post_meta( $post_id );
@@ -168,7 +171,7 @@ class TypographyFront {
 		$this->props = Utils::castSchema( $this->props, $schema );
 	}
 
-	private function setPropsDefaults() {
+	private function setSinglePropsDefaults() {
 
 		$defaults = Defaults::$typography;
 
@@ -189,6 +192,7 @@ class TypographyFront {
 	}
 
 	private function setSelectorGroups() {
+
 		foreach ( $this->props['selector_groups'] as $group_props ) {
 
 			$group = new SelectorGroupFront( $group_props );
