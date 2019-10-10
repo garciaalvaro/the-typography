@@ -25,7 +25,9 @@ function enqueue_editor() {
 		array(
 			'lodash',
 			'wp-api-fetch',
-			'wp-block-editor',
+			isset( $wp_scripts->registered['wp-block-editor'] )
+				? 'wp-block-editor'
+				: 'wp-editor',
 			'wp-components',
 			'wp-compose',
 			'wp-data',
@@ -59,7 +61,9 @@ function enqueue_customizer() {
 			'customize-controls',
 			'lodash',
 			'wp-api-fetch',
-			'wp-block-editor',
+			isset( $wp_scripts->registered['wp-block-editor'] )
+				? 'wp-block-editor'
+				: 'wp-editor',
 			'wp-block-library',
 			'wp-components',
 			'wp-compose',
