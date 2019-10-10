@@ -13,7 +13,7 @@ Add Typography to your Gutenberg site using Google Fonts.
 == Description ==
 
 Add Typography to your site using Google Fonts. Enter CSS selectors or select Blocks to apply custom typography.
-Available typography options:
+Available typography options include:
 
 * Font family & variants from Google Fonts
 * Color (hex or rgba)
@@ -28,16 +28,16 @@ Available typography options:
 Typographies can be assigned to a specific context:
 
 * All site
-* Post types/s (post types available in the site)
+* Post types/s (post types available on the site)
 * Post types/s template (index, single)
 * Front page
 * 404 page
 
 Each typography can have several groups of selectors with unique modifications from the root typography.
-For example: a typography can be set with a certain Font, a certain Color and a certain Font size;
-each of its groups of selectors inherit those properties and one might modify the inherited color and another modify the inherited Font size.
+For example: a typography can be set with a certain Font, Color and Font size;
+each of its groups of selectors inherit those properties and one could modify the inherited color and other the inherited Font size.
 
-Available CSS selectors:
+Available CSS selectors include:
 
 * Text CSS selector (eg: .site-title a)
 * Block Selector (eg: Block Quote > Citation)
@@ -89,6 +89,6 @@ The following filters can be used to modify (or remove) the styles and fonts bef
 
 == Screenshots ==
 
-1. Customizer, all typographies created.
-2. Customizer, typography being edited.
-3. Post editor, Block selectors.
+1. Customizer, list of typographies
+2. Customizer, typography being edited
+3. Post editor, Block selectors
