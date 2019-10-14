@@ -2,6 +2,10 @@
 
 # The Typography
 
+[Demo](https://gutenberg-showcase.melonpan.io/the-typography) - [Documentation](https://melonpan.io/wordpress-plugins/the-typography) - [WordPress](https://wordpress.org/plugins/the-typography)
+
+<br />
+
 Add Typography to your Gutenberg site using Google Fonts. Enter CSS selectors or select Blocks to apply custom typography.
 
 <br />
@@ -60,7 +64,3 @@ Customizer, typography being edited
 Post editor, Block selectors
 <br />
 <img src="assets-repo/screenshot-3.png" width="700px" alt="Post editor, Block selectors" />
-
----
-
-This plugin can be downloaded from the [WordPress repository](https://wordpress.org/plugins/the-typography).

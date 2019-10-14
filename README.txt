@@ -12,7 +12,13 @@ Add Typography to your Gutenberg site using Google Fonts.
 
 == Description ==
 
-Add Typography to your site using Google Fonts. Enter CSS selectors or select Blocks to apply custom typography.
+[Demo](https://gutenberg-showcase.melonpan.io/the-typography) - [Documentation](https://melonpan.io/wordpress-plugins/the-typography) - [GitHub](https://github.com/garciaalvaro/the-typography)
+
+Add Typography to your Gutenberg site using Google Fonts. Enter CSS selectors or select Blocks to apply custom typography.
+
+
+== Typography style ==
+
 Available typography options include:
 
 * Font family & variants from Google Fonts
@@ -25,6 +31,9 @@ Available typography options include:
 * Text transform (capitalize, uppercase, lowercase)
 * Text decoration (line-through, overline, underline)
 
+
+== Typography context ==
+
 Typographies can be assigned to a specific context:
 
 * All site
@@ -33,14 +42,18 @@ Typographies can be assigned to a specific context:
 * Front page
 * 404 page
 
-Each typography can have several groups of selectors with unique modifications from the root typography.
+
+== Typography selectors ==
+
+Each typography can have several groups of selectors with unique modifications based on the root typography.
 For example: a typography can be set with a certain Font, Color and Font size;
 each of its groups of selectors inherit those properties and one could modify the inherited color and other the inherited Font size.
 
 Available CSS selectors include:
 
-* Text CSS selector (eg: .site-title a)
-* Block Selector (eg: Block Quote > Citation)
+- Text CSS selector (eg: .site-title a)
+- Block Selector (eg: Block Quote > Citation)
+
 
 == Usage ==
 
@@ -51,6 +64,7 @@ That's it!
 If you want to preview the different fonts before selecting one you can preview them in the [Google Fonts repository](https://fonts.google.com/).
 **Note**: The typography editing is assigned to the 'edit_theme_options' capability. This means that, by default, only admin and super admin will be able to use the features.
 
+
 == Installation ==
 
 Installation from the WordPress admin.
@@ -60,6 +74,7 @@ Installation from the WordPress admin.
 3. In the results list *The Typography* plugin should appear, click **Install Now** button.
 4. Once it finished installing, click the *Activate* button.
 5. Now you can go to any post where the Block editor is enabled or go the Theme Customizer.
+
 
 == Frequently Asked Questions ==
 
@@ -73,6 +88,7 @@ The following filters can be used to modify (or remove) the styles and fonts bef
 
 * `the_typography_styles_before_enqueue`: This filter receives an array with the styles before they are embeded to the front end.
 * `the_typography_fonts_before_enqueue`: This filter receives an array with the fonts before they are embeded as an external style sheet to be loaded in the front end.
+
 
 == Changelog ==
 
