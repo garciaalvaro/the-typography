@@ -53,14 +53,5 @@ Available CSS selectors include:
 
 ## Screenshots
 
-Customizer, list of typographies:
-<br />
-<img src="assets-repo/screenshot-1.png" width="700px" alt="Customizer, list of typographies" />
-
-Customizer, typography being edited
-<br />
-<img src="assets-repo/screenshot-2.png" width="700px" alt="Customizer, typography being edited" />
-
-Post editor, Block selectors
-<br />
-<img src="assets-repo/screenshot-3.png" width="700px" alt="Post editor, Block selectors" />
+<img src="assets-repo/screenshot-1.jpg" width="700px" alt="Typography options" />
+<img src="assets-repo/screenshot-2.jpg" width="700px" alt="Customizer panel" />

@@ -103,8 +103,8 @@ The following filters can be used to modify (or remove) the styles and fonts bef
 = 1.0.0 =
 * Initial release.
 
+
 == Screenshots ==
 
-1. Customizer, list of typographies
-2. Customizer, typography being edited
-3. Post editor, Block selectors
+1. Typography options
+2. Customizer panel
