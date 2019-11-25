@@ -17,7 +17,7 @@ function register_the_typography_cpt() {
 		'map_meta_cap' => true,
 		'public'       => false,
 		'show_in_rest' => true,
-		'label'        => 'Typography',
+		'label'        => __( 'Typography', 'thet' ),
 		'supports'     => array(
 			'title',
 			'custom-fields',
