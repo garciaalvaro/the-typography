@@ -26,7 +26,9 @@ export const useUpdateTypography = () => {
 			typography_raw
 		);
 
-		updateTypography(typography ? typography.id : typography_raw.id);
+		if (typography) {
+			updateTypography({ ...single, id: typography.id });
+		}
 	};
 
 	return update;

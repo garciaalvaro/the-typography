@@ -161,7 +161,7 @@ type ActionRemoveSelectorGroup = ActionWithPayload<
 >;
 type ActionUpdateTypography = ActionWithPayload<
 	"UPDATE_TYPOGRAPHY",
-	Typography["id"]
+	Typography
 >;
 
 // Navigation
