@@ -1,8 +1,8 @@
 === The Typography ===
 Contributors: melonpan
 Tags: gutenberg, blocks, typography, text, fonts, customizer
-Requires at least: 5.1
-Tested up to: 5.2
+Requires at least: 5.3
+Tested up to: 5.3
 Stable tag: 1.1.0
 Requires PHP: 7.1
 License: GPLv3
