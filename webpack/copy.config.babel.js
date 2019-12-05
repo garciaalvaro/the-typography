@@ -29,7 +29,8 @@ export default {
 					"src/**",
 					"**/dev/**",
 					"tsconfig.json",
-					"types/**"
+					"types/**",
+					"webpack/**"
 				]
 			}
 		])
