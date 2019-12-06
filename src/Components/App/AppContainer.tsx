@@ -22,7 +22,7 @@ export const AppContainer: React.ComponentType = props => {
 		container_ref.current = div_ref.current.closest(
 			is_customizer
 				? "div.wp-full-overlay-sidebar-content"
-				: ".edit-post-sidebar"
+				: ".edit-post-editor-regions__sidebar"
 		) as HTMLElement | null;
 
 		if (container_ref.current) {

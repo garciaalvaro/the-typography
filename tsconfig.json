@@ -25,6 +25,6 @@
 		}
 	},
 	"include": ["src", "types/*", "pro"],
-	"exclude": ["node_modules", ".webpack/*"],
+	"exclude": ["node_modules"],
 	"compileOnSave": false
 }

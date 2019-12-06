@@ -191,17 +191,14 @@ export const reducer = (state = initial_state, action: Actions): State => {
 		}
 		case "UPDATE_TYPOGRAPHY": {
 			const index = state.typographies.findIndex(
-				typography => typography.id === action.payload
+				typography => typography.id === action.payload.id
 			);
-			const new_single = {
-				...state.single,
-				id: action.payload
-			};
+			const new_single = action.payload;
 
 			return {
 				...state,
 				has_changed_single: false,
-				single: new_single,
+				single: state.view === "single" ? new_single : state.single,
 				typographies:
 					index === -1
 						? [new_single, ...state.typographies]
