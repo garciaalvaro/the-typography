@@ -39,12 +39,12 @@ export const fonts: Fonts = {
 	},
 	Abhaya_Libre: {
 		family: "Abhaya Libre",
-		subsets: ["latin", "latin-ext", "sinhala"],
+		subsets: ["latin-ext", "latin", "sinhala"],
 		variants: ["400", "500", "600", "700", "800"]
 	},
 	Abril_Fatface: {
 		family: "Abril Fatface",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Aclonica: {
@@ -69,22 +69,32 @@ export const fonts: Fonts = {
 	},
 	Advent_Pro: {
 		family: "Advent Pro",
-		subsets: ["latin", "latin-ext", "greek"],
+		subsets: ["greek", "latin-ext", "latin"],
 		variants: ["100", "200", "300", "400", "500", "600", "700"]
 	},
 	Aguafina_Script: {
 		family: "Aguafina Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Akronim: {
 		family: "Akronim",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Aladin: {
 		family: "Aladin",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
+		variants: ["400"]
+	},
+	Alata: {
+		family: "Alata",
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400"]
+	},
+	Alatsi: {
+		family: "Alatsi",
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Aldrich: {
@@ -94,19 +104,19 @@ export const fonts: Fonts = {
 	},
 	Alef: {
 		family: "Alef",
-		subsets: ["hebrew", "latin"],
+		subsets: ["latin", "hebrew"],
 		variants: ["400", "700"]
 	},
 	Alegreya: {
 		family: "Alegreya",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"400",
@@ -124,13 +134,13 @@ export const fonts: Fonts = {
 	Alegreya_SC: {
 		family: "Alegreya SC",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"400",
@@ -148,13 +158,13 @@ export const fonts: Fonts = {
 	Alegreya_Sans: {
 		family: "Alegreya Sans",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -176,13 +186,13 @@ export const fonts: Fonts = {
 	Alegreya_Sans_SC: {
 		family: "Alegreya Sans SC",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -203,22 +213,22 @@ export const fonts: Fonts = {
 	},
 	Aleo: {
 		family: "Aleo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "300i", "400", "400i", "700", "700i"]
 	},
 	Alex_Brush: {
 		family: "Alex Brush",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Alfa_Slab_One: {
 		family: "Alfa Slab One",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Alice: {
 		family: "Alice",
-		subsets: ["cyrillic-ext", "cyrillic", "latin"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin"],
 		variants: ["400"]
 	},
 	Alike: {
@@ -233,7 +243,7 @@ export const fonts: Fonts = {
 	},
 	Allan: {
 		family: "Allan",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Allerta: {
@@ -248,7 +258,7 @@ export const fonts: Fonts = {
 	},
 	Allura: {
 		family: "Allura",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Almarai: {
@@ -258,12 +268,12 @@ export const fonts: Fonts = {
 	},
 	Almendra: {
 		family: "Almendra",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Almendra_Display: {
 		family: "Almendra Display",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Almendra_SC: {
@@ -273,7 +283,7 @@ export const fonts: Fonts = {
 	},
 	Amarante: {
 		family: "Amarante",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Amaranth: {
@@ -283,7 +293,7 @@ export const fonts: Fonts = {
 	},
 	Amatic_SC: {
 		family: "Amatic SC",
-		subsets: ["cyrillic", "hebrew", "latin", "latin-ext", "vietnamese"],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin", "hebrew"],
 		variants: ["400", "700"]
 	},
 	Amethysta: {
@@ -293,38 +303,32 @@ export const fonts: Fonts = {
 	},
 	Amiko: {
 		family: "Amiko",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "600", "700"]
 	},
 	Amiri: {
 		family: "Amiri",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Amita: {
 		family: "Amita",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Anaheim: {
 		family: "Anaheim",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Andada: {
 		family: "Andada",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Andika: {
 		family: "Andika",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Angkor: {
@@ -339,7 +343,7 @@ export const fonts: Fonts = {
 	},
 	Anonymous_Pro: {
 		family: "Anonymous Pro",
-		subsets: ["cyrillic", "latin", "latin-ext", "greek"],
+		subsets: ["cyrillic", "greek", "latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Antic: {
@@ -359,7 +363,7 @@ export const fonts: Fonts = {
 	},
 	Anton: {
 		family: "Anton",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Arapey: {
@@ -369,12 +373,12 @@ export const fonts: Fonts = {
 	},
 	Arbutus: {
 		family: "Arbutus",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Arbutus_Slab: {
 		family: "Arbutus Slab",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Architects_Daughter: {
@@ -384,80 +388,56 @@ export const fonts: Fonts = {
 	},
 	Archivo: {
 		family: "Archivo",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
 	},
 	Archivo_Black: {
 		family: "Archivo Black",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Archivo_Narrow: {
 		family: "Archivo Narrow",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
 	},
 	Aref_Ruqaa: {
 		family: "Aref Ruqaa",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["400", "700"]
 	},
 	Arima_Madurai: {
 		family: "Arima Madurai",
-		subsets: ["latin", "tamil", "latin-ext", "vietnamese"],
+		subsets: ["tamil", "latin-ext", "vietnamese", "latin"],
 		variants: ["100", "200", "300", "400", "500", "700", "800", "900"]
 	},
 	Arimo: {
 		family: "Arimo",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"hebrew",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"hebrew",
+			"greek-ext"
 		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Arizonia: {
 		family: "Arizonia",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Armata: {
 		family: "Armata",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Arsenal: {
 		family: "Arsenal",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Artifika: {
@@ -472,40 +452,22 @@ export const fonts: Fonts = {
 	},
 	Arya: {
 		family: "Arya",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Asap: {
 		family: "Asap",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
 	},
 	Asap_Condensed: {
 		family: "Asap Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
 	},
 	Asar: {
 		family: "Asar",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Asset: {
@@ -515,7 +477,7 @@ export const fonts: Fonts = {
 	},
 	Assistant: {
 		family: "Assistant",
-		subsets: ["hebrew", "latin"],
+		subsets: ["latin", "hebrew"],
 		variants: ["200", "300", "400", "600", "700", "800"]
 	},
 	Astloch: {
@@ -530,12 +492,12 @@ export const fonts: Fonts = {
 	},
 	Athiti: {
 		family: "Athiti",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Atma: {
 		family: "Atma",
-		subsets: ["latin", "latin-ext", "bengali"],
+		subsets: ["bengali", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Atomic_Age: {
@@ -550,27 +512,27 @@ export const fonts: Fonts = {
 	},
 	Audiowide: {
 		family: "Audiowide",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Autour_One: {
 		family: "Autour One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Average: {
 		family: "Average",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Average_Sans: {
 		family: "Average Sans",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Averia_Gruesa_Libre: {
 		family: "Averia Gruesa Libre",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Averia_Libre: {
@@ -605,17 +567,17 @@ export const fonts: Fonts = {
 	},
 	Bahiana: {
 		family: "Bahiana",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Bahianita: {
 		family: "Bahianita",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Bai_Jamjuree: {
 		family: "Bai Jamjuree",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -633,52 +595,52 @@ export const fonts: Fonts = {
 	},
 	Baloo: {
 		family: "Baloo",
-		subsets: ["devanagari", "latin", "latin-ext", "vietnamese"],
+		subsets: ["devanagari", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Baloo_Bhai: {
 		family: "Baloo Bhai",
-		subsets: ["gujarati", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "gujarati"],
 		variants: ["400"]
 	},
 	Baloo_Bhaijaan: {
 		family: "Baloo Bhaijaan",
-		subsets: ["arabic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "arabic"],
 		variants: ["400"]
 	},
 	Baloo_Bhaina: {
 		family: "Baloo Bhaina",
-		subsets: ["oriya", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "oriya"],
 		variants: ["400"]
 	},
 	Baloo_Chettan: {
 		family: "Baloo Chettan",
-		subsets: ["latin", "latin-ext", "vietnamese", "malayalam"],
+		subsets: ["latin-ext", "vietnamese", "latin", "malayalam"],
 		variants: ["400"]
 	},
 	Baloo_Da: {
 		family: "Baloo Da",
-		subsets: ["latin", "latin-ext", "vietnamese", "bengali"],
+		subsets: ["bengali", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Baloo_Paaji: {
 		family: "Baloo Paaji",
-		subsets: ["gurmukhi", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "gurmukhi"],
 		variants: ["400"]
 	},
 	Baloo_Tamma: {
 		family: "Baloo Tamma",
-		subsets: ["latin", "kannada", "latin-ext", "vietnamese"],
+		subsets: ["kannada", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Baloo_Tammudu: {
 		family: "Baloo Tammudu",
-		subsets: ["latin", "latin-ext", "vietnamese", "telugu"],
+		subsets: ["latin-ext", "telugu", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Baloo_Thambi: {
 		family: "Baloo Thambi",
-		subsets: ["latin", "tamil", "latin-ext", "vietnamese"],
+		subsets: ["tamil", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Balthazar: {
@@ -688,12 +650,12 @@ export const fonts: Fonts = {
 	},
 	Bangers: {
 		family: "Bangers",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Barlow: {
 		family: "Barlow",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -717,7 +679,7 @@ export const fonts: Fonts = {
 	},
 	Barlow_Condensed: {
 		family: "Barlow Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -741,7 +703,7 @@ export const fonts: Fonts = {
 	},
 	Barlow_Semi_Condensed: {
 		family: "Barlow Semi Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -765,18 +727,23 @@ export const fonts: Fonts = {
 	},
 	Barriecito: {
 		family: "Barriecito",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Barrio: {
 		family: "Barrio",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Basic: {
 		family: "Basic",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
+	},
+	Baskervville: {
+		family: "Baskervville",
+		subsets: ["latin-ext", "latin"],
+		variants: ["400", "400i"]
 	},
 	Battambang: {
 		family: "Battambang",
@@ -795,7 +762,7 @@ export const fonts: Fonts = {
 	},
 	Be_Vietnam: {
 		family: "Be Vietnam",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -813,6 +780,11 @@ export const fonts: Fonts = {
 			"800i"
 		]
 	},
+	Bebas_Neue: {
+		family: "Bebas Neue",
+		subsets: ["latin-ext", "latin"],
+		variants: ["400"]
+	},
 	Belgrano: {
 		family: "Belgrano",
 		subsets: ["latin"],
@@ -820,17 +792,17 @@ export const fonts: Fonts = {
 	},
 	Bellefair: {
 		family: "Bellefair",
-		subsets: ["hebrew", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "hebrew"],
 		variants: ["400"]
 	},
 	Belleza: {
 		family: "Belleza",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	BenchNine: {
 		family: "BenchNine",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "700"]
 	},
 	Bentham: {
@@ -840,7 +812,7 @@ export const fonts: Fonts = {
 	},
 	Berkshire_Swash: {
 		family: "Berkshire Swash",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Beth_Ellen: {
@@ -850,22 +822,22 @@ export const fonts: Fonts = {
 	},
 	Bevan: {
 		family: "Bevan",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Big_Shoulders_Display: {
 		family: "Big Shoulders Display",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["100", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Big_Shoulders_Text: {
 		family: "Big Shoulders Text",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["100", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Bigelow_Rules: {
 		family: "Bigelow Rules",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Bigshot_One: {
@@ -875,52 +847,52 @@ export const fonts: Fonts = {
 	},
 	Bilbo: {
 		family: "Bilbo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Bilbo_Swash_Caps: {
 		family: "Bilbo Swash Caps",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	BioRhyme: {
 		family: "BioRhyme",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["200", "300", "400", "700", "800"]
 	},
 	BioRhyme_Expanded: {
 		family: "BioRhyme Expanded",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["200", "300", "400", "700", "800"]
 	},
 	Biryani: {
 		family: "Biryani",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["200", "300", "400", "600", "700", "800", "900"]
 	},
 	Bitter: {
 		family: "Bitter",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Black_And_White_Picture: {
 		family: "Black And White Picture",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Black_Han_Sans: {
 		family: "Black Han Sans",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Black_Ops_One: {
 		family: "Black Ops One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Blinker: {
 		family: "Blinker",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["100", "200", "300", "400", "600", "700", "800", "900"]
 	},
 	Bokor: {
@@ -945,7 +917,7 @@ export const fonts: Fonts = {
 	},
 	Bowlby_One_SC: {
 		family: "Bowlby One SC",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Brawler: {
@@ -955,17 +927,17 @@ export const fonts: Fonts = {
 	},
 	Bree_Serif: {
 		family: "Bree Serif",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Bubblegum_Sans: {
 		family: "Bubblegum Sans",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Bubbler_One: {
 		family: "Bubbler One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Buda: {
@@ -975,61 +947,52 @@ export const fonts: Fonts = {
 	},
 	Buenard: {
 		family: "Buenard",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Bungee: {
 		family: "Bungee",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Bungee_Hairline: {
 		family: "Bungee Hairline",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Bungee_Inline: {
 		family: "Bungee Inline",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Bungee_Outline: {
 		family: "Bungee Outline",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Bungee_Shade: {
 		family: "Bungee Shade",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Butcherman: {
 		family: "Butcherman",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Butterfly_Kids: {
 		family: "Butterfly Kids",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Cabin: {
 		family: "Cabin",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
 	},
 	Cabin_Condensed: {
 		family: "Cabin Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400", "500", "600", "700"]
 	},
 	Cabin_Sketch: {
@@ -1049,8 +1012,13 @@ export const fonts: Fonts = {
 	},
 	Cairo: {
 		family: "Cairo",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
 		variants: ["200", "300", "400", "600", "700", "900"]
+	},
+	Calistoga: {
+		family: "Calistoga",
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400"]
 	},
 	Calligraffitti: {
 		family: "Calligraffitti",
@@ -1059,7 +1027,7 @@ export const fonts: Fonts = {
 	},
 	Cambay: {
 		family: "Cambay",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Cambo: {
@@ -1079,22 +1047,22 @@ export const fonts: Fonts = {
 	},
 	Cantata_One: {
 		family: "Cantata One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Cantora_One: {
 		family: "Cantora One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Capriola: {
 		family: "Capriola",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Cardo: {
 		family: "Cardo",
-		subsets: ["greek-ext", "latin", "latin-ext", "greek"],
+		subsets: ["greek", "latin-ext", "latin", "greek-ext"],
 		variants: ["400", "400i", "700"]
 	},
 	Carme: {
@@ -1119,32 +1087,22 @@ export const fonts: Fonts = {
 	},
 	Catamaran: {
 		family: "Catamaran",
-		subsets: ["latin", "tamil", "latin-ext"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["tamil", "latin-ext", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Caudex: {
 		family: "Caudex",
-		subsets: ["greek-ext", "latin", "latin-ext", "greek"],
+		subsets: ["greek", "latin-ext", "latin", "greek-ext"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Caveat: {
 		family: "Caveat",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Caveat_Brush: {
 		family: "Caveat Brush",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Cedarville_Cursive: {
@@ -1154,12 +1112,12 @@ export const fonts: Fonts = {
 	},
 	Ceviche_One: {
 		family: "Ceviche One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Chakra_Petch: {
 		family: "Chakra Petch",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"300",
 			"300i",
@@ -1175,7 +1133,7 @@ export const fonts: Fonts = {
 	},
 	Changa: {
 		family: "Changa",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
 		variants: ["200", "300", "400", "500", "600", "700", "800"]
 	},
 	Changa_One: {
@@ -1185,37 +1143,37 @@ export const fonts: Fonts = {
 	},
 	Chango: {
 		family: "Chango",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Charm: {
 		family: "Charm",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400", "700"]
 	},
 	Charmonman: {
 		family: "Charmonman",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400", "700"]
 	},
 	Chathura: {
 		family: "Chathura",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["100", "300", "400", "700", "800"]
 	},
 	Chau_Philomene_One: {
 		family: "Chau Philomene One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Chela_One: {
 		family: "Chela One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Chelsea_Market: {
 		family: "Chelsea Market",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Chenla: {
@@ -1230,7 +1188,7 @@ export const fonts: Fonts = {
 	},
 	Cherry_Swash: {
 		family: "Cherry Swash",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Chewy: {
@@ -1240,7 +1198,7 @@ export const fonts: Fonts = {
 	},
 	Chicle: {
 		family: "Chicle",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Chilanka: {
@@ -1250,26 +1208,17 @@ export const fonts: Fonts = {
 	},
 	Chivo: {
 		family: "Chivo",
-		subsets: ["latin", "latin-ext"],
-		variants: [
-			"300",
-			"300i",
-			"400",
-			"400i",
-			"700",
-			"700i",
-			"900",
-			"900i"
-		]
+		subsets: ["latin-ext", "latin"],
+		variants: ["300", "300i", "400", "400i", "700", "700i", "900", "900i"]
 	},
 	Chonburi: {
 		family: "Chonburi",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400"]
 	},
 	Cinzel: {
 		family: "Cinzel",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700", "900"]
 	},
 	Cinzel_Decorative: {
@@ -1279,43 +1228,43 @@ export const fonts: Fonts = {
 	},
 	Clicker_Script: {
 		family: "Clicker Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Coda: {
 		family: "Coda",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "800"]
 	},
 	Coda_Caption: {
 		family: "Coda Caption",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["800"]
 	},
 	Codystar: {
 		family: "Codystar",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400"]
 	},
 	Coiny: {
 		family: "Coiny",
-		subsets: ["latin", "tamil", "latin-ext", "vietnamese"],
+		subsets: ["tamil", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Combo: {
 		family: "Combo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Comfortaa: {
 		family: "Comfortaa",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin"
 		],
 		variants: ["300", "400", "500", "600", "700"]
 	},
@@ -1326,12 +1275,12 @@ export const fonts: Fonts = {
 	},
 	Concert_One: {
 		family: "Concert One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Condiment: {
 		family: "Condiment",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Content: {
@@ -1361,18 +1310,12 @@ export const fonts: Fonts = {
 	},
 	Corben: {
 		family: "Corben",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Cormorant: {
 		family: "Cormorant",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"300",
 			"300i",
@@ -1388,13 +1331,7 @@ export const fonts: Fonts = {
 	},
 	Cormorant_Garamond: {
 		family: "Cormorant Garamond",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"300",
 			"300i",
@@ -1410,13 +1347,7 @@ export const fonts: Fonts = {
 	},
 	Cormorant_Infant: {
 		family: "Cormorant Infant",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"300",
 			"300i",
@@ -1432,47 +1363,40 @@ export const fonts: Fonts = {
 	},
 	Cormorant_SC: {
 		family: "Cormorant SC",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Cormorant_Unicase: {
 		family: "Cormorant Unicase",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Cormorant_Upright: {
 		family: "Cormorant Upright",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Courgette: {
 		family: "Courgette",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
+	},
+	Courier_Prime: {
+		family: "Courier Prime",
+		subsets: ["latin-ext", "latin"],
+		variants: ["400", "400i", "700", "700i"]
 	},
 	Cousine: {
 		family: "Cousine",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"hebrew",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"hebrew",
+			"greek-ext"
 		],
 		variants: ["400", "400i", "700", "700i"]
 	},
@@ -1498,12 +1422,12 @@ export const fonts: Fonts = {
 	},
 	Crete_Round: {
 		family: "Crete Round",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Crimson_Pro: {
 		family: "Crimson Pro",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"200",
 			"300",
@@ -1530,7 +1454,7 @@ export const fonts: Fonts = {
 	},
 	Croissant_One: {
 		family: "Croissant One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Crushed: {
@@ -1540,43 +1464,37 @@ export const fonts: Fonts = {
 	},
 	Cuprum: {
 		family: "Cuprum",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Cute_Font: {
 		family: "Cute Font",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Cutive: {
 		family: "Cutive",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Cutive_Mono: {
 		family: "Cutive Mono",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	DM_Sans: {
 		family: "DM Sans",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "500", "500i", "700", "700i"]
 	},
 	DM_Serif_Display: {
 		family: "DM Serif Display",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	DM_Serif_Text: {
 		family: "DM Serif Text",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Damion: {
@@ -1586,8 +1504,8 @@ export const fonts: Fonts = {
 	},
 	Dancing_Script: {
 		family: "Dancing Script",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: ["400", "700"]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "500", "600", "700"]
 	},
 	Dangrek: {
 		family: "Dangrek",
@@ -1596,12 +1514,12 @@ export const fonts: Fonts = {
 	},
 	Darker_Grotesque: {
 		family: "Darker Grotesque",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["300", "400", "500", "600", "700", "800", "900"]
 	},
 	David_Libre: {
 		family: "David Libre",
-		subsets: ["hebrew", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "hebrew"],
 		variants: ["400", "500", "700"]
 	},
 	Dawning_of_a_New_Day: {
@@ -1616,7 +1534,7 @@ export const fonts: Fonts = {
 	},
 	Dekko: {
 		family: "Dekko",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Delius: {
@@ -1641,64 +1559,64 @@ export const fonts: Fonts = {
 	},
 	Denk_One: {
 		family: "Denk One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Devonshire: {
 		family: "Devonshire",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Dhurjati: {
 		family: "Dhurjati",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Didact_Gothic: {
 		family: "Didact Gothic",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["400"]
 	},
 	Diplomata: {
 		family: "Diplomata",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Diplomata_SC: {
 		family: "Diplomata SC",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Do_Hyeon: {
 		family: "Do Hyeon",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Dokdo: {
 		family: "Dokdo",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Domine: {
 		family: "Domine",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Donegal_One: {
 		family: "Donegal One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Doppio_One: {
 		family: "Doppio One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Dorsa: {
@@ -1708,76 +1626,76 @@ export const fonts: Fonts = {
 	},
 	Dosis: {
 		family: "Dosis",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["200", "300", "400", "500", "600", "700", "800"]
 	},
 	Dr_Sugiyama: {
 		family: "Dr Sugiyama",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Duru_Sans: {
 		family: "Duru Sans",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Dynalight: {
 		family: "Dynalight",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	EB_Garamond: {
 		family: "EB Garamond",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"400",
-			"400i",
 			"500",
-			"500i",
 			"600",
-			"600i",
 			"700",
-			"700i",
 			"800",
+			"400i",
+			"500i",
+			"600i",
+			"700i",
 			"800i"
 		]
 	},
 	Eagle_Lake: {
 		family: "Eagle Lake",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	East_Sea_Dokdo: {
 		family: "East Sea Dokdo",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Eater: {
 		family: "Eater",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Economica: {
 		family: "Economica",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Eczar: {
 		family: "Eczar",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "500", "600", "700", "800"]
 	},
 	El_Messiri: {
 		family: "El Messiri",
-		subsets: ["cyrillic", "arabic", "latin"],
+		subsets: ["cyrillic", "latin", "arabic"],
 		variants: ["400", "500", "600", "700"]
 	},
 	Electrolize: {
@@ -1787,98 +1705,48 @@ export const fonts: Fonts = {
 	},
 	Elsie: {
 		family: "Elsie",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "900"]
 	},
 	Elsie_Swash_Caps: {
 		family: "Elsie Swash Caps",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "900"]
 	},
 	Emblema_One: {
 		family: "Emblema One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Emilys_Candy: {
 		family: "Emilys Candy",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Encode_Sans: {
 		family: "Encode Sans",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Encode_Sans_Condensed: {
 		family: "Encode Sans Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Encode_Sans_Expanded: {
 		family: "Encode Sans Expanded",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Encode_Sans_Semi_Condensed: {
 		family: "Encode Sans Semi Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Encode_Sans_Semi_Expanded: {
 		family: "Encode Sans Semi Expanded",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Engagement: {
 		family: "Engagement",
@@ -1887,37 +1755,37 @@ export const fonts: Fonts = {
 	},
 	Englebert: {
 		family: "Englebert",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Enriqueta: {
 		family: "Enriqueta",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "500", "600", "700"]
 	},
 	Erica_One: {
 		family: "Erica One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Esteban: {
 		family: "Esteban",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Euphoria_Script: {
 		family: "Euphoria Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ewert: {
 		family: "Ewert",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Exo: {
 		family: "Exo",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -1941,13 +1809,7 @@ export const fonts: Fonts = {
 	},
 	Exo_2: {
 		family: "Exo 2",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -1972,20 +1834,11 @@ export const fonts: Fonts = {
 	Expletus_Sans: {
 		family: "Expletus Sans",
 		subsets: ["latin"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
 	},
 	Fahkwang: {
 		family: "Fahkwang",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -2008,12 +1861,12 @@ export const fonts: Fonts = {
 	},
 	Farro: {
 		family: "Farro",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "500", "700"]
 	},
 	Farsan: {
 		family: "Farsan",
-		subsets: ["gujarati", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "gujarati"],
 		variants: ["400"]
 	},
 	Fascinate: {
@@ -2038,22 +1891,13 @@ export const fonts: Fonts = {
 	},
 	Fauna_One: {
 		family: "Fauna One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Faustina: {
 		family: "Faustina",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "500", "600", "700", "400i", "500i", "600i", "700i"]
 	},
 	Federant: {
 		family: "Federant",
@@ -2067,12 +1911,12 @@ export const fonts: Fonts = {
 	},
 	Felipa: {
 		family: "Felipa",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Fenix: {
 		family: "Fenix",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Finger_Paint: {
@@ -2083,37 +1927,37 @@ export const fonts: Fonts = {
 	Fira_Code: {
 		family: "Fira Code",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Fira_Mono: {
 		family: "Fira Mono",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["400", "500", "700"]
 	},
 	Fira_Sans: {
 		family: "Fira Sans",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -2139,13 +1983,13 @@ export const fonts: Fonts = {
 	Fira_Sans_Condensed: {
 		family: "Fira Sans Condensed",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -2171,13 +2015,13 @@ export const fonts: Fonts = {
 	Fira_Sans_Extra_Condensed: {
 		family: "Fira Sans Extra Condensed",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -2202,7 +2046,7 @@ export const fonts: Fonts = {
 	},
 	Fjalla_One: {
 		family: "Fjalla One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Fjord_One: {
@@ -2217,12 +2061,12 @@ export const fonts: Fonts = {
 	},
 	Flavors: {
 		family: "Flavors",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Fondamento: {
 		family: "Fondamento",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Fontdiner_Swanky: {
@@ -2232,27 +2076,27 @@ export const fonts: Fonts = {
 	},
 	Forum: {
 		family: "Forum",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Francois_One: {
 		family: "Francois One",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Frank_Ruhl_Libre: {
 		family: "Frank Ruhl Libre",
-		subsets: ["hebrew", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "hebrew"],
 		variants: ["300", "400", "500", "700", "900"]
 	},
 	Freckle_Face: {
 		family: "Freckle Face",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Fredericka_the_Great: {
 		family: "Fredericka the Great",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Fredoka_One: {
@@ -2267,7 +2111,7 @@ export const fonts: Fonts = {
 	},
 	Fresca: {
 		family: "Fresca",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Frijole: {
@@ -2277,7 +2121,7 @@ export const fonts: Fonts = {
 	},
 	Fruktur: {
 		family: "Fruktur",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Fugaz_One: {
@@ -2297,22 +2141,22 @@ export const fonts: Fonts = {
 	},
 	Gabriela: {
 		family: "Gabriela",
-		subsets: ["cyrillic-ext", "cyrillic", "latin"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin"],
 		variants: ["400"]
 	},
 	Gaegu: {
 		family: "Gaegu",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["300", "400", "700"]
 	},
 	Gafata: {
 		family: "Gafata",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Galada: {
 		family: "Galada",
-		subsets: ["latin", "bengali"],
+		subsets: ["bengali", "latin"],
 		variants: ["400"]
 	},
 	Galdeano: {
@@ -2322,12 +2166,12 @@ export const fonts: Fonts = {
 	},
 	Galindo: {
 		family: "Galindo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Gamja_Flower: {
 		family: "Gamja Flower",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Gayathri: {
@@ -2335,14 +2179,19 @@ export const fonts: Fonts = {
 		subsets: ["latin", "malayalam"],
 		variants: ["100", "400", "700"]
 	},
+	Gelasio: {
+		family: "Gelasio",
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "400i", "500", "500i", "600", "600i", "700", "700i"]
+	},
 	Gentium_Basic: {
 		family: "Gentium Basic",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Gentium_Book_Basic: {
 		family: "Gentium Book Basic",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Geo: {
@@ -2367,12 +2216,17 @@ export const fonts: Fonts = {
 	},
 	Gidugu: {
 		family: "Gidugu",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Gilda_Display: {
 		family: "Gilda Display",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
+		variants: ["400"]
+	},
+	Girassol: {
+		family: "Girassol",
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Give_You_Glory: {
@@ -2382,12 +2236,12 @@ export const fonts: Fonts = {
 	},
 	Glass_Antiqua: {
 		family: "Glass Antiqua",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Glegoo: {
 		family: "Glegoo",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Gloria_Hallelujah: {
@@ -2412,18 +2266,8 @@ export const fonts: Fonts = {
 	},
 	Gothic_A1: {
 		family: "Gothic A1",
-		subsets: ["latin", "korean"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["korean", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Goudy_Bookletter_1911: {
 		family: "Goudy Bookletter 1911",
@@ -2437,7 +2281,7 @@ export const fonts: Fonts = {
 	},
 	Grand_Hotel: {
 		family: "Grand Hotel",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Gravitas_One: {
@@ -2447,12 +2291,12 @@ export const fonts: Fonts = {
 	},
 	Great_Vibes: {
 		family: "Great Vibes",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Grenze: {
 		family: "Grenze",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -2476,52 +2320,57 @@ export const fonts: Fonts = {
 	},
 	Griffy: {
 		family: "Griffy",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Gruppo: {
 		family: "Gruppo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Gudea: {
 		family: "Gudea",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Gugi: {
 		family: "Gugi",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
+	},
+	Gupter: {
+		family: "Gupter",
+		subsets: ["latin"],
+		variants: ["400", "500", "700"]
 	},
 	Gurajada: {
 		family: "Gurajada",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Habibi: {
 		family: "Habibi",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Halant: {
 		family: "Halant",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Hammersmith_One: {
 		family: "Hammersmith One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Hanalei: {
 		family: "Hanalei",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Hanalei_Fill: {
 		family: "Hanalei Fill",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Handlee: {
@@ -2536,22 +2385,22 @@ export const fonts: Fonts = {
 	},
 	Happy_Monkey: {
 		family: "Happy Monkey",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Harmattan: {
 		family: "Harmattan",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["400"]
 	},
 	Headland_One: {
 		family: "Headland One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Heebo: {
 		family: "Heebo",
-		subsets: ["hebrew", "latin"],
+		subsets: ["latin", "hebrew"],
 		variants: ["100", "300", "400", "500", "700", "800", "900"]
 	},
 	Henny_Penny: {
@@ -2561,52 +2410,42 @@ export const fonts: Fonts = {
 	},
 	Hepta_Slab: {
 		family: "Hepta Slab",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Herr_Von_Muellerhoff: {
 		family: "Herr Von Muellerhoff",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Hi_Melody: {
 		family: "Hi Melody",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Hind: {
 		family: "Hind",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Hind_Guntur: {
 		family: "Hind Guntur",
-		subsets: ["latin", "latin-ext", "telugu"],
+		subsets: ["latin-ext", "telugu", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Hind_Madurai: {
 		family: "Hind Madurai",
-		subsets: ["latin", "tamil", "latin-ext"],
+		subsets: ["tamil", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Hind_Siliguri: {
 		family: "Hind Siliguri",
-		subsets: ["latin", "latin-ext", "bengali"],
+		subsets: ["bengali", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Hind_Vadodara: {
 		family: "Hind Vadodara",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Holtwood_One_SC: {
@@ -2626,13 +2465,7 @@ export const fonts: Fonts = {
 	},
 	IBM_Plex_Mono: {
 		family: "IBM Plex Mono",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -2653,12 +2486,12 @@ export const fonts: Fonts = {
 	IBM_Plex_Sans: {
 		family: "IBM Plex Sans",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin"
 		],
 		variants: [
 			"100",
@@ -2679,7 +2512,7 @@ export const fonts: Fonts = {
 	},
 	IBM_Plex_Sans_Condensed: {
 		family: "IBM Plex Sans Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -2699,13 +2532,7 @@ export const fonts: Fonts = {
 	},
 	IBM_Plex_Serif: {
 		family: "IBM Plex Serif",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -2773,6 +2600,11 @@ export const fonts: Fonts = {
 		subsets: ["latin"],
 		variants: ["400"]
 	},
+	Ibarra_Real_Nova: {
+		family: "Ibarra Real Nova",
+		subsets: ["latin-ext", "latin"],
+		variants: ["400", "400i", "600", "600i", "700", "700i"]
+	},
 	Iceberg: {
 		family: "Iceberg",
 		subsets: ["latin"],
@@ -2785,17 +2617,17 @@ export const fonts: Fonts = {
 	},
 	Imprima: {
 		family: "Imprima",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Inconsolata: {
 		family: "Inconsolata",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400", "700"]
 	},
 	Inder: {
 		family: "Inder",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Indie_Flower: {
@@ -2805,13 +2637,18 @@ export const fonts: Fonts = {
 	},
 	Inika: {
 		family: "Inika",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Inknut_Antiqua: {
 		family: "Inknut Antiqua",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700", "800", "900"]
+	},
+	Inria_Serif: {
+		family: "Inria Serif",
+		subsets: ["latin-ext", "latin"],
+		variants: ["300", "300i", "400", "400i", "700", "700i"]
 	},
 	Irish_Grover: {
 		family: "Irish Grover",
@@ -2820,7 +2657,7 @@ export const fonts: Fonts = {
 	},
 	Istok_Web: {
 		family: "Istok Web",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Italiana: {
@@ -2830,12 +2667,12 @@ export const fonts: Fonts = {
 	},
 	Italianno: {
 		family: "Italianno",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Itim: {
 		family: "Itim",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400"]
 	},
 	Jacques_Francois: {
@@ -2850,32 +2687,37 @@ export const fonts: Fonts = {
 	},
 	Jaldi: {
 		family: "Jaldi",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Jim_Nightshade: {
 		family: "Jim Nightshade",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Jockey_One: {
 		family: "Jockey One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Jolly_Lodger: {
 		family: "Jolly Lodger",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Jomhuria: {
 		family: "Jomhuria",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
+		variants: ["400"]
+	},
+	Jomolhari: {
+		family: "Jomolhari",
+		subsets: ["latin", "tibetan"],
 		variants: ["400"]
 	},
 	Josefin_Sans: {
 		family: "Josefin Sans",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -2907,17 +2749,17 @@ export const fonts: Fonts = {
 	},
 	Joti_One: {
 		family: "Joti One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Jua: {
 		family: "Jua",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Judson: {
 		family: "Judson",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Julee: {
@@ -2927,7 +2769,7 @@ export const fonts: Fonts = {
 	},
 	Julius_Sans_One: {
 		family: "Julius Sans One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Junge: {
@@ -2938,13 +2780,13 @@ export const fonts: Fonts = {
 	Jura: {
 		family: "Jura",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["300", "400", "500", "600", "700"]
 	},
@@ -2955,12 +2797,12 @@ export const fonts: Fonts = {
 	},
 	Just_Me_Again_Down_Here: {
 		family: "Just Me Again Down Here",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	K2D: {
 		family: "K2D",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"100",
 			"100i",
@@ -2987,7 +2829,7 @@ export const fonts: Fonts = {
 	},
 	Kalam: {
 		family: "Kalam",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "700"]
 	},
 	Kameron: {
@@ -2997,7 +2839,7 @@ export const fonts: Fonts = {
 	},
 	Kanit: {
 		family: "Kanit",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"100",
 			"100i",
@@ -3026,32 +2868,32 @@ export const fonts: Fonts = {
 	},
 	Karla: {
 		family: "Karla",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Karma: {
 		family: "Karma",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Katibeh: {
 		family: "Katibeh",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
 		variants: ["400"]
 	},
 	Kaushan_Script: {
 		family: "Kaushan Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Kavivanar: {
 		family: "Kavivanar",
-		subsets: ["latin", "tamil", "latin-ext"],
+		subsets: ["tamil", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Kavoon: {
 		family: "Kavoon",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Kdam_Thmor: {
@@ -3061,12 +2903,12 @@ export const fonts: Fonts = {
 	},
 	Keania_One: {
 		family: "Keania One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Kelly_Slab: {
 		family: "Kelly Slab",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Kenia: {
@@ -3076,7 +2918,7 @@ export const fonts: Fonts = {
 	},
 	Khand: {
 		family: "Khand",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Khmer: {
@@ -3086,12 +2928,12 @@ export const fonts: Fonts = {
 	},
 	Khula: {
 		family: "Khula",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "600", "700", "800"]
 	},
 	Kirang_Haerang: {
 		family: "Kirang Haerang",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Kite_One: {
@@ -3101,12 +2943,12 @@ export const fonts: Fonts = {
 	},
 	Knewave: {
 		family: "Knewave",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	KoHo: {
 		family: "KoHo",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -3124,7 +2966,7 @@ export const fonts: Fonts = {
 	},
 	Kodchasan: {
 		family: "Kodchasan",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -3142,17 +2984,17 @@ export const fonts: Fonts = {
 	},
 	Kosugi: {
 		family: "Kosugi",
-		subsets: ["cyrillic", "japanese", "latin"],
+		subsets: ["cyrillic", "latin", "japanese"],
 		variants: ["400"]
 	},
 	Kosugi_Maru: {
 		family: "Kosugi Maru",
-		subsets: ["cyrillic", "japanese", "latin"],
+		subsets: ["cyrillic", "latin", "japanese"],
 		variants: ["400"]
 	},
 	Kotta_One: {
 		family: "Kotta One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Koulen: {
@@ -3167,7 +3009,7 @@ export const fonts: Fonts = {
 	},
 	Kreon: {
 		family: "Kreon",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Kristi: {
@@ -3177,12 +3019,12 @@ export const fonts: Fonts = {
 	},
 	Krona_One: {
 		family: "Krona One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Krub: {
 		family: "Krub",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -3198,25 +3040,35 @@ export const fonts: Fonts = {
 			"700i"
 		]
 	},
+	Kulim_Park: {
+		family: "Kulim Park",
+		subsets: ["latin-ext", "latin"],
+		variants: [
+			"200",
+			"200i",
+			"300",
+			"300i",
+			"400",
+			"400i",
+			"600",
+			"600i",
+			"700",
+			"700i"
+		]
+	},
 	Kumar_One: {
 		family: "Kumar One",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["400"]
 	},
 	Kumar_One_Outline: {
 		family: "Kumar One Outline",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["400"]
 	},
 	Kurale: {
 		family: "Kurale",
-		subsets: [
-			"cyrillic-ext",
-			"devanagari",
-			"cyrillic",
-			"latin",
-			"latin-ext"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	La_Belle_Aurore: {
@@ -3231,32 +3083,32 @@ export const fonts: Fonts = {
 	},
 	Laila: {
 		family: "Laila",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Lakki_Reddy: {
 		family: "Lakki Reddy",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Lalezar: {
 		family: "Lalezar",
-		subsets: ["arabic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "arabic"],
 		variants: ["400"]
 	},
 	Lancelot: {
 		family: "Lancelot",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Lateef: {
 		family: "Lateef",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["400"]
 	},
 	Lato: {
 		family: "Lato",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -3282,12 +3134,12 @@ export const fonts: Fonts = {
 	},
 	Ledger: {
 		family: "Ledger",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Lekton: {
 		family: "Lekton",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Lemon: {
@@ -3297,42 +3149,42 @@ export const fonts: Fonts = {
 	},
 	Lemonada: {
 		family: "Lemonada",
-		subsets: ["arabic", "latin", "latin-ext", "vietnamese"],
-		variants: ["300", "400", "600", "700"]
+		subsets: ["latin-ext", "vietnamese", "latin", "arabic"],
+		variants: ["300", "400", "500", "600", "700"]
 	},
 	Lexend_Deca: {
 		family: "Lexend Deca",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lexend_Exa: {
 		family: "Lexend Exa",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lexend_Giga: {
 		family: "Lexend Giga",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lexend_Mega: {
 		family: "Lexend Mega",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lexend_Peta: {
 		family: "Lexend Peta",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lexend_Tera: {
 		family: "Lexend Tera",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lexend_Zetta: {
 		family: "Lexend Zetta",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Libre_Barcode_128: {
@@ -3367,22 +3219,22 @@ export const fonts: Fonts = {
 	},
 	Libre_Baskerville: {
 		family: "Libre Baskerville",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Libre_Caslon_Display: {
 		family: "Libre Caslon Display",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Libre_Caslon_Text: {
 		family: "Libre Caslon Text",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Libre_Franklin: {
 		family: "Libre Franklin",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -3406,22 +3258,22 @@ export const fonts: Fonts = {
 	},
 	Life_Savers: {
 		family: "Life Savers",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700", "800"]
 	},
 	Lilita_One: {
 		family: "Lilita One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Lily_Script_One: {
 		family: "Lily Script One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Limelight: {
 		family: "Limelight",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Linden_Hill: {
@@ -3433,22 +3285,13 @@ export const fonts: Fonts = {
 		family: "Literata",
 		subsets: [
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
-		variants: [
-			"400",
-			"500",
-			"600",
-			"700",
-			"400i",
-			"500i",
-			"600i",
-			"700i"
-		]
+		variants: ["400", "500", "600", "700", "400i", "500i", "600i", "700i"]
 	},
 	Liu_Jian_Mao_Cao: {
 		family: "Liu Jian Mao Cao",
@@ -3457,7 +3300,7 @@ export const fonts: Fonts = {
 	},
 	Livvic: {
 		family: "Livvic",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -3479,13 +3322,7 @@ export const fonts: Fonts = {
 	},
 	Lobster: {
 		family: "Lobster",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Lobster_Two: {
@@ -3520,13 +3357,7 @@ export const fonts: Fonts = {
 	},
 	Lora: {
 		family: "Lora",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Love_Ya_Like_A_Sister: {
@@ -3541,7 +3372,7 @@ export const fonts: Fonts = {
 	},
 	Lovers_Quarrel: {
 		family: "Lovers Quarrel",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Luckiest_Guy: {
@@ -3562,30 +3393,30 @@ export const fonts: Fonts = {
 	M_PLUS_1p: {
 		family: "M PLUS 1p",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"hebrew",
-			"japanese",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"hebrew",
+			"japanese",
+			"greek-ext"
 		],
 		variants: ["100", "300", "400", "500", "700", "800", "900"]
 	},
 	M_PLUS_Rounded_1c: {
 		family: "M PLUS Rounded 1c",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"hebrew",
-			"japanese",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"hebrew",
+			"japanese",
+			"greek-ext"
 		],
 		variants: ["100", "300", "400", "500", "700", "800", "900"]
 	},
@@ -3606,12 +3437,12 @@ export const fonts: Fonts = {
 	},
 	Mada: {
 		family: "Mada",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["200", "300", "400", "500", "600", "700", "900"]
 	},
 	Magra: {
 		family: "Magra",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Maiden_Orange: {
@@ -3621,12 +3452,12 @@ export const fonts: Fonts = {
 	},
 	Maitree: {
 		family: "Maitree",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Major_Mono_Display: {
 		family: "Major Mono Display",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Mako: {
@@ -3636,7 +3467,7 @@ export const fonts: Fonts = {
 	},
 	Mali: {
 		family: "Mali",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -3654,12 +3485,12 @@ export const fonts: Fonts = {
 	},
 	Mallanna: {
 		family: "Mallanna",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Mandali: {
 		family: "Mandali",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Manjari: {
@@ -3674,41 +3505,32 @@ export const fonts: Fonts = {
 	},
 	Manuale: {
 		family: "Manuale",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"600",
-			"600i",
-			"700",
-			"700i"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "500", "600", "700", "400i", "500i", "600i", "700i"]
 	},
 	Marcellus: {
 		family: "Marcellus",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Marcellus_SC: {
 		family: "Marcellus SC",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Marck_Script: {
 		family: "Marck Script",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Margarine: {
 		family: "Margarine",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Markazi_Text: {
 		family: "Markazi Text",
-		subsets: ["arabic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "arabic"],
 		variants: ["400", "500", "600", "700"]
 	},
 	Marko_One: {
@@ -3718,17 +3540,17 @@ export const fonts: Fonts = {
 	},
 	Marmelad: {
 		family: "Marmelad",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Martel: {
 		family: "Martel",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["200", "300", "400", "600", "700", "800", "900"]
 	},
 	Martel_Sans: {
 		family: "Martel Sans",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["200", "300", "400", "600", "700", "800", "900"]
 	},
 	Marvel: {
@@ -3748,12 +3570,12 @@ export const fonts: Fonts = {
 	},
 	Maven_Pro: {
 		family: "Maven Pro",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: ["400", "500", "700", "900"]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["400", "500", "600", "700", "800", "900"]
 	},
 	McLaren: {
 		family: "McLaren",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Meddon: {
@@ -3763,7 +3585,7 @@ export const fonts: Fonts = {
 	},
 	MedievalSharp: {
 		family: "MedievalSharp",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Medula_One: {
@@ -3773,7 +3595,7 @@ export const fonts: Fonts = {
 	},
 	Meera_Inimai: {
 		family: "Meera Inimai",
-		subsets: ["latin", "tamil"],
+		subsets: ["tamil", "latin"],
 		variants: ["400"]
 	},
 	Megrim: {
@@ -3783,12 +3605,12 @@ export const fonts: Fonts = {
 	},
 	Meie_Script: {
 		family: "Meie Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Merienda: {
 		family: "Merienda",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Merienda_One: {
@@ -3798,37 +3620,13 @@ export const fonts: Fonts = {
 	},
 	Merriweather: {
 		family: "Merriweather",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
-		variants: [
-			"300",
-			"300i",
-			"400",
-			"400i",
-			"700",
-			"700i",
-			"900",
-			"900i"
-		]
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		variants: ["300", "300i", "400", "400i", "700", "700i", "900", "900i"]
 	},
 	Merriweather_Sans: {
 		family: "Merriweather Sans",
-		subsets: ["latin", "latin-ext"],
-		variants: [
-			"300",
-			"300i",
-			"400",
-			"400i",
-			"700",
-			"700i",
-			"800",
-			"800i"
-		]
+		subsets: ["latin-ext", "latin"],
+		variants: ["300", "300i", "400", "400i", "700", "700i", "800", "800i"]
 	},
 	Metal: {
 		family: "Metal",
@@ -3837,17 +3635,17 @@ export const fonts: Fonts = {
 	},
 	Metal_Mania: {
 		family: "Metal Mania",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Metamorphous: {
 		family: "Metamorphous",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Metrophobic: {
 		family: "Metrophobic",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Michroma: {
@@ -3857,7 +3655,7 @@ export const fonts: Fonts = {
 	},
 	Milonga: {
 		family: "Milonga",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Miltonian: {
@@ -3872,7 +3670,7 @@ export const fonts: Fonts = {
 	},
 	Mina: {
 		family: "Mina",
-		subsets: ["latin", "latin-ext", "bengali"],
+		subsets: ["bengali", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Miniver: {
@@ -3882,52 +3680,52 @@ export const fonts: Fonts = {
 	},
 	Miriam_Libre: {
 		family: "Miriam Libre",
-		subsets: ["hebrew", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "hebrew"],
 		variants: ["400", "700"]
 	},
 	Mirza: {
 		family: "Mirza",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
 		variants: ["400", "500", "600", "700"]
 	},
 	Miss_Fajardose: {
 		family: "Miss Fajardose",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mitr: {
 		family: "Mitr",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Modak: {
 		family: "Modak",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Modern_Antiqua: {
 		family: "Modern Antiqua",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mogra: {
 		family: "Mogra",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["400"]
 	},
 	Molengo: {
 		family: "Molengo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Molle: {
 		family: "Molle",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400i"]
 	},
 	Monda: {
 		family: "Monda",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Monofett: {
@@ -3942,7 +3740,7 @@ export const fonts: Fonts = {
 	},
 	Monsieur_La_Doulaise: {
 		family: "Monsieur La Doulaise",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Montaga: {
@@ -3957,13 +3755,7 @@ export const fonts: Fonts = {
 	},
 	Montserrat: {
 		family: "Montserrat",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -3987,13 +3779,7 @@ export const fonts: Fonts = {
 	},
 	Montserrat_Alternates: {
 		family: "Montserrat Alternates",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -4037,107 +3823,109 @@ export const fonts: Fonts = {
 	},
 	Mouse_Memoirs: {
 		family: "Mouse Memoirs",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mr_Bedfort: {
 		family: "Mr Bedfort",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mr_Dafoe: {
 		family: "Mr Dafoe",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mr_De_Haviland: {
 		family: "Mr De Haviland",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mrs_Saint_Delafield: {
 		family: "Mrs Saint Delafield",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mrs_Sheppards: {
 		family: "Mrs Sheppards",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Mukta: {
 		family: "Mukta",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["200", "300", "400", "500", "600", "700", "800"]
 	},
 	Mukta_Mahee: {
 		family: "Mukta Mahee",
-		subsets: ["gurmukhi", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gurmukhi"],
 		variants: ["200", "300", "400", "500", "600", "700", "800"]
 	},
 	Mukta_Malar: {
 		family: "Mukta Malar",
-		subsets: ["latin", "tamil", "latin-ext"],
+		subsets: ["tamil", "latin-ext", "latin"],
 		variants: ["200", "300", "400", "500", "600", "700", "800"]
 	},
 	Mukta_Vaani: {
 		family: "Mukta Vaani",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["200", "300", "400", "500", "600", "700", "800"]
 	},
 	Muli: {
 		family: "Muli",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"200",
-			"200i",
 			"300",
-			"300i",
 			"400",
-			"400i",
+			"500",
 			"600",
-			"600i",
 			"700",
-			"700i",
 			"800",
-			"800i",
 			"900",
+			"200i",
+			"300i",
+			"400i",
+			"500i",
+			"600i",
+			"700i",
+			"800i",
 			"900i"
 		]
 	},
 	Mystery_Quest: {
 		family: "Mystery Quest",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	NTR: {
 		family: "NTR",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Nanum_Brush_Script: {
 		family: "Nanum Brush Script",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Nanum_Gothic: {
 		family: "Nanum Gothic",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400", "700", "800"]
 	},
 	Nanum_Gothic_Coding: {
 		family: "Nanum Gothic Coding",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400", "700"]
 	},
 	Nanum_Myeongjo: {
 		family: "Nanum Myeongjo",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400", "700", "800"]
 	},
 	Nanum_Pen_Script: {
 		family: "Nanum Pen Script",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Neucha: {
@@ -4147,27 +3935,27 @@ export const fonts: Fonts = {
 	},
 	Neuton: {
 		family: "Neuton",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["200", "300", "400", "400i", "700", "800"]
 	},
 	New_Rocker: {
 		family: "New Rocker",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	News_Cycle: {
 		family: "News Cycle",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Niconne: {
 		family: "Niconne",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Niramit: {
 		family: "Niramit",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"200",
 			"200i",
@@ -4190,7 +3978,7 @@ export const fonts: Fonts = {
 	},
 	Nobile: {
 		family: "Nobile",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "500", "500i", "700", "700i"]
 	},
 	Nokora: {
@@ -4200,12 +3988,12 @@ export const fonts: Fonts = {
 	},
 	Norican: {
 		family: "Norican",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Nosifer: {
 		family: "Nosifer",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Notable: {
@@ -4220,41 +4008,41 @@ export const fonts: Fonts = {
 	},
 	Noticia_Text: {
 		family: "Noticia Text",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Noto_Sans: {
 		family: "Noto Sans",
 		subsets: [
-			"cyrillic-ext",
-			"devanagari",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
+			"devanagari",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Noto_Sans_HK: {
 		family: "Noto Sans HK",
-		subsets: ["chinese-hongkong", "latin"],
+		subsets: ["latin", "chinese-hongkong"],
 		variants: ["100", "300", "400", "500", "700", "900"]
 	},
 	Noto_Sans_JP: {
 		family: "Noto Sans JP",
-		subsets: ["japanese", "latin"],
+		subsets: ["latin", "japanese"],
 		variants: ["100", "300", "400", "500", "700", "900"]
 	},
 	Noto_Sans_KR: {
 		family: "Noto Sans KR",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["100", "300", "400", "500", "700", "900"]
 	},
 	Noto_Sans_SC: {
 		family: "Noto Sans SC",
-		subsets: ["cyrillic", "latin", "vietnamese", "chinese-simplified"],
+		subsets: ["cyrillic", "vietnamese", "latin", "chinese-simplified"],
 		variants: ["100", "300", "400", "500", "700", "900"]
 	},
 	Noto_Sans_TC: {
@@ -4265,34 +4053,34 @@ export const fonts: Fonts = {
 	Noto_Serif: {
 		family: "Noto Serif",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Noto_Serif_JP: {
 		family: "Noto Serif JP",
-		subsets: ["japanese", "latin"],
+		subsets: ["latin", "japanese"],
 		variants: ["200", "300", "400", "500", "600", "700", "900"]
 	},
 	Noto_Serif_KR: {
 		family: "Noto Serif KR",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["200", "300", "400", "500", "600", "700", "900"]
 	},
 	Noto_Serif_SC: {
 		family: "Noto Serif SC",
-		subsets: ["cyrillic", "latin", "vietnamese", "chinese-simplified"],
+		subsets: ["cyrillic", "vietnamese", "latin", "chinese-simplified"],
 		variants: ["200", "300", "400", "500", "600", "700", "900"]
 	},
 	Noto_Serif_TC: {
 		family: "Noto Serif TC",
-		subsets: ["chinese-traditional", "cyrillic", "latin", "vietnamese"],
+		subsets: ["cyrillic", "chinese-traditional", "vietnamese", "latin"],
 		variants: ["200", "300", "400", "500", "600", "700", "900"]
 	},
 	Nova_Cut: {
@@ -4307,7 +4095,7 @@ export const fonts: Fonts = {
 	},
 	Nova_Mono: {
 		family: "Nova Mono",
-		subsets: ["latin", "greek"],
+		subsets: ["greek", "latin"],
 		variants: ["400"]
 	},
 	Nova_Oval: {
@@ -4342,7 +4130,7 @@ export const fonts: Fonts = {
 	},
 	Nunito: {
 		family: "Nunito",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"200",
 			"200i",
@@ -4362,7 +4150,7 @@ export const fonts: Fonts = {
 	},
 	Nunito_Sans: {
 		family: "Nunito Sans",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
 			"200",
 			"200i",
@@ -4380,6 +4168,11 @@ export const fonts: Fonts = {
 			"900i"
 		]
 	},
+	Odibee_Sans: {
+		family: "Odibee Sans",
+		subsets: ["latin"],
+		variants: ["400"]
+	},
 	Odor_Mean_Chey: {
 		family: "Odor Mean Chey",
 		subsets: ["khmer"],
@@ -4392,40 +4185,34 @@ export const fonts: Fonts = {
 	},
 	Old_Standard_TT: {
 		family: "Old Standard TT",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700"]
 	},
 	Oldenburg: {
 		family: "Oldenburg",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Oleo_Script: {
 		family: "Oleo Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Oleo_Script_Swash_Caps: {
 		family: "Oleo Script Swash Caps",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Open_Sans: {
 		family: "Open Sans",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"300",
@@ -4443,34 +4230,34 @@ export const fonts: Fonts = {
 	Open_Sans_Condensed: {
 		family: "Open Sans Condensed",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["300", "300i", "700"]
 	},
 	Oranienbaum: {
 		family: "Oranienbaum",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Orbitron: {
 		family: "Orbitron",
 		subsets: ["latin"],
-		variants: ["400", "500", "700", "900"]
+		variants: ["400", "500", "600", "700", "800", "900"]
 	},
 	Oregano: {
 		family: "Oregano",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Orienta: {
 		family: "Orienta",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Original_Surfer: {
@@ -4480,13 +4267,7 @@ export const fonts: Fonts = {
 	},
 	Oswald: {
 		family: "Oswald",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Over_the_Rainbow: {
@@ -4496,17 +4277,17 @@ export const fonts: Fonts = {
 	},
 	Overlock: {
 		family: "Overlock",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i", "900", "900i"]
 	},
 	Overlock_SC: {
 		family: "Overlock SC",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Overpass: {
 		family: "Overpass",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -4528,7 +4309,7 @@ export const fonts: Fonts = {
 	},
 	Overpass_Mono: {
 		family: "Overpass Mono",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "600", "700"]
 	},
 	Ovo: {
@@ -4538,53 +4319,47 @@ export const fonts: Fonts = {
 	},
 	Oxygen: {
 		family: "Oxygen",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "700"]
 	},
 	Oxygen_Mono: {
 		family: "Oxygen Mono",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	PT_Mono: {
 		family: "PT Mono",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	PT_Sans: {
 		family: "PT Sans",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	PT_Sans_Caption: {
 		family: "PT Sans Caption",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	PT_Sans_Narrow: {
 		family: "PT Sans Narrow",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	PT_Serif: {
 		family: "PT Serif",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	PT_Serif_Caption: {
 		family: "PT Serif Caption",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Pacifico: {
 		family: "Pacifico",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Padauk: {
@@ -4594,23 +4369,17 @@ export const fonts: Fonts = {
 	},
 	Palanquin: {
 		family: "Palanquin",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["100", "200", "300", "400", "500", "600", "700"]
 	},
 	Palanquin_Dark: {
 		family: "Palanquin Dark",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "500", "600", "700"]
 	},
 	Pangolin: {
 		family: "Pangolin",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Paprika: {
@@ -4620,37 +4389,37 @@ export const fonts: Fonts = {
 	},
 	Parisienne: {
 		family: "Parisienne",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Passero_One: {
 		family: "Passero One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Passion_One: {
 		family: "Passion One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700", "900"]
 	},
 	Pathway_Gothic_One: {
 		family: "Pathway Gothic One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Patrick_Hand: {
 		family: "Patrick Hand",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Patrick_Hand_SC: {
 		family: "Patrick Hand SC",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Pattaya: {
 		family: "Pattaya",
-		subsets: ["cyrillic", "latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400"]
 	},
 	Patua_One: {
@@ -4660,22 +4429,22 @@ export const fonts: Fonts = {
 	},
 	Pavanam: {
 		family: "Pavanam",
-		subsets: ["latin", "tamil", "latin-ext"],
+		subsets: ["tamil", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Paytone_One: {
 		family: "Paytone One",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Peddana: {
 		family: "Peddana",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Peralta: {
 		family: "Peralta",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Permanent_Marker: {
@@ -4685,7 +4454,7 @@ export const fonts: Fonts = {
 	},
 	Petit_Formal_Script: {
 		family: "Petit Formal Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Petrona: {
@@ -4695,12 +4464,12 @@ export const fonts: Fonts = {
 	},
 	Philosopher: {
 		family: "Philosopher",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "vietnamese"],
+		subsets: ["cyrillic", "cyrillic-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Piedra: {
 		family: "Piedra",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Pinyon_Script: {
@@ -4710,55 +4479,49 @@ export const fonts: Fonts = {
 	},
 	Pirata_One: {
 		family: "Pirata One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Plaster: {
 		family: "Plaster",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Play: {
 		family: "Play",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin"
 		],
 		variants: ["400", "700"]
 	},
 	Playball: {
 		family: "Playball",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Playfair_Display: {
 		family: "Playfair Display",
-		subsets: ["cyrillic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i", "900", "900i"]
 	},
 	Playfair_Display_SC: {
 		family: "Playfair Display SC",
-		subsets: ["cyrillic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i", "900", "900i"]
 	},
 	Podkova: {
 		family: "Podkova",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "500", "600", "700", "800"]
 	},
 	Poiret_One: {
 		family: "Poiret One",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Poller_One: {
@@ -4778,17 +4541,17 @@ export const fonts: Fonts = {
 	},
 	Pontano_Sans: {
 		family: "Pontano Sans",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Poor_Story: {
 		family: "Poor Story",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Poppins: {
 		family: "Poppins",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -4822,12 +4585,12 @@ export const fonts: Fonts = {
 	},
 	Pragati_Narrow: {
 		family: "Pragati Narrow",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Prata: {
 		family: "Prata",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "vietnamese"],
+		subsets: ["cyrillic", "cyrillic-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Preahvihear: {
@@ -4837,23 +4600,17 @@ export const fonts: Fonts = {
 	},
 	Press_Start_2P: {
 		family: "Press Start 2P",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"greek"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "greek", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Pridi: {
 		family: "Pridi",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Princess_Sofia: {
 		family: "Princess Sofia",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Prociono: {
@@ -4863,7 +4620,7 @@ export const fonts: Fonts = {
 	},
 	Prompt: {
 		family: "Prompt",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"100",
 			"100i",
@@ -4887,12 +4644,12 @@ export const fonts: Fonts = {
 	},
 	Prosto_One: {
 		family: "Prosto One",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Proza_Libre: {
 		family: "Proza Libre",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"400",
 			"400i",
@@ -4906,6 +4663,30 @@ export const fonts: Fonts = {
 			"800i"
 		]
 	},
+	Public_Sans: {
+		family: "Public Sans",
+		subsets: ["latin-ext", "latin"],
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900",
+			"100i",
+			"200i",
+			"300i",
+			"400i",
+			"500i",
+			"600i",
+			"700i",
+			"800i",
+			"900i"
+		]
+	},
 	Puritan: {
 		family: "Puritan",
 		subsets: ["latin"],
@@ -4913,12 +4694,12 @@ export const fonts: Fonts = {
 	},
 	Purple_Purse: {
 		family: "Purple Purse",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Quando: {
 		family: "Quando",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Quantico: {
@@ -4928,12 +4709,12 @@ export const fonts: Fonts = {
 	},
 	Quattrocento: {
 		family: "Quattrocento",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Quattrocento_Sans: {
 		family: "Quattrocento Sans",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Questrial: {
@@ -4943,42 +4724,42 @@ export const fonts: Fonts = {
 	},
 	Quicksand: {
 		family: "Quicksand",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Quintessential: {
 		family: "Quintessential",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Qwigley: {
 		family: "Qwigley",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Racing_Sans_One: {
 		family: "Racing Sans One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Radley: {
 		family: "Radley",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Rajdhani: {
 		family: "Rajdhani",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Rakkas: {
 		family: "Rakkas",
-		subsets: ["arabic", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "arabic"],
 		variants: ["400"]
 	},
 	Raleway: {
 		family: "Raleway",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"100",
 			"100i",
@@ -5002,32 +4783,32 @@ export const fonts: Fonts = {
 	},
 	Raleway_Dots: {
 		family: "Raleway Dots",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ramabhadra: {
 		family: "Ramabhadra",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Ramaraja: {
 		family: "Ramaraja",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Rambla: {
 		family: "Rambla",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Rammetto_One: {
 		family: "Rammetto One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ranchers: {
 		family: "Ranchers",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Rancho: {
@@ -5037,12 +4818,12 @@ export const fonts: Fonts = {
 	},
 	Ranga: {
 		family: "Ranga",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Rasa: {
 		family: "Rasa",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Rationale: {
@@ -5052,26 +4833,17 @@ export const fonts: Fonts = {
 	},
 	Ravi_Prakash: {
 		family: "Ravi Prakash",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Red_Hat_Display: {
 		family: "Red Hat Display",
-		subsets: ["latin", "latin-ext"],
-		variants: [
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"700",
-			"700i",
-			"900",
-			"900i"
-		]
+		subsets: ["latin-ext", "latin"],
+		variants: ["400", "400i", "500", "500i", "700", "700i", "900", "900i"]
 	},
 	Red_Hat_Text: {
 		family: "Red Hat Text",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "500", "500i", "700", "700i"]
 	},
 	Redressed: {
@@ -5081,7 +4853,7 @@ export const fonts: Fonts = {
 	},
 	Reem_Kufi: {
 		family: "Reem Kufi",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["400"]
 	},
 	Reenie_Beanie: {
@@ -5091,44 +4863,44 @@ export const fonts: Fonts = {
 	},
 	Revalia: {
 		family: "Revalia",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Rhodium_Libre: {
 		family: "Rhodium Libre",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ribeye: {
 		family: "Ribeye",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ribeye_Marrow: {
 		family: "Ribeye Marrow",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Righteous: {
 		family: "Righteous",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Risque: {
 		family: "Risque",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Roboto: {
 		family: "Roboto",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -5148,26 +4920,26 @@ export const fonts: Fonts = {
 	Roboto_Condensed: {
 		family: "Roboto Condensed",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["300", "300i", "400", "400i", "700", "700i"]
 	},
 	Roboto_Mono: {
 		family: "Roboto Mono",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"100",
@@ -5185,15 +4957,15 @@ export const fonts: Fonts = {
 	Roboto_Slab: {
 		family: "Roboto Slab",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
-		variants: ["100", "300", "400", "700"]
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Rochester: {
 		family: "Rochester",
@@ -5207,37 +4979,38 @@ export const fonts: Fonts = {
 	},
 	Rokkitt: {
 		family: "Rokkitt",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+	},
+	Romanesco: {
+		family: "Romanesco",
+		subsets: ["latin-ext", "latin"],
+		variants: ["400"]
+	},
+	Ropa_Sans: {
+		family: "Ropa Sans",
+		subsets: ["latin-ext", "latin"],
+		variants: ["400", "400i"]
+	},
+	Rosario: {
+		family: "Rosario",
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: [
-			"100",
-			"200",
 			"300",
 			"400",
 			"500",
 			"600",
 			"700",
-			"800",
-			"900"
+			"300i",
+			"400i",
+			"500i",
+			"600i",
+			"700i"
 		]
-	},
-	Romanesco: {
-		family: "Romanesco",
-		subsets: ["latin", "latin-ext"],
-		variants: ["400"]
-	},
-	Ropa_Sans: {
-		family: "Ropa Sans",
-		subsets: ["latin", "latin-ext"],
-		variants: ["400", "400i"]
-	},
-	Rosario: {
-		family: "Rosario",
-		subsets: ["latin"],
-		variants: ["400", "400i", "700", "700i"]
 	},
 	Rosarivo: {
 		family: "Rosarivo",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Rouge_Script: {
@@ -5247,12 +5020,12 @@ export const fonts: Fonts = {
 	},
 	Rozha_One: {
 		family: "Rozha One",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Rubik: {
 		family: "Rubik",
-		subsets: ["cyrillic", "hebrew", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin", "hebrew"],
 		variants: [
 			"300",
 			"300i",
@@ -5268,57 +5041,57 @@ export const fonts: Fonts = {
 	},
 	Rubik_Mono_One: {
 		family: "Rubik Mono One",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ruda: {
 		family: "Ruda",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700", "900"]
 	},
 	Rufina: {
 		family: "Rufina",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Ruge_Boogie: {
 		family: "Ruge Boogie",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ruluko: {
 		family: "Ruluko",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Rum_Raisin: {
 		family: "Rum Raisin",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ruslan_Display: {
 		family: "Ruslan Display",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Russo_One: {
 		family: "Russo One",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Ruthie: {
 		family: "Ruthie",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Rye: {
 		family: "Rye",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Sacramento: {
 		family: "Sacramento",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Sahitya: {
@@ -5328,72 +5101,32 @@ export const fonts: Fonts = {
 	},
 	Sail: {
 		family: "Sail",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Saira: {
 		family: "Saira",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Saira_Condensed: {
 		family: "Saira Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Saira_Extra_Condensed: {
 		family: "Saira Extra Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Saira_Semi_Condensed: {
 		family: "Saira Semi Condensed",
-		subsets: ["latin", "latin-ext", "vietnamese"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "vietnamese", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Saira_Stencil_One: {
 		family: "Saira Stencil One",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Salsa: {
@@ -5403,31 +5136,22 @@ export const fonts: Fonts = {
 	},
 	Sanchez: {
 		family: "Sanchez",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Sancreek: {
 		family: "Sancreek",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Sansita: {
 		family: "Sansita",
-		subsets: ["latin", "latin-ext"],
-		variants: [
-			"400",
-			"400i",
-			"700",
-			"700i",
-			"800",
-			"800i",
-			"900",
-			"900i"
-		]
+		subsets: ["latin-ext", "latin"],
+		variants: ["400", "400i", "700", "700i", "800", "800i", "900", "900i"]
 	},
 	Sarabun: {
 		family: "Sarabun",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"100",
 			"100i",
@@ -5449,17 +5173,17 @@ export const fonts: Fonts = {
 	},
 	Sarala: {
 		family: "Sarala",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Sarina: {
 		family: "Sarina",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Sarpanch: {
 		family: "Sarpanch",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "500", "600", "700", "800", "900"]
 	},
 	Satisfy: {
@@ -5469,28 +5193,22 @@ export const fonts: Fonts = {
 	},
 	Sawarabi_Gothic: {
 		family: "Sawarabi Gothic",
-		subsets: [
-			"cyrillic",
-			"japanese",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin", "japanese"],
 		variants: ["400"]
 	},
 	Sawarabi_Mincho: {
 		family: "Sawarabi Mincho",
-		subsets: ["japanese", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "japanese"],
 		variants: ["400"]
 	},
 	Scada: {
 		family: "Scada",
-		subsets: ["cyrillic-ext", "cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Scheherazade: {
 		family: "Scheherazade",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["400", "700"]
 	},
 	Schoolbell: {
@@ -5500,37 +5218,37 @@ export const fonts: Fonts = {
 	},
 	Scope_One: {
 		family: "Scope One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Seaweed_Script: {
 		family: "Seaweed Script",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Secular_One: {
 		family: "Secular One",
-		subsets: ["hebrew", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "hebrew"],
 		variants: ["400"]
 	},
 	Sedgwick_Ave: {
 		family: "Sedgwick Ave",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Sedgwick_Ave_Display: {
 		family: "Sedgwick Ave Display",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Sevillana: {
 		family: "Sevillana",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Seymour_One: {
 		family: "Seymour One",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Shadows_Into_Light: {
@@ -5540,7 +5258,7 @@ export const fonts: Fonts = {
 	},
 	Shadows_Into_Light_Two: {
 		family: "Shadows Into Light Two",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Shanti: {
@@ -5550,7 +5268,7 @@ export const fonts: Fonts = {
 	},
 	Share: {
 		family: "Share",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Share_Tech: {
@@ -5565,7 +5283,7 @@ export const fonts: Fonts = {
 	},
 	Shojumaru: {
 		family: "Shojumaru",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Short_Stack: {
@@ -5575,7 +5293,7 @@ export const fonts: Fonts = {
 	},
 	Shrikhand: {
 		family: "Shrikhand",
-		subsets: ["gujarati", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "gujarati"],
 		variants: ["400"]
 	},
 	Siemreap: {
@@ -5585,22 +5303,22 @@ export const fonts: Fonts = {
 	},
 	Sigmar_One: {
 		family: "Sigmar One",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Signika: {
 		family: "Signika",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "600", "700"]
 	},
 	Signika_Negative: {
 		family: "Signika Negative",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "600", "700"]
 	},
 	Simonetta: {
 		family: "Simonetta",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "900", "900i"]
 	},
 	Single_Day: {
@@ -5610,7 +5328,7 @@ export const fonts: Fonts = {
 	},
 	Sintony: {
 		family: "Sintony",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Sirin_Stencil: {
@@ -5625,17 +5343,17 @@ export const fonts: Fonts = {
 	},
 	Skranji: {
 		family: "Skranji",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Slabo_13px: {
 		family: "Slabo 13px",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Slabo_27px: {
 		family: "Slabo 27px",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Slackey: {
@@ -5655,7 +5373,7 @@ export const fonts: Fonts = {
 	},
 	Sniglet: {
 		family: "Sniglet",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "800"]
 	},
 	Snippet: {
@@ -5665,7 +5383,7 @@ export const fonts: Fonts = {
 	},
 	Snowburst_One: {
 		family: "Snowburst One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Sofadi_One: {
@@ -5678,30 +5396,35 @@ export const fonts: Fonts = {
 		subsets: ["latin"],
 		variants: ["400"]
 	},
+	Solway: {
+		family: "Solway",
+		subsets: ["latin"],
+		variants: ["300", "400", "500", "700", "800"]
+	},
 	Song_Myung: {
 		family: "Song Myung",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Sonsie_One: {
 		family: "Sonsie One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Sorts_Mill_Goudy: {
 		family: "Sorts Mill Goudy",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i"]
 	},
 	Source_Code_Pro: {
 		family: "Source Code Pro",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin"
 		],
 		variants: [
 			"200",
@@ -5723,13 +5446,13 @@ export const fonts: Fonts = {
 	Source_Sans_Pro: {
 		family: "Source Sans Pro",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: [
 			"200",
@@ -5748,12 +5471,12 @@ export const fonts: Fonts = {
 	},
 	Source_Serif_Pro: {
 		family: "Source Serif Pro",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "600", "700"]
 	},
 	Space_Mono: {
 		family: "Space Mono",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Special_Elite: {
@@ -5763,7 +5486,7 @@ export const fonts: Fonts = {
 	},
 	Spectral: {
 		family: "Spectral",
-		subsets: ["cyrillic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"200",
 			"200i",
@@ -5783,7 +5506,7 @@ export const fonts: Fonts = {
 	},
 	Spectral_SC: {
 		family: "Spectral SC",
-		subsets: ["cyrillic", "latin", "latin-ext", "vietnamese"],
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin"],
 		variants: [
 			"200",
 			"200i",
@@ -5808,7 +5531,7 @@ export const fonts: Fonts = {
 	},
 	Spinnaker: {
 		family: "Spinnaker",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Spirax: {
@@ -5823,32 +5546,32 @@ export const fonts: Fonts = {
 	},
 	Sree_Krushnadevaraya: {
 		family: "Sree Krushnadevaraya",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Sriracha: {
 		family: "Sriracha",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400"]
 	},
 	Srisakdi: {
 		family: "Srisakdi",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400", "700"]
 	},
 	Staatliches: {
 		family: "Staatliches",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Stalemate: {
 		family: "Stalemate",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Stalinist_One: {
 		family: "Stalinist One",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Stardos_Stencil: {
@@ -5858,17 +5581,17 @@ export const fonts: Fonts = {
 	},
 	Stint_Ultra_Condensed: {
 		family: "Stint Ultra Condensed",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Stint_Ultra_Expanded: {
 		family: "Stint Ultra Expanded",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Stoke: {
 		family: "Stoke",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400"]
 	},
 	Strait: {
@@ -5878,7 +5601,7 @@ export const fonts: Fonts = {
 	},
 	Stylish: {
 		family: "Stylish",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Sue_Ellen_Francisco: {
@@ -5888,17 +5611,22 @@ export const fonts: Fonts = {
 	},
 	Suez_One: {
 		family: "Suez One",
-		subsets: ["hebrew", "latin", "latin-ext"],
+		subsets: ["latin-ext", "latin", "hebrew"],
 		variants: ["400"]
+	},
+	Sulphur_Point: {
+		family: "Sulphur Point",
+		subsets: ["latin-ext", "latin"],
+		variants: ["300", "400", "700"]
 	},
 	Sumana: {
 		family: "Sumana",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Sunflower: {
 		family: "Sunflower",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["300", "500", "700"]
 	},
 	Sunshiney: {
@@ -5913,17 +5641,17 @@ export const fonts: Fonts = {
 	},
 	Sura: {
 		family: "Sura",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "700"]
 	},
 	Suranna: {
 		family: "Suranna",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Suravaram: {
 		family: "Suravaram",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Suwannaphum: {
@@ -5943,7 +5671,7 @@ export const fonts: Fonts = {
 	},
 	Tajawal: {
 		family: "Tajawal",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["200", "300", "400", "500", "700", "800", "900"]
 	},
 	Tangerine: {
@@ -5958,12 +5686,12 @@ export const fonts: Fonts = {
 	},
 	Tauri: {
 		family: "Tauri",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Taviraj: {
 		family: "Taviraj",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"100",
 			"100i",
@@ -5987,32 +5715,32 @@ export const fonts: Fonts = {
 	},
 	Teko: {
 		family: "Teko",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Telex: {
 		family: "Telex",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Tenali_Ramakrishna: {
 		family: "Tenali Ramakrishna",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Tenor_Sans: {
 		family: "Tenor Sans",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Text_Me_One: {
 		family: "Text Me One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Thasadith: {
 		family: "Thasadith",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	The_Girl_Next_Door: {
@@ -6027,36 +5755,36 @@ export const fonts: Fonts = {
 	},
 	Tillana: {
 		family: "Tillana",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "500", "600", "700", "800"]
 	},
 	Timmana: {
 		family: "Timmana",
-		subsets: ["latin", "telugu"],
+		subsets: ["telugu", "latin"],
 		variants: ["400"]
 	},
 	Tinos: {
 		family: "Tinos",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"hebrew",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin",
+			"hebrew",
+			"greek-ext"
 		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Titan_One: {
 		family: "Titan One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Titillium_Web: {
 		family: "Titillium Web",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"200",
 			"200i",
@@ -6071,6 +5799,30 @@ export const fonts: Fonts = {
 			"900"
 		]
 	},
+	Tomorrow: {
+		family: "Tomorrow",
+		subsets: ["latin-ext", "latin"],
+		variants: [
+			"100",
+			"100i",
+			"200",
+			"200i",
+			"300",
+			"300i",
+			"400",
+			"400i",
+			"500",
+			"500i",
+			"600",
+			"600i",
+			"700",
+			"700i",
+			"800",
+			"800i",
+			"900",
+			"900i"
+		]
+	},
 	Trade_Winds: {
 		family: "Trade Winds",
 		subsets: ["latin"],
@@ -6078,7 +5830,7 @@ export const fonts: Fonts = {
 	},
 	Trirong: {
 		family: "Trirong",
-		subsets: ["latin", "latin-ext", "vietnamese", "thai"],
+		subsets: ["latin-ext", "vietnamese", "latin", "thai"],
 		variants: [
 			"100",
 			"100i",
@@ -6102,7 +5854,7 @@ export const fonts: Fonts = {
 	},
 	Trocchi: {
 		family: "Trocchi",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Trochut: {
@@ -6112,7 +5864,7 @@ export const fonts: Fonts = {
 	},
 	Trykker: {
 		family: "Trykker",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Tulpen_One: {
@@ -6122,51 +5874,42 @@ export const fonts: Fonts = {
 	},
 	Turret_Road: {
 		family: "Turret Road",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["200", "300", "400", "500", "700", "800"]
 	},
 	Ubuntu: {
 		family: "Ubuntu",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
-		variants: [
-			"300",
-			"300i",
-			"400",
-			"400i",
-			"500",
-			"500i",
-			"700",
-			"700i"
-		]
+		variants: ["300", "300i", "400", "400i", "500", "500i", "700", "700i"]
 	},
 	Ubuntu_Condensed: {
 		family: "Ubuntu Condensed",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["400"]
 	},
 	Ubuntu_Mono: {
 		family: "Ubuntu Mono",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"greek-ext",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
-			"greek"
+			"latin",
+			"greek-ext"
 		],
 		variants: ["400", "400i", "700", "700i"]
 	},
@@ -6182,12 +5925,12 @@ export const fonts: Fonts = {
 	},
 	Underdog: {
 		family: "Underdog",
-		subsets: ["cyrillic", "latin", "latin-ext"],
+		subsets: ["cyrillic", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Unica_One: {
 		family: "Unica One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	UnifrakturCook: {
@@ -6212,27 +5955,27 @@ export const fonts: Fonts = {
 	},
 	Unna: {
 		family: "Unna",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	VT323: {
 		family: "VT323",
-		subsets: ["latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Vampiro_One: {
 		family: "Vampiro One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Varela: {
 		family: "Varela",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Varela_Round: {
 		family: "Varela Round",
-		subsets: ["hebrew", "latin", "latin-ext", "vietnamese"],
+		subsets: ["latin-ext", "vietnamese", "latin", "hebrew"],
 		variants: ["400"]
 	},
 	Vast_Shadow: {
@@ -6242,12 +5985,12 @@ export const fonts: Fonts = {
 	},
 	Vesper_Libre: {
 		family: "Vesper Libre",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400", "500", "700", "900"]
 	},
 	Vibes: {
 		family: "Vibes",
-		subsets: ["arabic", "latin"],
+		subsets: ["latin", "arabic"],
 		variants: ["400"]
 	},
 	Vibur: {
@@ -6262,12 +6005,12 @@ export const fonts: Fonts = {
 	},
 	Viga: {
 		family: "Viga",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Voces: {
 		family: "Voces",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Volkhov: {
@@ -6278,33 +6021,18 @@ export const fonts: Fonts = {
 	Vollkorn: {
 		family: "Vollkorn",
 		subsets: [
-			"cyrillic-ext",
 			"cyrillic",
-			"latin",
+			"cyrillic-ext",
+			"greek",
 			"latin-ext",
 			"vietnamese",
-			"greek"
+			"latin"
 		],
-		variants: [
-			"400",
-			"400i",
-			"600",
-			"600i",
-			"700",
-			"700i",
-			"900",
-			"900i"
-		]
+		variants: ["400", "400i", "600", "600i", "700", "700i", "900", "900i"]
 	},
 	Vollkorn_SC: {
 		family: "Vollkorn SC",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400", "600", "700", "900"]
 	},
 	Voltaire: {
@@ -6329,17 +6057,17 @@ export const fonts: Fonts = {
 	},
 	Warnes: {
 		family: "Warnes",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Wellfleet: {
 		family: "Wellfleet",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Wendy_One: {
 		family: "Wendy One",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Wire_One: {
@@ -6349,32 +6077,22 @@ export const fonts: Fonts = {
 	},
 	Work_Sans: {
 		family: "Work Sans",
-		subsets: ["latin", "latin-ext"],
-		variants: [
-			"100",
-			"200",
-			"300",
-			"400",
-			"500",
-			"600",
-			"700",
-			"800",
-			"900"
-		]
+		subsets: ["latin-ext", "latin"],
+		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 	},
 	Yanone_Kaffeesatz: {
 		family: "Yanone Kaffeesatz",
-		subsets: ["cyrillic", "latin", "latin-ext", "vietnamese"],
-		variants: ["200", "300", "400", "700"]
+		subsets: ["cyrillic", "latin-ext", "vietnamese", "latin"],
+		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Yantramanav: {
 		family: "Yantramanav",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["100", "300", "400", "500", "700", "900"]
 	},
 	Yatra_One: {
 		family: "Yatra One",
-		subsets: ["devanagari", "latin", "latin-ext"],
+		subsets: ["devanagari", "latin-ext", "latin"],
 		variants: ["400"]
 	},
 	Yellowtail: {
@@ -6384,18 +6102,12 @@ export const fonts: Fonts = {
 	},
 	Yeon_Sung: {
 		family: "Yeon Sung",
-		subsets: ["latin", "korean"],
+		subsets: ["korean", "latin"],
 		variants: ["400"]
 	},
 	Yeseva_One: {
 		family: "Yeseva One",
-		subsets: [
-			"cyrillic-ext",
-			"cyrillic",
-			"latin",
-			"latin-ext",
-			"vietnamese"
-		],
+		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
 		variants: ["400"]
 	},
 	Yesteryear: {
@@ -6405,7 +6117,7 @@ export const fonts: Fonts = {
 	},
 	Yrsa: {
 		family: "Yrsa",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	ZCOOL_KuaiLe: {
@@ -6435,7 +6147,7 @@ export const fonts: Fonts = {
 	},
 	Zilla_Slab: {
 		family: "Zilla Slab",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: [
 			"300",
 			"300i",
@@ -6451,7 +6163,7 @@ export const fonts: Fonts = {
 	},
 	Zilla_Slab_Highlight: {
 		family: "Zilla Slab Highlight",
-		subsets: ["latin", "latin-ext"],
+		subsets: ["latin-ext", "latin"],
 		variants: ["400", "700"]
 	}
 };
