@@ -1,4 +1,4 @@
-import uuid from "uuid/v4";
+import { v4 as uuid } from "uuid";
 import { is_customizer } from "utils/data/plugin";
 
 export const generateDefaultStyle = (): Style => ({

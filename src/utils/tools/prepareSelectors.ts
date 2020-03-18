@@ -1,4 +1,4 @@
-import uuid from "uuid/v4";
+import { v4 as uuid } from "uuid";
 import { assign, pick, keys, startCase } from "lodash";
 
 import { generateDefaultSelector } from "utils/data/defaults";

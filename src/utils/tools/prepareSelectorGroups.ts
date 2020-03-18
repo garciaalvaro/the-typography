@@ -1,5 +1,5 @@
+import { v4 as uuid } from "uuid";
 import { assign, pick, keys } from "lodash";
-import uuid from "uuid/v4";
 
 import { prepareSelectors } from "utils/tools/prepareSelectors";
 import {
