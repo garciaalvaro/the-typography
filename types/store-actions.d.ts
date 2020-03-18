@@ -1,17 +1,17 @@
-interface ActionWithPayload<T, P> {
+type ActionWithPayload<T, P> = {
 	type: T;
 	payload: P;
-}
-interface ActionNoPayload<T> {
+};
+type ActionNoPayload<T> = {
 	type: T;
-}
+};
 
-interface ActionCreatorWithPayload<A extends ActionsWithPayload> {
+type ActionCreatorWithPayload<A extends ActionsWithPayload> = {
 	(payload: A["payload"]): A;
-}
-interface ActionCreatorNoPayload<A extends ActionsNoPayload> {
+};
+type ActionCreatorNoPayload<A extends ActionsNoPayload> = {
 	(): A;
-}
+};
 
 type ActionsWithPayload =
 	| ActionSetDownloadedFonts
@@ -73,19 +73,18 @@ type Actions =
 	| ActionResetSingleStyle
 	| ActionIncreaseCurrentPage;
 
-interface ActionCreators
-	extends ActionCreatorsDownloadedFonts,
-		ActionCreatorsNavigation,
-		ActionCreatorsSingle,
-		ActionCreatorsTaxonomies,
-		ActionCreatorsTypographies {}
+type ActionCreators = ActionCreatorsDownloadedFonts &
+	ActionCreatorsNavigation &
+	ActionCreatorsSingle &
+	ActionCreatorsTaxonomies &
+	ActionCreatorsTypographies;
 
 // Downloaded Fonts
-interface ActionCreatorsDownloadedFonts {
+type ActionCreatorsDownloadedFonts = {
 	setDownloadedFonts: ActionCreatorWithPayload<ActionSetDownloadedFonts>;
 	addDownloadedFont: ActionCreatorWithPayload<ActionAddDownloadedFont>;
 	removeDownloadedFont: ActionCreatorWithPayload<ActionRemoveDownloadedFont>;
-}
+};
 type ActionSetDownloadedFonts = ActionWithPayload<
 	"SET_DOWNLOADED_FONTS",
 	State["downloaded_fonts"]
@@ -100,16 +99,16 @@ type ActionRemoveDownloadedFont = ActionWithPayload<
 >;
 
 // Fonts
-interface ActionCreatorsFonts {
+type ActionCreatorsFonts = {
 	setFontsLoaded: ActionCreatorWithPayload<ActionSetFontsLoaded>;
-}
+};
 type ActionSetFontsLoaded = ActionWithPayload<
 	"SET_FONTS_LOADED",
 	{ family: string; variants: FontVariant[] }[]
 >;
 
 // Single
-interface ActionCreatorsSingle {
+type ActionCreatorsSingle = {
 	addSelector: ActionCreatorWithPayload<ActionAddSelector>;
 	addSelectorGroup: ActionCreatorNoPayload<ActionAddSelectorGroup>;
 	loadSingle: ActionCreatorWithPayload<ActionLoadSingle>;
@@ -124,7 +123,7 @@ interface ActionCreatorsSingle {
 	removeSelector: ActionCreatorWithPayload<ActionRemoveSelector>;
 	removeSelectorGroup: ActionCreatorWithPayload<ActionRemoveSelectorGroup>;
 	updateTypography: ActionCreatorWithPayload<ActionUpdateTypography>;
-}
+};
 type ActionAddSelector = ActionWithPayload<"ADD_SELECTOR", SelectorGroup["id"]>;
 type ActionAddSelectorGroup = ActionNoPayload<"ADD_SELECTOR_GROUP">;
 type ActionLoadSingle = ActionWithPayload<"LOAD_SINGLE", Typography["id"]>;
@@ -143,6 +142,7 @@ type ActionSetProp = ActionWithPayload<
 	"SET_PROP",
 	{
 		prop_key: keyof Selector | keyof SelectorGroup | keyof Typography;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		prop_value: any;
 		group_id?: SelectorGroup["id"];
 		selector_id?: Selector["id"];
@@ -165,14 +165,14 @@ type ActionUpdateTypography = ActionWithPayload<
 >;
 
 // Navigation
-interface ActionCreatorsNavigation {
+type ActionCreatorsNavigation = {
 	increaseCurrentPage: ActionCreatorNoPayload<ActionIncreaseCurrentPage>;
 	openTab: ActionCreatorWithPayload<ActionOpenTab>;
 	setReachedLastPage: ActionCreatorWithPayload<ActionSetReachedLastPage>;
 	setLoading: ActionCreatorWithPayload<ActionSetLoading>;
 	setPreviewerPageData: ActionCreatorWithPayload<ActionSetPreviewerPageData>;
 	setView: ActionCreatorWithPayload<ActionSetView>;
-}
+};
 type ActionIncreaseCurrentPage = ActionNoPayload<"INCREASE_CURRENT_PAGE">;
 type ActionOpenTab = ActionWithPayload<"OPEN_TAB", State["tab_open"]>;
 type ActionSetReachedLastPage = ActionWithPayload<
@@ -187,10 +187,10 @@ type ActionSetPreviewerPageData = ActionWithPayload<
 type ActionSetView = ActionWithPayload<"SET_VIEW", State["view"]>;
 
 // Taxonomies
-interface ActionCreatorsTaxonomies {
+type ActionCreatorsTaxonomies = {
 	addTaxonomyTerm: ActionCreatorWithPayload<ActionAddTaxonomyTerm>;
 	setTaxonomies: ActionCreatorWithPayload<ActionSetTaxonomies>;
-}
+};
 type ActionAddTaxonomyTerm = ActionWithPayload<
 	"ADD_TAXONOMY_TERM",
 	{ taxonomy_name: string; term: TaxonomyTerm }
@@ -198,11 +198,11 @@ type ActionAddTaxonomyTerm = ActionWithPayload<
 type ActionSetTaxonomies = ActionWithPayload<"SET_TAXONOMIES", Taxonomies>;
 
 // Typographies
-interface ActionCreatorsTypographies {
+type ActionCreatorsTypographies = {
 	addTypographies: ActionCreatorWithPayload<ActionAddTypographies>;
 	removeTypography: ActionCreatorWithPayload<ActionRemoveTypography>;
 	setTypographyActive: ActionCreatorWithPayload<ActionSetTypographyActive>;
-}
+};
 type ActionAddTypographies = ActionWithPayload<
 	"ADD_TYPOGRAPHIES",
 	Typography[]

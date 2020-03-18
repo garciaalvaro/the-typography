@@ -5,9 +5,9 @@ import { useDispatch } from "@wordpress/data";
 import { ButtonPopover } from "utils/Components";
 import { store_slug } from "utils/data";
 
-interface Props {
+type Props = {
 	id: Typography["id"];
-}
+};
 
 export const ButtonRemove: React.ComponentType<Props> = props => {
 	const { id } = props;

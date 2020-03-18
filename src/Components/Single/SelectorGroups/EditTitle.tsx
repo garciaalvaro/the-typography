@@ -5,9 +5,7 @@ import { ControlTextToggle } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface Props extends SelectorGroup {}
-
-export const EditTitle: React.ComponentType<Props> = props => {
+export const EditTitle: React.ComponentType<SelectorGroup> = props => {
 	const { custom_title, title, id } = props;
 	const setValue = useSetProp(id);
 
@@ -22,13 +20,17 @@ export const EditTitle: React.ComponentType<Props> = props => {
 				InputLabelProps={{
 					classes: {
 						root: addPrefix("material_ui-textfield-label"),
-						focused: addPrefix("material_ui-textfield-label-focused")
+						focused: addPrefix(
+							"material_ui-textfield-label-focused"
+						)
 					}
 				}}
 				InputProps={{
 					classes: {
 						root: addPrefix("material_ui-textfield-input"),
-						focused: addPrefix("material_ui-textfield-input-focused")
+						focused: addPrefix(
+							"material_ui-textfield-input-focused"
+						)
 					}
 				}}
 				placeholder={__("enter a title")}

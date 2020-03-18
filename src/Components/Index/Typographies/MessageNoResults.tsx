@@ -4,7 +4,7 @@ import { useDispatch } from "@wordpress/data";
 import { Div, Span, Button } from "utils/Components";
 import { store_slug } from "utils/data";
 
-export const MessageNoResults: React.ComponentType = props => {
+export const MessageNoResults: React.ComponentType = () => {
 	const { loadSingle } = useDispatch(store_slug);
 
 	return (

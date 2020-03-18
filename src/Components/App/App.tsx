@@ -22,8 +22,10 @@ const useFetchDownloadedFonts = applyFilters(
 	() => noop
 );
 
-export const App: React.ComponentType = props => {
-	const view = useSelect<State["view"]>(select => select(store_slug).getView());
+export const App: React.ComponentType = () => {
+	const view = useSelect<State["view"]>(select =>
+		select(store_slug).getView()
+	);
 
 	useHandleFonts();
 	useFetchDownloadedFonts();

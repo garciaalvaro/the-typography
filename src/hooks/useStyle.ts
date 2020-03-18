@@ -4,20 +4,20 @@ import { useSelect } from "@wordpress/data";
 
 import { store_slug } from "utils/data/plugin";
 
-interface useSelectTypographyStyle {
+type useSelectTypographyStyle = {
 	typography_style: TypographyStyle | null;
-}
+};
 
-interface useSelectGroupStyle {
+type useSelectGroupStyle = {
 	group_style: SelectorGroupStyle | null;
-}
+};
 
-interface StylePropName {
+type StylePropName = {
 	custom_prop: keyof StyleCustomProps | "custom_font";
 	prop: keyof StyleNonCustomProps | "font_family";
-}
+};
 
-interface StyleJustPropsCamelCase {
+type StyleJustPropsCamelCase = {
 	fontSize?: Style["font_size"];
 	lineHeight?: Style["line_height"];
 	letterSpacing?: Style["letter_spacing"];
@@ -26,7 +26,7 @@ interface StyleJustPropsCamelCase {
 	fontStyle?: Style["font_style"];
 	textTransform?: Style["text_transform"];
 	textDecoration?: Style["text_decoration"];
-}
+};
 
 const props_name: StylePropName[] = [
 	{ custom_prop: "custom_font", prop: "font_family" },
@@ -39,34 +39,6 @@ const props_name: StylePropName[] = [
 	{ custom_prop: "custom_line_height", prop: "line_height" },
 	{ custom_prop: "custom_letter_spacing", prop: "letter_spacing" }
 ];
-
-export const useTypographyStyle = (typography_id?: Typography["id"]) => {
-	const { typography_style } = useSelect<useSelectTypographyStyle>(select => ({
-		typography_style: select(store_slug).getStyleProps({ typography_id })
-	}));
-
-	const style = useStyle(typography_style);
-
-	return style;
-};
-
-export const useGroupStyle = (
-	group_id: SelectorGroup["id"],
-	typography_id?: Typography["id"]
-) => {
-	const { typography_style } = useSelect<useSelectTypographyStyle>(select => ({
-		typography_style: select(store_slug).getStyleProps({ typography_id })
-	}));
-	const { group_style } = useSelect<useSelectGroupStyle>(select => ({
-		group_style: select(store_slug).getStyleProps({
-			typography_id,
-			group_id
-		})
-	}));
-	const style = useStyle(typography_style, group_style);
-
-	return style;
-};
 
 const useStyle = (
 	typography_style: TypographyStyle | null,
@@ -84,9 +56,18 @@ const useStyle = (
 				(style, { custom_prop, prop }) => {
 					let value = null;
 
-					if (custom_prop === "custom_font" || prop === "font_family") {
-						if (typography_style.custom_font && typography_style.font_family) {
-							const family = typography_style.font_family.replace(/_/g, " ");
+					if (
+						custom_prop === "custom_font" ||
+						prop === "font_family"
+					) {
+						if (
+							typography_style.custom_font &&
+							typography_style.font_family
+						) {
+							const family = typography_style.font_family.replace(
+								/_/g,
+								" "
+							);
 
 							return {
 								...style,
@@ -114,6 +95,10 @@ const useStyle = (
 						value = `${value}px`;
 					}
 
+					if (prop === "font_weight" && typeof value === "string") {
+						value = parseInt(value);
+					}
+
 					return {
 						...style,
 						[camelCase(prop)]: value
@@ -126,6 +111,44 @@ const useStyle = (
 		...(typography_style ? values(typography_style) : []),
 		...(group_style ? values(group_style) : [])
 	]);
+
+	return style;
+};
+
+export const useTypographyStyle = (typography_id?: Typography["id"]) => {
+	const { typography_style } = useSelect<useSelectTypographyStyle>(
+		select => ({
+			typography_style: select(store_slug).getStyleProps({
+				typography_id
+			})
+		})
+	);
+
+	const style = useStyle(typography_style);
+
+	return style;
+};
+
+export const useGroupStyle = (
+	group_id: SelectorGroup["id"],
+	typography_id?: Typography["id"]
+) => {
+	const { typography_style } = useSelect<useSelectTypographyStyle>(
+		select => ({
+			typography_style: select(store_slug).getStyleProps({
+				typography_id
+			})
+		})
+	);
+
+	const { group_style } = useSelect<useSelectGroupStyle>(select => ({
+		group_style: select(store_slug).getStyleProps({
+			typography_id,
+			group_id
+		})
+	}));
+
+	const style = useStyle(typography_style, group_style);
 
 	return style;
 };

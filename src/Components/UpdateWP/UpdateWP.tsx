@@ -1,7 +1,7 @@
 import { Div, Span } from "utils/Components";
 import { __ } from "@wordpress/i18n";
 
-export const UpdateWP: React.ComponentType = props => {
+export const UpdateWP: React.ComponentType = () => {
 	return (
 		<Div id="container" className="color_scheme-type-light">
 			<Div id="content-index" className="content">

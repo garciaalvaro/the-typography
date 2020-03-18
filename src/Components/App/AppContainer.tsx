@@ -7,11 +7,19 @@ import { useWindowSize } from "utils/hooks";
 
 export const AppContainer: React.ComponentType = props => {
 	const { children } = props;
-	const view = useSelect<State["view"]>(select => select(store_slug).getView());
+
+	const view = useSelect<State["view"]>(select =>
+		select(store_slug).getView()
+	);
+
 	const { window_width, window_height } = useWindowSize();
+
 	const [height, setHeight] = useState(555);
+
 	const div_ref = useRef<HTMLDivElement | null>(null);
+
 	const container_ref = useRef<HTMLElement | null>(null);
+
 	const header_ref = useRef<HTMLElement | null>(null);
 
 	useEffect(() => {

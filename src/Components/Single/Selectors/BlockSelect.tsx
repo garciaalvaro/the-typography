@@ -9,13 +9,14 @@ import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 import { ContextBlockTypes } from "../Typography/Typography";
 
-interface BlockSelectProps extends Selector {
+type BlockSelectProps = Selector & {
 	group_id: SelectorGroup["id"];
 	block_type: BlockType | undefined;
 	setBlockType: Function;
-}
+};
 
-const Option: React.ComponentType<Object> = props => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Option: React.ComponentType<Record<string, any>> = props => {
 	const { data, innerProps, isDisabled } = props;
 	const { icon, label } = data;
 
@@ -24,12 +25,16 @@ const Option: React.ComponentType<Object> = props => {
 	);
 };
 
-const SingleValue: React.ComponentType<Object> = props => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SingleValue: React.ComponentType<Record<string, any>> = props => {
 	const { data, innerProps } = props;
 	const { value, label, icon } = data;
 
 	if (!value) {
-		<BlockOption label={__("...select a block")} extra_props={innerProps} />;
+		<BlockOption
+			label={__("...select a block")}
+			extra_props={innerProps}
+		/>;
 	}
 
 	return <BlockOption icon={icon} label={label} extra_props={innerProps} />;

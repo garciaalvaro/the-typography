@@ -24,7 +24,7 @@ export const prepareTypography = (
 	typography_raw: TypographyRaw,
 	taxonomies_data: Taxonomies
 ): Typography => {
-	let {
+	const {
 		id,
 		title: title_raw,
 		context_type,

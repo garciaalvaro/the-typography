@@ -1,19 +1,21 @@
-interface ComponentProps extends Object {
+type ComponentProps = {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[prop: string]: any;
 	children?: React.ReactNode;
 	id?: string | null;
 	className?: string | null | (string | null)[] | undefined;
-}
+};
 
-interface BlockTypeDataElementRaw {
+type BlockTypeDataElementRaw = {
 	name: string;
 	selector: string;
-}
+};
 
-interface BlockTypeDataElement extends BlockTypeDataElementRaw {
+type BlockTypeDataElement = BlockTypeDataElementRaw & {
 	id: string;
-}
+};
 
-interface BlockTypeData {
+type BlockTypeData = {
 	name: string;
 	elements: BlockTypeDataElementRaw[];
-}
+};

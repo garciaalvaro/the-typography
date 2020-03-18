@@ -9,5 +9,6 @@ export const plugin_prefix = "thet";
 export const store_slug = `melonpan/${plugin_namespace}`;
 export const typographies_per_page = 99;
 export const is_pro = applyFilters("the_typography.is_pro", false);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const is_editor = isUndefined((window as any).wp.customize);
 export const is_customizer = !is_editor;

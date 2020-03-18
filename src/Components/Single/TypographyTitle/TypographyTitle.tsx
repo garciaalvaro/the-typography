@@ -8,7 +8,7 @@ import { addPrefix } from "utils/tools";
 import { store_slug } from "utils/data";
 import { useSetProp, useTypographyStyle, useIsPredefinedSingle } from "hooks";
 
-export const TypographyTitle: React.ComponentType = props => {
+export const TypographyTitle: React.ComponentType = () => {
 	const { _description, _namespace_title } = useSelect<{
 		_description: Typography["_description"];
 		_namespace: Typography["_namespace"];
@@ -18,8 +18,11 @@ export const TypographyTitle: React.ComponentType = props => {
 	const title = useSelect<State["single"]["title"]>(select =>
 		select(store_slug).getTitle()
 	);
+
 	const style = useTypographyStyle();
+
 	const setValue = useSetProp();
+
 	const is_predefined = useIsPredefinedSingle();
 
 	if (is_predefined) {
@@ -48,17 +51,21 @@ export const TypographyTitle: React.ComponentType = props => {
 				InputLabelProps={{
 					classes: {
 						root: addPrefix("material_ui-textfield-label"),
-						focused: addPrefix("material_ui-textfield-label-focused")
+						focused: addPrefix(
+							"material_ui-textfield-label-focused"
+						)
 					}
 				}}
 				InputProps={{
 					classes: {
 						root: addPrefix("material_ui-textfield-input"),
-						focused: addPrefix("material_ui-textfield-input-focused")
+						focused: addPrefix(
+							"material_ui-textfield-input-focused"
+						)
 					}
 				}}
-				// @ts-ignore
 				inputProps={{
+					// @ts-ignore
 					style: title && style ? style : {}
 				}}
 				label={__("Title")}

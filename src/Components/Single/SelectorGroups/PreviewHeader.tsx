@@ -5,10 +5,10 @@ import { ButtonRemove } from "./ButtonRemove";
 import { PreviewTitle } from "./PreviewTitle";
 import { useIsPredefinedSingle } from "hooks";
 
-interface Props extends SelectorGroup {
+type Props = SelectorGroup & {
 	is_open: boolean;
 	toggle: Function;
-}
+};
 
 export const PreviewHeader: React.ComponentType<Props> = props => {
 	const { id, is_open, toggle, _description } = props;

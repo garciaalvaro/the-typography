@@ -1,10 +1,12 @@
-interface TypographyRaw {
+type TypographyRaw = {
 	id: number;
 	title: { rendered: string };
 	context_type: number[];
 	context_post_type: number[];
 	context_post_type_template: number[];
-	meta: Object & {
+	meta: {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		[prop: string]: any;
 		_typography_style_defaults: string;
 		selector_groups: string;
 		custom_font_size: boolean;
@@ -24,15 +26,14 @@ interface TypographyRaw {
 		custom_text_decoration: boolean;
 		text_decoration: TextDecoration;
 	};
-}
+};
 
-interface TypographyRawToUpload
-	extends Omit<TypographyRaw, "title" | "meta" | "id"> {
+type TypographyRawToUpload = Omit<TypographyRaw, "title" | "meta" | "id"> & {
 	id?: Typography["id"];
 	title: string;
 	meta: Partial<TypographyRaw["meta"]>;
 	status: "publish";
-}
+};
 
 type TextDecoration = "none" | "line-through" | "overline" | "underline";
 
@@ -49,11 +50,11 @@ type FontWeight =
 	| "800"
 	| "900";
 
-interface Font {
+type Font = {
 	family: string;
 	variants: FontVariant[];
 	subsets: string[];
-}
+};
 
 type Fonts = Record<string, Font>;
 
@@ -77,16 +78,16 @@ type FontVariant =
 	| "900"
 	| "900i";
 
-interface FontFamily {
+type FontFamily = {
 	value: string;
 	label: string;
-}
+};
 
 type FontStyle = "italic" | "normal" | "oblique";
 
-interface SelectorRaw extends Partial<Selector> {}
+type SelectorRaw = Partial<Selector>;
 
-interface Selector {
+type Selector = {
 	_can_be_removed: boolean;
 	id: string;
 	// selector_type: "text" | "block";
@@ -96,13 +97,13 @@ interface Selector {
 	block_selector_root: string;
 	block_selector_extra: string;
 	// block_element_label: string;
-}
+};
 
-interface SelectorGroupRaw extends Partial<Omit<SelectorGroup, "selectors">> {
+type SelectorGroupRaw = Partial<Omit<SelectorGroup, "selectors">> & {
 	selectors: SelectorRaw[];
-}
+};
 
-interface SelectorGroup extends SelectorGroupStyle {
+type SelectorGroup = SelectorGroupStyle & {
 	_id: string;
 	_description: string;
 	_typography_style_defaults: SelectorGroupStyle | null;
@@ -114,11 +115,11 @@ interface SelectorGroup extends SelectorGroupStyle {
 	custom_parent_selector: boolean;
 	parent_selector: string;
 	custom_typography: boolean;
-}
+};
 
 type ContextType = "all_site" | "post_type" | "front_page" | "404_page";
 
-interface Typography extends TypographyStyle {
+type Typography = TypographyStyle & {
 	is_active: boolean;
 	_id: string;
 	_namespace: string;
@@ -133,4 +134,4 @@ interface Typography extends TypographyStyle {
 	context_post_type: string[];
 	context_post_type_template: ("index" | "single")[];
 	selector_groups: SelectorGroup[];
-}
+};

@@ -3,10 +3,10 @@ import { useEffect, useState } from "@wordpress/element";
 
 import { Span } from "utils/Components";
 
-interface Props {
+type Props = {
 	update_counter: number;
 	is_new: boolean;
-}
+};
 
 export const MessageJustSaved: React.ComponentType<Props> = props => {
 	const { update_counter, is_new } = props;

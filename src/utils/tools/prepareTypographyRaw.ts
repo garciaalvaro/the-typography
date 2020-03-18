@@ -9,10 +9,14 @@ import {
 const prepareSelectorGroups = (
 	selector_groups: SelectorGroup[]
 ): SelectorGroupRaw[] =>
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	selector_groups.map(({ id, selectors, ...props_to_be_saved }) => {
 		// Omit props with default value
 		const selector_group_default = generateDefaultSelectorGroup();
+
 		const selector_default = generateDefaultSelector();
+
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const props_to_be_saved_prepared = omitBy<any>(
 			props_to_be_saved,
 			(val, key: keyof Omit<SelectorGroup, "id">) =>
@@ -22,18 +26,23 @@ const prepareSelectorGroups = (
 		return {
 			...props_to_be_saved_prepared,
 			selectors: selectors.map(
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				({ id, ...props_to_be_saved }): SelectorRaw => {
 					// Omit props with default value
-					return omitBy<any>(props_to_be_saved, (val, key: keyof Selector) => {
-						if (key === "id") {
-							return true;
-						}
-						if (val === selector_default[key]) {
-							return true;
-						}
+					// eslint-disable-next-line @typescript-eslint/no-explicit-any
+					return omitBy<any>(
+						props_to_be_saved,
+						(val, key: keyof Selector) => {
+							if (key === "id") {
+								return true;
+							}
+							if (val === selector_default[key]) {
+								return true;
+							}
 
-						return false;
-					});
+							return false;
+						}
+					);
 				}
 			)
 		};

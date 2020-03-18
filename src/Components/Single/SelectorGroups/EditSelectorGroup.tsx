@@ -11,8 +11,6 @@ import { ButtonResetDefaults } from "../ButtonResetDefaults/ButtonResetDefaults"
 import { useIsPredefinedSingle } from "hooks";
 import { store_slug } from "utils/data";
 
-interface Props extends SelectorGroup {}
-
 const getSelectors = (
 	selectors: Selector[],
 	type: "editable" | "predefined",
@@ -29,15 +27,19 @@ const getSelectors = (
 		: [];
 };
 
-export const EditSelectorGroup: React.ComponentType<Props> = props => {
+export const EditSelectorGroup: React.ComponentType<SelectorGroup> = props => {
 	const { id: group_id, selectors } = props;
+
 	const is_predefined = useIsPredefinedSingle();
+
 	const [selectors_editable, setSelectorsEditable] = useState<Selector[]>(
 		getSelectors(selectors, "editable", is_predefined)
 	);
+
 	const [selectors_predefined, setSelectorsPredefined] = useState<Selector[]>(
 		getSelectors(selectors, "predefined", is_predefined)
 	);
+
 	const _typography_style_defaults = useSelect<
 		SelectorGroup["_typography_style_defaults"]
 	>(select =>
@@ -48,7 +50,9 @@ export const EditSelectorGroup: React.ComponentType<Props> = props => {
 
 	// When new selectors are added we assign them to predefined or editable.
 	useEffect(() => {
-		setSelectorsEditable(getSelectors(selectors, "editable", is_predefined));
+		setSelectorsEditable(
+			getSelectors(selectors, "editable", is_predefined)
+		);
 		setSelectorsPredefined(
 			getSelectors(selectors, "predefined", is_predefined)
 		);

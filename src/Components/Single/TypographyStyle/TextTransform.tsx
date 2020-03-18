@@ -6,15 +6,15 @@ import { Div, ControlTextToggle } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface TextTransformOption {
+type TextTransformOption = {
 	value: TextTransform;
 	label: string;
-}
-interface Props {
+};
+type Props = {
 	custom_text_transform: Typography["custom_text_transform"];
 	text_transform: Typography["text_transform"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 const options: TextTransformOption[] = [
 	{ value: "none", label: "none" },
@@ -28,7 +28,12 @@ export const TextTransform: React.ComponentType<Props> = props => {
 	const setValue = useSetProp(group_id);
 
 	return (
-		<Div className={["control-container", "control-container-text_transform"]}>
+		<Div
+			className={[
+				"control-container",
+				"control-container-text_transform"
+			]}
+		>
 			<ControlTextToggle
 				group_id={group_id}
 				prop_key="custom_text_transform"

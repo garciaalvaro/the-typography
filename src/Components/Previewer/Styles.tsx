@@ -4,19 +4,22 @@ import { useSelect } from "@wordpress/data";
 import { store_slug } from "utils/data";
 import { GroupStyle } from "./GroupStyle";
 
-interface Styles {
+type Styles = {
 	group_id: SelectorGroup["id"];
 	style: string;
 	selector: string;
-}
+};
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { customize } = (window as any).wp;
 
-export const Styles: React.ComponentType = props => {
+export const Styles: React.ComponentType = () => {
 	const ids = useSelect<
 		{ typography_id: Typography["id"]; groups_id: SelectorGroup["id"][] }[]
 	>(select => select(store_slug).getVisibleIds());
+
 	const [styles, setStyles] = useState<Styles[]>([]);
+
 	const style_string = useRef("");
 
 	useEffect(() => {

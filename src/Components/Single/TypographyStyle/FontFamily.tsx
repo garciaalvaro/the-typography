@@ -10,9 +10,9 @@ import { addPrefix } from "utils/tools";
 import { plugin_prefix, fonts as googlefonts } from "utils/data";
 import { useSetProp } from "hooks";
 
-interface Props {
+type Props = {
 	font_family: Typography["font_family"];
-}
+};
 
 const fonts = applyFilters("the_typography.fontsList", googlefonts);
 
@@ -32,7 +32,9 @@ const options = reduce<Fonts, FontFamily[]>(
 
 export const FontFamily: React.ComponentType<Props> = props => {
 	const { font_family } = props;
+
 	const setValue = useSetProp();
+
 	const [selected, setSelected] = useState(
 		options.find(({ value }) => value === font_family)
 	);

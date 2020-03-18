@@ -6,12 +6,17 @@ import { Div, Span } from "utils/Components";
 import { PreviewSelectorText } from "./PreviewSelectorText";
 import { PreviewSelectorBlock } from "./PreviewSelectorBlock";
 
-interface Props extends SelectorGroup {
+type Props = SelectorGroup & {
 	onClick?: Function;
-}
+};
 
 export const PreviewSelectors: React.ComponentType<Props> = props => {
-	const { selectors, custom_parent_selector, parent_selector, onClick } = props;
+	const {
+		selectors,
+		custom_parent_selector,
+		parent_selector,
+		onClick
+	} = props;
 
 	return (
 		<Div className="preview-selectors" onClick={onClick || noop}>
@@ -32,10 +37,20 @@ export const PreviewSelectors: React.ComponentType<Props> = props => {
 						const selector_type = !block_name ? "text" : "block";
 
 						if (selector_type === "text") {
-							return <PreviewSelectorText key={selector.id} {...selector} />;
+							return (
+								<PreviewSelectorText
+									key={selector.id}
+									{...selector}
+								/>
+							);
 						}
 
-						return <PreviewSelectorBlock key={selector.id} {...selector} />;
+						return (
+							<PreviewSelectorBlock
+								key={selector.id}
+								{...selector}
+							/>
+						);
 					})}
 				</Fragment>
 			)}

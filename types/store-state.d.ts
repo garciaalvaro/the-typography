@@ -1,4 +1,4 @@
-interface State {
+type State = {
 	tab_open: "typographies" | "fonts";
 	view: "single" | "index";
 	is_loading: boolean;
@@ -20,4 +20,4 @@ interface State {
 		variants_loaded: FontVariant[];
 	}[];
 	downloaded_fonts: DownloadedFont[];
-}
+};

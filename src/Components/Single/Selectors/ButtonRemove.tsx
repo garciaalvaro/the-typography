@@ -4,10 +4,10 @@ import { useDispatch } from "@wordpress/data";
 import { ButtonPopover } from "utils/Components";
 import { store_slug } from "utils/data";
 
-interface Props {
+type Props = {
 	selector_id: Selector["id"];
 	group_id: SelectorGroup["id"];
-}
+};
 
 export const ButtonRemove: React.ComponentType<Props> = props => {
 	const { selector_id, group_id } = props;

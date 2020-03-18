@@ -8,20 +8,22 @@ import { ContextType } from "./ContextType";
 import { PostType } from "./PostType";
 import { PostTypeTemplate } from "./PostTypeTemplate";
 
-interface useSelectProps {
+type useSelectProps = {
 	_context_fixed: Typography["_context_fixed"];
 	context_type: Typography["context_type"];
 	context_post_type: Typography["context_post_type"];
 	context_post_type_template: Typography["context_post_type_template"];
-}
+};
 
-export const TypographyContext: React.ComponentType = props => {
+export const TypographyContext: React.ComponentType = () => {
 	const {
 		_context_fixed,
 		context_type,
 		context_post_type,
 		context_post_type_template
-	} = useSelect<useSelectProps>(select => select(store_slug).getContextProps());
+	} = useSelect<useSelectProps>(select =>
+		select(store_slug).getContextProps()
+	);
 
 	return (
 		<Panel id="single-context" label={__("Context")}>
@@ -36,6 +38,7 @@ export const TypographyContext: React.ComponentType = props => {
 						_context_fixed={_context_fixed}
 						context_post_type={context_post_type}
 					/>
+
 					<PostTypeTemplate
 						_context_fixed={_context_fixed}
 						context_post_type_template={context_post_type_template}

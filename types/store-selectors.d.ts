@@ -1,18 +1,17 @@
 type StoreSelector<T, P = null> = (state: State, parameter: P) => T;
 
-interface Selectors
-	extends SelectorsDownloadedFonts,
-		SelectorsTypographies,
-		SelectorsFonts,
-		SelectorsTaxonomies,
-		SelectorsSingle,
-		SelectorsNavigation {}
+type Selectors = SelectorsDownloadedFonts &
+	SelectorsTypographies &
+	SelectorsFonts &
+	SelectorsTaxonomies &
+	SelectorsSingle &
+	SelectorsNavigation;
 
-interface SelectorsDownloadedFonts {
+type SelectorsDownloadedFonts = {
 	getDownloadedFonts: StoreSelector<DownloadedFont[]>;
-}
+};
 
-interface SelectorsTypographies {
+type SelectorsTypographies = {
 	getParentSelector: StoreSelector<
 		SelectorGroup["parent_selector"],
 		{ typography_id?: Typography["id"]; group_id: SelectorGroup["id"] }
@@ -74,18 +73,18 @@ interface SelectorsTypographies {
 		} | null,
 		Typography["id"]
 	>;
-}
+};
 
-interface SelectorsFonts {
+type SelectorsFonts = {
 	getFonts: StoreSelector<State["fonts"]>;
 	getFontsToLoad: StoreSelector<FontToLoad[]>;
-}
+};
 
-interface SelectorsTaxonomies {
+type SelectorsTaxonomies = {
 	getTaxonomies: StoreSelector<Taxonomies>;
-}
+};
 
-interface SelectorsSingle {
+type SelectorsSingle = {
 	hasChangedSingle: StoreSelector<State["has_changed_single"]>;
 	isActiveSingle: StoreSelector<Typography["is_active"]>;
 	isNewSingle: StoreSelector<boolean>;
@@ -93,13 +92,13 @@ interface SelectorsSingle {
 	isVisibleSingle: StoreSelector<Typography["is_visible"]>;
 	getSingle: StoreSelector<Typography>;
 	getSingleId: StoreSelector<Typography["id"]>;
-}
+};
 
-interface SelectorsNavigation {
+type SelectorsNavigation = {
 	reachedLastPage: StoreSelector<State["reached_last_page"]>;
 	isLoading: StoreSelector<State["is_loading"]>;
 	getCurrentPage: StoreSelector<State["current_page"]>;
 	getPreviewerPageData: StoreSelector<State["previewer_page_data"]>;
 	getTabOpen: StoreSelector<State["tab_open"]>;
 	getView: StoreSelector<State["view"]>;
-}
+};

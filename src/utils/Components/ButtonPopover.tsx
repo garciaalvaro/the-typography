@@ -8,19 +8,23 @@ import { Div } from "utils/Components/Div";
 import { Button } from "utils/Components/Button";
 import { useToggle } from "utils/hooks/useToggle";
 
-interface Props {
+type Props = {
 	click: Function;
 	className: string | string[];
 	label: string;
 	icon: keyof Icons | React.ReactNode;
 	show_popover?: boolean;
 	id?: string;
-}
+};
 
 export const ButtonPopover: React.ComponentType<Props> = props => {
-	let { show_popover, click, label, className, icon, id } = props;
+	const { click, label, className, icon, id } = props;
+
 	const { is_open, toggle, close } = useToggle();
-	show_popover = isUndefined(show_popover) ? true : show_popover;
+
+	const show_popover = isUndefined(props.show_popover)
+		? true
+		: props.show_popover;
 
 	return (
 		<Popover

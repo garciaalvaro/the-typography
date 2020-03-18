@@ -5,9 +5,9 @@ import { EditSelectorGroup } from "./EditSelectorGroup";
 import { PreviewSelectors } from "./PreviewSelectors";
 import { PreviewHeader } from "./PreviewHeader";
 
-interface Props extends SelectorGroup {
+type Props = SelectorGroup & {
 	is_new: boolean;
-}
+};
 
 export const SelectorGroup: React.ComponentType<Props> = props => {
 	const { id, is_new } = props;
@@ -30,7 +30,10 @@ export const SelectorGroup: React.ComponentType<Props> = props => {
 			{is_open ? (
 				<EditSelectorGroup {...props} />
 			) : (
-				<PreviewSelectors {...props} onClick={is_open ? undefined : toggle} />
+				<PreviewSelectors
+					{...props}
+					onClick={is_open ? undefined : toggle}
+				/>
 			)}
 		</Div>
 	);

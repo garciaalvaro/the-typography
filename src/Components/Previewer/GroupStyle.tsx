@@ -6,25 +6,28 @@ import produce from "immer";
 import { store_slug } from "utils/data";
 import { useGroupStyle, useGroupSelectorsString } from "hooks";
 
-interface StyleProps {
+type StyleProps = {
 	typography_id: Typography["id"];
 	group_id: SelectorGroup["id"];
 	setStyles: Function;
-}
+};
 
-interface Styles {
+type Styles = {
 	group_id: SelectorGroup["id"];
 	style: string;
 	selector: string;
-}
+};
 
 // We use a component to make use of an individual state for each style
 export const GroupStyle: React.ComponentType<StyleProps> = props => {
 	const { group_id, typography_id, setStyles } = props;
+
 	const force_styles = useSelect<SelectorGroup["force_styles"]>(select =>
 		select(store_slug).getForceStyles({ group_id, typography_id })
 	);
+
 	const style = useGroupStyle(group_id, typography_id);
+
 	const selector = useGroupSelectorsString(group_id, typography_id);
 
 	// On Unmount remove this style from styles.
@@ -72,6 +75,7 @@ export const GroupStyle: React.ComponentType<StyleProps> = props => {
 				const style_obj = draft.find(
 					style_obj => style_obj.group_id === group_id
 				);
+
 				const style_string = reduce(
 					style,
 					(acc, prop_value, prop_key) =>

@@ -6,19 +6,21 @@ import { Div, Span, ControlTextToggle } from "utils/Components";
 import { useToggle } from "utils/hooks";
 import { useSetPropDebounced } from "hooks";
 
-interface Props {
+type Props = {
 	custom_color: Typography["custom_color"];
 	color: Typography["color"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 export const Color: React.ComponentType<Props> = props => {
 	const { custom_color, color, group_id } = props;
+
 	const [value, setValue] = useSetPropDebounced({
 		prop_key: "color",
 		initial_value: color,
 		group_id
 	});
+
 	const { is_open, toggle, close } = useToggle();
 
 	return (

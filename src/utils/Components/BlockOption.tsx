@@ -4,15 +4,17 @@ import { Div } from "utils/Components/Div";
 import { Span } from "utils/Components/Span";
 import { Icon } from "utils/Components/Icon";
 
-interface Props {
+type Props = {
 	label: string;
 	icon?: string | React.ReactNode;
-	extra_props?: Object;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	extra_props?: Record<string, any>;
 	children?: React.ReactNode;
-}
+};
 
 export const BlockOption: React.ComponentType<Props> = props => {
-	let { icon, label, extra_props, children } = props;
+	let { extra_props } = props;
+	const { icon, label, children } = props;
 
 	extra_props = extra_props || {};
 
@@ -21,7 +23,9 @@ export const BlockOption: React.ComponentType<Props> = props => {
 			<Div className="icon">
 				{icon ? <BlockIcon icon={icon} /> : <Icon icon="error" />}
 			</Div>
+
 			<Span className="label">{label}</Span>
+
 			{children && children}
 		</Div>
 	);

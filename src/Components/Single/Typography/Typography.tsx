@@ -13,23 +13,27 @@ import { TypographyContext } from "../TypographyContext/TypographyContext";
 import { TypographyStyle } from "../TypographyStyle/TypographyStyle";
 import { SelectorGroups } from "../SelectorGroups/SelectorGroups";
 
-interface ContextProps {
+type ContextProps = {
 	block_types: BlockType[];
-}
+};
 
 export const ContextBlockTypes = createContext<ContextProps>({
 	block_types: []
 });
 
-export const Typography: React.ComponentType = props => {
+export const Typography: React.ComponentType = () => {
 	const is_predefined = useIsPredefinedSingle();
+
 	const color_scheme = useColorScheme();
+
 	const is_visible = useSelect<boolean>(select =>
 		select(store_slug).isVisibleSingle()
 	);
+
 	const is_active = useSelect<boolean>(select =>
 		select(store_slug).isActiveSingle()
 	);
+
 	const block_types = useSelect<BlockType[]>(select =>
 		select("core/blocks")
 			.getBlockTypes()
@@ -40,7 +44,8 @@ export const Typography: React.ComponentType = props => {
 						id: "root",
 						name: __("Block root"),
 						selector:
-							".wp-block-" + name.replace(/^core\//, "").replace(/\//, "-")
+							".wp-block-" +
+							name.replace(/^core\//, "").replace(/\//, "-")
 					},
 					{
 						id: "custom",
@@ -79,12 +84,18 @@ export const Typography: React.ComponentType = props => {
 				]}
 			>
 				{is_customizer && (
-					<TypographyVisibility is_visible={is_visible} is_active={is_active} />
+					<TypographyVisibility
+						is_visible={is_visible}
+						is_active={is_active}
+					/>
 				)}
 
 				<TypographyTitle />
+
 				<TypographyContext />
+
 				<TypographyStyle />
+
 				<SelectorGroups />
 			</Div>
 		</ContextBlockTypes.Provider>

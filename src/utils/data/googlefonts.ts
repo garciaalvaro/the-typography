@@ -1,9 +1,9 @@
 import { __ } from "@wordpress/i18n";
 
-interface FontVariantObj {
+type FontVariantObj = {
 	value: FontVariant;
 	label: string;
-}
+};
 
 export const variants: FontVariantObj[] = [
 	{ value: "100", label: __("thin 100") },
@@ -328,7 +328,13 @@ export const fonts: Fonts = {
 	},
 	Andika: {
 		family: "Andika",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400"]
 	},
 	Angkor: {
@@ -437,7 +443,13 @@ export const fonts: Fonts = {
 	},
 	Arsenal: {
 		family: "Arsenal",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Artifika: {
@@ -1088,7 +1100,17 @@ export const fonts: Fonts = {
 	Catamaran: {
 		family: "Catamaran",
 		subsets: ["tamil", "latin-ext", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Caudex: {
 		family: "Caudex",
@@ -1315,7 +1337,13 @@ export const fonts: Fonts = {
 	},
 	Cormorant: {
 		family: "Cormorant",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"300",
 			"300i",
@@ -1331,7 +1359,13 @@ export const fonts: Fonts = {
 	},
 	Cormorant_Garamond: {
 		family: "Cormorant Garamond",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"300",
 			"300i",
@@ -1347,7 +1381,13 @@ export const fonts: Fonts = {
 	},
 	Cormorant_Infant: {
 		family: "Cormorant Infant",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"300",
 			"300i",
@@ -1363,12 +1403,24 @@ export const fonts: Fonts = {
 	},
 	Cormorant_SC: {
 		family: "Cormorant SC",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Cormorant_Unicase: {
 		family: "Cormorant Unicase",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["300", "400", "500", "600", "700"]
 	},
 	Cormorant_Upright: {
@@ -1464,7 +1516,13 @@ export const fonts: Fonts = {
 	},
 	Cuprum: {
 		family: "Cuprum",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Cute_Font: {
@@ -1726,27 +1784,77 @@ export const fonts: Fonts = {
 	Encode_Sans: {
 		family: "Encode Sans",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Encode_Sans_Condensed: {
 		family: "Encode Sans Condensed",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Encode_Sans_Expanded: {
 		family: "Encode Sans Expanded",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Encode_Sans_Semi_Condensed: {
 		family: "Encode Sans Semi Condensed",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Encode_Sans_Semi_Expanded: {
 		family: "Encode Sans Semi Expanded",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Engagement: {
 		family: "Engagement",
@@ -1809,7 +1917,13 @@ export const fonts: Fonts = {
 	},
 	Exo_2: {
 		family: "Exo 2",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"100",
 			"100i",
@@ -2267,7 +2381,17 @@ export const fonts: Fonts = {
 	Gothic_A1: {
 		family: "Gothic A1",
 		subsets: ["korean", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Goudy_Bookletter_1911: {
 		family: "Goudy Bookletter 1911",
@@ -2411,7 +2535,17 @@ export const fonts: Fonts = {
 	Hepta_Slab: {
 		family: "Hepta Slab",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Herr_Von_Muellerhoff: {
 		family: "Herr Von Muellerhoff",
@@ -2465,7 +2599,13 @@ export const fonts: Fonts = {
 	},
 	IBM_Plex_Mono: {
 		family: "IBM Plex Mono",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"100",
 			"100i",
@@ -2532,7 +2672,13 @@ export const fonts: Fonts = {
 	},
 	IBM_Plex_Serif: {
 		family: "IBM Plex Serif",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"100",
 			"100i",
@@ -3068,7 +3214,13 @@ export const fonts: Fonts = {
 	},
 	Kurale: {
 		family: "Kurale",
-		subsets: ["cyrillic", "cyrillic-ext", "devanagari", "latin-ext", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"devanagari",
+			"latin-ext",
+			"latin"
+		],
 		variants: ["400"]
 	},
 	La_Belle_Aurore: {
@@ -3322,7 +3474,13 @@ export const fonts: Fonts = {
 	},
 	Lobster: {
 		family: "Lobster",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400"]
 	},
 	Lobster_Two: {
@@ -3357,7 +3515,13 @@ export const fonts: Fonts = {
 	},
 	Lora: {
 		family: "Lora",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400", "400i", "700", "700i"]
 	},
 	Love_Ya_Like_A_Sister: {
@@ -3620,7 +3784,13 @@ export const fonts: Fonts = {
 	},
 	Merriweather: {
 		family: "Merriweather",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["300", "300i", "400", "400i", "700", "700i", "900", "900i"]
 	},
 	Merriweather_Sans: {
@@ -3755,7 +3925,13 @@ export const fonts: Fonts = {
 	},
 	Montserrat: {
 		family: "Montserrat",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"100",
 			"100i",
@@ -3779,7 +3955,13 @@ export const fonts: Fonts = {
 	},
 	Montserrat_Alternates: {
 		family: "Montserrat Alternates",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"100",
 			"100i",
@@ -4130,7 +4312,13 @@ export const fonts: Fonts = {
 	},
 	Nunito: {
 		family: "Nunito",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: [
 			"200",
 			"200i",
@@ -4185,7 +4373,13 @@ export const fonts: Fonts = {
 	},
 	Old_Standard_TT: {
 		family: "Old Standard TT",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400", "400i", "700"]
 	},
 	Oldenburg: {
@@ -4267,7 +4461,13 @@ export const fonts: Fonts = {
 	},
 	Oswald: {
 		family: "Oswald",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["200", "300", "400", "500", "600", "700"]
 	},
 	Over_the_Rainbow: {
@@ -4359,7 +4559,13 @@ export const fonts: Fonts = {
 	},
 	Pacifico: {
 		family: "Pacifico",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400"]
 	},
 	Padauk: {
@@ -4379,7 +4585,13 @@ export const fonts: Fonts = {
 	},
 	Pangolin: {
 		family: "Pangolin",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400"]
 	},
 	Paprika: {
@@ -4516,7 +4728,13 @@ export const fonts: Fonts = {
 	},
 	Podkova: {
 		family: "Podkova",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400", "500", "600", "700", "800"]
 	},
 	Poiret_One: {
@@ -4965,7 +5183,17 @@ export const fonts: Fonts = {
 			"latin",
 			"greek-ext"
 		],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Rochester: {
 		family: "Rochester",
@@ -4980,7 +5208,17 @@ export const fonts: Fonts = {
 	Rokkitt: {
 		family: "Rokkitt",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Romanesco: {
 		family: "Romanesco",
@@ -5107,22 +5345,62 @@ export const fonts: Fonts = {
 	Saira: {
 		family: "Saira",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Saira_Condensed: {
 		family: "Saira Condensed",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Saira_Extra_Condensed: {
 		family: "Saira Extra Condensed",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Saira_Semi_Condensed: {
 		family: "Saira Semi Condensed",
 		subsets: ["latin-ext", "vietnamese", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Saira_Stencil_One: {
 		family: "Saira Stencil One",
@@ -6032,7 +6310,13 @@ export const fonts: Fonts = {
 	},
 	Vollkorn_SC: {
 		family: "Vollkorn SC",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400", "600", "700", "900"]
 	},
 	Voltaire: {
@@ -6078,7 +6362,17 @@ export const fonts: Fonts = {
 	Work_Sans: {
 		family: "Work Sans",
 		subsets: ["latin-ext", "latin"],
-		variants: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+		variants: [
+			"100",
+			"200",
+			"300",
+			"400",
+			"500",
+			"600",
+			"700",
+			"800",
+			"900"
+		]
 	},
 	Yanone_Kaffeesatz: {
 		family: "Yanone Kaffeesatz",
@@ -6107,7 +6401,13 @@ export const fonts: Fonts = {
 	},
 	Yeseva_One: {
 		family: "Yeseva One",
-		subsets: ["cyrillic", "cyrillic-ext", "latin-ext", "vietnamese", "latin"],
+		subsets: [
+			"cyrillic",
+			"cyrillic-ext",
+			"latin-ext",
+			"vietnamese",
+			"latin"
+		],
 		variants: ["400"]
 	},
 	Yesteryear: {

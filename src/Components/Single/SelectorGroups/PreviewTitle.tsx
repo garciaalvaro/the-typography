@@ -3,13 +3,14 @@ import { __ } from "@wordpress/i18n";
 import { Span } from "utils/Components";
 import { useGroupStyle } from "hooks";
 
-interface Props extends SelectorGroup {
+type Props = SelectorGroup & {
 	toggle: Function;
-}
+};
 
 export const PreviewTitle: React.ComponentType<Props> = props => {
 	const { id, custom_title, title, toggle } = props;
 	const style = useGroupStyle(id);
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const { lineHeight, ...style_without_lineHeight } = style;
 
 	return (

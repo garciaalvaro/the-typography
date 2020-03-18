@@ -3,9 +3,9 @@ import { __ } from "@wordpress/i18n";
 import { Button } from "utils/Components";
 import { useUpdateTypography } from "hooks";
 
-interface Props {
+type Props = {
 	setUpdateCounter: Function;
-}
+};
 
 export const ButtonSave: React.ComponentType<Props> = props => {
 	const { setUpdateCounter } = props;

@@ -6,16 +6,16 @@ import { Div, ControlTextToggle } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface FontWeightOption {
+type FontWeightOption = {
 	value: FontWeight;
 	label: string;
-}
+};
 
-interface Props {
+type Props = {
 	custom_font_weight: Typography["custom_font_weight"];
 	font_weight: Typography["font_weight"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 const options: FontWeightOption[] = [
 	{ value: "100", label: __("thin 100") },
