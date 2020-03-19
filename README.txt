@@ -92,23 +92,29 @@ The following filters can be used to modify (or remove) the styles and fonts bef
 
 == Changelog ==
 
+= 1.3.0 =
+* Updated fonts
+* Added linter for development
+* Updated dependencies
+* Minor fixes
+
 = 1.2.0 =
-* Refactored code base. Migrated JavaScript to TypeScript.
-* UI & UX improvements. CSS and JS small bug fixes.
-* Letter Spacing allows negative values.
-* Incremented Font Size maximum value to 80.
-* Upgraded minimum version to WP 5.3. The plugin can be used in 5.2 activating the Gutenberg plugin.
+* Refactored code base. Migrated JavaScript to TypeScript
+* UI & UX improvements. CSS and JS small bug fixes
+* Letter Spacing allows negative values
+* Incremented Font Size maximum value to 80
+* Upgraded minimum version to WP 5.3. The plugin can be used in 5.2 activating the Gutenberg plugin
 
 = 1.1.0 =
-* Include core blocks selection in Customizer.
-* Sort typographies styles so that newer take preference over older.
-* Improvements in the UI and added some UX hints.
-* Fix Customizer Previewer bugs.
-* Improve code base.
-* Update dependencies.
+* Include core blocks selection in Customizer
+* Sort typographies styles so that newer take preference over older
+* Improvements in the UI and added some UX hints
+* Fix Customizer Previewer bugs
+* Improve code base
+* Update dependencies
 
 = 1.0.0 =
-* Initial release.
+* Initial release
 
 
 == Screenshots ==
