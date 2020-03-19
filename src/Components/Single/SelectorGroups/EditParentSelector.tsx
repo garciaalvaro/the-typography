@@ -20,13 +20,17 @@ export const EditParentSelector: React.ComponentType<SelectorGroup> = props => {
 				InputLabelProps={{
 					classes: {
 						root: addPrefix("material_ui-textfield-label"),
-						focused: addPrefix("material_ui-textfield-label-focused")
+						focused: addPrefix(
+							"material_ui-textfield-label-focused"
+						)
 					}
 				}}
 				InputProps={{
 					classes: {
 						root: addPrefix("material_ui-textfield-input"),
-						focused: addPrefix("material_ui-textfield-input-focused")
+						focused: addPrefix(
+							"material_ui-textfield-input-focused"
+						)
 					}
 				}}
 				placeholder={__("enter a CSS selector")}

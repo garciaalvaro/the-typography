@@ -9,28 +9,37 @@ import { store_slug } from "utils/data";
 import { addPrefix, prepareTaxonomyTerm } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface Props {
+type Props = {
 	_context_fixed: Typography["_context_fixed"];
 	context_post_type: Typography["context_post_type"];
-}
+};
 
 export const PostType: React.ComponentType<Props> = props => {
 	const { context_post_type, _context_fixed } = props;
+
 	const { addTaxonomyTerm } = useDispatch(store_slug);
+
 	const setValue = useSetProp();
+
 	const { saveEntityRecord } = useDispatch("core");
+
 	const taxonomies = useSelect<State["taxonomies"]>(select =>
 		select(store_slug).getTaxonomies()
 	);
+
 	const post_types_raw = useSelect<PostTypeRaw[] | undefined>(select =>
 		select("core").getPostTypes()
 	);
+
 	const [post_types_local, setPostTypesLocal] = useState<PostType[]>([]);
 
 	useEffect(() => {
 		const post_types = post_types_raw
 			? post_types_raw
-					.filter(({ slug, viewable }) => viewable && slug !== "attachment")
+					.filter(
+						({ slug, viewable }) =>
+							viewable && slug !== "attachment"
+					)
 					.map(({ slug, name }) => ({
 						value: slug,
 						label: name
@@ -43,7 +52,8 @@ export const PostType: React.ComponentType<Props> = props => {
 			...post_types,
 			...context_post_type
 				.filter(
-					post_type => !post_types.find(({ value }) => value === post_type)
+					post_type =>
+						!post_types.find(({ value }) => value === post_type)
 				)
 				.map(post_type => ({ value: post_type, label: post_type }))
 		]);
@@ -55,8 +65,9 @@ export const PostType: React.ComponentType<Props> = props => {
 				{context_post_type
 					.map(
 						post_type =>
-							post_types_local.find(({ value }) => value === post_type) ||
-							post_type
+							post_types_local.find(
+								({ value }) => value === post_type
+							) || post_type
 					)
 					.join(", ")}
 			</Span>
@@ -78,6 +89,7 @@ export const PostType: React.ComponentType<Props> = props => {
 			multiple
 			displayEmpty
 			value={context_post_type}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			onChange={async (e: any) => {
 				const values_new: string[] = e.target.value;
 
@@ -86,7 +98,9 @@ export const PostType: React.ComponentType<Props> = props => {
 				values_new.map(async value_new => {
 					// If the term exists already, return. Otherwise save the taxonomy term.
 					if (
-						taxonomies.context_post_type.find(({ slug }) => slug === value_new)
+						taxonomies.context_post_type.find(
+							({ slug }) => slug === value_new
+						)
 					) {
 						return;
 					}
@@ -109,7 +123,10 @@ export const PostType: React.ComponentType<Props> = props => {
 					)) as TaxonomyTermRaw;
 					const term = prepareTaxonomyTerm(term_raw);
 
-					addTaxonomyTerm({ taxonomy_name: "context_post_type", term });
+					addTaxonomyTerm({
+						taxonomy_name: "context_post_type",
+						term
+					});
 				});
 			}}
 			renderValue={selected_raw => {

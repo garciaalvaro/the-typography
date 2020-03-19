@@ -4,7 +4,7 @@ import { useDispatch } from "@wordpress/data";
 import { Button } from "utils/Components";
 import { store_slug } from "utils/data";
 
-export const ButtonUndo: React.ComponentType = props => {
+export const ButtonUndo: React.ComponentType = () => {
 	const { undoSingle } = useDispatch(store_slug);
 
 	return (

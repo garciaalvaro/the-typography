@@ -6,16 +6,16 @@ import { Div, ControlTextToggle } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface TextDecorationOption {
+type TextDecorationOption = {
 	value: TextDecoration;
 	label: string;
-}
+};
 
-interface Props {
+type Props = {
 	custom_text_decoration: Typography["custom_text_decoration"];
 	text_decoration: Typography["text_decoration"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 const options: TextDecorationOption[] = [
 	{ value: "none", label: "none" },
@@ -29,7 +29,12 @@ export const TextDecoration: React.ComponentType<Props> = props => {
 	const setValue = useSetProp(group_id);
 
 	return (
-		<Div className={["control-container", "control-container-text_decoration"]}>
+		<Div
+			className={[
+				"control-container",
+				"control-container-text_decoration"
+			]}
+		>
 			<ControlTextToggle
 				group_id={group_id}
 				prop_key="custom_text_decoration"

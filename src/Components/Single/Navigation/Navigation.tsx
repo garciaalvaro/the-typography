@@ -10,13 +10,15 @@ import { ButtonUpdate } from "./ButtonUpdate";
 import { ButtonSave } from "./ButtonSave";
 import { MessageJustSaved } from "./MessageJustSaved";
 
-export const Navigation: React.ComponentType = props => {
+export const Navigation: React.ComponentType = () => {
 	const is_new_single = useSelect<boolean>(select =>
 		select(store_slug).isNewSingle()
 	);
+
 	const has_changed_single = useSelect<State["has_changed_single"]>(select =>
 		select(store_slug).hasChangedSingle()
 	);
+
 	const [update_counter, setUpdateCounter] = useState(0);
 
 	useEffect(() => {

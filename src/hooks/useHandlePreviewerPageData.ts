@@ -3,6 +3,7 @@ import { useDispatch } from "@wordpress/data";
 
 import { store_slug } from "utils/data";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { customize } = (window as any).wp;
 
 export const useHandlePreviewerPageData = () => {

@@ -5,10 +5,10 @@ import "./TypographyVisibility.styl";
 import { Div, Icon } from "utils/Components";
 import { is_pro } from "utils/data";
 
-interface Props {
+type Props = {
 	is_active: Typography["is_active"];
 	is_visible: Typography["is_visible"];
-}
+};
 
 export const TypographyVisibility: React.ComponentType<Props> = props => {
 	const { is_visible } = props;
@@ -24,7 +24,9 @@ export const TypographyVisibility: React.ComponentType<Props> = props => {
 					__("Not active in the current preview window (%s%s%s)"),
 					!is_visible ? __(`the "context" is different`) : "",
 					!is_visible && is_pro && !is_active ? __(" & ") : "",
-					is_pro && !is_active ? __("the typography is deactivated") : ""
+					is_pro && !is_active
+						? __("the typography is deactivated")
+						: ""
 				)
 			);
 		}
@@ -40,6 +42,7 @@ export const TypographyVisibility: React.ComponentType<Props> = props => {
 			>
 				<Icon icon="visibility" />
 			</Div>
+
 			<Div className={["typography-visibility-message"]}>
 				{visibility_label}
 			</Div>

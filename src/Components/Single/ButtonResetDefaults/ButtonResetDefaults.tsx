@@ -5,13 +5,17 @@ import "./ButtonResetDefaults.styl";
 import { store_slug } from "utils/data";
 import { ButtonPopover, Icon } from "utils/Components";
 
-interface Props {
+type Props = {
 	group_id?: string;
-}
+};
 
 export const ButtonResetDefaults: React.ComponentType<Props> = props => {
 	const { group_id } = props;
-	const { resetSingleStyle, resetSelectorGroupStyle } = useDispatch(store_slug);
+
+	const { resetSingleStyle, resetSelectorGroupStyle } = useDispatch(
+		store_slug
+	);
+
 	const resetStyle = () => {
 		if (group_id) {
 			resetSelectorGroupStyle(group_id);

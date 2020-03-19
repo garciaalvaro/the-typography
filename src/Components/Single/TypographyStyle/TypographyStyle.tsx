@@ -15,7 +15,7 @@ import { TextTransform } from "./TextTransform";
 import { TextDecoration } from "./TextDecoration";
 import { ButtonResetDefaults } from "../ButtonResetDefaults/ButtonResetDefaults";
 
-export const TypographyStyle: React.ComponentType = props => {
+export const TypographyStyle: React.ComponentType = () => {
 	const _typography_style_defaults = useSelect<
 		Typography["_typography_style_defaults"]
 	>(select => select(store_slug).getTypographyStyleDefaults({}));
@@ -55,28 +55,39 @@ export const TypographyStyle: React.ComponentType = props => {
 				font_family={font_family}
 				font_variant={font_variant}
 			/>
+
 			<Color custom_color={custom_color} color={color} />
-			<FontSize custom_font_size={custom_font_size} font_size={font_size} />
+
+			<FontSize
+				custom_font_size={custom_font_size}
+				font_size={font_size}
+			/>
+
 			<FontStyle
 				custom_font_style={custom_font_style}
 				font_style={font_style}
 			/>
+
 			<FontWeight
 				custom_font_weight={custom_font_weight}
 				font_weight={font_weight}
 			/>
+
 			<LineHeight
 				custom_line_height={custom_line_height}
 				line_height={line_height}
 			/>
+
 			<LetterSpacing
 				custom_letter_spacing={custom_letter_spacing}
 				letter_spacing={letter_spacing}
 			/>
+
 			<TextTransform
 				custom_text_transform={custom_text_transform}
 				text_transform={text_transform}
 			/>
+
 			<TextDecoration
 				custom_text_decoration={custom_text_decoration}
 				text_decoration={text_decoration}

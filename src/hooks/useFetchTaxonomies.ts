@@ -7,6 +7,7 @@ import { prepareTaxonomy } from "utils/tools/prepareTaxonomies";
 
 export const useFetchTaxonomies = () => {
 	const { setTaxonomies } = useDispatch(store_slug);
+
 	const current_page = useSelect<State["current_page"]>(select =>
 		select(store_slug).getCurrentPage()
 	);
@@ -24,16 +25,21 @@ export const useFetchTaxonomies = () => {
 			const context_type_raw = await apiFetch<TaxonomyTermRaw[]>({
 				path: "/wp/v2/context_type"
 			});
+
 			const context_type = prepareTaxonomy(context_type_raw);
 
 			const context_post_type_raw = await apiFetch<TaxonomyTermRaw[]>({
 				path: "/wp/v2/context_post_type"
 			});
+
 			const context_post_type = prepareTaxonomy(context_post_type_raw);
 
-			const context_post_type_template_raw = await apiFetch<TaxonomyTermRaw[]>({
+			const context_post_type_template_raw = await apiFetch<
+				TaxonomyTermRaw[]
+			>({
 				path: "/wp/v2/context_post_type_template"
 			});
+
 			const context_post_type_template = prepareTaxonomy(
 				context_post_type_template_raw
 			);

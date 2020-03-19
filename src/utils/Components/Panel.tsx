@@ -5,11 +5,11 @@ import { Icon } from "utils/Components/Icon";
 import { Span } from "utils/Components/Span";
 import { useToggle } from "utils/hooks/useToggle";
 
-interface Props {
+type Props = {
 	id: string;
 	label: string;
 	children: React.ReactNode;
-}
+};
 
 export const Panel: React.ComponentType<Props> = props => {
 	const { id, label, children } = props;
@@ -22,8 +22,10 @@ export const Panel: React.ComponentType<Props> = props => {
 				onClick={toggle}
 			>
 				<Span className="panel-label">{label}</Span>
+
 				<Icon icon={is_open ? "collapse" : "expand"} />
 			</Button>
+
 			{is_open && children}
 		</Div>
 	);

@@ -4,10 +4,10 @@ import { useSelect } from "@wordpress/data";
 
 import { store_slug } from "utils/data/plugin";
 
-interface ColorProps {
+type ColorProps = {
 	custom_color: Style["custom_color"];
 	color: Style["color"];
-}
+};
 
 export const useColorScheme = (typography_id?: Typography["id"]) => {
 	const typography_color_props = useSelect<ColorProps | null>(select =>
@@ -47,7 +47,10 @@ export const useColorScheme = (typography_id?: Typography["id"]) => {
 	}, [
 		// TODO: Confirm it is valid to use conditional dependencies
 		...(typography_color_props
-			? [typography_color_props.custom_color, typography_color_props.color]
+			? [
+					typography_color_props.custom_color,
+					typography_color_props.color
+			  ]
 			: [])
 	]);
 

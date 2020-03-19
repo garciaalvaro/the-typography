@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { customize } = (window as any).wp;
 
 customize.bind("preview-ready", () => {

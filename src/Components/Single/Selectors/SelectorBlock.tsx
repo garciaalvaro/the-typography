@@ -7,21 +7,27 @@ import { BlockSelect } from "./BlockSelect";
 import { ContextBlockTypes } from "../Typography/Typography";
 import { BlockExtraSelect } from "./BlockExtraSelect";
 
-interface Props extends Selector {
+type Props = Selector & {
 	group_id: SelectorGroup["id"];
-}
+};
 
 export const SelectorBlock: React.ComponentType<Props> = props => {
 	const { block_types } = useContext(ContextBlockTypes);
+
 	const { block_name, block_title } = props;
-	const [block_type, setBlockType] = useState<BlockType | undefined>(undefined);
+
+	const [block_type, setBlockType] = useState<BlockType | undefined>(
+		undefined
+	);
 
 	useEffect(() => {
 		if (!block_types.length) {
 			return;
 		}
 
-		const block_type = block_types.find(({ value }) => value === block_name);
+		const block_type = block_types.find(
+			({ value }) => value === block_name
+		);
 
 		if (block_type) {
 			setBlockType(block_type);
@@ -62,7 +68,9 @@ export const SelectorBlock: React.ComponentType<Props> = props => {
 				setBlockType={setBlockType}
 			/>
 
-			{block_type && <BlockExtraSelect {...props} block_type={block_type} />}
+			{block_type && (
+				<BlockExtraSelect {...props} block_type={block_type} />
+			)}
 		</Fragment>
 	);
 };

@@ -13,9 +13,11 @@ export const useFetchTypographies = () => {
 		setLoading,
 		increaseCurrentPage
 	} = useDispatch(store_slug);
+
 	const taxonomies = useSelect<State["taxonomies"]>(select =>
 		select(store_slug).getTaxonomies()
 	);
+
 	const current_page = useSelect<State["current_page"]>(select =>
 		select(store_slug).getCurrentPage()
 	);
@@ -37,6 +39,7 @@ export const useFetchTypographies = () => {
 					per_page: typographies_per_page,
 					page: current_page + 1
 				})
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			}).catch(({ code }: any) => {
 				if (code === "rest_post_invalid_page_number") {
 					setReachedLastPage(true);
@@ -44,7 +47,10 @@ export const useFetchTypographies = () => {
 			});
 
 			if (typographies_raw) {
-				const typographies = prepareTypographies(typographies_raw, taxonomies);
+				const typographies = prepareTypographies(
+					typographies_raw,
+					taxonomies
+				);
 
 				addTypographies(typographies);
 

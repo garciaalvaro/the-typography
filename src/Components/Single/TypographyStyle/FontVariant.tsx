@@ -10,15 +10,15 @@ import { addPrefix } from "utils/tools";
 import { fonts as googlefonts } from "utils/data";
 import { useSetProp } from "hooks";
 
-interface FontVariantOption {
+type FontVariantOption = {
 	value: FontVariant;
 	label: string;
-}
+};
 
-interface Props {
+type Props = {
 	font_family: Typography["font_family"];
 	font_variant: Typography["font_variant"];
-}
+};
 
 const fonts = applyFilters("the_typography.fontsList", googlefonts);
 

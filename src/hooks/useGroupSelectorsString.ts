@@ -11,12 +11,15 @@ export const useGroupSelectorsString = (
 	const selectors = useSelect<Selector[]>(select =>
 		select(store_slug).getSelectors({ typography_id, group_id })
 	);
-	const parent_selector = useSelect<SelectorGroup["parent_selector"]>(select =>
-		select(store_slug).getParentSelector({
-			typography_id,
-			group_id
-		})
+
+	const parent_selector = useSelect<SelectorGroup["parent_selector"]>(
+		select =>
+			select(store_slug).getParentSelector({
+				typography_id,
+				group_id
+			})
 	);
+
 	const [selectors_string, setSelectorsString] = useState("");
 
 	useEffect(() => {
@@ -27,7 +30,9 @@ export const useGroupSelectorsString = (
 		setSelectorsString(
 			compact(selectors)
 				.map(selector =>
-					parent_selector ? `${parent_selector} ${selector}` : `${selector}`
+					parent_selector
+						? `${parent_selector} ${selector}`
+						: `${selector}`
 				)
 				.join(",")
 		);

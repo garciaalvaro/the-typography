@@ -6,16 +6,16 @@ import { Div, ControlTextToggle } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface FontStyleOption {
+type FontStyleOption = {
 	value: FontStyle;
 	label: string;
-}
+};
 
-interface Props {
+type Props = {
 	custom_font_style: Typography["custom_font_style"];
 	font_style: Typography["font_style"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 const options: FontStyleOption[] = [
 	{ value: "italic", label: "italic" },

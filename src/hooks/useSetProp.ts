@@ -13,6 +13,7 @@ export const useSetProp = (
 
 	const setValue = (
 		prop_key: keyof Selector | keyof SelectorGroup | keyof Typography,
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		prop_value: any
 	) => {
 		const payload = {
@@ -36,6 +37,7 @@ export const useSetPropDebounced = ({
 	delay
 }: {
 	prop_key: keyof Selector | keyof SelectorGroup | keyof Typography;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	initial_value: any;
 	group_id?: SelectorGroup["id"];
 	selector_id?: Selector["id"];

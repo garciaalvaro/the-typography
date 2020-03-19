@@ -9,15 +9,19 @@ import { useIsFirstRender } from "utils/hooks";
 import { SelectorGroup } from "./SelectorGroup";
 import { ButtonAdd } from "./ButtonAdd";
 
-export const SelectorGroups: React.ComponentType = props => {
+export const SelectorGroups: React.ComponentType = () => {
 	const has_changed_single = useSelect<State["has_changed_single"]>(select =>
 		select(store_slug).hasChangedSingle()
 	);
+
 	const [undo_counter, setUndoCounter] = useState(0);
+
 	const is_first_render = useIsFirstRender();
+
 	const selector_groups = useSelect<SelectorGroup[]>(select =>
 		select(store_slug).getSelectorGroups()
 	);
+
 	const new_element_just_added = useNewElementJustAdded(selector_groups);
 
 	// Some of the inputs in Selectors have a local state which, when

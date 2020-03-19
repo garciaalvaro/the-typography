@@ -6,15 +6,21 @@ import { ContextBlockTypes } from "../Typography/Typography";
 
 export const PreviewSelectorBlock: React.ComponentType<Selector> = props => {
 	const { block_types } = useContext(ContextBlockTypes);
+
 	const { block_name, block_title, block_selector_extra } = props;
-	const [block_type, setBlockType] = useState<BlockType | undefined>(undefined);
+
+	const [block_type, setBlockType] = useState<BlockType | undefined>(
+		undefined
+	);
 
 	useEffect(() => {
 		if (!block_types.length) {
 			return;
 		}
 
-		const block_type = block_types.find(({ value }) => value === block_name);
+		const block_type = block_types.find(
+			({ value }) => value === block_name
+		);
 
 		setBlockType(block_type);
 	}, [block_types.length]);
@@ -31,7 +37,9 @@ export const PreviewSelectorBlock: React.ComponentType<Selector> = props => {
 		return (
 			<Div className="selector">
 				<BlockOption label={block_title || block_name}>
-					{block_selector_extra && <Span>{block_selector_extra}</Span>}
+					{block_selector_extra && (
+						<Span>{block_selector_extra}</Span>
+					)}
 				</BlockOption>
 			</Div>
 		);

@@ -6,10 +6,10 @@ import { Div, Span } from "utils/Components";
 import { store_slug } from "utils/data";
 import { useTypographyStyle } from "hooks";
 
-interface Props {
+type Props = {
 	id: Typography["id"];
 	title: Typography["title"];
-}
+};
 
 export const Title: React.ComponentType<Props> = props => {
 	const { id, title } = props;

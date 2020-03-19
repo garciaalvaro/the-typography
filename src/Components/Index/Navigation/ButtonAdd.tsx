@@ -3,7 +3,7 @@ import { useDispatch } from "@wordpress/data";
 import { store_slug } from "utils/data";
 import { Button, Icon } from "utils/Components";
 
-export const ButtonAdd: React.ComponentType = props => {
+export const ButtonAdd: React.ComponentType = () => {
 	const { loadSingle } = useDispatch(store_slug);
 
 	return (

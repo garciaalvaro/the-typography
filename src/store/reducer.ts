@@ -45,7 +45,10 @@ export const reducer = (state = initial_state, action: Actions): State => {
 							return;
 						}
 
-						font.variants_loaded = uniq([...variants, ...font.variants_loaded]);
+						font.variants_loaded = uniq([
+							...variants,
+							...font.variants_loaded
+						]);
 					})
 				)
 			};
@@ -143,7 +146,8 @@ export const reducer = (state = initial_state, action: Actions): State => {
 				...state,
 				typographies: state.typographies.map(typography => ({
 					...typography,
-					is_active: typography.id === id ? value : typography.is_active
+					is_active:
+						typography.id === id ? value : typography.is_active
 				}))
 			};
 		}
@@ -151,7 +155,8 @@ export const reducer = (state = initial_state, action: Actions): State => {
 			let typographies_new;
 			// In case there are typographies which are already present we filter them
 			typographies_new = action.payload.filter(
-				({ id }) => !state.typographies.find(typography => typography.id === id)
+				({ id }) =>
+					!state.typographies.find(typography => typography.id === id)
 			);
 
 			// If its customizer add the visibility
@@ -163,7 +168,9 @@ export const reducer = (state = initial_state, action: Actions): State => {
 			}
 
 			const fonts_to_add = action.payload
-				.filter(({ custom_font, font_family }) => custom_font && font_family)
+				.filter(
+					({ custom_font, font_family }) => custom_font && font_family
+				)
 				.map(({ font_family, font_variant }) => ({
 					family: font_family,
 					variants: font_variant
@@ -221,7 +228,10 @@ export const reducer = (state = initial_state, action: Actions): State => {
 				single: typography
 					? {
 							...typography,
-							is_visible: isVisible(typography, previewer_page_data)
+							is_visible: isVisible(
+								typography,
+								previewer_page_data
+							)
 					  }
 					: generateDefaultTypography()
 			};
@@ -261,7 +271,12 @@ export const reducer = (state = initial_state, action: Actions): State => {
 		}
 		case "SET_PROP": {
 			const { single, previewer_page_data } = state;
-			const { prop_key, prop_value, group_id, selector_id } = action.payload;
+			const {
+				prop_key,
+				prop_value,
+				group_id,
+				selector_id
+			} = action.payload;
 
 			if (
 				prop_key === "context_type" ||
@@ -290,14 +305,21 @@ export const reducer = (state = initial_state, action: Actions): State => {
 					fonts_new = produce(state.fonts, draft => {
 						const { font_family, font_variant } = state.single;
 						const family =
-							prop_key === "font_family" ? prop_value : font_family;
+							prop_key === "font_family"
+								? prop_value
+								: font_family;
 						const variants =
-							prop_key === "font_variant" ? prop_value : font_variant;
+							prop_key === "font_variant"
+								? prop_value
+								: font_variant;
 
 						const font = draft.find(font => font.family === family);
 
 						if (font) {
-							font.variants = uniq([...variants, ...font.variants]);
+							font.variants = uniq([
+								...variants,
+								...font.variants
+							]);
 
 							return;
 						}
@@ -322,31 +344,38 @@ export const reducer = (state = initial_state, action: Actions): State => {
 				has_changed_single: true,
 				single: {
 					...single,
-					selector_groups: produce(single.selector_groups, draft_groups => {
-						const group = draft_groups.find(group => group.id === group_id);
+					selector_groups: produce(
+						single.selector_groups,
+						draft_groups => {
+							const group = draft_groups.find(
+								group => group.id === group_id
+							);
 
-						if (!group) {
-							return;
-						}
+							if (!group) {
+								return;
+							}
 
-						if (!selector_id) {
+							if (!selector_id) {
+								// @ts-ignore TODO
+								group[
+									prop_key as keyof SelectorGroup
+								] = prop_value;
+
+								return;
+							}
+
+							const selector = group.selectors.find(
+								selector => selector.id === selector_id
+							);
+
+							if (!selector) {
+								return;
+							}
+
 							// @ts-ignore TODO
-							group[prop_key as keyof SelectorGroup] = prop_value;
-
-							return;
+							selector[prop_key as keyof Selector] = prop_value;
 						}
-
-						const selector = group.selectors.find(
-							selector => selector.id === selector_id
-						);
-
-						if (!selector) {
-							return;
-						}
-
-						// @ts-ignore TODO
-						selector[prop_key as keyof Selector] = prop_value;
-					})
+					)
 				}
 			};
 		}
@@ -368,7 +397,8 @@ export const reducer = (state = initial_state, action: Actions): State => {
 
 							draft_groups[index] = {
 								...draft_groups[index],
-								...draft_groups[index]._typography_style_defaults
+								...draft_groups[index]
+									._typography_style_defaults
 							};
 						}
 					)
@@ -422,13 +452,18 @@ export const reducer = (state = initial_state, action: Actions): State => {
 					selector_groups: produce(
 						state.single.selector_groups,
 						draft_groups => {
-							const group = draft_groups.find(group => group.id === group_id);
+							const group = draft_groups.find(
+								group => group.id === group_id
+							);
 
 							if (!group) {
 								return;
 							}
 
-							remove(group.selectors, ({ id }) => id === selector_id);
+							remove(
+								group.selectors,
+								({ id }) => id === selector_id
+							);
 						}
 					)
 				}
@@ -443,7 +478,10 @@ export const reducer = (state = initial_state, action: Actions): State => {
 					selector_groups: produce(
 						state.single.selector_groups,
 						draft_groups => {
-							remove(draft_groups, ({ id }) => id === action.payload);
+							remove(
+								draft_groups,
+								({ id }) => id === action.payload
+							);
 						}
 					)
 				}

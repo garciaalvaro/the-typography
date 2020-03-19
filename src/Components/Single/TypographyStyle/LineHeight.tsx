@@ -1,15 +1,15 @@
 import { __ } from "@wordpress/i18n";
-import Slider from "@material-ui/lab/Slider";
+import Slider from "@material-ui/core/Slider";
 
 import { Div, ControlTextToggle, RangeValueIndicator } from "utils/Components";
 import { toFixed, addPrefix } from "utils/tools";
 import { useSetPropDebounced } from "hooks";
 
-interface Props {
+type Props = {
 	custom_line_height: Typography["custom_line_height"];
 	line_height: Typography["line_height"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 export const LineHeight: React.ComponentType<Props> = props => {
 	const { custom_line_height, line_height, group_id } = props;
@@ -32,7 +32,6 @@ export const LineHeight: React.ComponentType<Props> = props => {
 				<Slider
 					classes={{
 						thumb: addPrefix("material_ui-range-thumb"),
-						container: addPrefix("material_ui-range-container"),
 						track: addPrefix("material_ui-range-track"),
 						root: addPrefix("material_ui-range-root")
 					}}
@@ -40,7 +39,9 @@ export const LineHeight: React.ComponentType<Props> = props => {
 					min={0.3}
 					max={3}
 					value={value}
-					onChange={(e, value) => setValue(toFixed(value, 1))}
+					onChange={(e, value) =>
+						setValue(toFixed(value as number, 1))
+					}
 				/>
 			</ControlTextToggle>
 		</Div>

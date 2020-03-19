@@ -7,10 +7,10 @@ import { Selector } from "./Selector";
 import { ButtonAdd } from "./ButtonAdd";
 import { useNewElementJustAdded } from "hooks";
 
-interface Props {
+type Props = {
 	selectors: Selector[];
 	group_id: SelectorGroup["id"];
-}
+};
 
 export const Selectors: React.ComponentType<Props> = props => {
 	const { selectors, group_id } = props;
@@ -20,7 +20,9 @@ export const Selectors: React.ComponentType<Props> = props => {
 		<Div className="edit-selectors">
 			{is_customizer && (
 				<Span className={["single-message", "message-go_to_editor"]}>
-					{__("Selecting custom blocks can be done from any Post editor.")}
+					{__(
+						"Selecting custom blocks can be done from any Post editor."
+					)}
 				</Span>
 			)}
 

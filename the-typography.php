@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/the-typography/
  * Description: Add Typography to your Gutenberg site using Google Fonts.
  * Author: melonpan
- * Version: 1.2.0
+ * Version: 1.3.0
  * License: GPL3+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  */
@@ -38,7 +38,7 @@ if ( ! class_exists( 'TheTypography' ) ) {
 		private function defineConstants() {
 
 			if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
-				define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.2.0' );
+				define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.3.0' );
 			}
 			if ( ! defined( __NAMESPACE__ . '\PLUGIN_NAME' ) ) {
 				define( __NAMESPACE__ . '\PLUGIN_NAME', 'the-typography' );

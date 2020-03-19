@@ -5,10 +5,10 @@ import { useDispatch } from "@wordpress/data";
 import { Button } from "utils/Components";
 import { store_slug } from "utils/data";
 
-interface Props {
+type Props = {
 	new_element_just_added: boolean;
 	group_id: SelectorGroup["id"];
-}
+};
 
 export const ButtonAdd: React.ComponentType<Props> = props => {
 	const { new_element_just_added, group_id } = props;
@@ -16,7 +16,9 @@ export const ButtonAdd: React.ComponentType<Props> = props => {
 
 	return (
 		<Button
-			onClick={!new_element_just_added ? () => addSelector(group_id) : noop}
+			onClick={
+				!new_element_just_added ? () => addSelector(group_id) : noop
+			}
 			id="button-add_selector"
 			className={["button-text", "button-with_border"]}
 		>

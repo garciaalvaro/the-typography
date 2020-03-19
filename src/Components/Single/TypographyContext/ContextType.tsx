@@ -6,10 +6,10 @@ import { addPrefix } from "utils/tools";
 import { Span } from "utils/Components";
 import { useSetProp } from "hooks";
 
-interface Props {
+type Props = {
 	_context_fixed: Typography["_context_fixed"];
 	context_type: Typography["context_type"];
-}
+};
 
 const options: { value: ContextType; label: string }[] = [
 	{ value: "all_site", label: __("All site") },

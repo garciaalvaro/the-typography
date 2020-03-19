@@ -40,7 +40,11 @@ export const EditGroupStyle: React.ComponentType<SelectorGroup> = props => {
 			label={__("Use custom typography")}
 		>
 			<Div className="typography">
-				<Color group_id={id} custom_color={custom_color} color={color} />
+				<Color
+					group_id={id}
+					custom_color={custom_color}
+					color={color}
+				/>
 				<FontSize
 					group_id={id}
 					custom_font_size={custom_font_size}

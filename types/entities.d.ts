@@ -1,44 +1,46 @@
-interface BlockType {
+type BlockType = {
 	value: string;
 	label: string;
 	icon: string | React.ReactNode;
 	elements: BlockTypeDataElement[];
-}
+};
 
-interface TaxonomyTermRaw extends Object, TaxonomyTerm {}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type TaxonomyTermRaw = Record<any, string> & TaxonomyTerm;
 
-interface TaxonomyTerm {
+type TaxonomyTerm = {
 	id: number;
 	slug: string;
 	name: string;
-}
+};
 
-interface Taxonomies {
+type Taxonomies = {
 	[key: string]: TaxonomyTerm[];
-}
+};
 
-interface PostTypeRaw extends Object {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PostTypeRaw = Record<any, string> & {
 	slug: string;
 	name: string;
 	viewable: boolean;
-}
+};
 
-interface PostType {
+type PostType = {
 	value: string;
 	label: string;
-}
+};
 
-interface DownloadedFontRaw {
+type DownloadedFontRaw = {
 	font: string;
 	woff: string;
 	woff2: string;
 	ttf: string;
 	svg: string;
 	eot: string;
-}
+};
 
-interface DownloadedFont {
+type DownloadedFont = {
 	value: string;
 	label: string;
 	is_downloaded: boolean;
-}
+};

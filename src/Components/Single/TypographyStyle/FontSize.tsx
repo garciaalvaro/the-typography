@@ -1,15 +1,15 @@
 import { __ } from "@wordpress/i18n";
-import Slider from "@material-ui/lab/Slider";
+import Slider from "@material-ui/core/Slider";
 
 import { Div, ControlTextToggle, RangeValueIndicator } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetPropDebounced } from "hooks";
 
-interface Props {
+type Props = {
 	custom_font_size: Typography["custom_font_size"];
 	font_size: Typography["font_size"];
 	group_id?: SelectorGroup["id"];
-}
+};
 
 export const FontSize: React.ComponentType<Props> = props => {
 	const { custom_font_size, font_size, group_id } = props;
@@ -28,15 +28,12 @@ export const FontSize: React.ComponentType<Props> = props => {
 				label={__("font-size")}
 			>
 				<RangeValueIndicator value={value} unit="px" />
+
 				<Slider
 					classes={{
 						thumb: addPrefix("material_ui-range-thumb"),
-						container: addPrefix("material_ui-range-container"),
 						track: addPrefix("material_ui-range-track"),
-						root: addPrefix("material_ui-range-root"),
-						activated: addPrefix("material_ui-range-activated"),
-						focused: addPrefix("material_ui-range-focused"),
-						jumped: addPrefix("material_ui-range-jumped")
+						root: addPrefix("material_ui-range-root")
 					}}
 					min={5}
 					max={80}

@@ -3,6 +3,7 @@ import { useState, useEffect } from "@wordpress/element";
 import { useIsFirstRender } from "utils/hooks/useIsFirstRender";
 
 // Modified from https://usehooks.com/useDebounce/ | MIT
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useDebounce = (value: any, delay = 1111) => {
 	const is_first_render = useIsFirstRender();
 	const [debounced_value, setDebouncedValue] = useState(value);

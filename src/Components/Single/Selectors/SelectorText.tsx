@@ -5,10 +5,10 @@ import TextField from "@material-ui/core/TextField";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface Props extends Selector {
+type Props = Selector & {
 	is_new: boolean;
 	group_id: SelectorGroup["id"];
-}
+};
 
 export const SelectorText: React.ComponentType<Props> = props => {
 	const { text_selector, is_new, group_id, id: selector_id } = props;

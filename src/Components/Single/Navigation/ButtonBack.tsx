@@ -4,10 +4,11 @@ import { useDispatch, useSelect } from "@wordpress/data";
 import { ButtonPopover } from "utils/Components";
 import { store_slug } from "utils/data";
 
-export const ButtonBack: React.ComponentType = props => {
+export const ButtonBack: React.ComponentType = () => {
 	const has_changed_single = useSelect<State["has_changed_single"]>(select =>
 		select(store_slug).hasChangedSingle()
 	);
+
 	const { setView, resetSingle } = useDispatch(store_slug);
 
 	return (

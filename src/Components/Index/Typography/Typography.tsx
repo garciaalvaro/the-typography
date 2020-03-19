@@ -9,7 +9,12 @@ import { Info } from "./Info";
 import { ButtonRemove } from "./ButtonRemove";
 import { useColorScheme, useIsPredefined } from "hooks";
 
-const ButtonActivate = applyFilters<React.ComponentType>(
+type Props = {
+	id: Typography["id"];
+	is_active: Typography["is_active"];
+};
+
+const ButtonActivate = applyFilters<React.ComponentType<Props>>(
 	"the_typography.Component.ButtonActivate",
 	() => null
 );
@@ -32,11 +37,12 @@ export const Typography: React.ComponentType<Typography> = props => {
 			<Title id={id} title={title} />
 
 			{is_customizer && (
-				<TypographyVisibility is_visible={is_visible} is_active={is_active} />
+				<TypographyVisibility
+					is_visible={is_visible}
+					is_active={is_active}
+				/>
 			)}
 
-			{/*
-			// @ts-ignore */}
 			{is_predefined && <ButtonActivate id={id} is_active={is_active} />}
 
 			{!is_predefined && <ButtonRemove id={id} />}

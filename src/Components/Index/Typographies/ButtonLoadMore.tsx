@@ -3,7 +3,7 @@ import { __ } from "@wordpress/i18n";
 import { Button } from "utils/Components";
 import { useFetchTypographies } from "hooks";
 
-export const ButtonLoadMore: React.ComponentType = props => {
+export const ButtonLoadMore: React.ComponentType = () => {
 	const fetchTypographies = useFetchTypographies();
 
 	return (

@@ -63,7 +63,9 @@ export const selectors_typographies: SelectorsTypographies = {
 			}) =>
 				block_name
 					? `${block_selector_root}${
-							block_selector_extra ? " " + block_selector_extra : ""
+							block_selector_extra
+								? " " + block_selector_extra
+								: ""
 					  }`
 					: text_selector
 		);
@@ -100,7 +102,9 @@ export const selectors_typographies: SelectorsTypographies = {
 		const { typographies, single, view } = state;
 
 		const typographies_with_single = typographies
-			.map(typography => (typography.id === single.id ? single : typography))
+			.map(typography =>
+				typography.id === single.id ? single : typography
+			)
 			.filter(({ is_visible, is_active }) => is_visible && is_active);
 
 		if (view === "single" && !single.id) {

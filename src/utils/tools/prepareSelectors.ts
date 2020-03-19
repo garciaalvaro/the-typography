@@ -1,6 +1,5 @@
-import uuid from "uuid/v4";
+import { v4 as uuid } from "uuid";
 import { assign, pick, keys, startCase } from "lodash";
-import { __ } from "@wordpress/i18n";
 
 import { generateDefaultSelector } from "utils/data/defaults";
 
@@ -13,7 +12,10 @@ export const prepareSelectors = (selectors_raw: SelectorRaw[]): Selector[] =>
 			selector_default,
 			pick(selector_raw, keys(selector_default))
 		);
-		let { block_name, block_title } = selector;
+
+		const { block_name } = selector;
+
+		let { block_title } = selector;
 
 		if (block_name) {
 			block_title = block_title || startCase(block_name);

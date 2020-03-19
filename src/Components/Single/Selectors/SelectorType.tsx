@@ -7,16 +7,16 @@ import { useSetProp } from "hooks";
 
 type SelectorType = "text" | "block";
 
-interface SelectorTypeOption {
+type SelectorTypeOption = {
 	value: SelectorType;
 	label: string;
-}
+};
 
-interface Props extends Selector {
+type Props = Selector & {
 	group_id: SelectorGroup["id"];
 	type: SelectorType;
 	setType: Function;
-}
+};
 
 const options: SelectorTypeOption[] = [
 	{ value: "block", label: "Block selector" },

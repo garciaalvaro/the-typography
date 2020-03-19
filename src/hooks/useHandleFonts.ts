@@ -5,6 +5,7 @@ import { applyFilters } from "@wordpress/hooks";
 import { generateFontHref } from "utils/tools";
 import { store_slug, is_customizer } from "utils/data";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { customize } = (window as any).wp;
 
 const fetch_google_fonts = applyFilters(
@@ -16,12 +17,19 @@ export const useHandleFonts = () => {
 	const fonts_to_load = useSelect<FontToLoad[]>(select =>
 		select(store_slug).getFontsToLoad()
 	);
+
 	const { setFontsLoaded } = useDispatch(store_slug);
+
 	const is_loading = useRef(false);
+
 	const href = useRef("");
 
 	useEffect(() => {
-		if (!fetch_google_fonts || is_loading.current || !fonts_to_load.length) {
+		if (
+			!fetch_google_fonts ||
+			is_loading.current ||
+			!fonts_to_load.length
+		) {
 			return;
 		}
 
@@ -51,7 +59,10 @@ export const useHandleFonts = () => {
 		link.href = href.current;
 
 		if (is_customizer) {
-			customize.previewer.send("the_typography-googlefonts_href", href.current);
+			customize.previewer.send(
+				"the_typography-googlefonts_href",
+				href.current
+			);
 		}
 	}, [fonts_to_load]);
 
@@ -61,7 +72,10 @@ export const useHandleFonts = () => {
 		}
 
 		customize.previewer.bind("ready", () =>
-			customize.previewer.send("the_typography-googlefonts_href", href.current)
+			customize.previewer.send(
+				"the_typography-googlefonts_href",
+				href.current
+			)
 		);
 	}, []);
 };

@@ -7,11 +7,19 @@ import { useWindowSize } from "utils/hooks";
 
 export const AppContainer: React.ComponentType = props => {
 	const { children } = props;
-	const view = useSelect<State["view"]>(select => select(store_slug).getView());
+
+	const view = useSelect<State["view"]>(select =>
+		select(store_slug).getView()
+	);
+
 	const { window_width, window_height } = useWindowSize();
+
 	const [height, setHeight] = useState(555);
+
 	const div_ref = useRef<HTMLDivElement | null>(null);
+
 	const container_ref = useRef<HTMLElement | null>(null);
+
 	const header_ref = useRef<HTMLElement | null>(null);
 
 	useEffect(() => {
@@ -19,11 +27,21 @@ export const AppContainer: React.ComponentType = props => {
 			return;
 		}
 
-		container_ref.current = div_ref.current.closest(
-			is_customizer
-				? "div.wp-full-overlay-sidebar-content"
-				: ".edit-post-editor-regions__sidebar"
-		) as HTMLElement | null;
+		if (is_customizer) {
+			container_ref.current = div_ref.current.closest(
+				"div.wp-full-overlay-sidebar-content"
+			) as HTMLElement | null;
+		} else {
+			container_ref.current = (div_ref.current.closest(
+				".edit-post-editor-regions__sidebar"
+			) ||
+				div_ref.current.closest(
+					".block-editor-editor-skeleton__sidebar"
+				) ||
+				div_ref.current.closest(
+					".edit-post-sidebar"
+				)) as HTMLElement | null;
+		}
 
 		if (container_ref.current) {
 			header_ref.current = container_ref.current.querySelector(

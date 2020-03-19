@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "@wordpress/element";
 
 import { useIsFirstRender } from "utils/hooks/useIsFirstRender";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useNewElementJustAdded = (elements: any[], delay = 1000) => {
 	const previous_elements_length = useRef(elements.length);
 	const [new_added, setNewAdded] = useState(false);

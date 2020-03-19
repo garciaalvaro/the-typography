@@ -1,5 +1,5 @@
+import { v4 as uuid } from "uuid";
 import { assign, pick, keys } from "lodash";
-import uuid from "uuid/v4";
 
 import { prepareSelectors } from "utils/tools/prepareSelectors";
 import {
@@ -23,10 +23,11 @@ export const prepareSelectorGroups = (
 	groups_raw: SelectorGroupRaw[]
 ): SelectorGroup[] =>
 	groups_raw.map(group_raw => {
-		const group = assign({}, selector_group_default, pick(
-			group_raw,
-			keys(selector_group_default)
-		) as SelectorGroupRaw);
+		const group = assign(
+			{},
+			selector_group_default,
+			pick(group_raw, keys(selector_group_default)) as SelectorGroupRaw
+		);
 
 		if (group._typography_style_defaults) {
 			group._typography_style_defaults = prepareSelectorGroupStyle(

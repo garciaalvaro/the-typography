@@ -6,8 +6,7 @@ import { addPrefix } from "utils/tools";
 import { Span } from "utils/Components";
 import { useSetProp } from "hooks";
 
-interface Props
-	extends Pick<Typography, "_context_fixed" | "context_post_type_template"> {}
+type Props = Pick<Typography, "_context_fixed" | "context_post_type_template">;
 
 const options = [
 	{ value: "index", label: __("Index") },
@@ -23,7 +22,9 @@ export const PostTypeTemplate: React.ComponentType<Props> = props => {
 			<Span>
 				{context_post_type_template
 					.reduce((labels: string[], value) => {
-						const option = options.find(option => option.value === value);
+						const option = options.find(
+							option => option.value === value
+						);
 
 						if (!option) {
 							return labels;
@@ -51,7 +52,9 @@ export const PostTypeTemplate: React.ComponentType<Props> = props => {
 			multiple
 			displayEmpty
 			value={context_post_type_template}
-			onChange={e => setValue("context_post_type_template", e.target.value)}
+			onChange={e =>
+				setValue("context_post_type_template", e.target.value)
+			}
 			renderValue={selected_raw => {
 				const selected = selected_raw as typeof context_post_type_template;
 
@@ -65,7 +68,9 @@ export const PostTypeTemplate: React.ComponentType<Props> = props => {
 
 				return selected
 					.reduce((labels: string[], value) => {
-						const option = options.find(option => option.value === value);
+						const option = options.find(
+							option => option.value === value
+						);
 
 						if (!option) {
 							return labels;

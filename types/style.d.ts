@@ -1,4 +1,4 @@
-interface StyleCustomProps {
+type StyleCustomProps = {
 	custom_font_size: boolean;
 	custom_line_height: boolean;
 	custom_letter_spacing: boolean;
@@ -7,9 +7,9 @@ interface StyleCustomProps {
 	custom_font_style: boolean;
 	custom_text_transform: boolean;
 	custom_text_decoration: boolean;
-}
+};
 
-interface StyleNonCustomProps {
+type StyleNonCustomProps = {
 	font_size: number;
 	line_height: number;
 	letter_spacing: number;
@@ -18,17 +18,17 @@ interface StyleNonCustomProps {
 	font_style: FontStyle;
 	text_transform: TextTransform;
 	text_decoration: TextDecoration;
-}
+};
 
-interface Style extends StyleCustomProps, StyleNonCustomProps {}
+type Style = StyleCustomProps & StyleNonCustomProps;
 
-interface SelectorGroupStyle extends Style {
+type SelectorGroupStyle = Style & {
 	custom_typography: boolean;
 	force_styles: boolean;
-}
+};
 
-interface TypographyStyle extends Style {
+type TypographyStyle = Style & {
 	custom_font: boolean;
 	font_family: string;
 	font_variant: FontVariant[];
-}
+};

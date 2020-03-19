@@ -93,7 +93,10 @@ const stackable: BlockTypeData[] = [
 		elements: [
 			{ name: __("Body"), selector: ".ugb-testimonial__body" },
 			{ name: __("Person name"), selector: ".ugb-testimonial__name" },
-			{ name: __("Person position"), selector: ".ugb-testimonial__position" }
+			{
+				name: __("Person position"),
+				selector: ".ugb-testimonial__position"
+			}
 		]
 	},
 	{
@@ -101,19 +104,34 @@ const stackable: BlockTypeData[] = [
 		elements: [
 			{ name: __("Name"), selector: ".ugb-team-member__name" },
 			{ name: __("Position"), selector: ".ugb-team-member__position" },
-			{ name: __("Description"), selector: ".ugb-team-member__description" }
+			{
+				name: __("Description"),
+				selector: ".ugb-team-member__description"
+			}
 		]
 	},
 	{
 		name: "ugb/pricing-box",
 		elements: [
 			{ name: __("Title"), selector: ".ugb-pricing-box__title" },
-			{ name: __("Price prefix"), selector: ".ugb-pricing-box__price-prefix" },
+			{
+				name: __("Price prefix"),
+				selector: ".ugb-pricing-box__price-prefix"
+			},
 			{ name: __("Price"), selector: ".ugb-pricing-box__price" },
-			{ name: __("Price suffix"), selector: ".ugb-pricing-box__price-suffix" },
-			{ name: __("Price description"), selector: ".ugb-pricing-box__subprice" },
+			{
+				name: __("Price suffix"),
+				selector: ".ugb-pricing-box__price-suffix"
+			},
+			{
+				name: __("Price description"),
+				selector: ".ugb-pricing-box__subprice"
+			},
 			{ name: __("Button"), selector: ".ugb-button--inner" },
-			{ name: __("Description"), selector: ".ugb-pricing-box__description" }
+			{
+				name: __("Description"),
+				selector: ".ugb-pricing-box__description"
+			}
 		]
 	},
 	{
@@ -121,7 +139,10 @@ const stackable: BlockTypeData[] = [
 		elements: [
 			{ name: __("Number"), selector: ".ugb-number-box__number" },
 			{ name: __("Title"), selector: ".ugb-number-box__title" },
-			{ name: __("Description"), selector: ".ugb-number-box__description" }
+			{
+				name: __("Description"),
+				selector: ".ugb-number-box__description"
+			}
 		]
 	},
 	{
@@ -167,7 +188,10 @@ const stackable: BlockTypeData[] = [
 		name: "ugb/blog-posts",
 		elements: [
 			{ name: __("Block root"), selector: ".ugb-blog-posts" },
-			{ name: __("Category"), selector: ".ugb-blog-posts__category-list a" },
+			{
+				name: __("Category"),
+				selector: ".ugb-blog-posts__category-list a"
+			},
 			{ name: __("Meta"), selector: ".ugb-blog-posts__meta" },
 			{ name: __("Title"), selector: ".ugb-blog-posts__title a" },
 			{ name: __("Excerpt"), selector: ".ugb-blog-posts__excerpt" }
@@ -219,7 +243,10 @@ const coblocks: BlockTypeData[] = [
 	{
 		name: "coblocks/author",
 		elements: [
-			{ name: __("Heading"), selector: ".wp-block-coblocks-author__heading" },
+			{
+				name: __("Heading"),
+				selector: ".wp-block-coblocks-author__heading"
+			},
 			{ name: __("Name"), selector: ".wp-block-coblocks-author__name" },
 			{
 				name: __("Biography"),
@@ -231,13 +258,19 @@ const coblocks: BlockTypeData[] = [
 	{
 		name: "coblocks/highlight",
 		elements: [
-			{ name: __("Content"), selector: ".wp-block-coblocks-highlight__content" }
+			{
+				name: __("Content"),
+				selector: ".wp-block-coblocks-highlight__content"
+			}
 		]
 	},
 	{
 		name: "coblocks/click-to-tweet",
 		elements: [
-			{ name: __("Text"), selector: ".wp-block-coblocks-click-to-tweet__text" },
+			{
+				name: __("Text"),
+				selector: ".wp-block-coblocks-click-to-tweet__text"
+			},
 			{
 				name: "Button",
 				selector: ".wp-block-coblocks-click-to-tweet__twitter-btn"
@@ -329,8 +362,14 @@ const atomic_blocks: BlockTypeData[] = [
 	{
 		name: "atomic-blocks/ab-sharing",
 		elements: [
-			{ name: __("Twitter"), selector: ".ab-share-twitter .ab-social-text" },
-			{ name: __("Facebook"), selector: ".ab-share-facebook .ab-social-text" }
+			{
+				name: __("Twitter"),
+				selector: ".ab-share-twitter .ab-social-text"
+			},
+			{
+				name: __("Facebook"),
+				selector: ".ab-share-facebook .ab-social-text"
+			}
 		]
 	},
 	{
@@ -354,7 +393,10 @@ const atomic_blocks: BlockTypeData[] = [
 			{ name: __("Button"), selector: ".ab-block-button .ab-button" },
 			{ name: __("Price"), selector: ".ab-pricing-table-price" },
 			{ name: __("Price term"), selector: ".ab-pricing-table-term" },
-			{ name: __("Price currency"), selector: ".ab-pricing-table-currency" },
+			{
+				name: __("Price currency"),
+				selector: ".ab-pricing-table-currency"
+			},
 			{ name: __("Features"), selector: ".ab-pricing-table-features" }
 		]
 	}

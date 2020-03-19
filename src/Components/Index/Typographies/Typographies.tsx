@@ -19,23 +19,30 @@ const DownloadedFonts = applyFilters<React.ComponentType>(
 	() => null
 );
 
-export const Typographies: React.ComponentType = props => {
+export const Typographies: React.ComponentType = () => {
 	const tab_open = useSelect<State["tab_open"]>(select =>
 		select(store_slug).getTabOpen()
 	);
+
 	const is_loading = useSelect<State["is_loading"]>(select =>
 		select(store_slug).isLoading()
 	);
+
 	const reached_last_page = useSelect<State["reached_last_page"]>(select =>
 		select(store_slug).reachedLastPage()
 	);
+
 	const typographies = useSelect<State["typographies"]>(select =>
 		select(store_slug).getTypographies()
 	);
+
 	const show_tabs = is_pro;
+
 	const show_load_more_button =
 		!is_loading && !reached_last_page && !!typographies.length;
+
 	const show_message_loading = is_loading;
+
 	const show_message_no_results =
 		!is_loading &&
 		tab_open === "typographies" &&
@@ -55,7 +62,9 @@ export const Typographies: React.ComponentType = props => {
 			)}
 
 			{show_load_more_button && <ButtonLoadMore />}
+
 			{show_message_loading && <MessageLoading />}
+
 			{show_message_no_results && <MessageNoResults />}
 		</Div>
 	);

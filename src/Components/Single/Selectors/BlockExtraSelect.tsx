@@ -8,10 +8,10 @@ import { Div } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { useSetProp } from "hooks";
 
-interface Props extends Selector {
+type Props = Selector & {
 	block_type: BlockType;
 	group_id: SelectorGroup["id"];
-}
+};
 
 // TODO: handle not-found options
 const getOptionFromSelector = (
@@ -40,7 +40,9 @@ const getOptionFromId = (id: string, options: BlockTypeDataElement[]) => {
 		return option;
 	}
 
-	return options.find(option => option.id === "custom") as BlockTypeDataElement;
+	return options.find(
+		option => option.id === "custom"
+	) as BlockTypeDataElement;
 };
 
 const getOptions = (options: BlockTypeDataElement[]) =>
@@ -119,13 +121,17 @@ export const BlockExtraSelect: React.ComponentType<Props> = props => {
 					InputLabelProps={{
 						classes: {
 							root: addPrefix("material_ui-textfield-label"),
-							focused: addPrefix("material_ui-textfield-label-focused")
+							focused: addPrefix(
+								"material_ui-textfield-label-focused"
+							)
 						}
 					}}
 					InputProps={{
 						classes: {
 							root: addPrefix("material_ui-textfield-input"),
-							focused: addPrefix("material_ui-textfield-input-focused")
+							focused: addPrefix(
+								"material_ui-textfield-input-focused"
+							)
 						}
 					}}
 					className={addPrefix("material_ui-select-container")}
