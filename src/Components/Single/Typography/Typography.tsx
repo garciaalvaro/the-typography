@@ -21,6 +21,9 @@ export const ContextBlockTypes = createContext<ContextProps>({
 	block_types: []
 });
 
+// These blocks dont have a class to identify them
+const block_types_to_exclude = ["core/paragraph", "core/heading"];
+
 export const Typography: React.ComponentType = () => {
 	const is_predefined = useIsPredefinedSingle();
 
@@ -37,8 +40,13 @@ export const Typography: React.ComponentType = () => {
 	const block_types = useSelect<BlockType[]>(select =>
 		select("core/blocks")
 			.getBlockTypes()
-			.map(({ name, title, icon }) => {
+			.reduce<BlockType[]>((acc, { name, title, icon }) => {
+				if (block_types_to_exclude.includes(name)) {
+					return acc;
+				}
+
 				const data = block_types_data.find(data => data.name === name);
+
 				const elements_default = [
 					{
 						id: "root",
@@ -53,24 +61,39 @@ export const Typography: React.ComponentType = () => {
 						selector: ""
 					}
 				];
-				const elements = data
-					? // If "Block root" exists in data.elements, we remove the default.
-					  uniqBy([...data.elements, ...elements_default], "name")
-					: elements_default;
 
-				return {
-					value: name,
-					label: title,
-					icon: icon.src || icon,
-					elements: sortBy(
-						elements.map(element => ({
-							id: snakeCase(element.name),
-							...element
-						})),
+				let elements = elements_default;
+
+				if (data) {
+					const elements_custom = data.elements.map<
+						BlockTypeDataElementRaw & {
+							id: string;
+						}
+					>(element => ({
+						...element,
+						id:
+							element.name === "Block root"
+								? "root"
+								: snakeCase(element.name)
+					}));
+
+					// If "Block root" exists in data.elements, we remove the default.
+					elements = uniqBy(
+						[...elements_custom, ...elements_default],
 						"name"
-					)
-				};
-			})
+					);
+				}
+
+				return [
+					...acc,
+					{
+						value: name,
+						label: title,
+						icon: icon.src || icon,
+						elements: sortBy(elements, "name")
+					}
+				];
+			}, [])
 	);
 
 	return (
