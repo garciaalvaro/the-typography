@@ -16,7 +16,8 @@
 		"postbuild": "npm run copy && npm run pragma",
 		"type-check": "tsc",
 		"lint": "eslint 'src/**/*.{ts,tsx}'",
-		"prettier": "prettier --check 'src/**/*.{ts,tsx}'"
+		"prettier": "prettier --check 'src/**/*.{ts,tsx}'",
+		"start": "npm run dev"
 	},
 	"dependencies": {
 		"@material-ui/core": "^4.9.7",
