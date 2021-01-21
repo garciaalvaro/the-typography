@@ -24,7 +24,7 @@
 		"@material-ui/icons": "^4.9.1",
 		"@material-ui/lab": "^4.0.0-alpha.46",
 		"@material-ui/styles": "^4.9.6",
-		"immer": "^6.0.2",
+		"immer": "^8.0.1",
 		"react-color": "^2.18.0",
 		"react-select": "^3.0.8",
 		"react-tiny-popover": "^4.0.0",
